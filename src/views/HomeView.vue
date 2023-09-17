@@ -11,7 +11,7 @@
       <div class="flex flex-col items-center justify-between w-full mb-10 lg:flex-row">
         <div class="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5">
           <div class="max-w-xl mb-6">
-            <h3 class="w-[387px] text-gray-900 text-[42px] font-bold font-['Poppins'] leading-[50px]">Send & Receive
+            <h3 class="w-[387px] text-gray-900 text-[42px] font-medium font-['Poppins'] leading-[50px]">Send & Receive
               Message Online </h3>
             <p class="w-[387px] mt-[30px] text-zinc-600 text-base font-normal font-['Poppins'] leading-relaxed">Powerful,
               self-serve product easy to use for easily communicate with our virtual sim cards, sign up us or see the demo
@@ -20,7 +20,7 @@
 
         </div>
         <div class="flex items-center justify-center lg:w-1/2">
-          <div>
+          <div class="pr-12">
             <svg width="100%" height="468" viewBox="0 0 480 468" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M178.998 102.775L211.103 127.642L195.335 147.999L163.23 123.131L178.998 102.775Z" fill="#EBEBEB" />
               <path
