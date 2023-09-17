@@ -1,0 +1,15 @@
+/* dark-mode.css */
+
+/* Override background and text color for the dark mode */
+body.dark {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  /* Override link color in dark mode */
+  body.dark a {
+    color: #61dafb;
+  }
+  
+  /* Add additional dark mode styles as needed */
+  

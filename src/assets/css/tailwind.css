@@ -1,0 +1,17 @@
+/* tailwind.css */
+
+/* Import the base styles (required) */
+@import 'tailwindcss/base';
+
+/* Import the component styles (optional) */
+@import 'tailwindcss/components';
+
+/* Import the utility styles (required) */
+@import 'tailwindcss/utilities';
+
+/* src/assets/css/tailwind.css */
+
+/* Import other CSS styles here */
+
+/* Import the fonts.css file */
+@import './fonts.css';
