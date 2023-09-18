@@ -1,3 +1,10 @@
+<script setup>
+import  playStore from '../../assets/img/Google Play Black Borde.png'; 
+import  appStore from '../../assets/img/App Store Black Borde.png'; 
+
+
+</script>
+
 <template>
     <div class="max-h-[276.62px] px-[200px] mx-auto py-[60px] sm:max-w-xl md:max-w-full lg:max-w-full md:px-24  bg-neutral-100">
         <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-5">
@@ -127,7 +134,7 @@
                 <div class="flex">
                    
                 <a href="" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">
-                    <img src="../../assets/img/Google Play Black Borde.png" alt="play-store" />
+                    <img :src="appStore" alt="play-store" />
                     
                 </a>
                
@@ -135,7 +142,7 @@
                 <div class="flex">
                    
                 <a href="" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">
-                    <img src="../../assets/img/App Store Black Borde.png" alt="app-store" />
+                    <img :src="playStore" alt="app-store" />
                 </a>
                
                 </div>
