@@ -1,4 +1,5 @@
 <script setup>
+import  playStore from '../assets/img/demo.png'; 
 </script>
 
 <template>
@@ -552,5 +553,27 @@
 
 
 
+  <!-- demo start -->
+  <div class="px-4 pt-21 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 lg:pt-[84px]">
+      <div class="flex flex-col items-center justify-between w-full mb-10 lg:flex-row">
+        <div class="flex items-center justify-center lg:w-1/2">
+          <div class="pr-12">
+            <img :src="playStore" alt="app-store" />
+
+        </div>
+
+      </div>
+        <div class="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5">
+          <div class="max-w-xl mb-6">
+            <h3 class="text-neutral-800 text-[32px] font-medium font-['Inter'] leading-[48px]">Get a tour of ZEDSMS </h3>
+            <p class="max-w-[334px] text-neutral-800 text-base font-light font-['Inter']">Watch the tour you just how easy it is to get your messaging started.
+            </p>
+          </div>
+
+        </div>
+      
+    </div>
+  </div>
+  <!-- demo end -->
 
 </main></template>
