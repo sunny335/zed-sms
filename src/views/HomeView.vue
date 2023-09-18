@@ -1,20 +1,19 @@
 <script setup>
 import  playStore from '../assets/img/demo.png'; 
+import GetANumber from '../components/GetANumber/GetANumber.vue';
+
+
 </script>
 
 <template>
-  <main>
-    <div>
-
-    </div>
-
+  <main class="pb-[103px]">
     <div class="px-4 pt-21 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 lg:pt-[84px]">
-      <div class="flex flex-col items-center justify-between w-full mb-10 lg:flex-row">
+      <div class="flex flex-col items-center justify-between w-full mb-[157px] lg:flex-row">
         <div class="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5">
           <div class="max-w-xl mb-6">
-            <h3 class="w-[387px] text-gray-900 text-[42px] font-medium font-['Poppins'] leading-[50px]">Send & Receive
+            <h3 class="max-w-[387px] text-gray-900 text-[42px] font-medium font-['Poppins'] leading-[50px]">Send & Receive
               Message Online </h3>
-            <p class="w-[387px] mt-[30px] text-zinc-600 text-base font-normal font-['Poppins'] leading-relaxed">Powerful,
+            <p class="max-w-[387px] mt-[30px] text-zinc-600 text-base font-normal font-['Poppins'] leading-relaxed">Powerful,
               self-serve product easy to use for easily communicate with our virtual sim cards, sign up us or see the demo
             </p>
           </div>
@@ -549,6 +548,7 @@ import  playStore from '../assets/img/demo.png';
 
       </div>
     </div>
+    <GetANumber />
   </div>
 
 
@@ -577,3 +577,4 @@ import  playStore from '../assets/img/demo.png';
   <!-- demo end -->
 
 </main></template>
+

@@ -61,7 +61,7 @@ import CommunityIcon from '../icons/IconCollections.vue'
                                     </span>
                                 </a>
                             </div>
-                            <div>
+                            <div class="hidden md:block">
                                 <HeaderDropdown :selectedLanguage="selectedLanguage" @update:selectedLanguage="updateSelectedLanguage" />
                             </div>
                         </div>
