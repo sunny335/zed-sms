@@ -21,7 +21,8 @@ module.exports = {
       }
     },
     fontFamily:{
-      Poppins:["Poppins","sans-sarif"]
+      Poppins:["Poppins","sans-sarif"],
+      Inter:["Inter","sans-sarif"]
     }
   },
   plugins: [],
