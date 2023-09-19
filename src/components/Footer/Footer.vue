@@ -7,9 +7,9 @@ import  appStore from '../../assets/img/App Store Black Borde.png';
 
 <template>
     <div class="bg-neutral-100">
-        <div class="max-h-[276.62px] lg:px-8 mx-auto py-[60px] sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24  bg-neutral-100">
-            <div class="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-5">
-                <div class="sm:col-span-2 flex flex-col items-center mr-[263px]">
+        <div class="min-h-[276.62px] lg:px-8 mx-auto py-[60px] sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24  bg-neutral-100">
+            <div class="flex flex-wrap lg:grid justify-around gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-5">
+                <div class="sm:col-span-2 flex flex-col items-center lg:mr-[263px] w-full ">
                     <a href="/" aria-label="Go home" title="Company" class="flex flex-col items-center">
                         <svg width="44" height="45" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -97,7 +97,7 @@ import  appStore from '../../assets/img/App Store Black Borde.png';
                     </div>
     
                 </div>
-                <div class="space-y-2 text-sm">
+                <div class="space-y-2 text-sm lg:w-full sm:w-[48%]">
                     <p class="text-blue-600 text-lg font-medium font-['Inter'] leading-7">Information</p>
                     <div class="flex">
                        
@@ -112,7 +112,7 @@ import  appStore from '../../assets/img/App Store Black Borde.png';
                         <a href="" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">Help Desk</a>
                     </div>
                 </div>
-                <div class="space-y-2 text-sm">
+                <div class="space-y-2 text-sm lg:w-full sm:w-[48%]">
                     <p class="text-blue-600 text-lg font-medium font-['Inter'] leading-7">Company</p>
                     <div class="flex">
                        
@@ -130,23 +130,20 @@ import  appStore from '../../assets/img/App Store Black Borde.png';
                         <a href="" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">Terms & condition</a>
                     </div>
                </div>
-                <div class="space-y-2 text-sm">
+                <div class="space-y-2 text-sm w-full flex flex-col justify-center items-start lg:items-center gap-3 mx-4">
                     <p class="text-blue-600 text-lg font-medium font-['Inter'] leading-7">Download App</p>
-                    <div class="flex">
+                    <div class="flex  lg:flex-col items-center gap-3">
                        
-                    <a href="" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">
+                    <a href="" >
                         <img :src="appStore" alt="play-store" />
                         
                     </a>
-                   
-                    </div>
-                    <div class="flex">
-                       
-                    <a href="" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">
+                    <a href="" >
                         <img :src="playStore" alt="app-store" />
                     </a>
                    
                     </div>
+                
                
                </div>
         </div>

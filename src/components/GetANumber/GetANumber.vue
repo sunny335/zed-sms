@@ -1,6 +1,21 @@
 
 <script setup>
 import PhilipinsImg from '../../assets/img/Philipins.png';
+import LebanonImg from '../../assets/img/flags/Lebanon.png';
+import TaiwanImg from '../../assets/img/flags/Taiwan.png';
+import IsraelImg from '../../assets/img/flags/Israel.png';
+import RussiaImg from '../../assets/img/flags/Russia.png';
+import NorthAfricaImg from '../../assets/img/flags/North-africa.png';
+import SouthAmericaImg from '../../assets/img/flags/South-america.png';
+import DenmarkImg from '../../assets/img/flags/Denmark.png';
+import AppleImg from '../../assets/img/company/Apple.png';
+import MicrosoftImg from '../../assets/img/company/Microsoft.png';
+import MicrosoftImg2 from '../../assets/img/company/Microsoft2.png';
+import MicrosoftImg3 from '../../assets/img/company/Microsoft3.png';
+import AmazonImg from '../../assets/img/company/Amazon.png';
+import AmazonImg2 from '../../assets/img/company/Amazon2.png';
+import TeslaImg from '../../assets/img/company/Tesla.png';
+import TeslaImg2 from '../../assets/img/company/Tesla2.png';
 
 </script>
 
@@ -447,33 +462,32 @@ export default {
             openTab: 1,
             countries: [
                 { name: 'United States', flag: PhilipinsImg },
-                { name: 'Canada', flag: 'Philipins.png' },
-                { name: 'United Kingdom', flag: 'English.png' },
-                { name: 'France', flag: 'English.png' },
-                { name: 'Germany', flag: 'English.png' },
-                { name: 'Spain', flag: 'English.png' },
-                { name: 'United States', flag: 'English.png' },
-                { name: 'Canada', flag: 'Philipins.png' },
-                { name: 'United Kingdom', flag: 'English.png' },
-                { name: 'France', flag: 'English.png' },
-                { name: 'Germany', flag: 'English.png' },
-                { name: 'Spain', flag: 'English.png' },
+                { name: 'Lebanon', flag: LebanonImg },
+                { name: 'Taiwan', flag: TaiwanImg },
+                { name: 'Israel', flag:IsraelImg },
+                { name: 'Russia', flag: RussiaImg },
+                { name: 'North Africa', flag: NorthAfricaImg },
+                { name: 'Denmark', flag: DenmarkImg },
+                { name: 'South America', flag: SouthAmericaImg },
+                { name: 'Russia', flag: RussiaImg },
+                { name: 'North Africa', flag: NorthAfricaImg },
+                { name: 'Denmark', flag: DenmarkImg },
+                { name: 'South America', flag: SouthAmericaImg },
 
             ],
             services: [
-                { name: 'Apple', price: '$0.45', flag: 'English.png' },
-                { name: 'Amazon', price: '$0.45', flag: 'Philipins.png' },
-                { name: 'Amazon', price: '$0.45', flag: 'English.png' },
-                { name: 'Tesla', price: '$0.45', flag: 'English.png' },
-                { name: 'Microsoft', price: '$0.45', flag: 'English.png' },
-                { name: 'Microsoft', price: '$0.45', flag: 'English.png' },
-                { name: 'Microsoft', price: '$0.45', flag: 'English.png' },
-                { name: 'Tesla', price: '$0.45', flag: 'Philipins.png' },
-                { name: 'Apple', price: '$0.45', flag: 'English.png' },
-                { name: 'Amazon', price: '$0.45', flag: 'Philipins.png' },
-                { name: 'Amazon', price: '$0.45', flag: 'English.png' },
-                { name: 'Tesla', price: '$0.45', flag: 'English.png' },
-                { name: 'Microsoft', price: '$0.45', flag: 'English.png' },
+                { name: 'Apple', price: '$0.45', flag: AppleImg },
+                { name: 'Amazon', price: '$0.45', flag: AmazonImg },
+                { name: 'Amazon', price: '$0.45', flag: AmazonImg2 },
+                { name: 'Tesla', price: '$0.45', flag: TeslaImg },
+                { name: 'Microsoft', price: '$0.45', flag: MicrosoftImg },
+                { name: 'Microsoft', price: '$0.45', flag: MicrosoftImg2 },
+                { name: 'Microsoft', price: '$0.45', flag: MicrosoftImg3 },
+                { name: 'Tesla', price: '$0.45', flag: TeslaImg2 },
+                { name: 'Microsoft', price: '$0.45', flag: MicrosoftImg },
+                { name: 'Microsoft', price: '$0.45', flag: MicrosoftImg2 },
+                { name: 'Microsoft', price: '$0.45', flag: MicrosoftImg3 },
+                { name: 'Tesla', price: '$0.45', flag: TeslaImg2 },
 
             ],
             phoneNumbers: [
