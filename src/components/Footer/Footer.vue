@@ -9,7 +9,7 @@ import  appStore from '../../assets/img/App Store Black Borde.png';
     <div class="bg-neutral-100">
         <div class="min-h-[276.62px] lg:px-8 mx-auto py-[60px] sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24  bg-neutral-100">
             <div class="flex flex-wrap md:flex lg:grid justify-around gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-5">
-                <div class="sm:col-span-2 flex flex-col items-center lg:mr-[263px] w-full ">
+                <div class="sm:col-span-2 flex flex-col items-center lg:items-start lg:mr-[263px] w-full ">
                     <a href="/" aria-label="Go home" title="Company" class="flex flex-col items-center">
                         <svg width="44" height="45" viewBox="0 0 44 45" fill="none" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink">

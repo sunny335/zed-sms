@@ -834,7 +834,7 @@ commitment necessary.</p>
 
 
       <!-- FAQ -->
-      <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
+      <div class=" px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[768px] md:px-24 lg:px-8 ">
       <div class="pt-[107px] lg:pt-[161px]  lg:px-0">
         <div class="text-gray-900 text-2xl lg:text-[32px] text-center font-medium font-['Poppins'] leading-[44px]">
           Frequently asked
