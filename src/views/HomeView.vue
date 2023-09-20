@@ -566,7 +566,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
       <!-- virtual-->
       <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
       <div class="pt-[136px] lg:pt-[154px]">
-        <h3 class="max-w-[197px] mx-auto lg:w-full text-center text-neutral-800 text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[44px]">Buy virtual sim
+        <h3 class="max-w-[197px]  mx-auto lg:max-w-full text-center text-neutral-800 text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[44px]">Buy virtual sim
           easier than ever</h3>
 
         <div class="mt-[50px] lg:mt-[100px] flex flex-col  items-center">

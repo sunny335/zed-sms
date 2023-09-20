@@ -96,7 +96,7 @@ import google from '../assets/img/google.png';
                         </label>
                     </div>
                     <button
-                        class="max-w-[534px] h-[70px] pl-[173px] pr-[172px] pt-[19.50px] pb-[20.50px] bg-blue-600 rounded-[14px] justify-center items-center inline-flex">
+                        class="max-w-[534px] w-full h-[70px]  pt-[19.50px] pb-[20.50px] bg-blue-600 rounded-[14px] justify-center items-center inline-flex">
                         <div class="self-stretch justify-center items-center gap-4 inline-flex">
                             <div class="text-white text-xl font-normal font-['Poppins']">Create an account</div>
                         </div>
@@ -108,21 +108,21 @@ import google from '../assets/img/google.png';
                         <div class="text-zinc-600 text-2xl font-normal font-['Poppins']">OR</div>
                         <div class="grow shrink basis-0 h-0.5 bg-zinc-200"></div>
                     </div>
-                    <div
-                        class="max-w-[534px] max-h-16 pl-[139.50px] pr-[137.5px] pt-[16.50px] pb-[17.50px] bg-white rounded-[14px] border border-zinc-600 justify-center items-center inline-flex cursor-pointe my-6">
+                    <button
+                        class="max-w-[534px] w-full max-h-16  pt-[16.50px] pb-[17.50px] bg-white rounded-[14px] border border-zinc-600 justify-center items-center inline-flex cursor-pointe my-6">
                         <div class="self-stretch justify-center items-center gap-4 inline-flex">
                             <div class="w-6 h-6 relative">
                                 <img :src="google" alt="">
                             </div>
                             <div class="text-zinc-600 text-xl  font-normal font-['Poppins']">Continue with Google</div>
                         </div>
-                    </div>
-                    <div
-                        class="max-w-[534px] max-h-16 pl-[160.50px] pr-[160.50px] pt-[16.50px] pb-[17.50px] bg-white rounded-[14px] border border-zinc-600 justify-center items-center inline-flex cursor-pointer">
+                    </button>
+                    <button
+                        class="max-w-[534px] w-full max-h-16 pt-[16.50px] pb-[17.50px] bg-white rounded-[14px] border border-zinc-600 justify-center items-center inline-flex cursor-pointer">
                         <div class="self-stretch justify-center items-center gap-4 inline-flex">
                             <div class="text-zinc-600 text-xl font-normal font-['Poppins']">Continue with Others</div>
                         </div>
-                    </div>
+                    </button>
                 </div>
 
             </div>
