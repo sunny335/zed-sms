@@ -5,28 +5,23 @@ import google from '../assets/img/google.png';
 
 </script>
 <template>
-    <!--
-      Heads up! 👋
-    
-      Plugins:
-        - @tailwindcss/forms
-    -->
-
-    <section class="bg-white py-10">
-        <div class="flex justify-evenly items-center">
-            <div>
+    <section
+        class="bg-white py-6 lg:py-10 px-4 pt-21 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 lg:pt-[84px] ">
+        <div class="flex-col-reverse flex lg:flex-row justify-evenly items-center">
+            <div class="py-[130px] lg:py-0 mx-6">
                 <img src="../assets/img/SignUp.png" alt="" srcset="">
             </div>
-            <div class="max-w-[534px]">
-                <div class="flex justify-between items-center gap-[120px]">
-                    <p class="text-zinc-600 text-[32px] font-medium font-['Poppins']">Create an account</p>
-                    <RouterLink class="text-neutral-800 text-base font-light font-['Poppins'] underline" to="/">Log in
+            <div class="max-w-[330px] lg:max-w-[534px]">
+                <div class="flex-col flex lg:flex-row justify-start lg:justify-between items-start lg:items-center gap-0 lg:gap-[120px]">
+                    <p class="text-zinc-600 text-2xl lg:text-[32px] font-medium font-['Poppins'] pb-[14px] lg:pb-0">Create
+                        an account</p>
+                    <RouterLink class="text-neutral-800 text-base font-light font-['Poppins'] underline " to="/">Log in
                         instead</RouterLink>
                 </div>
                 <form class="mt-10">
                     <div>
                         <label class="text-zinc-600 text-base font-normal font-['Poppins'] block mb-2">User Name</label>
-                        <input type="text" class="w-full h-14 relative rounded-xl border border-zinc-600" />
+                        <input type="text" class=" w-full h-14 relative rounded-xl border border-zinc-600" />
                     </div>
                     <div class="mt-5">
                         <label class="text-zinc-600 text-base font-normal font-['Poppins'] block mb-2">Email</label>
@@ -82,17 +77,40 @@ import google from '../assets/img/google.png';
                         <input type="password" class="w-full h-14 relative rounded-xl border border-zinc-600" />
                     </div>
                     <div class="">
-                        <label for="" class="flex gap-4 items-start my-5">
-                            <input type="checkbox" class="border-gray-300 rounded h-5 w-5 mt-1" />
+                        <label for="" class="flex justify-start items-start my-5">
+                            <div class="inline-flex items-center">
+                                <label class="relative flex cursor-pointer items-center rounded-full p-3" for="checkbox-3"
+                                    data-ripple-dark="true">
+                                    <input type="checkbox"
+                                        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-black checked:bg-black checked:before:bg-black hover:before:opacity-10"
+                                        id="checkbox-3" defaultChecked />
+                                    <div
+                                        class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20"
+                                            fill="currentColor" stroke="currentColor" stroke-width="1">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </div>
+                                </label>
+                            </div>
 
-                            <div><span class="text-zinc-600 text-base font-normal font-['Poppins']">By creating an account,
-                                    I agree to our </span><span
-                                    class="text-neutral-800 text-base font-normal font-['Poppins'] underline">Terms of
-                                    use</span><span class="text-zinc-600 text-base font-normal font-['Poppins']"> <br />and
-                                </span><span
-                                    class="text-neutral-800 text-base font-normal font-['Poppins'] underline">Privacy
+                            <div><span class="text-zinc-600 text-sm lg:text-base font-normal font-['Poppins']">By creating
+                                    an account,I agree to our </span>
+                                <span
+                                    class="text-neutral-800 text-sm lg:text-base font-normal font-['Poppins'] underline">Terms
+                                    of
+                                    use</span>
+                                <span class="text-zinc-600 text-sm lg:text-base font-normal font-['Poppins']">
+                                    and
+                                </span>
+                                <span
+                                    class="text-neutral-800 text-sm lg:text-base font-normal font-['Poppins'] underline">Privacy
                                     Policy</span><span
-                                    class="text-zinc-600 text-base font-normal font-['Poppins'] underline"> </span></div>
+                                    class="text-zinc-600 text-sm lg:text-base font-normal font-['Poppins'] underline">
+                                </span>
+                            </div>
                         </label>
                     </div>
                     <button
@@ -103,10 +121,10 @@ import google from '../assets/img/google.png';
                     </button>
                 </form>
                 <div class="my-[30px]">
-                    <div class="w-[534px] h-[33px] justify-start items-center gap-[23px] inline-flex">
-                        <div class="grow shrink basis-0 h-0.5 bg-zinc-200"></div>
-                        <div class="text-zinc-600 text-2xl font-normal font-['Poppins']">OR</div>
-                        <div class="grow shrink basis-0 h-0.5 bg-zinc-200"></div>
+                    <div class="flex  items-center justify-center ">
+                        <div class="w-[226.50px] h-[1px] bg-gray-400"></div>
+                        <p class=" text-neutral-800 text-base font-normal font-['Poppins'] px-6">OR</p>
+                        <div class="w-[226.50px] h-[1px] bg-gray-400"></div>
                     </div>
                     <button
                         class="max-w-[534px] w-full max-h-16  pt-[16.50px] pb-[17.50px] bg-white rounded-[14px] border border-zinc-600 justify-center items-center inline-flex cursor-pointe my-6">
@@ -127,5 +145,4 @@ import google from '../assets/img/google.png';
 
             </div>
         </div>
-    </section>
-</template>
+</section></template>

@@ -21,6 +21,26 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/LogIn.vue')
+    },
+    {
+      path: '/reset-password',
+      name: 'ResetPassword',
+      component: () => import('../views/ResetPassword.vue')
+    },
+    {
+      path: '/confirm-email',
+      name: 'ConfirmEmail',
+      component: () => import('../views/ConfirmEmail.vue')
+    },
+    {
+      path: '/reset-password-new',
+      name: 'ResetPasswordNew',
+      component: () => import('../views/ResetPasswordNew.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'NotFound',
+      component: () => import('../views/NotFound.vue')
     }
   ]
 })

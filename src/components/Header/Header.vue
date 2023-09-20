@@ -47,7 +47,7 @@ import CommunityIcon from '../icons/IconCollections.vue'
                         <div class="sm:flex sm:gap-5">
                             <div class="hidden sm:flex">
                                 <RouterLink class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-blue-600 justify-center items-center inline-flex"
-                                    to="/signUp">
+                                    to="/logIn">
                                     <span
                                         class="text-center text-neutral-800 text-sm font-normal font-['Poppins'] leading-[17px]">
                                         Sign In
@@ -55,7 +55,7 @@ import CommunityIcon from '../icons/IconCollections.vue'
                                 </RouterLink>
                             </div>
                             <RouterLink  class="w-24 h-[37px] px-4 py-2.5 bg-blue-600 rounded-[10px] justify-center items-end inline-flex"
-                            to="/logIn">
+                            to="/signUp">
                                 <span class="text-center text-white text-sm font-medium font-['Poppins'] leading-[17px]">
                                     Sign Up
                                 </span>

@@ -1,24 +1,18 @@
 
 <script setup>
-// import { RouterLink } from 'vue-router'
+import { RouterLink } from 'vue-router'
 import google from '../assets/img/google.png';
 import fb from '../assets/img/fb.jpg';
 import apple from '../assets/img/apple.png';
+import recaptcha from '../assets/img/google_recaptcha-official 2.png';
 
 </script>
 <template>
-    <!--
-      Heads up! 👋
-    
-      Plugins:
-        - @tailwindcss/forms
-    -->
-
-    <section class="bg-white py-10 flex justify-center items-center">
+    <section class="bg-white pt-0 lg:pt-10 pb-[39px] flex justify-center items-center">
         <div
-            class="w-[1112px] h-[687px] px-[120px] py-10 bg-white rounded-[30px] shadow flex-col justify-start items-center gap-[50px] inline-flex">
-            <h2 class="text-center text-neutral-800 text-[32px] font-medium font-['Poppins']">Log in</h2>
-            <div class="flex">
+            class="min-w-[1112px] min-h-[687px] px-[120px] py-0 lg:py-10 bg-white rounded-none lg:rounded-[30px] shadow-none lg:shadow flex-col justify-start items-center gap-[50px] inline-flex">
+            <h2 class="text-left lg:text-center w-[40%] text-neutral-800 text-[32px] font-medium font-['Poppins']">Log in</h2>
+            <div class="flex-col flex lg:flex-row justify-center items-center  w-full min-h-[381px]">
                 <div>
                     <form>
                         <div class="max-w-[354px]">
@@ -49,66 +43,123 @@ import apple from '../assets/img/apple.png';
                             <input type="password" class="w-[354px] h-14 relative rounded-xl border border-gray-400 mt-2" />
                         </div>
                         <div class="">
-                            <label for="" class="flex gap-4  justify-between items-start my-5">
-                                <div class="flex gap-4 items-start">
-                                    <input type="checkbox" class="border-gray-300 rounded h-5 w-5 mt-1" />
+                            <label for="" class="flex gap-4  justify-between items-center my-5">
+                                <div class="flex  justify-start items-center">
+                                    <div class="inline-flex items-center">
+                                        <label class="relative flex cursor-pointer items-center rounded-full p-3"
+                                            for="checkbox-3" data-ripple-dark="true">
+                                            <input type="checkbox"
+                                                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-black checked:bg-black checked:before:bg-black hover:before:opacity-10"
+                                                id="checkbox-3" defaultChecked />
+                                            <div
+                                                class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5"
+                                                    viewBox="0 0 20 20" fill="currentColor" stroke="currentColor"
+                                                    stroke-width="1">
+                                                    <path fill-rule="evenodd"
+                                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                            </div>
+                                        </label>
+                                    </div>
 
                                     <p class="text-zinc-600 text-base font-light font-['Poppins']">Remember me</p>
                                 </div>
-                                <div class="text-right text-zinc-600 text-base font-light font-['Poppins'] underline">Forget
-                                    password!</div>
+                                <RouterLink to="/reset-password"
+                                    class="text-right text-zinc-600 text-base font-light font-['Poppins'] underline">Forget
+                                    password!</RouterLink>
                             </label>
                         </div>
-                        <div
-                            class="max-w-[354px] max-h-[58px] px-[142px] py-[11px] bg-blue-600 rounded-[14px] justify-center items-center gap-2.5 inline-flex">
+                        <button
+                            class="max-w-[354px] max-h-[58px] w-full py-[11px] bg-blue-600 rounded-[14px] justify-center items-center gap-2.5 inline-flex">
                             <div class="text-center text-white text-2xl font-normal font-['Poppins']">Log in</div>
-                        </div>
+                        </button>
                     </form>
                     <div class="mt-[24px]"><span class="text-zinc-600 text-base font-normal font-['Poppins']">Don’t have an
                             ccount? </span><span class="text-zinc-600 text-base font-normal font-['Poppins'] underline">Sign
                             up </span></div>
                 </div>
-                <div class="max-w-[301px] h-6  -rotate-90 justify-start items-center gap-[23px] inline-flex">
-                    <div class="grow shrink basis-0 h-px bg-gray-400"></div>
-                    <div class="origin-top-left rotate-90 text-neutral-800 text-base font-normal font-['Avenir']">OR</div>
-                    <div class="grow shrink basis-0 h-px bg-gray-400"></div>
+
+                <div class="hidden lg:block">
+                    <div class="flex flex-col items-center justify-center px-[81px]">
+                        <div class="h-[116.50px] w-[2px] bg-gray-400"></div>
+                        <p class=" text-neutral-800 text-base font-normal font-['Poppins'] py-2">OR</p>
+                        <div class="h-[116.50px] w-[2px] bg-gray-400"></div>
+                    </div>
                 </div>
-                <div>
-                    <div
-                        class="max-w-[354px] max-h-[60px] pl-[67.50px] pr-[68.50px] pt-[17.50px] pb-[18.50px] bg-white rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
+                <div class="block lg:hidden mt-10 mx-12">
+                    <div class="flex  items-center justify-center ">
+                        <div class="w-[124px] h-[1px] bg-gray-400"></div>
+                        <p class=" text-neutral-800 text-base font-normal font-['Poppins'] px-6">OR</p>
+                        <div class="w-[124px] h-[1px] bg-gray-400"></div>
+                    </div>
+
+                </div>
+
+                <div class="max-w-[354px] max-h-full mt-[50px]">
+                    <button
+                        class="max-w-[354px] max-h-[60px] w-full  pt-[17.50px] pb-[18.50px] bg-white rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
                         <div class="self-stretch justify-center items-center gap-5 inline-flex">
                             <div class="w-6 h-6 relative">
                                 <img :src="google" alt="" srcset="">
                             </div>
                             <div class="text-neutral-800 text-base font-light font-['Poppins']">Continue with Google</div>
                         </div>
-                    </div>
-                    <div
-                        class="max-w-[354px] max-h-[60px] pl-[57.50px] pr-[57.50px] pt-[17.50px] pb-[18.50px] bg-white rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
+                    </button>
+                    <button
+                        class="max-w-[354px] max-h-[60px]  w-full  pt-[17.50px] pb-[18.50px] bg-white rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
                         <div class="self-stretch justify-center items-center gap-5 inline-flex">
                             <div class="w-6 h-6 relative">
                                 <img :src="fb" alt="" srcset="">
                             </div>
                             <div class="text-neutral-800 text-base font-light font-['Poppins']">Continue with Facebook</div>
                         </div>
-                    </div>
-                    <div
-                        class="max-w-[354px] max-h-[60px] pl-[62.5px] pr-[62.50px] pt-[17.50px] pb-[18.50px] bg-white rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
+                    </button>
+                    <button
+                        class="max-w-[354px] max-h-[60px] w-full  pt-[17.50px] pb-[18.50px] bg-white rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
                         <div class="self-stretch justify-center items-center gap-5 inline-flex">
                             <div class="w-6 h-6 relative">
                                 <img :src="apple" alt="" srcset="">
                             </div>
                             <div class="text-neutral-800 text-base font-light font-['Poppins']">Continue with Apple ID</div>
                         </div>
-                    </div>
-                    <div
-                        class="max-w-[354px] max-h-[60px] px-[92px] pt-[18.50px] pb-[17.50px] bg-white rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
+                    </button>
+                    <button
+                        class="max-w-[354px] max-h-[60px]  w-full  pt-[18.50px] pb-[17.50px] bg-white rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
                         <div class="self-stretch justify-center items-center gap-4 inline-flex">
                             <div class="text-neutral-800 text-base font-light font-['Poppins']">Continue with Others</div>
                         </div>
-                    </div>
+                    </button>
                 </div>
             </div>
+            <!-- <div
+                class="max-w-[363px] max-h-[68px] w-full px-2 pt-[11px] pb-[10.71px] rounded-[14px] border border-zinc-600 justify-center items-center gap-[124px] inline-flex">
+                <div class="self-stretch justify-center items-center gap-2 inline-flex">
+                    <div class="inline-flex items-center">
+                        <label class="relative flex cursor-pointer items-center rounded-full p-3" for="checkbox-3"
+                            data-ripple-dark="true">
+                            <input type="checkbox"
+                                class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-green-500 checked:bg-green-500 checked:before:bg-green-500 hover:before:opacity-10"
+                                id="checkbox-3" defaultChecked />
+                            <div
+                                class="pointer-events-none absolute top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20"
+                                    fill="currentColor" stroke="currentColor" stroke-width="1">
+                                    <path fill-rule="evenodd"
+                                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="text-center text-zinc-600 text-base font-light font-['Poppins']">I’m not a robot</div>
+                </div>
+                <div class="w-12 h-[46.29px] relative flex-col justify-start items-start flex">
+                    <img :src="recaptcha" alt="" srcset="">
+                </div>
+            </div> -->
+       
         </div>
     </section>
 </template>
