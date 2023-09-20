@@ -120,7 +120,7 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                             </div>
                                         </form>
                                         <div
-                                            class="relative after:content-['*'] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
+                                            class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
 
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar ">
                                                 <li v-for="(country, index) in countries" :key="index">
@@ -169,7 +169,7 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                             </div>
                                         </form>
                                         <div
-                                            class="relative after:content-['*'] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
+                                            class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
                                                 <li v-for="(service, index) in services" :key="index">
                                                     <div
@@ -219,7 +219,7 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                             </div>
                                         </form>
                                         <div
-                                            class="relative after:content-['*'] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
+                                            class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
                                                 <li v-for="(phoneNumber, index) in phoneNumbers" :key="index">
 
@@ -268,7 +268,7 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                             </div>
                                         </form>
                                         <div
-                                            class="relative after:content-['*'] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
+                                            class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
 
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar ">
                                                 <li v-for="(country, index) in countries" :key="index">
@@ -318,7 +318,7 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                             </div>
                                         </form>
                                         <div
-                                            class="relative after:content-['*'] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
+                                            class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
                                                 <li v-for="(phoneNumber, index) in phoneNumbers" :key="index">
 
@@ -366,7 +366,7 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                             </div>
                                         </form>
                                         <div
-                                            class="relative after:content-['*'] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
+                                            class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
 
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar ">
                                                 <li v-for="(country, index) in countries" :key="index">
@@ -415,7 +415,7 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                             </div>
                                         </form>
                                         <div
-                                            class="relative after:content-['*'] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
+                                            class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
                                                 <li v-for="(service, index) in services" :key="index">
                                                     <div
