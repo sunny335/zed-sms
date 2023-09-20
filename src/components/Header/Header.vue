@@ -45,22 +45,23 @@ import CommunityIcon from '../icons/IconCollections.vue'
 
                     <div class="flex items-center gap-4">
                         <div class="sm:flex sm:gap-5">
-                            <a class="w-24 h-[37px] px-6 py-2.5 bg-blue-600 rounded-[10px] justify-center items-end inline-flex"
-                                href="/">
-                                <span class="text-center text-white text-sm font-medium font-['Poppins'] leading-[17px]">
-                                    Sign in
-                                </span>
-                            </a>
-
                             <div class="hidden sm:flex">
-                                <a class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-blue-600 justify-center items-center inline-flex"
-                                    href="/">
+                                <RouterLink class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-blue-600 justify-center items-center inline-flex"
+                                    to="/signUp">
                                     <span
                                         class="text-center text-neutral-800 text-sm font-normal font-['Poppins'] leading-[17px]">
-                                        Sign up
+                                        Sign In
                                     </span>
-                                </a>
+                                </RouterLink>
                             </div>
+                            <RouterLink  class="w-24 h-[37px] px-4 py-2.5 bg-blue-600 rounded-[10px] justify-center items-end inline-flex"
+                            to="/logIn">
+                                <span class="text-center text-white text-sm font-medium font-['Poppins'] leading-[17px]">
+                                    Sign Up
+                                </span>
+                            </RouterLink>
+
+                      
                             <div class="hidden md:block">
                                 <HeaderDropdown :selectedLanguage="selectedLanguage" @update:selectedLanguage="updateSelectedLanguage" />
                             </div>

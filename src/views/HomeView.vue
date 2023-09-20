@@ -559,13 +559,17 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
 
         </div>
       </div>
-      <!-- <GetANumber /> -->
+   <div class="hidden lg:block">
+    <GetANumber />
+   </div>
+   </div>
       <!-- virtual-->
-      <div class="pt-[154px]">
-        <h3 class="text-center text-neutral-800 text-[32px] font-medium font-['Poppins'] leading-[44px]">Buy virtual sim
+      <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
+      <div class="pt-[136px] lg:pt-[154px]">
+        <h3 class="max-w-[197px] mx-auto lg:w-full text-center text-neutral-800 text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[44px]">Buy virtual sim
           easier than ever</h3>
 
-        <div class="mt-[100px] flex flex-col  items-center">
+        <div class="mt-[50px] lg:mt-[100px] flex flex-col  items-center">
           <div class="justify-center items-center hidden lg:inline-flex">
             <svg class="mr-[30px]" width="119" height="39" viewBox="0 0 119 39" fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -677,9 +681,11 @@ commitment necessary.</p>
         </div>
 
       </div>
+      </div>
       <!-- virtual -->
       <!-- Choose -->
-      <div class="pt-[200px] px-0 sm:px-4">
+      <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
+      <div class="pt-[100px] lg:pt-[200px] px-0 sm:px-4">
         <div class="flex flex-col-reverse items-center justify-between w-full mb-10 lg:flex-row">
 
 
@@ -740,29 +746,32 @@ commitment necessary.</p>
           </div>
         </div>
       </div>
+      </div>
       <!-- Choose -->
 
       <!-- demo start -->
-      <div class="pt-[100px] lg:pt-[250px] px-[37px] lg:px-0">
+      <div class="bg-neutral-100 bg-opacity-40 mt-[100px] lg:mt-[200px]">
+      <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
+      <div class=" px-[37px] lg:px-0 py-[10px] lg:py-[100px]">
         <div class="flex flex-col items-center justify-between w-full mb-10 lg:flex-row">
 
           <div class="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5">
             <div class="max-w-full mb-6">
-              <h3 class="text-neutral-800 text-2xl lg:text-[32px] font-medium font-['Inter'] leading-[48px]">Get a tour of
+              <h3 class="text-neutral-800 text-2xl lg:text-[32px] font-medium font-['Inter'] leading-[48px] text-center lg:text-left">Get a tour of
                 ZEDSMS </h3>
               <p
                 class="max-w-[334px]  text-neutral-800 text-sm text-center lg:text-left lg:text-base font-light font-['Inter'] mt-[10px]">
                 Watch the tour you
                 just how easy it is to get your messaging started.
               </p>
-              <div class="flex justify-center lg:justify-start items-center">
+              <button class="flex justify-center lg:justify-start items-center cursor-pointer lg:mx-0 mx-auto">
                 <div
                   class="mt-[30px] px-10 py-[15px] rounded-[14px] border border-zinc-600 justify-start items-start inline-flex ">
                   <div class="text-center text-zinc-600 text-[19px] font-light font-['Inter'] leading-relaxed">Watch demo
                     ->
                   </div>
                 </div>
-              </div>
+              </button>
             </div>
 
           </div>
@@ -776,37 +785,41 @@ commitment necessary.</p>
 
         </div>
       </div>
+      </div>
+      </div>
+
       <!-- demo end -->
 
       <!-- available on -->
-      <div class="pt-[217px]">
+      <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
+      <div class="pt-[117px]">
         <h3 class="text-center text-neutral-800 text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[57.60px]">We
           are available
           on</h3>
-        <div class="flex flex-wrap  items-center justify-between w-full mb-10 lg:flex-row mt-[60px] lg:mt-[100px] px-0">
+        <div class="flex flex-wrap  items-center justify-between w-full mb-10 lg:mb-0 lg:flex-row mt-[60px] lg:mt-[100px] px-0">
 
-          <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px]">
+          <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="Webversion" alt="app-store" />
             <p class="text-neutral-800 text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">Web version</p>
 
           </div>
-          <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px]">
+          <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="MobileApp" alt="app-store" />
             <p class="text-neutral-800 text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">Mobile App</p>
 
           </div>
-          <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px]">
+          <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="DesktopApp" alt="app-store" />
             <p class="text-neutral-800 text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">Desktop App</p>
 
           </div>
-          <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px]">
+          <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="TelegramChatBot" alt="app-store" />
             <p class="text-neutral-800 text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">Telegram Chat
               Bot</p>
 
           </div>
-          <div class="flex flex-col items-center w-2/3 lg:w-auto mb-[60px]">
+          <div class="flex flex-col items-center w-2/3 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="WhatsAppChatBot" alt="app-store" />
             <p class="text-neutral-800 text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">WhatsApp Chat
               Bot</p>
@@ -816,16 +829,18 @@ commitment necessary.</p>
 
         </div>
       </div>
+      </div>
       <!-- available on -->
 
 
       <!-- FAQ -->
-      <div class="pt-[217px]  lg:px-0">
+      <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
+      <div class="pt-[107px] lg:pt-[161px]  lg:px-0">
         <div class="text-gray-900 text-2xl lg:text-[32px] text-center font-medium font-['Poppins'] leading-[44px]">
           Frequently asked
           questions</div>
         <div
-          class="text-neutral-800 text-sm lg:text-base text-center  pt-5 font-light font-['Poppins'] leading-[30px] w-[321px] lg:w-full">
+          class="text-neutral-800 text-sm lg:text-base text-center  pt-5 font-light font-['Poppins'] leading-[30px] w-[321px] lg:w-full mx-auto">
           Everything you
           need to know about the product & services</div>
         <div class="space-y-4 mt-[60px]">
@@ -991,8 +1006,9 @@ commitment necessary.</p>
 
         </div>
       </div>
+      </div>
       <!-- FAQ -->
-    </div>
+   
 
 
 </main></template>
