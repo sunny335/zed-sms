@@ -7,7 +7,7 @@ import { RouterLink } from 'vue-router'
 <template>
     <section class="bg-white pt-10 pb-[39px] flex justify-center items-center my-[62px] lg:my-2">
         <div
-            class="max-w-[341px] lg:max-w-[764px] h-[420px] px-5 py-[60px] lg:px-[200px] lg:py-[100px] bg-white rounded-3xl shadow flex-col justify-start items-start gap-[34px] inline-flex">
+            class="max-w-[341px] lg:max-w-[764px] h-[420px] px-5 py-[60px] lg:px-[200px] lg:py-[100px] bg-white rounded-3xl shadow-none lg:shadow-custom flex-col justify-start items-start gap-[34px] inline-flex">
            <div>
             <h4 class="text-neutral-800 text-xl font-medium font-['Poppins'] leading-loose tracking-tight">Reset your
                 password?</h4>

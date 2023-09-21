@@ -10,7 +10,7 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
 <template>
     <section class="bg-white pt-0 lg:pt-10 pb-[39px] flex justify-center items-center">
         <div
-            class="min-w-[1112px] min-h-[687px] px-[120px] py-0 lg:py-10 bg-white rounded-none lg:rounded-[30px] shadow-none lg:shadow flex-col justify-start items-center gap-[50px] inline-flex">
+            class="min-w-[1112px] min-h-[687px] px-[120px] py-0 lg:py-10 bg-white rounded-none lg:rounded-[30px] shadow-none lg:shadow-custom flex-col justify-start items-center gap-[50px] inline-flex">
             <h2 class="text-left lg:text-center w-[40%] text-neutral-800 text-[32px] font-medium font-['Poppins']">Log in
             </h2>
             <div class="flex-col flex lg:flex-row justify-center items-center  w-full min-h-[381px]">
