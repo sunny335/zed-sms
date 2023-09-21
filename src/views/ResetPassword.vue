@@ -8,10 +8,12 @@ import { RouterLink } from 'vue-router'
     <section class="bg-white pt-10 pb-[39px] flex justify-center items-center">
         <div
             class="w-[764px] h-[420px] px-[200px] py-[100px] bg-white rounded-3xl shadow flex-col justify-start items-start gap-[34px] inline-flex">
+           <div>
             <h4 class="text-neutral-800 text-xl font-medium font-['Poppins'] leading-loose tracking-tight">Reset your
                 password?</h4>
             <p class="text-neutral-800 text-sm font-light font-['Poppins'] leading-tight tracking-tight">Type in your
                 registered email address or username.</p>
+           </div>
 
             <form>
                 <input
