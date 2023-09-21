@@ -32,21 +32,21 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                 class="flex mb-0 list-none flex-row max-w-[450px] mx-auto rounded-2xl border border-blue-600 overflow-hidden	 h-[58px]">
                 <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                     <a class="w-[150px] flex items-center justify-center text-center text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px] "
-                        v-on:click="toggleTabs(1);selectCountry(null);selectPhone(null); selectService(null)"
+                        v-on:click="toggleTabs(1); selectCountry(null); selectPhone(null); selectService(null)"
                         v-bind:class="{ 'text-neutral-800 bg-white': openTab !== 1, 'text-white bg-blue-600': openTab === 1 }">
                         Shared
                     </a>
                 </li>
                 <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                     <a class="w-[150px] flex items-center justify-center text-center text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px] "
-                        v-on:click="toggleTabs(2);selectCountry(null);selectPhone(null); selectService(null)"
+                        v-on:click="toggleTabs(2); selectCountry(null); selectPhone(null); selectService(null)"
                         v-bind:class="{ 'text-neutral-800 bg-white': openTab !== 2, 'text-white bg-blue-600': openTab === 2 }">
                         Private
                     </a>
                 </li>
                 <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                     <a class="w-[150px] flex items-center justify-center text-center text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px] "
-                        v-on:click="toggleTabs(3);selectCountry(null);selectPhone(null); selectService(null)"
+                        v-on:click="toggleTabs(3); selectCountry(null); selectPhone(null); selectService(null)"
                         v-bind:class="{ 'text-neutral-800 bg-white': openTab !== 3, 'text-white bg-blue-600': openTab === 3 }">
                         Temporary
                     </a>
@@ -174,7 +174,9 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                         <div
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
-                                                <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer" v-for="(service, index) in services" :key="index" @click="selectService(service)"
+                                                <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
+                                                    v-for="(service, index) in services" :key="index"
+                                                    @click="selectService(service)"
                                                     :class="{ 'border': selectedService === service }">
 
                                                     <div
@@ -227,19 +229,53 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
                                                 <li v-for="(phoneNumber, index) in phoneNumbers" :key="index"
-                                                class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
-                                                @click="selectPhone(phoneNumber)"
-                                                    :class="{ 'border': selectedPhone === phoneNumber }"
-                                                >
+                                                    class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
+                                                    @click="selectPhone(phoneNumber)"
+                                                    :class="{ 'border': selectedPhone === phoneNumber }">
 
                                                     <div
-                                                        class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
+                                                        class=" w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
                                                         <div
                                                             class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
 
                                                             <div
-                                                                class="grow shrink basis-0 text-neutral-800 text-base font-light font-['Poppins']">
-                                                                {{ phoneNumber }}</div>
+                                                                class="grow shrink basis-0 text-neutral-800 text-base font-light font-['Poppins'] flex items-center gap-[16px]">
+                                                                {{ phoneNumber }} 
+                                                                <div v-if="selectedPhone === phoneNumber"
+                                                                    class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px]">
+                                                                    <div class="pr-[3px]">
+                                                                        <WeekListDropdown
+                                                                            :selectedLanguage="selectedLanguage"
+                                                                            @update:selectedLanguage="updateSelectedLanguage" />
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex items-center gap-[6px] border-l border-zinc-600 pl-[3px]">
+                                                                        <span
+                                                                            class="text-zinc-600 text-xs font-normal font-['Poppins']">Get
+                                                                            Now</span>
+                                                                        <svg width="14" height="14" viewBox="0 0 14 14"
+                                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M2.07371 8.31669C1.65461 6.36087 1.44506 5.38296 1.97038 4.73315C2.4957 4.08334 3.4958 4.08334 5.49602 4.08334H8.50378C10.504 4.08334 11.5041 4.08334 12.0294 4.73315C12.5547 5.38296 12.3452 6.36087 11.9261 8.31669L11.6761 9.48335C11.392 10.809 11.25 11.4718 10.7687 11.8609C10.2874 12.25 9.60952 12.25 8.25378 12.25H5.74602C4.39027 12.25 3.7124 12.25 3.23111 11.8609C2.74981 11.4718 2.60778 10.809 2.32371 9.48335L2.07371 8.31669Z"
+                                                                                stroke="#495057" stroke-width="0.7" />
+                                                                            <path d="M4.66675 7H9.33342" stroke="#495057"
+                                                                                stroke-width="0.7" stroke-linecap="round"
+                                                                                stroke-linejoin="round" />
+                                                                            <path d="M5.83325 8.75H8.16659" stroke="#495057"
+                                                                                stroke-width="0.7" stroke-linecap="round"
+                                                                                stroke-linejoin="round" />
+                                                                            <path d="M10.5 5.25L8.75 1.75" stroke="#495057"
+                                                                                stroke-width="0.7" stroke-linecap="round"
+                                                                                stroke-linejoin="round" />
+                                                                            <path d="M3.5 5.25L5.25 1.75" stroke="#495057"
+                                                                                stroke-width="0.7" stroke-linecap="round"
+                                                                                stroke-linejoin="round" />
+                                                                        </svg>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
 
@@ -333,19 +369,53 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
                                                 <li v-for="(phoneNumber, index) in phoneNumbers" :key="index"
-                                                class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
-                                                @click="selectPhone(phoneNumber)"
-                                                    :class="{ 'border': selectedPhone === phoneNumber }"
-                                                >
+                                                    class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
+                                                    @click="selectPhone(phoneNumber)"
+                                                    :class="{ 'border': selectedPhone === phoneNumber }">
 
                                                     <div
-                                                        class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
+                                                        class="max-w-full w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
                                                         <div
                                                             class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
 
                                                             <div
-                                                                class="grow shrink basis-0 text-neutral-800 text-base font-light font-['Poppins']">
-                                                                {{ phoneNumber }}</div>
+                                                                class="grow shrink basis-0 text-neutral-800 text-base font-light font-['Poppins'] flex items-center gap-[16px]">
+                                                                {{ phoneNumber }} 
+                                                                <div v-if="selectedPhone === phoneNumber"
+                                                                    class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px]">
+                                                                    <div class="pr-[3px]">
+                                                                        <WeekListDropdown
+                                                                            :selectedLanguage="selectedLanguage"
+                                                                            @update:selectedLanguage="updateSelectedLanguage" />
+                                                                    </div>
+                                                                    <div
+                                                                        class="flex items-center gap-[6px] border-l border-zinc-600 pl-[3px]">
+                                                                        <span
+                                                                            class="text-zinc-600 text-xs font-normal font-['Poppins']">Get
+                                                                            Now</span>
+                                                                        <svg width="14" height="14" viewBox="0 0 14 14"
+                                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path
+                                                                                d="M2.07371 8.31669C1.65461 6.36087 1.44506 5.38296 1.97038 4.73315C2.4957 4.08334 3.4958 4.08334 5.49602 4.08334H8.50378C10.504 4.08334 11.5041 4.08334 12.0294 4.73315C12.5547 5.38296 12.3452 6.36087 11.9261 8.31669L11.6761 9.48335C11.392 10.809 11.25 11.4718 10.7687 11.8609C10.2874 12.25 9.60952 12.25 8.25378 12.25H5.74602C4.39027 12.25 3.7124 12.25 3.23111 11.8609C2.74981 11.4718 2.60778 10.809 2.32371 9.48335L2.07371 8.31669Z"
+                                                                                stroke="#495057" stroke-width="0.7" />
+                                                                            <path d="M4.66675 7H9.33342" stroke="#495057"
+                                                                                stroke-width="0.7" stroke-linecap="round"
+                                                                                stroke-linejoin="round" />
+                                                                            <path d="M5.83325 8.75H8.16659" stroke="#495057"
+                                                                                stroke-width="0.7" stroke-linecap="round"
+                                                                                stroke-linejoin="round" />
+                                                                            <path d="M10.5 5.25L8.75 1.75" stroke="#495057"
+                                                                                stroke-width="0.7" stroke-linecap="round"
+                                                                                stroke-linejoin="round" />
+                                                                            <path d="M3.5 5.25L5.25 1.75" stroke="#495057"
+                                                                                stroke-width="0.7" stroke-linecap="round"
+                                                                                stroke-linejoin="round" />
+                                                                        </svg>
+
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
 
@@ -436,7 +506,9 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                         <div
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
-                                                <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer" v-for="(service, index) in services" :key="index" @click="selectService(service)"
+                                                <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
+                                                    v-for="(service, index) in services" :key="index"
+                                                    @click="selectService(service)"
                                                     :class="{ 'border': selectedService === service }">
                                                     <div
                                                         class="max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
@@ -475,10 +547,15 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
 </template>
   
 <script>
+import WeekListDropdown from './WeekListDropdown.vue';
 export default {
+    components: {
+        WeekListDropdown,
+    },
     name: "pink-tabs",
     data() {
         return {
+            selectedWeek: '01 Week',
             openTab: 1,
             selectedCountry: null,
             selectedService: null,
@@ -545,6 +622,10 @@ export default {
         },
         selectPhone(phone) {
             this.selectedPhone = phone;
+        },
+        updateSelectedWeek(week) {
+            this.selectedWeek = week; // Update the selected language when the event is emitted from HeaderDropdown
+            // You can perform any additional actions based on the selected language here
         },
         // getFlagImage(flagFileName) {
         //     // Adjust the path to the directory where your flag images are stored
