@@ -32,21 +32,21 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                 class="flex mb-0 list-none flex-row max-w-[450px] mx-auto rounded-2xl border border-blue-600 overflow-hidden	 h-[58px]">
                 <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                     <a class="w-[150px] flex items-center justify-center text-center text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px] "
-                        v-on:click="toggleTabs(1)"
+                        v-on:click="toggleTabs(1);selectCountry(null);selectPhone(null); selectService(null)"
                         v-bind:class="{ 'text-neutral-800 bg-white': openTab !== 1, 'text-white bg-blue-600': openTab === 1 }">
                         Shared
                     </a>
                 </li>
                 <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                     <a class="w-[150px] flex items-center justify-center text-center text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px] "
-                        v-on:click="toggleTabs(2)"
+                        v-on:click="toggleTabs(2);selectCountry(null);selectPhone(null); selectService(null)"
                         v-bind:class="{ 'text-neutral-800 bg-white': openTab !== 2, 'text-white bg-blue-600': openTab === 2 }">
                         Private
                     </a>
                 </li>
                 <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                     <a class="w-[150px] flex items-center justify-center text-center text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px] "
-                        v-on:click="toggleTabs(3)"
+                        v-on:click="toggleTabs(3);selectCountry(null);selectPhone(null); selectService(null)"
                         v-bind:class="{ 'text-neutral-800 bg-white': openTab !== 3, 'text-white bg-blue-600': openTab === 3 }">
                         Temporary
                     </a>
@@ -123,7 +123,10 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
 
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar ">
-                                                <li v-for="(country, index) in countries" :key="index">
+                                                <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
+                                                    v-for="(country, index) in countries" :key="index"
+                                                    @click="selectCountry(country)"
+                                                    :class="{ 'border': selectedCountry === country }">
                                                     <div
                                                         class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
                                                         <div
@@ -171,7 +174,9 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                         <div
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
-                                                <li v-for="(service, index) in services" :key="index">
+                                                <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer" v-for="(service, index) in services" :key="index" @click="selectService(service)"
+                                                    :class="{ 'border': selectedService === service }">
+
                                                     <div
                                                         class="max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
                                                         <div
@@ -221,7 +226,11 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                         <div
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
-                                                <li v-for="(phoneNumber, index) in phoneNumbers" :key="index">
+                                                <li v-for="(phoneNumber, index) in phoneNumbers" :key="index"
+                                                class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
+                                                @click="selectPhone(phoneNumber)"
+                                                    :class="{ 'border': selectedPhone === phoneNumber }"
+                                                >
 
                                                     <div
                                                         class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
@@ -271,7 +280,10 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
 
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar ">
-                                                <li v-for="(country, index) in countries" :key="index">
+                                                <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
+                                                    v-for="(country, index) in countries" :key="index"
+                                                    @click="selectCountry(country)"
+                                                    :class="{ 'border': selectedCountry === country }">
                                                     <div
                                                         class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
                                                         <div
@@ -320,7 +332,11 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                         <div
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
-                                                <li v-for="(phoneNumber, index) in phoneNumbers" :key="index">
+                                                <li v-for="(phoneNumber, index) in phoneNumbers" :key="index"
+                                                class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
+                                                @click="selectPhone(phoneNumber)"
+                                                    :class="{ 'border': selectedPhone === phoneNumber }"
+                                                >
 
                                                     <div
                                                         class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
@@ -369,7 +385,10 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
 
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar ">
-                                                <li v-for="(country, index) in countries" :key="index">
+                                                <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
+                                                    v-for="(country, index) in countries" :key="index"
+                                                    @click="selectCountry(country)"
+                                                    :class="{ 'border': selectedCountry === country }">
                                                     <div
                                                         class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
                                                         <div
@@ -417,7 +436,8 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                         <div
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
-                                                <li v-for="(service, index) in services" :key="index">
+                                                <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer" v-for="(service, index) in services" :key="index" @click="selectService(service)"
+                                                    :class="{ 'border': selectedService === service }">
                                                     <div
                                                         class="max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
                                                         <div
@@ -460,11 +480,14 @@ export default {
     data() {
         return {
             openTab: 1,
+            selectedCountry: null,
+            selectedService: null,
+            selectedPhone: null,
             countries: [
                 { name: 'United States', flag: PhilipinsImg },
                 { name: 'Lebanon', flag: LebanonImg },
                 { name: 'Taiwan', flag: TaiwanImg },
-                { name: 'Israel', flag:IsraelImg },
+                { name: 'Israel', flag: IsraelImg },
                 { name: 'Russia', flag: RussiaImg },
                 { name: 'North Africa', flag: NorthAfricaImg },
                 { name: 'Denmark', flag: DenmarkImg },
@@ -491,21 +514,21 @@ export default {
 
             ],
             phoneNumbers: [
-                '+88013-456-7890',
-                '+88015-555-5555',
-                '+88017-654-3210',
+                '+88013-456-7590',
+                '+88015-555-5545',
+                '+88017-654-3510',
                 '+88018-888-8888',
                 '+88015-123-4567',
                 '+88013-456-7890',
                 '+88015-555-5555',
-                '+88017-654-3210',
-                '+88018-888-8888',
-                '+88015-123-4567',
-                '+88013-456-7890',
-                '+88015-555-5555',
-                '+88017-654-3210',
-                '+88018-888-8888',
-                '+88015-123-4567',
+                '+88017-654-3280',
+                '+88018-888-8458',
+                '+88015-123-4597',
+                '+88013-456-7190',
+                '+88015-555-5255',
+                '+88017-654-3710',
+                '+88018-888-8848',
+                '+88015-123-4557',
             ],
 
         }
@@ -513,6 +536,15 @@ export default {
     methods: {
         toggleTabs: function (tabNumber) {
             this.openTab = tabNumber
+        },
+        selectCountry(country) {
+            this.selectedCountry = country;
+        },
+        selectService(service) {
+            this.selectedService = service;
+        },
+        selectPhone(phone) {
+            this.selectedPhone = phone;
         },
         // getFlagImage(flagFileName) {
         //     // Adjust the path to the directory where your flag images are stored

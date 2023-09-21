@@ -15,7 +15,7 @@ import google from '../assets/img/google.png';
                 <div class="flex-col flex lg:flex-row justify-start lg:justify-between items-start lg:items-center gap-0 lg:gap-[120px]">
                     <p class="text-zinc-600 text-2xl lg:text-[32px] font-medium font-['Poppins'] pb-[14px] lg:pb-0">Create
                         an account</p>
-                    <RouterLink class="text-neutral-800 text-base font-light font-['Poppins'] underline " to="/">Log in
+                    <RouterLink class="text-neutral-800 text-base font-light font-['Poppins'] underline " to="/login">Log in
                         instead</RouterLink>
                 </div>
                 <form class="mt-10">
