@@ -5,9 +5,9 @@ import { RouterLink } from 'vue-router'
 
 </script>
 <template>
-    <section class="bg-white pt-10 pb-[39px] flex justify-center items-center">
+    <section class="bg-white pt-[95px] pb-[117px] lg:pt-10 lg:pb-[39px] flex justify-center items-center">
         <div
-            class="w-[696px] h-[400px] px-[200px] py-[100px] bg-white rounded-3xl shadow flex-col justify-start items-start gap-[30px] inline-flex">
+            class="max-w-[336px] lg:max-w-[696px] h-[400px] px-5 py-[100px] lg:px-[200px] lg:py-[100px] bg-white rounded-3xl shadow flex-col justify-start items-start gap-[30px] inline-flex">
             <div class="flex-col justify-start items-start gap-0.5 flex">
                 <div class="flex-col justify-start items-start flex">
                     <div
