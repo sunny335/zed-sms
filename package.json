@@ -9,6 +9,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.16",
     "D": "^1.0.0",
     "autoprefixer": "^10.4.15",
     "pinia": "^2.1.6",

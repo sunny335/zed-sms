@@ -20,10 +20,10 @@ import paymentSuccessful from "../../assets/img/payment/paymentSuccessful.png"
                     Payment Successful</h2>
                 <p class="text-center text-zinc-600 text-sms lg:text-base font-normal font-['Poppins'] leading-tight tracking-tight mb-[40px]">Your payment of
                     $23.25 was successfully completed</p>
-                <div
+                <RouterLink to="/"
                     class="max-w-[189px] h-[53px] px-20 py-3.5 bg-blue-600 rounded-xl justify-center items-center gap-2.5 inline-flex cursor-pointer">
                     <p class="text-white text-xl font-medium font-['Poppins'] leading-normal tracking-tight">OK</p>
-                </div>
+                </RouterLink>
             </div>
     </div>
 </section></template>

@@ -16,7 +16,10 @@ import AmazonImg from '../../assets/img/company/Amazon.png';
 import AmazonImg2 from '../../assets/img/company/Amazon2.png';
 import TeslaImg from '../../assets/img/company/Tesla.png';
 import TeslaImg2 from '../../assets/img/company/Tesla2.png';
+import { ref } from 'vue'
+import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 
+const open = ref(true)
 </script>
 
 <template>
@@ -57,41 +60,51 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                 <div class="w-full">
 
                     <div class="tab-content tab-space w-full">
-                        <div
+                        <div v-if="selectedCountry || selectedPhone || selectedService"
                             class="flex items-center gap-[20px] justify-center border-b border-zinc-600 w-max mx-auto pb-[26px]">
-                            <div class="flex gap-[6px] items-center">
+                            <div v-if="selectedCountry" class="flex gap-[6px] items-center">
+
                                 <div class="text-center text-zinc-600 text-sm font-normal font-['Poppins']">Country:
                                 </div>
                                 <div class="flex gap-[6px] items-center">
-                                    <img :src="PhilipinsImg" alt="Image Description" />
+                                    <!-- <img :src="PhilipinsImg" alt="Image Description" /> -->
+                                    <img :src="selectedCountry?.flag" class="w-[30px] h-[30px] rounded-full" alt="Flag" />
 
-                                    <div class="text-center text-zinc-600 text-sm font-light font-['Poppins']">South
-                                        Africa</div>
+                                    <div class="text-center text-zinc-600 text-sm font-light font-['Poppins']">
+                                        {{ selectedCountry.name }}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex gap-[6px] items-center">
+                            <div class="flex gap-[6px] items-center" v-if="selectedService">
                                 <div class="text-center text-zinc-600 text-sm font-normal font-['Poppins']">Service:
                                 </div>
+
                                 <div class="flex gap-[6px] items-center">
-                                    <img :src="PhilipinsImg" alt="Image Description" />
+                                    <img :src="selectedService.flag" alt="Image Description" />
                                     <div class="text-center text-zinc-600 text-sm font-light font-['Poppins']">
-                                        Instagram</div>
+                                        {{ selectedService.name }}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex gap-[6px] items-center">
+                            {{ console.log(selectedCountry) }}
+                            <div class="flex gap-[6px] items-center" v-if="selectedPhone">
                                 <div class="text-center text-zinc-600 text-sm font-normal font-['Poppins']">Number:
                                 </div>
-                                <div class="text-zinc-600 text-sm font-light font-['Poppins']">+880 12321 2***5232</div>
+                                <div class="text-zinc-600 text-sm font-light font-['Poppins']">{{ selectedPhone }}</div>
                             </div>
-                            <div class="flex gap-[6px] items-center">
+                            <div class="flex gap-[6px] items-center" v-if="selectedPhone && selectedWeek">
+
                                 <div class="text-center text-zinc-600 text-sm font-normal font-['Poppins']">Rent:
                                 </div>
-                                <div class="text-zinc-600 text-sm font-light font-['Poppins']">1 Week</div>
+                                <div class="text-zinc-600 text-sm font-light font-['Poppins']">{{ selectedWeek }}</div>
                             </div>
-                            <div class="flex gap-[6px] items-center">
+                            <div class="flex gap-[6px] items-center"
+                                v-if="openTab === 2 ? selectedCountry.price : selectedService">
                                 <div class="text-center text-zinc-600 text-sm font-normal font-['Poppins']">Cost:
                                 </div>
-                                <div class="text-zinc-600 text-sm font-light font-['Poppins']">$00.00</div>
+                                <div class="text-zinc-600 text-sm font-light font-['Poppins']">{{ openTab === 2 ?
+                                    selectedCountry.price : selectedService.price }}
+                                </div>
                             </div>
                         </div>
                         <div class="w-full" v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
@@ -240,15 +253,14 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
 
                                                             <div
                                                                 class="grow shrink basis-0 text-neutral-800 text-base font-light font-['Poppins'] flex items-center gap-[16px]">
-                                                                {{ phoneNumber }} 
+                                                                {{ phoneNumber }}
                                                                 <div v-if="selectedPhone === phoneNumber"
                                                                     class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px]">
                                                                     <div class="pr-[3px]">
-                                                                        <WeekListDropdown
-                                                                            :selectedLanguage="selectedLanguage"
-                                                                            @update:selectedLanguage="updateSelectedLanguage" />
+                                                                        <WeekListDropdown :selectedWeek="selectedWeek"
+                                                                            @update:selectedWeek="updateSelectedWeek" />
                                                                     </div>
-                                                                    <div
+                                                                    <div @click="handleModalOpen(true)"
                                                                         class="flex items-center gap-[6px] border-l border-zinc-600 pl-[3px]">
                                                                         <span
                                                                             class="text-zinc-600 text-xs font-normal font-['Poppins']">Get
@@ -321,7 +333,7 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                                     @click="selectCountry(country)"
                                                     :class="{ 'border': selectedCountry === country }">
                                                     <div
-                                                        class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
+                                                        class=" w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
                                                         <div
                                                             class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
                                                             <!-- <img :src="getFlagImage(country.flag)" class="w-4 h-4 mr-2"
@@ -333,6 +345,9 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                                                 class="grow shrink basis-0 text-neutral-800 text-base font-light font-['Poppins']">
                                                                 {{ country.name }}</div>
                                                         </div>
+                                                        <div
+                                                            class="text-right text-neutral-800 text-base font-light font-['Poppins']">
+                                                            {{ country.price }}</div>
                                                     </div>
 
                                                 </li>
@@ -380,15 +395,14 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
 
                                                             <div
                                                                 class="grow shrink basis-0 text-neutral-800 text-base font-light font-['Poppins'] flex items-center gap-[16px]">
-                                                                {{ phoneNumber }} 
+                                                                {{ phoneNumber }}
                                                                 <div v-if="selectedPhone === phoneNumber"
                                                                     class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px]">
                                                                     <div class="pr-[3px]">
-                                                                        <WeekListDropdown
-                                                                            :selectedLanguage="selectedLanguage"
-                                                                            @update:selectedLanguage="updateSelectedLanguage" />
+                                                                        <WeekListDropdown :selectedWeek="selectedWeek"
+                                                                            @update:selectedWeek="updateSelectedWeek" />
                                                                     </div>
-                                                                    <div
+                                                                    <div @click="handleModalOpen(true)"
                                                                         class="flex items-center gap-[6px] border-l border-zinc-600 pl-[3px]">
                                                                         <span
                                                                             class="text-zinc-600 text-xs font-normal font-['Poppins']">Get
@@ -506,7 +520,7 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                         <div
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
-                                                <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
+                                                <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer flex items-center gap-[16px]"
                                                     v-for="(service, index) in services" :key="index"
                                                     @click="selectService(service)"
                                                     :class="{ 'border': selectedService === service }">
@@ -527,6 +541,36 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
                                                             class="text-right text-neutral-800 text-base font-light font-['Poppins']">
                                                             {{ service.price }}</div>
                                                     </div>
+                                                    <div v-if="selectedService === service"
+                                                        class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px]">
+
+                                                        <div @click="handleModalOpen(true)"
+                                                            class="flex items-center gap-[6px] pl-[3px]">
+                                                            <span
+                                                                class="text-zinc-600 text-xs font-normal font-['Poppins']">Get
+                                                                Now</span>
+                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M2.07371 8.31669C1.65461 6.36087 1.44506 5.38296 1.97038 4.73315C2.4957 4.08334 3.4958 4.08334 5.49602 4.08334H8.50378C10.504 4.08334 11.5041 4.08334 12.0294 4.73315C12.5547 5.38296 12.3452 6.36087 11.9261 8.31669L11.6761 9.48335C11.392 10.809 11.25 11.4718 10.7687 11.8609C10.2874 12.25 9.60952 12.25 8.25378 12.25H5.74602C4.39027 12.25 3.7124 12.25 3.23111 11.8609C2.74981 11.4718 2.60778 10.809 2.32371 9.48335L2.07371 8.31669Z"
+                                                                    stroke="#495057" stroke-width="0.7" />
+                                                                <path d="M4.66675 7H9.33342" stroke="#495057"
+                                                                    stroke-width="0.7" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                                <path d="M5.83325 8.75H8.16659" stroke="#495057"
+                                                                    stroke-width="0.7" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                                <path d="M10.5 5.25L8.75 1.75" stroke="#495057"
+                                                                    stroke-width="0.7" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                                <path d="M3.5 5.25L5.25 1.75" stroke="#495057"
+                                                                    stroke-width="0.7" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                            </svg>
+
+                                                        </div>
+
+                                                    </div>
 
                                                 </li>
                                             </ul>
@@ -544,6 +588,125 @@ import TeslaImg2 from '../../assets/img/company/Tesla2.png';
             </div>
         </div>
     </div>
+
+    <TransitionRoot as="template" :show="OpenModal">
+        <Dialog as="div" class="relative z-10" @close="OpenModal = false">
+            <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100"
+                leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
+                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+            </TransitionChild>
+
+            <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+                <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                    <TransitionChild as="template" enter="ease-out duration-300"
+                        enter-from="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                        enter-to="opacity-100 translate-y-0 sm:scale-100" leave="ease-in duration-200"
+                        leave-from="opacity-100 translate-y-0 sm:scale-100"
+                        leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
+                        <DialogPanel
+                            class=" relative transform overflow-hidden rounded-lg bg-neutral-50 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg md:max-w-[322px]">
+                            <div class=" bg-neutral-50 px-[30px] pt-5 pb-0">
+                                <div class="">
+                                    <div v-if="selectedCountry"
+                                        class="flex items-center border-b border-zinc-200 py-[16px]">
+                                        <div class="text-left text-zinc-600 text-sm font-medium font-['Poppins'] w-2/4 ">
+                                            Country:
+                                        </div>
+                                        <div class="flex gap-[6px] items-center w-2/4">
+                                            <!-- <img :src="PhilipinsImg" alt="Image Description" /> -->
+                                            <img :src="selectedCountry?.flag" class="w-[20px] h-[20px] rounded-full"
+                                                alt="Flag" width="20" />
+
+                                            <div class="text-center text-zinc-600 text-sm font-light font-['Poppins']">
+                                                {{ selectedCountry.name }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div v-if="selectedService"
+                                        class="flex items-center border-b border-zinc-200 py-[16px]">
+                                        <div class="text-left text-zinc-600 text-sm font-medium font-['Poppins'] w-2/4">
+                                            Service:
+                                        </div>
+                                        <div class="flex gap-[6px] items-center">
+                                            <img :src="selectedService.flag" alt="Image Description" width="20" />
+                                            <div
+                                                class="text-center text-zinc-600 text-sm font-light font-['Poppins'] w-2/4	">
+                                                {{ selectedService.name }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div v-if="selectedPhone" class="flex items-center border-b border-zinc-200 py-[16px]">
+                                        <div class="text-left text-zinc-600 text-sm font-medium font-['Poppins'] w-2/4">
+                                            Number:
+                                        </div>
+                                        <div class="text-zinc-600 text-sm font-light font-['Poppins'] w-2/4	">
+                                            {{ selectedPhone }}
+                                        </div>
+                                    </div>
+                                    <div v-if="selectedPhone && selectedWeek"
+                                        class="flex items-center border-b border-zinc-200 py-[16px]">
+                                        <div class="text-left text-zinc-600 text-sm font-medium font-['Poppins'] w-2/4">
+                                            Rent:
+                                        </div>
+                                        <div class="text-zinc-600 text-sm font-light font-['Poppins'] w-2/4	">
+                                            {{ selectedWeek }}
+                                        </div>
+                                    </div>
+                                    <div v-if="openTab === 2 ? selectedCountry.price : selectedService.price"
+                                        class="flex items-center border-b border-zinc-200 py-[16px]">
+                                        <div class="text-left text-zinc-600 text-sm font-medium font-['Poppins'] w-2/4">
+                                            Cost:
+                                        </div>
+                                        <div class="text-zinc-600 text-sm font-light font-['Poppins'] w-2/4	">
+                                            {{
+                                                openTab === 2 ? selectedCountry.price : selectedService.price }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-[30px] py-[30px]">
+                                <div class=" justify-start items-start gap-5 inline-flex w-full">
+                                    <div @click="handleModalOpen(false)" ref="cancelButtonRef"
+                                        class="cursor-pointer px-6 py-[9px] rounded-[10px] border border-zinc-600 justify-center items-center gap-2 flex">
+                                        <svg width="14" height="11" viewBox="0 0 14 11" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13 5.5H1M1 5.5L5.5 1M1 5.5L5.5 10" stroke="#495057"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                        <div class="text-zinc-600 text-sm font-light font-['Poppins'] ">
+                                            Back
+                                        </div>
+                                    </div>
+                                    <RouterLink to="/payment"
+                                        class=" w-2/4 h-[41px] px-6 py-2.5 rounded-[10px] border border-blue-600 justify-center items-center gap-2.5 flex">
+                                        <div class="text-center text-blue-600 text-sm font-normal font-['Poppins']">Next
+
+                                        </div>
+                                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M2.57396 8.81673C2.15485 6.86091 1.9453 5.883 2.47062 5.23319C2.99594 4.58337 3.99605 4.58337 5.99626 4.58337H9.00402C11.0042 4.58337 12.0043 4.58337 12.5297 5.23319C13.055 5.883 12.8454 6.86091 12.4263 8.81673L12.1763 9.98339C11.8923 11.309 11.7502 11.9719 11.2689 12.361C10.7876 12.75 10.1098 12.75 8.75402 12.75H6.24626C4.89052 12.75 4.21264 12.75 3.73135 12.361C3.25006 11.9719 3.10802 11.309 2.82396 9.98339L2.57396 8.81673Z"
+                                                stroke="#0057FF" />
+                                            <path d="M5.1665 7.5H9.83317" stroke="#0057FF" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M6.3335 9.25H8.66683" stroke="#0057FF" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M11 5.75L9.25 2.25" stroke="#0057FF" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M4 5.75L5.75 2.25" stroke="#0057FF" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+
+                                    </RouterLink>
+                                </div>
+
+                            </div>
+                        </DialogPanel>
+                    </TransitionChild>
+                </div>
+            </div>
+        </Dialog>
+    </TransitionRoot>
 </template>
   
 <script>
@@ -555,26 +718,27 @@ export default {
     name: "pink-tabs",
     data() {
         return {
-            selectedWeek: '01 Week',
+            selectedWeek: '01 week',
             openTab: 1,
             selectedCountry: null,
             selectedService: null,
             selectedPhone: null,
+            OpenModal: false,
             countries: [
-                { name: 'United States', flag: PhilipinsImg },
-                { name: 'Lebanon', flag: LebanonImg },
-                { name: 'Taiwan', flag: TaiwanImg },
-                { name: 'Israel', flag: IsraelImg },
-                { name: 'Russia', flag: RussiaImg },
-                { name: 'North Africa', flag: NorthAfricaImg },
-                { name: 'Denmark', flag: DenmarkImg },
-                { name: 'South America', flag: SouthAmericaImg },
-                { name: 'Russia', flag: RussiaImg },
-                { name: 'North Africa', flag: NorthAfricaImg },
-                { name: 'Denmark', flag: DenmarkImg },
-                { name: 'South America', flag: SouthAmericaImg },
-
+                { name: 'United States', price: "$0.35", flag: PhilipinsImg },
+                { name: 'Lebanon', price: "$0.35", flag: LebanonImg },
+                { name: 'Taiwan', price: "$0.35", flag: TaiwanImg },
+                { name: 'Israel', price: "$0.35", flag: IsraelImg },
+                { name: 'Russia', price: "$0.35", flag: RussiaImg },
+                { name: 'North Africa', price: "$0.35", flag: NorthAfricaImg },
+                { name: 'Denmark', price: "$0.35", flag: DenmarkImg },
+                { name: 'South America', price: "$0.35", flag: SouthAmericaImg },
+                { name: 'Russia', price: "$0.35", flag: RussiaImg },
+                { name: 'North Africa', price: "$0.35", flag: NorthAfricaImg },
+                { name: 'Denmark', price: "$0.35", flag: DenmarkImg },
+                { name: 'South America', price: "$0.35", flag: SouthAmericaImg },
             ],
+
             services: [
                 { name: 'Apple', price: '$0.45', flag: AppleImg },
                 { name: 'Amazon', price: '$0.45', flag: AmazonImg },
@@ -626,6 +790,9 @@ export default {
         updateSelectedWeek(week) {
             this.selectedWeek = week; // Update the selected language when the event is emitted from HeaderDropdown
             // You can perform any additional actions based on the selected language here
+        },
+        handleModalOpen(open) {
+            this.OpenModal = open;
         },
         // getFlagImage(flagFileName) {
         //     // Adjust the path to the directory where your flag images are stored
