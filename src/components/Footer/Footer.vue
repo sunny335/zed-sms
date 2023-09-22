@@ -1,7 +1,7 @@
 <script setup>
 import  playStore from '../../assets/img/Google Play Black Borde.png'; 
 import  appStore from '../../assets/img/App Store Black Borde.png'; 
-
+import { RouterLink } from 'vue-router'
 
 </script>
 
@@ -101,11 +101,11 @@ import  appStore from '../../assets/img/App Store Black Borde.png';
                     <p class="text-blue-600 text-lg font-medium font-['Inter'] leading-7">Information</p>
                     <div class="flex">
                        
-                    <a href="" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">Blog</a>
+                    <RouterLink to="/blogs" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">Blog</RouterLink>
                    
                     </div>
                     <div class="flex">
-                        <a href="" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">Tutorials</a>
+                        <RouterLink to="/tutorial" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">Tutorials</RouterLink>
                     
                     </div>
                     <div class="flex">
@@ -116,18 +116,18 @@ import  appStore from '../../assets/img/App Store Black Borde.png';
                     <p class="text-blue-600 text-lg font-medium font-['Inter'] leading-7">Company</p>
                     <div class="flex">
                        
-                    <a href="" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">About</a>
+                    <RouterLink to="/about" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">About</RouterLink>
                    
                     </div>
                     <div class="flex">
-                        <a href="" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">Contact</a>
+                        <RouterLink to="/contact-us" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">Contact</RouterLink>
                     
                     </div>
                     <div class="flex">
-                        <a href="" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">Privacy & Policy</a>
+                        <RouterLink to="/privacy-policy" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">Privacy & Policy</RouterLink>
                     </div>
                     <div class="flex">
-                        <a href="" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">Terms & condition</a>
+                        <RouterLink to="/terms-condition" class="text-neutral-800 text-base font-normal font-['Inter'] leading-normal">Terms & condition</RouterLink>
                     </div>
                </div>
                <div>

@@ -15,20 +15,21 @@ import Responsibility from "../../assets/img/about/Responsibility.png"
 interdum ullamcorper sed pharetra sene." />
 
 
-            <div class="px-4 pt-21 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 lg:pt-[84px]">
-                <div class="flex flex-wrap justify-start items-start gap-[100px]">
-                    <h3 class="text-center w-[20%] text-neutral-800 text-[32px] font-medium font-['Poppins'] leading-9">What
+            <div class="px-4 pt-[60px] mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 lg:pt-[84px]">
+                <div class="flex flex-col lg:flex-row flex-wrap justify-start items-start gap-[14px] lg:gap-[100px]">
+                    <h3 class="text-left lg:text-center w-full lg:w-[20%] text-neutral-800 text-xl lg:text-[32px] font-medium font-['Poppins'] leading-9">What
+
                         we do
                     </h3>
-                    <div class="w-[65%]">
-                        <p class="w-[808px] text-zinc-600 text-xl font-light font-['Poppins'] leading-[29.20px]">It is a
+                    <div class="w-full lg:w-[65%]">
+                        <p class="max-w-[808px] text-zinc-600 text-xl font-light font-['Poppins'] leading-[29.20px]">It is a
                             long
                             established fact that a reader will be distracted by the content of a page when looking at its
                             layout. The point of using Lorem Ipsum is that it has a more-or-less distribution of letters, as
                             opposed to using.
                         </p>
                         <br>
-                        <p class="w-[808px] text-zinc-600 text-xl font-light font-['Poppins'] leading-[29.20px]">
+                        <p class="max-w-[808px] text-zinc-600 text-xl font-light font-['Poppins'] leading-[29.20px]">
                             Content here', making it look like readable English. Many desktop and web page editors now use
                             Lorem
                             Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites
@@ -37,9 +38,9 @@ interdum ullamcorper sed pharetra sene." />
                         </p>
                     </div>
                 </div>
-                <div class="flex justify-center items-center gap-[100px] mt-[187px] ">
+                <div class="flex  flex-col lg:flex-row justify-center items-center gap-[100px] mt-[187px] ">
                     <div class="max-w-[486px]">
-                        <h3 class=" text-neutral-800 text-[32px] font-medium font-['Poppins'] leading-9 pb-[24px]">Our
+                        <h3 class=" text-neutral-800 text-xl lg:text-[32px] font-medium font-['Poppins'] leading-9 pb-[24px]">Our
                             Mission</h3>
                         <p class=" text-zinc-600 text-xl font-light font-['Poppins'] leading-[29.20px]">Lorem ipsum dolor
                             sit amet, consectetur adipiscing Pharetra Ld eu aliquet diam lorem viverra at justo. Nulla odio
@@ -53,7 +54,7 @@ interdum ullamcorper sed pharetra sene." />
                     </div>
                     <img :src="chart" alt="" srcset="">
                 </div>
-                <div class="mt-[194px] mb-[172px]">
+                <div class="mt-[100px] lg:mt-[194px] mb-[107px] lg:mb-[172px]">
                     <div class="flex flex-col justify-center items-center">
                         <div
                             class="max-w-[201px] h-[63px] px-[50px] py-[18px] bg-sky-100 rounded-[39px] justify-center items-center gap-2.5 inline-flex mb-[28px]">
@@ -61,14 +62,14 @@ interdum ullamcorper sed pharetra sene." />
                             </p>
 
                         </div>
-                        <h3 class="text-center text-neutral-800 text-[32px] font-medium font-['Poppins'] leading-9 mb-[82px]">The
-                            story and values behind<br /> our company</h3>
+                        <h3 class="max-w-[456px] text-center text-neutral-800  text-2xl px-[25px] lg:px-0 lg:text-[32px] font-medium font-['Poppins'] leading-9 mb-[82px]">The
+                            story and values behind our company</h3>
                     </div>
-                    <div class="flex flex-wrap justify-center items-center gap-[80px]">
-                        <div class="flex w-[45%] gap-[30px]"
+                    <div class="flex flex-col lg:flex-row flex-wrap justify-center items-center gap-[80px]">
+                        <div class="flex flex-col lg:flex-row  w-full lg:w-[45%] gap-[30px]"
                         v-for="(value, index) in valuesData" :key="index"
                         >
-                            <img :src="value.img" alt="" srcset="">
+                            <img class="max-w-[100px] max-h-[100px] lg:max-w-[120px] lg:max-h-[120px]" :src="value.img" alt="" srcset="">
                             <div>
                                 <h6 class="text-neutral-800 text-2xl font-medium font-['Poppins'] leading-relaxed">
                                     {{value.title}}</h6>
