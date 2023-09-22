@@ -17,7 +17,7 @@ import { RouterLink } from 'vue-router'
 
             <form>
                 <input
-                    class="max-w-[345px] w-full h-[56px] px-3 rounded-lg border border-neutral-800 flex-col justify-start items-start inline-flex"
+                    class="max-w-[345px] w-full h-[56px] px-[16px] py-[8px] rounded-lg border border-neutral-800 flex-col justify-start items-start inline-flex"
                     placeholder="Email Address or Username*" type="text" />
 
 

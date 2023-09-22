@@ -20,10 +20,10 @@ import Elo from '../../assets/img/payment/Elo.png';
             </h1>
             <div class="my-[24px] lg:my-[36px]">
                 <ul
-                    class="flex justify-start mb-0 list-none flex-row mx-auto rounded-2xl overflow-hidden gap-2 lg:gap-4	 h-[58px]">
+                    class="flex justify-start mb-0 list-none flex-row mx-auto rounded-2xl overflow-hidden gap-2 lg:gap-8	 ">
                     <li class="max-w-[300px]-mb-px last:mr-0  text-center cursor-pointer"
                         v-bind:class="{ 'hidden': nextPaymentPage == true, 'block': nextPaymentPage === false }">
-                        <a class="w-full  flex items-center  text-neutral-800 text-base lg:text-xl font-normal font-['Poppins'] leading-[17px] h-[58px]"
+                        <a class="w-full  flex items-center  text-neutral-800 text-base lg:text-xl font-normal font-['Poppins'] leading-[17px] "
                             v-on:click="toggleTabs(1); selectCountry(null); selectPhone(null); selectService(null)">
                             <img class="w-[24px] h-[24px] mr-[6px] lg:mr-4" :src="blueTik" alt="" srcset=""
                                 v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
@@ -34,7 +34,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                         </a>
                     </li>
                     <li class="max-w-[300px] -mb-px last:mr-0  text-center cursor-pointer">
-                        <a class="w-full flex items-center  text-neutral-800 text-base lg:text-xl font-normal font-['Poppins'] leading-[17px] h-[58px]"
+                        <a class="w-full flex items-center  text-neutral-800 text-base lg:text-xl font-normal font-['Poppins'] leading-[17px] "
                             v-on:click="toggleTabs(2); selectCountry(null); selectPhone(null); selectService(null)">
                             <img class="w-[24px] h-[24px] mr-[6px] lg:mr-4" :src="blueTik" alt="" srcset=""
                                 v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
@@ -74,8 +74,8 @@ import Elo from '../../assets/img/payment/Elo.png';
                                             </div>
                                             <button
                                                 class="max-w-[120px] w-full px-3 h-[41px] rounded-[100px] lg:rounded-[10px] shadow border border-blue-600 justify-center items-center gap-2.5 flex">
-                                                <div class="text-center text-blue-600 text-sm font-normal font-['Poppins']">
-                                                    Pay Now</div>
+                                                <RouterLink to="/payment-successful" class="text-center text-blue-600 text-sm font-normal font-['Poppins']">
+                                                    Pay Now</RouterLink>
                                             </button>
                                         </div>
                                     </div>
@@ -92,7 +92,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                                                 class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                                 <ul class="mt-6 overflow-y-auto h-[491px] flex flex-wrap scrollbar">
                                                     <li v-for="(payment, index) in paymentsData" :key="index"
-                                                        class="mr-[13px]  border-gray-400 cursor-pointer w-full lg:w-[48%] my-3"
+                                                        class="mr-[13px]  border-gray-400 cursor-pointer w-full lg:w-[48%]"
                                                         @click="selectPayment(payment)"
                                                         :class="{ 'bg-blue-600 ': selectedPayment === payment }">
 
@@ -243,6 +243,24 @@ export default {
                 },
                 {
                     id: 9,
+                    img: Elo,
+                    name: "Elo",
+                    text: "Accepting bitcoin payment to staic wallet. Fee 1.5%",
+                },
+                {
+                    id: 10,
+                    img: BoletoBancário,
+                    name: "Boleto Bancário",
+                    text: "Accepting bitcoin payment to staic wallet. Fee 1.5%",
+                },
+                {
+                    id: 11,
+                    img: Cash,
+                    name: "Cash",
+                    text: "Accepting bitcoin payment to staic wallet. Fee 1.5%",
+                },
+                {
+                    id: 12,
                     img: Elo,
                     name: "Elo",
                     text: "Accepting bitcoin payment to staic wallet. Fee 1.5%",
