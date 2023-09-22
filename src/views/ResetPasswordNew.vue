@@ -17,10 +17,10 @@ import { RouterLink } from 'vue-router'
 
             <form>
                 <input
-                    class="max-w-[345px] w-full h-[56px] px-3 rounded-lg border border-neutral-800 flex-col justify-start items-start inline-flex"
+                    class="max-w-[345px] w-full h-[56px] px-[16px] py-[8px] rounded-lg border border-neutral-800 flex-col justify-start items-start inline-flex"
                     placeholder="New Password" type="text" />
                 <input
-                    class="max-w-[345px] w-full h-[56px] px-3 rounded-lg border border-neutral-800 flex-col justify-start items-start inline-flex mt-[30px]"
+                    class="max-w-[345px] w-full h-[56px] px-[16px] py-[8px] rounded-lg border border-neutral-800 flex-col justify-start items-start inline-flex mt-[30px]"
                     placeholder="Confirm New Password" type="password" />
 
 

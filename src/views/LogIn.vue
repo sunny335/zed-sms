@@ -18,7 +18,7 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                     <form>
                         <div class="max-w-[354px]">
                             <label class="text-zinc-600 text-base font-normal font-['Poppins']">Email or Username</label>
-                            <input type="text" class="w-[354px] h-14 relative rounded-xl border border-gray-400 mt-2" />
+                            <input type="text" class="w-[354px] px-[16px] py-[8px] h-14 relative rounded-xl border border-gray-400 mt-2" />
                         </div>
                         <div class="max-w-[354px] mt-4">
                             <div class="flex justify-between items-center">
@@ -41,7 +41,7 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
 
                                 </div>
                             </div>
-                            <input type="password" class="w-[354px] h-14 relative rounded-xl border border-gray-400 mt-2" />
+                            <input type="password" class="w-[354px] px-[16px] py-[8px] h-14 relative rounded-xl border border-gray-400 mt-2" />
                         </div>
                         <div class="">
                             <label for="" class="flex gap-4  justify-between items-center my-5">

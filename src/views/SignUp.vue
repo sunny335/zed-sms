@@ -21,11 +21,11 @@ import google from '../assets/img/google.png';
                 <form class="mt-10">
                     <div>
                         <label class="text-zinc-600 text-base font-normal font-['Poppins'] block mb-2">User Name</label>
-                        <input type="text" class=" w-full h-14 relative rounded-xl border border-zinc-600" />
+                        <input type="text" class="px-[16px] py-[8px] w-full h-14 relative rounded-xl border border-zinc-600" />
                     </div>
                     <div class="mt-5">
                         <label class="text-zinc-600 text-base font-normal font-['Poppins'] block mb-2">Email</label>
-                        <input type="email" class="w-full h-14 relative rounded-xl border border-zinc-600" />
+                        <input type="email" class="px-[16px] py-[8px] w-full h-14 relative rounded-xl border border-zinc-600" />
                     </div>
                     <div class="mt-5">
 
@@ -49,7 +49,7 @@ import google from '../assets/img/google.png';
 
                             </div>
                         </div>
-                        <input type="password" class="w-full h-14 relative rounded-xl border border-zinc-600" />
+                        <input type="password" class="px-[16px] py-[8px] w-full h-14 relative rounded-xl border border-zinc-600" />
                     </div>
                     <div class="mt-5">
 
@@ -74,7 +74,7 @@ import google from '../assets/img/google.png';
 
                             </div>
                         </div>
-                        <input type="password" class="w-full h-14 relative rounded-xl border border-zinc-600" />
+                        <input type="password" class="px-[16px] py-[8px] w-full h-14 relative rounded-xl border border-zinc-600" />
                     </div>
                     <div class="">
                         <label for="" class="flex justify-start items-start my-5">
