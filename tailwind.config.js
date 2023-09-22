@@ -46,6 +46,11 @@ module.exports = {
           '.scrollbar::-webkit-scrollbar-track-piece': {
               backgroundColor: "#fff",
           },
+        
+          '.shadow-custom': {
+            boxShadow: "0px 4px 40px 0px rgba(0, 0, 0, 0.07)",
+          },
+        
       });
   }),
   ],
