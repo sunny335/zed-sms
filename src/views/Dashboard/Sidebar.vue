@@ -2,7 +2,7 @@
 
 <template>
   <aside
-    class="w-[263px] h-[588px] bg-white rounded-2xl shadow flex-col justify-start items-start inline-flex overflow-hidden">
+    class="w-[263px] min-h-[588px] bg-white rounded-2xl shadow flex-col justify-start items-start inline-flex overflow-hidden ">
     <ul class="w-full">
       <li>
         <router-link to="/dashboard"
@@ -169,7 +169,7 @@ export default {
   
 <style>
 .router-link-exact-active {
-  background-color: #0074d9;
+  background-color: #0057FF;
   color: #fff;
 }
 

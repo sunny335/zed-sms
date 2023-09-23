@@ -83,7 +83,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                             </div>
                             <div v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
                                 <div class="">
-                                    <div class="flex gap-4">
+                                    <div class="flex gap-4"> 
 
                                         <div class="max-w-3/6 w-full">
 
