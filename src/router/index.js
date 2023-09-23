@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  
   routes: [
     {
       path: '/',
@@ -76,7 +77,50 @@ const router = createRouter({
       path: '/:pathMatch(.*)*',
       name: 'NotFound',
       component: () => import('../views/NotFound.vue')
-    }
+    },
+    {
+      path: '/dashboard',
+      component: () => import('../views/Dashboard/Dashboard.vue'), // Import the Dashboard component
+      children: [
+        {
+          path: '', // Default child route, e.g., '/dashboard'
+          component: () => import('../views/Dashboard/DashboardHome.vue'), // Create this component
+        },
+        {
+          path: 'my-number',
+          component: () => import('../views/Dashboard/Mynumber.vue'), // Create this component
+        },
+        {
+          path: 'manage-number',
+          component: () => import('../views/Dashboard/ManageNumber.vue'), // Create this component
+        },
+        {
+          path: 'buy-number',
+          component: () => import('../views/Dashboard/BuyNumber.vue'), // Create this component
+        },
+        {
+          path: 'transaction',
+          component: () => import('../views/Dashboard/Transaction.vue'), // Create this component
+        },
+        {
+          path: 'balance-transfer',
+          component: () => import('../views/Dashboard/BalanceTransfer.vue'), // Create this component
+        },
+        {
+          path: 'topup-balance',
+          component: () => import('../views/Dashboard/TopupBalance.vue'), // Create this component
+        },
+        {
+          path: 'appearance',
+          component: () => import('../views/Dashboard/Appearance.vue'), // Create this component
+        },
+        {
+          path: 'account-settings',
+          component: () => import('../views/Dashboard/AccountSettings.vue'), // Create this component
+        },
+        // Add more nested routes for other dashboard pages
+      ],
+    },
   ]
 })
 
