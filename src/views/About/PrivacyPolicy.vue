@@ -103,9 +103,12 @@
 </template>
 
 <script >
+import { onMounted } from 'vue';
+
 import SectionHeader from '../../components/SectionHeader/SectionHeader.vue';
 
 export default {
+    
     components: {
         SectionHeader,
     },
@@ -115,7 +118,13 @@ export default {
 
         }
 
-    }
+    },
+    setup() {
+    onMounted(() => {
+      window.scrollTo(0, 0); // Scrolls to the top of the page when the component is mounted
+    });
+  },
+    
 
 };
 

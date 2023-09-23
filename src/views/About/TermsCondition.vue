@@ -69,6 +69,7 @@
 
 <script >
 import SectionHeader from '../../components/SectionHeader/SectionHeader.vue';
+import { onMounted } from 'vue';
 
 export default {
     components: {
@@ -80,7 +81,12 @@ export default {
 
         }
 
-    }
+    },
+    setup() {
+    onMounted(() => {
+      window.scrollTo(0, 0); // Scrolls to the top of the page when the component is mounted
+    });
+  },
 
 };
 

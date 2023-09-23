@@ -53,9 +53,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         <h3
                             class="max-w-[360px] text-neutral-800 text-xl font-medium font-['Poppins'] truncate overflow-hidden leading-relaxed tracking-tight mt-[18px]">
                             {{ videoData.videoTitle }} </h3>
-                            <p
+                        <p
                             class="max-w-[360px] h-[47px] text-zinc-600 text-sm lg:text-base font-light font-['Poppins'] leading-normal mb-[8px] multiline block lg:hidden">
-                           {{ videoData.videoDescription }}</p>
+                            {{ videoData.videoDescription }}</p>
                     </div>
                     <div>
 
@@ -84,8 +84,11 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
                         <DialogPanel
                             class=" relative transform overflow-hidden rounded-lg bg-neutral-50 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg md:max-w-[951px]">
-                            <div class="max-w-[250px] max-h-[161px] rounded-2xl   lg:max-w-[951px] lg:min-h-[557px] w-full lg:rounded-[30px] border-2 border-white">
-                                <iframe class="max-w-[250px] max-h-[161px] rounded-2xl   lg:max-w-[951px] lg:min-h-[557px] w-full" src="https://www.youtube.com/embed/9m4HUt9MAzc"
+                            <div
+                                class="max-w-[250px] max-h-[161px] rounded-2xl   lg:max-w-[951px] lg:min-h-[557px] w-full lg:rounded-[30px] border-2 border-white">
+                                <iframe
+                                    class="max-w-[250px] max-h-[161px] rounded-2xl   lg:max-w-[951px] lg:min-h-[557px] w-full"
+                                    src="https://www.youtube.com/embed/9m4HUt9MAzc"
                                     title="The End Of Node.js? My Honest Thoughts" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowfullscreen></iframe>
@@ -100,6 +103,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
 <script >
 import SectionHeader from '../../components/SectionHeader/SectionHeader.vue';
+import { onMounted } from 'vue';
 
 export default {
     components: {
@@ -145,6 +149,7 @@ export default {
         }
 
     },
+
     methods: {
 
 
@@ -154,6 +159,11 @@ export default {
         },
 
 
+    },
+    setup() {
+        onMounted(() => {
+            window.scrollTo(0, 0); // Scrolls to the top of the page when the component is mounted
+        });
     },
 
 };
@@ -170,5 +180,4 @@ export default {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-</style>
+}</style>

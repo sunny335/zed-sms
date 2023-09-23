@@ -128,8 +128,14 @@ import chart from "../../assets/img/blog/chart.png"
 </template>
   
 <script>
+import { onMounted } from 'vue';
 import carousel from "../Blog/carousel.vue"
 export default {
+    setup() {
+    onMounted(() => {
+      window.scrollTo(0, 0); // Scrolls to the top of the page when the component is mounted
+    });
+  },
     components: {
         carousel,
     },
@@ -402,6 +408,7 @@ export default {
             return this.blogsData.filter(blog => blog.id === userId);
         },
     },
+    
 
 };
 </script>
