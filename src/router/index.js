@@ -6,7 +6,7 @@ const router = createRouter({
   
   routes: [
     {
-      path: '/',
+      path: '/', 
       name: 'home',
       component: HomeView
     },
@@ -73,6 +73,47 @@ const router = createRouter({
       name: 'Top Up Failed',
       component: () => import('../views/Payment/TopUpFailed.vue')
     },
+    {
+      path: '/about',
+      name: 'About',
+      component: () => import('../views/About/About.vue')
+    },
+    {
+      path: '/privacy-policy',
+      name: 'Privacy Policy',
+      component: () => import('../views/About/PrivacyPolicy.vue')
+    },
+    {
+      path: '/terms-condition',
+      name: 'Terms Condition',
+      component: () => import('../views/About/TermsCondition.vue')
+    },
+    {
+      path: '/contact-us',
+      name: 'Contact Us',
+      component: () => import('../views/About/ContactUs.vue')
+    },
+    {
+      path: '/blogs',
+      name: 'Blogs',
+      component: () => import('../views/Blog/Blogs.vue')
+    },
+    {
+      path: '/blogs/:id',
+      name: 'Blog',
+      component: () => import('../views/Blog/Blog.vue')
+    },
+    {
+      path: '/tutorial',
+      name: 'Tutorial',
+      component: () => import('../views/Blog/Tutorial.vue')
+    },
+    {
+      path: '/carousel',
+      name: 'carousel',
+      component: () => import('../views/Blog/carousel.vue')
+    },
+
     {
       path: '/:pathMatch(.*)*',
       name: 'NotFound',

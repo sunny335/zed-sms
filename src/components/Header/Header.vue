@@ -36,7 +36,7 @@ import CommunityIcon from '../icons/IconCollections.vue'
 
                             <li>
                                 <RouterLink class="text-neutral-800 text-base font-normal font-['Poppins'] leading-normal transition hover:text-gray-500/75"
-                                    to="/">
+                                    to="/contact-us">
                                     Contact
                                 </RouterLink>
                             </li>

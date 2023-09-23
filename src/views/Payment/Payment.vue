@@ -186,7 +186,7 @@ export default {
         return {
             selectedWeek: '01 Week',
             openTab: 1,
-            selectedCountry: null,
+            selectedCountry: null, 
             selectedService: null,
             selectedPhone: null,
             selectedPayment: null,
