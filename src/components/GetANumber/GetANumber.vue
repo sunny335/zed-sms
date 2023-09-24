@@ -16,10 +16,56 @@ import AmazonImg from '../../assets/img/company/Amazon.png';
 import AmazonImg2 from '../../assets/img/company/Amazon2.png';
 import TeslaImg from '../../assets/img/company/Tesla.png';
 import TeslaImg2 from '../../assets/img/company/Tesla2.png';
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 
-const open = ref(true)
+const open = ref(true);
+
+const selectedSearchCountry = ref(null);
+
+const filteredCountries = computed(() => {
+    if (!selectedSearchCountry.value) {
+
+        return countries;
+    } else {
+
+        const searchTerm = selectedSearchCountry.value.toLowerCase();
+        return countries.filter((country) =>
+            country.name.toLowerCase().includes(searchTerm)
+        );
+    }
+});
+
+const selectedSearchService = ref(null);
+
+const filteredService = computed(() => {
+    if (!selectedSearchService.value) {
+
+        return services;
+    } else {
+
+        const searchTerm = selectedSearchService.value.toLowerCase();
+        return services.filter((country) =>
+            country.name.toLowerCase().includes(searchTerm)
+        );
+    }
+});
+
+const selectedSearchPhone = ref(null);
+
+const filteredPhone = computed(() => {
+    if (!selectedSearchPhone.value) {
+
+        return phoneNumbers;
+    } else {
+
+        const searchTerm = selectedSearchPhone.value.toLowerCase();
+        return phoneNumbers.filter((country) =>
+            country.toLowerCase().includes(searchTerm)
+        );
+    }
+});
+
 </script>
 
 <template>
@@ -86,7 +132,6 @@ const open = ref(true)
                                     </div>
                                 </div>
                             </div>
-                            {{ console.log(selectedCountry) }}
                             <div class="flex gap-[6px] items-center" v-if="selectedPhone">
                                 <div class="text-center text-zinc-600 text-sm font-normal font-['Poppins']">Number:
                                 </div>
@@ -128,7 +173,7 @@ const open = ref(true)
                                                 </div>
                                                 <input type="search" id="default-search"
                                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Enter country" required>
+                                                    placeholder="Enter country" required v-model="selectedSearchCountry">
 
                                             </div>
                                         </form>
@@ -137,9 +182,9 @@ const open = ref(true)
 
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar ">
                                                 <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
-                                                    v-for="(country, index) in countries" :key="index"
+                                                    v-for="(country, index) in filteredCountries" :key="index"
                                                     @click="selectCountry(country)"
-                                                    :class="{ 'border': selectedCountry === country }">
+                                                    :class="{ 'border': (selectedCountry?.name === country?.name) && (country?.flag && selectedCountry?.name) }">
                                                     <div
                                                         class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
                                                         <div
@@ -180,7 +225,9 @@ const open = ref(true)
                                                 </div>
                                                 <input type="search" id="default-search"
                                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Enter Service" required>
+                                                    placeholder="Enter Service" required
+                                                    v-model="selectedSearchService"
+                                                    >
 
                                             </div>
                                         </form>
@@ -188,9 +235,9 @@ const open = ref(true)
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
                                                 <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
-                                                    v-for="(service, index) in services" :key="index"
+                                                    v-for="(service, index) in filteredService" :key="index"
                                                     @click="selectService(service)"
-                                                    :class="{ 'border': selectedService === service }">
+                                                    :class="{ 'border': (service?.flag == selectedService?.flag) && (selectedService?.name == service?.name) }">
 
                                                     <div
                                                         class="max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
@@ -234,14 +281,16 @@ const open = ref(true)
                                                 </div>
                                                 <input type="search" id="default-search"
                                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Enter number" required>
+                                                    placeholder="Enter number" required
+                                                    v-model="selectedSearchPhone"
+                                                    >
 
                                             </div>
                                         </form>
                                         <div
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
-                                                <li v-for="(phoneNumber, index) in phoneNumbers" :key="index"
+                                                <li v-for="(phoneNumber, index) in filteredPhone" :key="index"
                                                     class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
                                                     @click="selectPhone(phoneNumber)"
                                                     :class="{ 'border': selectedPhone === phoneNumber }">
@@ -320,7 +369,9 @@ const open = ref(true)
                                                 </div>
                                                 <input type="search" id="default-search"
                                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Enter country" required>
+                                                    placeholder="Enter country" required
+                                                    v-model="selectedSearchCountry"
+                                                    >
 
                                             </div>
                                         </form>
@@ -329,9 +380,9 @@ const open = ref(true)
 
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar ">
                                                 <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
-                                                    v-for="(country, index) in countries" :key="index"
+                                                    v-for="(country, index) in filteredCountries" :key="index"
                                                     @click="selectCountry(country)"
-                                                    :class="{ 'border': selectedCountry === country }">
+                                                    :class="{ 'border': (selectedCountry?.name == country?.name) && (selectedCountry?.flag == country?.flag) }">
                                                     <div
                                                         class=" w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
                                                         <div
@@ -376,14 +427,16 @@ const open = ref(true)
                                                 </div>
                                                 <input type="search" id="default-search"
                                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Enter number" required>
+                                                    placeholder="Enter number" required
+                                                    v-model="selectedSearchPhone"
+                                                    >
 
                                             </div>
                                         </form>
                                         <div
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
-                                                <li v-for="(phoneNumber, index) in phoneNumbers" :key="index"
+                                                <li v-for="(phoneNumber, index) in filteredPhone" :key="index"
                                                     class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
                                                     @click="selectPhone(phoneNumber)"
                                                     :class="{ 'border': selectedPhone === phoneNumber }">
@@ -461,7 +514,9 @@ const open = ref(true)
                                                 </div>
                                                 <input type="search" id="default-search"
                                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Enter country" required>
+                                                    placeholder="Enter country" required
+                                                    v-model="selectedSearchCountry"
+                                                    >
 
                                             </div>
                                         </form>
@@ -470,9 +525,9 @@ const open = ref(true)
 
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar ">
                                                 <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
-                                                    v-for="(country, index) in countries" :key="index"
+                                                    v-for="(country, index) in filteredCountries" :key="index"
                                                     @click="selectCountry(country)"
-                                                    :class="{ 'border': selectedCountry === country }">
+                                                    :class="{ 'border': (selectedCountry?.name == country?.name) && (selectedCountry?.flag == country?.flag) }">
                                                     <div
                                                         class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
                                                         <div
@@ -513,7 +568,9 @@ const open = ref(true)
                                                 </div>
                                                 <input type="search" id="default-search"
                                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Enter Service" required>
+                                                    placeholder="Enter Service" required
+                                                    v-model="selectedSearchService"
+                                                    >
 
                                             </div>
                                         </form>
@@ -521,9 +578,9 @@ const open = ref(true)
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
                                                 <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer flex items-center gap-[16px]"
-                                                    v-for="(service, index) in services" :key="index"
+                                                    v-for="(service, index) in filteredService" :key="index"
                                                     @click="selectService(service)"
-                                                    :class="{ 'border': selectedService === service }">
+                                                    :class="{ 'border': (selectedService?.name == service?.name)&& (selectedService?.flag == service?.flag) }">
                                                     <div
                                                         class="max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
                                                         <div
@@ -541,7 +598,7 @@ const open = ref(true)
                                                             class="text-right text-neutral-800 text-base font-light font-['Poppins']">
                                                             {{ service.price }}</div>
                                                     </div>
-                                                    <div v-if="selectedService === service"
+                                                    <div v-if="(selectedService?.name === service?.name) && (selectedService?.flag === service?.flag)"
                                                         class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px]">
 
                                                         <div @click="handleModalOpen(true)"
@@ -711,50 +768,38 @@ const open = ref(true)
   
 <script>
 import WeekListDropdown from './WeekListDropdown.vue';
-export default {
-    components: {
-        WeekListDropdown,
-    },
-    name: "pink-tabs",
-    data() {
-        return {
-            selectedWeek: '01 week',
-            openTab: 1,
-            selectedCountry: null,
-            selectedService: null,
-            selectedPhone: null,
-            OpenModal: false,
-            countries: [
-                { name: 'United States', price: "$0.35", flag: PhilipinsImg },
-                { name: 'Lebanon', price: "$0.35", flag: LebanonImg },
-                { name: 'Taiwan', price: "$0.35", flag: TaiwanImg },
-                { name: 'Israel', price: "$0.35", flag: IsraelImg },
-                { name: 'Russia', price: "$0.35", flag: RussiaImg },
-                { name: 'North Africa', price: "$0.35", flag: NorthAfricaImg },
-                { name: 'Denmark', price: "$0.35", flag: DenmarkImg },
-                { name: 'South America', price: "$0.35", flag: SouthAmericaImg },
-                { name: 'Russia', price: "$0.35", flag: RussiaImg },
-                { name: 'North Africa', price: "$0.35", flag: NorthAfricaImg },
-                { name: 'Denmark', price: "$0.35", flag: DenmarkImg },
-                { name: 'South America', price: "$0.35", flag: SouthAmericaImg },
-            ],
 
-            services: [
-                { name: 'Apple', price: '$0.45', flag: AppleImg },
-                { name: 'Amazon', price: '$0.45', flag: AmazonImg },
-                { name: 'Amazon', price: '$0.45', flag: AmazonImg2 },
-                { name: 'Tesla', price: '$0.45', flag: TeslaImg },
-                { name: 'Microsoft', price: '$0.45', flag: MicrosoftImg },
-                { name: 'Microsoft', price: '$0.45', flag: MicrosoftImg2 },
-                { name: 'Microsoft', price: '$0.45', flag: MicrosoftImg3 },
-                { name: 'Tesla', price: '$0.45', flag: TeslaImg2 },
-                { name: 'Microsoft', price: '$0.45', flag: MicrosoftImg },
-                { name: 'Microsoft', price: '$0.45', flag: MicrosoftImg2 },
-                { name: 'Microsoft', price: '$0.45', flag: MicrosoftImg3 },
-                { name: 'Tesla', price: '$0.45', flag: TeslaImg2 },
+const countries = [
+    { name: 'United States', price: "$0.35", flag: PhilipinsImg },
+    { name: 'Lebanon', price: "$0.35", flag: LebanonImg },
+    { name: 'Taiwan', price: "$0.35", flag: TaiwanImg },
+    { name: 'Israel', price: "$0.35", flag: IsraelImg },
+    { name: 'Russia', price: "$0.35", flag: RussiaImg },
+    { name: 'North Africa', price: "$0.35", flag: NorthAfricaImg },
+    { name: 'Denmark', price: "$0.35", flag: DenmarkImg },
+    { name: 'South America', price: "$0.35", flag: SouthAmericaImg },
+    { name: 'Russia', price: "$0.35", flag: RussiaImg },
+    { name: 'North Africa', price: "$0.35", flag: NorthAfricaImg },
+    { name: 'Denmark', price: "$0.35", flag: DenmarkImg },
+    { name: 'South America', price: "$0.35", flag: SouthAmericaImg },
+];
 
-            ],
-            phoneNumbers: [
+const services = [
+    { name: 'Apple', price: '$0.45', flag: AppleImg },
+    { name: 'Amazon', price: '$0.45', flag: AmazonImg },
+    { name: 'Amazon', price: '$0.45', flag: AmazonImg2 },
+    { name: 'Tesla', price: '$0.45', flag: TeslaImg },
+    { name: 'Micrososft', price: '$0.45', flag: MicrosoftImg },
+    { name: 'Microssoft', price: '$0.45', flag: MicrosoftImg2 },
+    { name: 'Micrososft', price: '$0.45', flag: MicrosoftImg3 },
+    { name: 'Tesla', price: '$0.45', flag: TeslaImg2 },
+    { name: 'Miicrosoft', price: '$10.45', flag: MicrosoftImg },
+    { name: 'Microsoft', price: '$0.45', flag: MicrosoftImg2 },
+    { name: 'Tessla', price: '$0.45', flag: TeslaImg2 },
+
+];
+
+const phoneNumbers= [
                 '+88013-456-7590',
                 '+88015-555-5545',
                 '+88017-654-3510',
@@ -770,8 +815,21 @@ export default {
                 '+88017-654-3710',
                 '+88018-888-8848',
                 '+88015-123-4557',
-            ],
+            ];
 
+export default {
+    components: {
+        WeekListDropdown,
+    },
+    name: "pink-tabs",
+    data() {
+        return {
+            selectedWeek: '01 week',
+            openTab: 1,
+            selectedCountry: null,
+            selectedService: null,
+            selectedPhone: null,
+            OpenModal: false,
         }
     },
     methods: {

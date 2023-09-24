@@ -12,7 +12,8 @@ import blueTik from '../../assets/img/blueTik.svg';
 
 
             <div class="px-[28px] pt-21 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 lg:pt-[84px]">
-                <div class="flex flex-col lg:flex-row justify-center items-center gap-[30px] lg:gap-[100px] mt-[52px] mb-[60px] lg:mb-[153px]">
+                <div
+                    class="flex flex-col lg:flex-row justify-center items-center gap-[30px] lg:gap-[100px] mt-[52px] mb-[60px] lg:mb-[153px]">
                     <img :src="ContactUs" alt="" srcset="">
                     <div class="max-w-[534px] w-full">
                         <form>
@@ -106,6 +107,7 @@ import blueTik from '../../assets/img/blueTik.svg';
 
 <script >
 import SectionHeader from '../../components/SectionHeader/SectionHeader.vue';
+import { onMounted } from 'vue';
 
 export default {
     components: {
@@ -115,9 +117,14 @@ export default {
 
         return {
             openTab: 1,
-      
+
         }
 
+    },
+    setup() {
+        onMounted(() => {
+            window.scrollTo(0, 0); // Scrolls to the top of the page when the component is mounted
+        });
     },
     methods: {
         toggleTabs: function (tabNumber) {

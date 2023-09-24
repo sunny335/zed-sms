@@ -120,46 +120,50 @@ const router = createRouter({
       component: () => import('../views/NotFound.vue')
     },
     {
+      path: '/service',
+      name: 'service',
+      component: () => import('../views/OurService.vue')
+    },
+    {
       path: '/dashboard',
-      component: () => import('../views/Dashboard/Dashboard.vue'), // Import the Dashboard component
+      component: () => import('../views/Dashboard/Dashboard.vue'),
       children: [
         {
-          path: '', // Default child route, e.g., '/dashboard'
-          component: () => import('../views/Dashboard/DashboardHome.vue'), // Create this component
+          path: '', 
+          component: () => import('../views/Dashboard/DashboardHome.vue'),
         },
         {
           path: 'my-number',
-          component: () => import('../views/Dashboard/Mynumber.vue'), // Create this component
+          component: () => import('../views/Dashboard/Mynumber.vue'),
         },
         {
           path: 'manage-number',
-          component: () => import('../views/Dashboard/ManageNumber.vue'), // Create this component
+          component: () => import('../views/Dashboard/ManageNumber.vue'),
         },
         {
           path: 'buy-number',
-          component: () => import('../views/Dashboard/BuyNumber.vue'), // Create this component
+          component: () => import('../views/Dashboard/BuyNumber.vue'),
         },
         {
           path: 'transaction',
-          component: () => import('../views/Dashboard/Transaction.vue'), // Create this component
+          component: () => import('../views/Dashboard/Transaction.vue'),
         },
         {
           path: 'balance-transfer',
-          component: () => import('../views/Dashboard/BalanceTransfer.vue'), // Create this component
+          component: () => import('../views/Dashboard/BalanceTransfer.vue'),
         },
         {
           path: 'topup-balance',
-          component: () => import('../views/Dashboard/TopupBalance.vue'), // Create this component
+          component: () => import('../views/Dashboard/TopupBalance.vue'),
         },
         {
           path: 'appearance',
-          component: () => import('../views/Dashboard/Appearance.vue'), // Create this component
+          component: () => import('../views/Dashboard/Appearance.vue'),
         },
         {
           path: 'account-settings',
-          component: () => import('../views/Dashboard/AccountSettings.vue'), // Create this component
+          component: () => import('../views/Dashboard/AccountSettings.vue'),
         },
-        // Add more nested routes for other dashboard pages
       ],
     },
   ]
