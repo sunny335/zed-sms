@@ -22,7 +22,7 @@ import CommunityIcon from '../icons/IconCollections.vue'
                         <ul class="flex items-center gap-11 text-sm">
                             <li>
                                 <RouterLink class="text-neutral-800 text-base font-normal font-['Poppins'] leading-normal transition hover:text-gray-500/75"
-                                    to="/">
+                                    to="/service">
                                     Our Service
                                 </RouterLink>
                             </li>
