@@ -14,7 +14,7 @@
             <div class="px-4 pt-[44px] mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1096px] md:px-24 lg:px-8 lg:pt-[84px]">
               <div class="mb-[44px] lg:mb-[101px]">
                 <h3 class="text-zinc-800 text-xl lg:text-[32px] font-medium font-['Poppins'] leading-10 mb-[20px]">About the role</h3>
-                <p class="w-[1027px] text-neutral-500 text-sm lg:text-base font-light font-['Poppins'] leading-[25.18px] pb-[24px]">you are going to use a passage of Lorem Ipsum, you need to be sure there isn't embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. </p>
+                <p class="max-w-[1027px] text-neutral-500 text-sm lg:text-base font-light font-['Poppins'] leading-[25.18px] pb-[24px]">you are going to use a passage of Lorem Ipsum, you need to be sure there isn't embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. </p>
                 <ul class="ml-4">
                     <li class=" text-neutral-500 text-sm lg:text-base font-normal font-['Nunito'] leading-[26px] lg:leading-[43.90px] list-disc">
                         You are going to use a passage of Lorem Ipsum, you need to be Sure there isn't 
@@ -33,7 +33,7 @@
               <div class="mb-[55px] lg:mb-[101px]">
                 <h3 class="text-zinc-800 text-xl lg:text-[32px] font-medium font-['Poppins'] leading-10 mb-[20px]">If the feeling is mutual, we offer:
 </h3>
-                <p class="w-[1027px] text-neutral-500 text-sm lg:text-base font-light font-['Poppins'] leading-[25.18px] pb-[24px]">you are going to use a passage of Lorem Ipsum, you need to be sure there isn't embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. </p>
+                <p class="max-w-[1027px] text-neutral-500 text-sm lg:text-base font-light font-['Poppins'] leading-[25.18px] pb-[24px]">you are going to use a passage of Lorem Ipsum, you need to be sure there isn't embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. </p>
                 <ul class="ml-4">
                     <li class=" text-neutral-500 text-sm lg:text-base font-normal font-['Nunito'] leading-[26px] lg:leading-[43.90px] list-disc">
                         Gross salary starting at 1,500 EUR/month

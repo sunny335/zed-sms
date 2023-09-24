@@ -1,7 +1,7 @@
 <!-- Dashboard.vue -->
 
 <template>
-    <div class="max-w-[1128px] mx-auto w-full flex gap-[20px] items-start">
+    <div class="max-w-[1128px] mx-auto w-full flex gap-[20px] mt-[50px] items-start">
       <DashboardSidebar />
       <div class="dashboard-content flex-1">
         <router-view />
