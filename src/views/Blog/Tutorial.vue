@@ -83,9 +83,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         leave-from="opacity-100 translate-y-0 sm:scale-100"
                         leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
                         <DialogPanel
-                            class=" relative transform overflow-hidden rounded-lg bg-neutral-50 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg md:max-w-[951px]">
+                            class=" relative transform overflow-hidden rounded-lg lg:rounded-[30px] bg-neutral-50 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg md:max-w-[951px]">
                             <div
-                                class="max-w-[250px] max-h-[161px] rounded-2xl   lg:max-w-[951px] lg:min-h-[557px] w-full lg:rounded-[30px] border-2 border-white">
+                                class="max-w-[250px] max-h-[161px] rounded-2xl   lg:max-w-[951px] lg:min-h-[557px] w-full lg:rounded-[30px] overflow-hidden">
                                 <iframe
                                     class="max-w-[250px] max-h-[161px] rounded-2xl   lg:max-w-[951px] lg:min-h-[557px] w-full"
                                     src="https://www.youtube.com/embed/9m4HUt9MAzc"
