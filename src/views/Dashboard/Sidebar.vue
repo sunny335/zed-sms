@@ -2,7 +2,7 @@
 
 <template>
   <aside
-    class="w-[263px] h-[588px] bg-white rounded-2xl shadow flex-col justify-start items-start inline-flex overflow-hidden">
+    class="w-[263px] h-[auto] bg-white rounded-2xl shadow-none lg:shadow-custom mb-[40px] flex-col justify-start items-start inline-flex overflow-hidden">
     <ul class="w-full">
       <li>
         <router-link to="/dashboard"
@@ -168,16 +168,21 @@ export default {
 </script>
   
 <style>
-.router-link-exact-active {
+aside .router-link-exact-active {
   background-color: #0074d9;
   color: #fff;
+  text-decoration: none;
 }
 
-.router-link-exact-active span{
+aside .router-link-exact-active span{
 
   color: #fff;
 }
-.router-link-exact-active svg path{
+aside .router-link-exact-active svg path{
+
+stroke: #fff;
+}
+aside .router-link-exact-active svg circle{
 
 stroke: #fff;
 }

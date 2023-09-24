@@ -144,11 +144,11 @@ const filteredPhone = computed(() => {
                                 <div class="text-zinc-600 text-sm font-light font-['Poppins']">{{ selectedWeek }}</div>
                             </div>
                             <div class="flex gap-[6px] items-center"
-                                v-if="openTab === 2 ? selectedCountry.price : selectedService">
+                                v-if="openTab === 2 ? selectedCountry?.price : selectedService">
                                 <div class="text-center text-zinc-600 text-sm font-normal font-['Poppins']">Cost:
                                 </div>
                                 <div class="text-zinc-600 text-sm font-light font-['Poppins']">{{ openTab === 2 ?
-                                    selectedCountry.price : selectedService.price }}
+                                   selectedCountry?.price : selectedService.price }}
                                 </div>
                             </div>
                         </div>
@@ -767,7 +767,7 @@ const filteredPhone = computed(() => {
 </template>
   
 <script>
-import WeekListDropdown from './WeekListDropdown.vue';
+import WeekListDropdown from '../WeekListDropdown/WeekListDropdown.vue';
 
 const countries = [
     { name: 'United States', price: "$0.35", flag: PhilipinsImg },

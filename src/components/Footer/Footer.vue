@@ -131,15 +131,15 @@ import { RouterLink } from 'vue-router'
                     </div>
                </div>
                <div>
-                <div class="space-y-2 text-sm w-full flex flex-col justify-center items-start lg:items-center gap-3 mx-4">
+                <div class="space-y-2 text-sm w-full flex flex-col justify-center items-start lg:items-center gap-3 px-4">
                     <p class="text-blue-600 text-lg font-medium font-['Inter'] leading-7">Download App</p>
                     <div class="flex  lg:flex-col items-center gap-3">
                        
-                    <a href="" >
+                    <a href="#" class="max-w-[46%] md:max-w-[100%]" >
                         <img :src="appStore" alt="play-store" />
                         
                     </a>
-                    <a href="" >
+                    <a href="#" class="max-w-[46%] md:max-w-[100%]" >
                         <img :src="playStore" alt="app-store" />
                     </a>
                    
