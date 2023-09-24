@@ -2,7 +2,7 @@
 
 <template>
   <aside
-    class="w-[263px] min-h-[588px] bg-white rounded-2xl shadow flex-col justify-start items-start inline-flex overflow-hidden ">
+    class="w-[263px] max-h-[588px] bg-white rounded-2xl shadow flex-col justify-start items-start inline-flex overflow-hidden ">
     <ul class="w-full">
       <li>
         <router-link to="/dashboard"
