@@ -21,21 +21,21 @@ import CommunityIcon from '../icons/IconCollections.vue'
                     <nav aria-label="Global" class="hidden md:block">
                         <ul class="flex items-center gap-11 text-sm">
                             <li>
-                                <RouterLink class="text-neutral-800 text-base font-normal font-['Poppins'] leading-normal transition hover:text-gray-500/75"
+                                <RouterLink class="text-neutral-800 text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600"
                                     to="/service">
                                     Our Service
                                 </RouterLink>
                             </li>
 
                             <li>
-                                <RouterLink class="text-neutral-800 text-base font-normal font-['Poppins'] leading-normal transition hover:text-gray-500/75"
+                                <RouterLink class="text-neutral-800 text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600"
                                     to="/about">
                                     About us
                                 </RouterLink>
                             </li>
 
                             <li>
-                                <RouterLink class="text-neutral-800 text-base font-normal font-['Poppins'] leading-normal transition hover:text-gray-500/75"
+                                <RouterLink class="text-neutral-800 text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600"
                                     to="/contact-us">
                                     Contact
                                 </RouterLink>
@@ -102,3 +102,10 @@ export default {
   },
 };
 </script>
+<style>
+.router-link-exact-active {
+  color: #0074d9;
+  text-decoration: underline;
+  font-weight: 500;
+}
+</style>
