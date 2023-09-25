@@ -57,20 +57,26 @@ import num7 from "../../assets/img/NumFlags/7.png"
                                         <span v-if="messageData.message.length > 100"
                                             class="text-blue-600 text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
                                             @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
-                                            {{ messageData.showFullMessage ? 'Less' : 'More' }} 
+                                            {{ messageData.showFullMessage ? 'Less' : 'More' }}
                                         </span>
                                         <svg class="inline pl-1 cursor-pointer"
-                                        v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
-                                        @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                        xmlns="http://www.w3.org/2000/svg" height="10px" viewBox="0 0 384 512"><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" fill="#0057FF"/></svg>
+                                            v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
+                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                            xmlns="http://www.w3.org/2000/svg" height="10px" viewBox="0 0 384 512">
+                                            <path
+                                                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                                                fill="#0057FF" />
+                                        </svg>
 
 
-                                        <svg
-                                        class="inline pl-1 cursor-pointer"
-                                        v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
-                                        @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                        
-                                        xmlns="http://www.w3.org/2000/svg" height="10px" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z" fill="#0057FF"/></svg>
+                                        <svg class="inline pl-1 cursor-pointer"
+                                            v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
+                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                            xmlns="http://www.w3.org/2000/svg" height="10px" viewBox="0 0 384 512">
+                                            <path
+                                                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                                                fill="#0057FF" />
+                                        </svg>
                                     </div>
                                 </div>
                             </div>
@@ -220,29 +226,29 @@ import num7 from "../../assets/img/NumFlags/7.png"
 
                             </tr>
                         </thead>
-                        <tbody  v-for="data in tableData" :key="data.id" class="">
+                        <tbody v-for="data in visibleData" :key="data.id" class="">
 
                             <tr class=" border-b-2">
-                                <td class="px-4 py-6 text-neutral-800 text-xs font-light font-['Poppins'] leading-[17px]">{{ data.dateTime }}</td>
+                                <td class="px-4 py-6 text-neutral-800 text-xs font-light font-['Poppins'] leading-[17px]">{{
+                                    data.dateTime }}</td>
                                 <td class="px-4 py-6 text-neutral-800 text-xs font-light font-['Poppins'] leading-[17px]">
                                     {{ data.action }}</td>
                                 <td class="px-4 py-6 text-neutral-800 text-xs font-light font-['Poppins'] leading-[17px]">
                                     ${{ data.amount }}</td>
                                 <td
-
-                                
                                     class="px-4 py-6 text-neutral-800 text-xs font-light font-['Poppins'] leading-[17px] max-w-[253px]">
                                     {{ data.description }} </td>
 
                             </tr>
-                       
+
 
                         </tbody>
                     </table>
-                    <button
+                    <button @click="loadMore" v-if="tableData.length > 3"
                         class="max-w-[125px] h-[37px] w-full py-2.5 rounded-[10px] border border-blue-600 justify-center items-center gap-2.5 inline-flex mx-auto mb-[67px]">
-                        <div class="text-blue-600 text-sm font-normal font-['Poppins'] leading-[17px]">See More</div>
+                        <div class="text-blue-600 text-sm font-normal font-['Poppins'] leading-[17px]">{{ tableData.length == itemsToShow ? "See less" : "See More" }}</div>
                     </button>
+                    <!-- <button @click="toggleLoadMore">{{ buttonText }}</button> -->
 
                 </div>
             </div>
@@ -262,6 +268,8 @@ export default {
             openTab: 1,
             messageSeenStatus: false,
             toggleArrowIcon: false,
+            buttonText: "Load More",
+            itemsToShow: 3,
             messagesData: [
                 {
                     id: 1,
@@ -552,6 +560,9 @@ export default {
                     description: "A number rental 33765837850 on 7 days, Revolut. Exp: 31.05.2023 07:48. Mor"
 
                 },
+                
+              
+
             ]
 
         }
@@ -567,10 +578,34 @@ export default {
         toggleArrow: function (v) {
             this.toggleArrowIcon = v
         },
+        loadMore() {
 
+          
+            if(this.tableData.length == this.itemsToShow){
+                this.itemsToShow =3;
+            }
+            else{
+                this.itemsToShow += 3; // Increase the number of items to show
+            }
+
+        },
+    //     toggleLoadMore() {
+    //   if (this.itemsToShow === this.tableData.length) {
+    //     // If all items are displayed, toggle to "Load More"
+    //     this.itemsToShow += 2;
+    //     this.buttonText = "Load More";
+    //   } else {
+    //     // Otherwise, show all items and toggle to "Load Less"
+    //     this.itemsToShow = this.tableData.length;
+    //     this.buttonText = "Load Less";
+    //   }
+    // },
 
     },
     computed: {
+        visibleData() {
+            return this.tableData.slice(0, this.itemsToShow);
+        },
         formattedMessage() {
             return (messageData) => {
                 const message = messageData.message;

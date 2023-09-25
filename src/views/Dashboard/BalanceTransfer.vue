@@ -1,6 +1,5 @@
 <template>
     <div>
-        account-settings
-        fsdfsd
+        balance transfer
     </div>
 </template>

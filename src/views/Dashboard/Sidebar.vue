@@ -169,7 +169,7 @@ export default {
   
 <style>
 aside .router-link-exact-active {
-  background-color: #0074d9;
+  background-color: #0057FF;
   color: #fff;
   text-decoration: none;
 }

@@ -1,6 +1,5 @@
 <template>
     <div>
-        account-settings
-        fsdfsd
+        transaction page
     </div>
 </template>

@@ -1,6 +1,5 @@
 <template>
     <div>
-        account-settings
-        fsdfsd
+       Top up balance Page
     </div>
 </template>
