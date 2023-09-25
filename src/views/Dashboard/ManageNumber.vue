@@ -22,8 +22,8 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
 </script>
 
 <template>
-    <section class="ml-[25px] mb-[97px]">
-        <div class="flex flex-wrap gap-[120px]">
+    <section class="pl-[54px] mb-[97px]">
+        <div class="flex gap-[82px]">
             <!-- All Number -->
             <div class="max-w-[40%] w-full">
                 <div class="w-[320px] h-[716px]">
