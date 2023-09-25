@@ -43,9 +43,8 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                             class="w-full px-[2px] pt-[0px] pb-[30px] flex-col justify-start items-center gap-[30px] inline-flex overflow-y-auto scrollbar max-h-[570px]">
                             <div class="w-full">
 
-                                <div class="flex items-center gap-[20px] py-4 pr-3"
-                                v-for="data in paymentsData" :key="data.id"
-                                >
+                                <div class="flex items-center gap-[20px] py-4 pr-3" v-for="data in paymentsData"
+                                    :key="data.id">
                                     <img :src="cash" alt="" srcset="">
                                     <div>
                                         <h6 class="text-neutral-800 text-base font-medium font-['Poppins'] leading-[17px]">
@@ -61,9 +60,32 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
 
                 </div>
             </div>
-            <!-- All Number -->
+            <!-- Balance TO-UP -->
             <div class="max-w-[45%] w-full">
+                <h3 class="text-neutral-800 text-xl font-medium font-['Poppins'] leading-[17px]">Balance TO-UP</h3>
 
+                <div
+                    class="w-[360px] h-[281px] px-[30px] py-10 bg-white rounded-[20px] shadow flex-col justify-start items-end gap-10 inline-flex">
+                    <div class="flex-col justify-start items-start gap-2.5 flex">
+                        <div class="flex-col justify-start items-start gap-10 flex">
+                            <div class="flex-col justify-start items-start gap-3.5 flex">
+                                <div class="text-neutral-800 text-base font-normal font-['Poppins']">Amount</div>
+                                <div
+                                    class="w-[300px] pl-6 pr-[229px] pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 justify-start items-center inline-flex">
+                                    <div class="self-stretch justify-start items-center inline-flex">
+                                        <div class="text-zinc-600 text-sm font-normal font-['Poppins']">$00.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center text-zinc-600 text-xs font-light font-['Poppins']">Minimum Amount: 1 USD
+                        </div>
+                    </div>
+                    <div
+                        class="px-10 py-3 rounded-[10px] shadow border border-blue-600 justify-start items-start gap-2.5 inline-flex">
+                        <div class="text-center text-blue-600 text-sm font-normal font-['Poppins']">TOP-UP Now</div>
+                    </div>
+                </div>
             </div>
 
 

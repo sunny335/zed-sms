@@ -23,7 +23,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
 
 <template>
     <section class="ml-[25px] mb-[97px]">
-        <div class="flex flex-wrap gap-[25px]">
+        <div class="flex flex-wrap gap-[120px]">
             <!-- All Number -->
             <div class="max-w-[40%] w-full">
                 <div class="w-[320px] h-[716px]">
@@ -56,7 +56,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                     <div
                         class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                         <div
-                            class="w-full px-[2px] pt-[0px] pb-[30px] flex-col justify-start items-center gap-[30px] inline-flex overflow-y-auto scrollbar max-h-[570px]">
+                            class="w-full px-[2px] pt-[0px] pb-[30px] flex-col justify-start items-center gap-[30px] inline-flex overflow-y-auto scrollbar max-h-[448px]">
                             <div class="w-full">
 
                                 <div class="tab-content tab-space w-full ">
