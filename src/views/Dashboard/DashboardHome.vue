@@ -618,7 +618,7 @@ export default {
                             return part;
                         } else {
 
-                            return `<span class="font-bold">${part}</span>`;
+                            return `<span class="text-neutral-800 text-xs font-medium font-['Poppins'] leading-tight">${part}</span>`;
                         }
                     });
 
@@ -630,7 +630,7 @@ export default {
                     if (index % 2 === 0) {
                         return part;
                     } else {
-                        return `<span class="font-bold	">${part}</span>`;
+                        return `<span class="text-neutral-800 text-xs font-medium font-['Poppins'] leading-tight	">${part}</span>`;
                     }
                 });
                 const formattedMessage = parts.length > 1 ? formattedParts[0] + formattedParts[1] : formattedParts.join("").slice(0, 100);
