@@ -134,7 +134,7 @@
 
 
           </span>
-          <span class="text-neutral-800 text-base font-light font-['Poppins'] leading-[136px]">
+          <span class="text-neutral-800 text-base font-light font-['Poppins'] leading-[36px]">
             Appearance
           </span>
         </router-link>
@@ -153,7 +153,7 @@
 
 
           </span>
-          <span class="text-neutral-800 text-base font-light font-['Poppins'] leading-[136px]"> Account Setting</span>
+          <span class="text-neutral-800 text-base font-light font-['Poppins'] leading-[36px]"> Account Setting</span>
 
         </router-link>
       </li>
