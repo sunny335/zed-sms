@@ -24,7 +24,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
 
 <template>
     <section class="ml-[25px] mb-[97px]">
-        <div class="flex flex-wrap gap-[25px]">
+        <div class="flex flex-wrap gap-[49px]">
             <!-- Choose Payment -->
             <div class="max-w-[401px] w-full">
                 <div class="w-[401px] h-[716px]">
@@ -43,9 +43,8 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                             class="w-full px-[2px] pt-[0px] pb-[30px] flex-col justify-start items-center gap-[30px] inline-flex overflow-y-auto scrollbar max-h-[570px]">
                             <div class="w-full">
 
-                                <div class="flex items-center gap-[20px] py-4 pr-3"
-                                v-for="data in paymentsData" :key="data.id"
-                                >
+                                <div class="flex items-center gap-[20px] py-4 pr-3" v-for="data in paymentsData"
+                                    :key="data.id">
                                     <img :src="cash" alt="" srcset="">
                                     <div>
                                         <h6 class="text-neutral-800 text-base font-medium font-['Poppins'] leading-[17px]">
@@ -61,9 +60,29 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
 
                 </div>
             </div>
-            <!-- All Number -->
+            <!-- Balance TO-UP -->
             <div class="max-w-[45%] w-full">
+                <h3 class="text-neutral-800 text-xl font-medium font-['Poppins'] leading-[17px] mb-10">Balance TO-UP</h3>
 
+                <div class="max-w-[360px] w-full h-[281px] px-[30px] py-10 bg-white rounded-[20px] shadow-custom">
+                    <form>
+
+                        <h6 class="text-neutral-800 text-base font-normal font-['Poppins'] mb-[14px]">Amount</h6>
+                        <input
+                            class="max-w-[300px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600"
+                            type="text" placeholder="$00.00" />
+                        <p class="text-zinc-600 text-xs font-light font-['Poppins'] mt-[10px]">Minimum Amount: 1 USD</p>
+
+
+
+                    <div class="flex justify-end items-center">
+                        <button
+                            class="max-w-[166px] h-[45px] w-full py-3 rounded-[10px] shadow border border-blue-600 justify-center items-start gap-2.5 inline-flex mt-10">
+                            <div class="text-center text-blue-600 text-sm font-normal font-['Poppins']">TOP-UP Now</div>
+                        </button>
+                    </div>
+                    </form>
+                </div>
             </div>
 
 
