@@ -458,7 +458,7 @@ const filteredPhone = computed(() => {
                                                                 {{ phoneNumber }}
                                                                 <div v-if="selectedPhone === phoneNumber"
                                                                     class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px]">
-                                                                    <div class="pr-[3px]">
+                                                                    <div class="pr-[3px]">  
                                                                         <WeekListDropdown :selectedWeek="selectedWeek"
                                                                             @update:selectedWeek="updateSelectedWeek" />
                                                                     </div>

@@ -22,14 +22,15 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
 </script>
 
 <template>
-    <section class="ml-[25px] mb-[97px]">
-        <div class="flex flex-wrap gap-[25px] justify-between">
+    <section class="ml-0 lg:ml-[25px] mb-[40px] lg:mb-[97px]"
+        :class="{ 'block': showMessageCompose === !true, 'hidden': showMessageCompose === true }">
+        <div class="flex  gap-[25px] lg:flex-row flex-col">
             <!-- All Number -->
-            <div class="max-w-[45%] w-full">
-                <div class="max-w-[357px] h-[711px]  ">
+            <div class="max-w-[342px] lg:max-w-[357px] w-full mx-auto">
+                <div class="max-w-[342px] lg:max-w-[357px] h-[711px]  ">
                     <div class="flex justify-between items-center">
                         <h3 class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px]">All Number</h3>
-                        <button
+                        <button v-on:click="toggleShowMessageCompose(true)"
                             class="max-w-[164px] max-h-11 w-full  py-2.5 rounded-[10px] shadow border border-neutral-800 justify-center items-center gap-2 inline-flex">
                             <div class="text-neutral-800 text-sm font-normal font-['Poppins'] leading-[17px]">Start Chat
                             </div>
@@ -122,10 +123,11 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                 </div>
             </div>
             <!-- All Message -->
-            <div class="max-w-[50%] w-full">
-                <div class="w-[460px] h-[716px] p-[30px] bg-white rounded-[20px] shadow-custom">
-                    <div class="flex  items-center mb-[30px]">
-                        <h3 class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">All Message</h3>
+            <div class="max-w-[460px] w-full">
+                <div class="max-w-[375px] lg:max-w-[460px] h-[716px] p-[22px] bg-white rounded-[20px] shadow-none lg:shadow-custom">
+                    <div class="flex lg:justify-start justify-center  items-center mb-[30px]">
+                        <h3 class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">All
+                            Message</h3>
                         <ul
                             class="flex mb-0 list-none flex-row max-w-[168px]  rounded-xl border border-blue-600 overflow-hidden	 h-[37px]">
                             <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
@@ -155,7 +157,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
 
                         <input class="w-full outline-none" type="text" placeholder="Find Message">
 
-                       
+
 
                     </div>
 
@@ -303,6 +305,51 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
 
         </div>
     </section>
+    <section class="ml-0 lg:ml-[25px] mb-[97px] mt-0 lg:mt-[70px] w-full"
+        :class="{ 'block': showMessageCompose === true, 'hidden': showMessageCompose === !true }">
+        <div class="max-w-[808px] w-full h-[457px] px-[48px] py-0 lg:py-[50px] bg-white rounded-[30px] shadow-none lg:shadow-custom">
+            <h3 class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px] ">Message Compose</h3>
+            <form class="mt-[30px]">
+
+
+                <div class="flex flex-col lg:flex-row justify-between items-center">
+
+                    <div class="max-w-[284px] w-full ">
+                        <p class="text-zinc-600 text-sm font-normal font-['Poppins'] leading-[17px] mb-[14px] ">From Number
+                        </p>
+                        <input
+                            class="max-w-[284px] w-full h-10 bg-white rounded-lg border border-gray-400 outline-none px-4"
+                            type="text" placeholder="+85 654 646 655 874" />
+                    </div>
+
+
+                    <div class="max-w-[284px] w-full ">
+                        <p class="text-zinc-600 text-sm font-normal font-['Poppins'] leading-[17px] mb-[14px] ">From Number
+                        </p>
+                        <input
+                            class="max-w-[284px] w-full h-10 bg-white rounded-lg border border-gray-400 outline-none px-4"
+                            type="text" placeholder="+85 654 646 655 874" />
+                    </div>
+                </div>
+                <div class="mt-[24px]">
+
+                    <p class="text-zinc-600 text-sm font-normal font-['Poppins'] leading-[17px]">Message</p>
+                    <textarea
+                        class="max-w-[337px] lg:max-w-[608px] w-full h-[111px] bg-white rounded-xl border border-zinc-600 mt-[14px] outline-none px-4 py-2 resize-none"></textarea>
+                </div>
+                <div class="flex justify-end items-center mt-[24px]">
+                    <button
+                    v-on:click="toggleShowMessageCompose(true)"
+                        class="max-w-[289px] w-full  h-[49px]  rounded-xl border border-blue-600 justify-center items-center gap-2.5 inline-flex">
+                        <div class="text-blue-600 text-base font-normal font-['Poppins'] leading-[17px]">Send</div>
+                    </button>
+                </div>
+
+
+            </form>
+        </div>
+
+    </section>
 </template>
 <script >
 
@@ -317,6 +364,7 @@ export default {
             openTab: 1,
             messageSeenStatus: false,
             toggleArrowIcon: false,
+            showMessageCompose: false,
             numbersData: [
                 {
                     id: 1,
@@ -522,6 +570,10 @@ export default {
         toggleArrow: function (v) {
             this.toggleArrowIcon = v
         },
+        toggleShowMessageCompose(v) {
+            this.showMessageCompose = v;
+            console.log("ssssssssssjjjjjjjj", v);
+        }
 
 
     },

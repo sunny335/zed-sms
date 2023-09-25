@@ -23,7 +23,7 @@ import num7 from "../../assets/img/NumFlags/7.png"
     <section class="max-w-[825px]">
         <div class="flex flex-wrap ">
             <!-- Recent Message -->
-            <div class="max-w-[60%] w-full">
+            <div class="max-w-full lg:max-w-[60%] w-full">
                 <div class="max-w-[436px] w-full pl-6 pr-[30px] pt-6 pb-5 bg-white rounded-[20px] shadow">
                     <h4 class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px]">Recent Message</h4>
 
@@ -88,8 +88,8 @@ import num7 from "../../assets/img/NumFlags/7.png"
                 </div>
             </div>
             <!-- All Number -->
-            <div class="w-[40%]">
-                <div class="w-[329px] h-[546px]">
+            <div class="max-w-full lg:max-w-[40%] w-full mt-[82px]">
+                <div class="max-w-[329px] w-full mx-auto h-[546px]">
                     <div class="flex justify-between items-center mb-[30px]">
                         <h3 class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px]">All Number</h3>
                         <ul
@@ -203,12 +203,12 @@ import num7 from "../../assets/img/NumFlags/7.png"
                 </div>
             </div>
             <!-- Recent Transaction -->
-            <div class="w-[100%] mt-[48px]">
+            <div class="max-w-[100%] mt-[48px] w-full">
                 <div class="max-w-[825px]  w-full flex-col justify-start items-start gap-[30px] inline-flex ">
                     <div class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px] ">Recent Transaction
                     </div>
 
-                    <table class="border-collapse w-full ">
+                    <table class="border-collapse w-full  table-auto">
                         <thead>
                             <tr class="shadow-md">
                                 <th
@@ -248,7 +248,7 @@ import num7 from "../../assets/img/NumFlags/7.png"
                         class="max-w-[125px] h-[37px] w-full py-2.5 rounded-[10px] border border-blue-600 justify-center items-center gap-2.5 inline-flex mx-auto mb-[67px]">
                         <div class="text-blue-600 text-sm font-normal font-['Poppins'] leading-[17px]">{{ tableData.length == itemsToShow ? "See less" : "See More" }}</div>
                     </button>
-                    <!-- <button @click="toggleLoadMore">{{ buttonText }}</button> -->
+                 
 
                 </div>
             </div>

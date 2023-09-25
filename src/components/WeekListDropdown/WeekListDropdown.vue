@@ -29,7 +29,7 @@
           <span class="text-neutral-800 text-xs font-light ">
               {{ item }}
 
-          </span>
+          </span> 
             </li>
         </ul>
     </div>

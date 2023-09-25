@@ -23,11 +23,11 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
 </script>
 
 <template>
-    <section class="ml-[25px] mb-[97px]">
+    <section class="ml-0 lg:ml-[25px] mb-[97px]">
         <div class="flex flex-wrap gap-[49px]">
             <!-- Choose Payment -->
-            <div class="max-w-[401px] w-full">
-                <div class="w-[401px] h-[716px]">
+            <div class="max-w-[401px] w-full mx-auto">
+                <div class="max-w-[343px] lg:max-w-[401px] h-[635px] mx-auto">
                     <div class="flex  items-center mb-[30px]">
                         <h3 class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">Choose
                             Payment</h3>
@@ -61,10 +61,10 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                 </div>
             </div>
             <!-- Balance TO-UP -->
-            <div class="max-w-[45%] w-full">
-                <h3 class="text-neutral-800 text-xl font-medium font-['Poppins'] leading-[17px] mb-10">Balance TO-UP</h3>
+            <div class="max-w-[360px] w-full mx-auto">
+                <h3 class="text-neutral-800 text-xl font-medium font-['Poppins'] leading-[17px] mb-10 text-center lg:text-left">Balance TO-UP</h3>
 
-                <div class="max-w-[360px] w-full h-[281px] px-[30px] py-10 bg-white rounded-[20px] shadow-custom">
+                <div class="max-w-[360px] w-full h-[281px] px-[30px] py-10 bg-white rounded-[20px] shadow-none lg:shadow-custom">
                     <form>
 
                         <h6 class="text-neutral-800 text-base font-normal font-['Poppins'] mb-[14px]">Amount</h6>

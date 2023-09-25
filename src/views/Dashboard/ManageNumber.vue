@@ -22,11 +22,11 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
 </script>
 
 <template>
-    <section class="pl-[54px] mb-[97px]">
-        <div class="flex gap-[82px]">
+    <section class="pl-0 lg:pl-[54px] mb-[97px]">
+        <div class="flex flex-col lg:flex-row gap-0 lg:gap-[82px]">
             <!-- All Number -->
-            <div class="max-w-[40%] w-full">
-                <div class="w-[320px] h-[716px]">
+            <div class="max-w-[339px] w-full mx-auto">
+                <div class="max-w-[320px] h-[600px] mx-auto">
                     <div class="flex  items-center mb-[30px]">
                         <h3 class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">All
                             Number</h3>
@@ -132,8 +132,8 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
 
                 </div>
             </div>
-            <!-- All Number -->
-            <div class="max-w-[45%] w-full">
+            <!-- Number Details -->
+            <div class="max-w-[337px] w-full mx-auto">
                 <div
                     class="w-[337px] h-[589px] p-[30px] bg-white rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
                     <h3 class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px] mb-[20px]">Number

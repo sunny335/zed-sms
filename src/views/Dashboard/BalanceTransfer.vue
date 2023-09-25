@@ -11,10 +11,10 @@ import balanceTransfer from "../../assets/img/balanceTransfer.png"
 </script>
 
 <template>
-    <section class="ml-[25px] mb-[97px]">
-        <div class="flex justify-center items-center gap-2 mt-20">
-            <img :src="balanceTransfer" alt="">
-            <div class="max-w-[360px] w-full h-96 px-[30px] py-10 bg-white rounded-[20px] shadow-custom">
+    <section class="ml-0 lg:ml-[25px] mb-[97px]">
+        <div class="flex  flex-col-reverse lg:flex-row justify-center items-center gap-2 mt-0 lg:mt-20">
+            <img class="mx-[18px] lg:mx-0" :src="balanceTransfer" alt="">
+            <div class="max-w-[360px] w-full h-96 px-[30px] py-10 bg-white rounded-[20px] shadow-none lg:shadow-custom">
 
 
                 <form>
