@@ -2,7 +2,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import CommunityIcon from '../icons/IconCollections.vue'
-const login = !true;
+const login = true;
 </script>
 
 <template>
