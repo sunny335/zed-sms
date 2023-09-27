@@ -64,7 +64,7 @@ const router = createRouter({
       component: () => import('../views/Payment/TransferFailed.vue')
     },
     {
-      path: '/top-up-successful',
+      path: '/top-up-successful', 
       name: 'Top Up Successful',
       component: () => import('../views/Payment/TopUpSuccessful.vue')
     },

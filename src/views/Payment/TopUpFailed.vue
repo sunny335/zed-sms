@@ -7,7 +7,7 @@
     <section>
         <div class="flex justify-center items-center">
             <div
-                class="max-w-[585px] max-h-[383px]  px-6 lg:px-[100px] py-6 lg:py-[50px] bg-white rounded-3xl shadow-none lg:shadow-custom  flex-col justify-start items-center inline-flex mt-[116px] mb-[137px]">
+                class="max-w-[585px] max-h-[383px]  px-6 lg:px-[100px] py-6 lg:py-[50px] bg-white dark:bg-[#09132C] rounded-3xl shadow-none lg:shadow-custom  flex-col justify-start items-center inline-flex mt-[116px] mb-[137px]">
 
                 <svg class="mb-[20px]" width="88" height="89" viewBox="0 0 88 89" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -19,9 +19,9 @@
 
 
                 <h2
-                    class="text-neutral-800 text-[28px] font-medium font-['Poppins'] leading-[34.58px] tracking-tight mb-[10px]">
+                    class="text-neutral-800 dark:text-white text-[28px] font-medium font-['Poppins'] leading-[34.58px] tracking-tight mb-[10px]">
                     Top-up Failed</h2>
-                <p class="text-zinc-600 text-center text-sm lg:text-base font-normal font-['Poppins'] leading-tight tracking-tight mb-[40px]">Your top-up of $23.25 was unfortunately failed.</p>
+                <p class="text-zinc-600 dark:text-white text-center text-sm lg:text-base font-normal font-['Poppins'] leading-tight tracking-tight mb-[40px]">Your top-up of $23.25 was unfortunately failed.</p>
                 <div
                     class="max-w-[258px] h-[53px] px-20 py-3.5 bg-blue-600 rounded-xl justify-center items-center gap-2.5 inline-flex cursor-pointer">
                     <p class="text-white text-xl font-medium font-['Poppins'] leading-normal tracking-tight">Try Again</p>

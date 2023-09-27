@@ -51,10 +51,10 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                         </div>
                         <h3
-                            class="max-w-[360px] text-neutral-800 text-xl font-medium font-['Poppins'] truncate overflow-hidden leading-relaxed tracking-tight mt-[18px]">
+                            class="max-w-[360px] text-neutral-800 dark:text-neutral-100 text-xl font-medium font-['Poppins'] truncate overflow-hidden leading-relaxed tracking-tight mt-[18px]">
                             {{ videoData.videoTitle }} </h3>
                         <p
-                            class="max-w-[360px] h-[47px] text-zinc-600 text-sm lg:text-base font-light font-['Poppins'] leading-normal mb-[8px] multiline block lg:hidden">
+                            class="max-w-[360px] h-[47px] text-zinc-600 text-sm lg:text-base font-light font-['Poppins'] leading-normal mb-[8px] multiline-tutorial block lg:hidden">
                             {{ videoData.videoDescription }}</p>
                     </div>
                     <div>
@@ -171,7 +171,10 @@ export default {
 
 </script>
 <style>
-.multiline {
+
+
+@media (max-width: 767px){
+    .multiline-tutorial {
     display: block;
     display: -webkit-box;
     margin: 0 auto;
@@ -180,4 +183,9 @@ export default {
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-}</style>
+}
+
+}
+
+
+</style>

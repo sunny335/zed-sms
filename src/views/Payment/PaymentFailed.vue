@@ -5,11 +5,11 @@ import paymentFailed from "../../assets/img/payment/paymentFailed.png"
 
 <template>
     <section
-        class="bg-white mt-10 mb-[102px]  lg:py-10 px-0 pt-21 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 pb-0 lg:mb-[145px] lg:mt-[128px]">
+        class="bg-white  dark:bg-[#070F24]  mt-10 mb-[102px]  lg:py-10 px-0 pt-21 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 pb-0 lg:mb-[145px] lg:mt-[128px]">
         <div class="flex flex-col-reverse lg:flex-row items-center justify-center gap-[80px] lg:gap-[43px]">
             <img class="max-w-[300px] lg:max-w-[500px] mx-auto" :src=paymentFailed alt="" srcset="">
             <div
-                class="max-w-[482px] w-full max-h-[363px] px-[20px] py-10 lg:px-10 lg:py-10 bg-neutral-50 lg:bg-white rounded-none lg:rounded-3xl shadow-none lg:shadow-custom flex-col justify-start items-center  inline-flex">
+                class="max-w-[482px] w-full max-h-[363px] px-[20px] py-10 lg:px-10 lg:py-10 bg-neutral-50 lg:bg-white  dark:bg-slate-900 rounded-none lg:rounded-3xl shadow-none lg:shadow-custom flex-col justify-start items-center  inline-flex">
 
                 <svg class="mb-[20px]" width="106" height="105" viewBox="0 0 106 105" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -18,9 +18,9 @@ import paymentFailed from "../../assets/img/payment/paymentFailed.png"
                 </svg>
 
 
-                <h2 class="text-neutral-800 text-[28px] font-medium font-['Poppins'] leading-[34.58px] tracking-tight mb-[10px]">
+                <h2 class="text-neutral-800 dark:text-white text-[28px] font-medium font-['Poppins'] leading-[34.58px] tracking-tight mb-[10px]">
                     Payment Failed</h2>
-                <p class="text-center text-zinc-600 w-full px-2 text-base font-normal font-['Poppins'] leading-tight tracking-tight mb-[40px]">Your payment of
+                <p class="text-center text-zinc-600 dark:text-white w-full px-2 text-base font-normal font-['Poppins'] leading-tight tracking-tight mb-[40px]">Your payment of
                     $23.25 was unfortunately failed.</p>
                 <div
                     class="max-w-[258px] h-[53px] px-20 py-3.5 bg-blue-600 rounded-xl justify-center items-center gap-2.5 inline-flex cursor-pointer">

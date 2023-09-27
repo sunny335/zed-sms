@@ -17,17 +17,17 @@ import blueTik from '../../assets/img/blueTik.svg';
                     <img :src="ContactUs" alt="" srcset="">
                     <div class="max-w-[534px] w-full">
                         <form>
-                            <label class="text-zinc-600 text-base font-normal font-['Poppins']">Email or Username</label>
-                            <input class="max-w-[534px] w-full h-14 relative rounded-xl border border-gray-400 mt-[16px]" />
+                            <label class="text-zinc-600 dark:text-white text-base font-normal font-['Poppins']">Email or Username</label>
+                            <input class="max-w-[534px] w-full h-14 relative rounded-xl border border-gray-400 mt-[16px] dark:bg-transparent" />
 
                             <div class="mt-[40px]">
-                                <p class=" text-neutral-800 text-base font-semibold font-['Poppins'] leading-tight">Select
+                                <p class=" text-neutral-800  dark:text-white text-base font-semibold font-['Poppins'] leading-tight">Select
                                     Subject?</p>
                                 <div class="my-[24px] lg:my-[36px]">
                                     <ul
                                         class="flex flex-col lg:flex-row justify-start mb-0 list-none  mx-auto gap-[20px] lg:gap-[35px] rounded-2xl overflow-hidden 	 ">
                                         <li class="max-w-[300px]-mb-px last:mr-0  text-center cursor-pointer">
-                                            <a class="w-full  flex items-center  text-neutral-800 text-base font-normal font-['Poppins'] leading-tight "
+                                            <a class="w-full  flex items-center  text-neutral-800  dark:text-white text-base font-normal font-['Poppins'] leading-tight "
                                                 v-on:click="toggleTabs(1); selectMessage(1)">
                                                 <img class="w-[14px] h-[14px] mr-[2px] lg:mr-[10px]" :src="blueTik" alt=""
                                                     srcset=""
@@ -40,7 +40,7 @@ import blueTik from '../../assets/img/blueTik.svg';
                                             </a>
                                         </li>
                                         <li class="max-w-[300px] -mb-px last:mr-0  text-center cursor-pointer">
-                                            <a class="w-full flex items-center text-neutral-800 text-base font-normal font-['Poppins'] leading-tight "
+                                            <a class="w-full flex items-center text-neutral-800 dark:text-white text-base font-normal font-['Poppins'] leading-tight "
                                                 v-on:click="toggleTabs(2);">
                                                 <img class="w-[14px] h-[14px] mr-[2px] lg:mr-[10px]" :src="blueTik" alt=""
                                                     srcset=""
@@ -52,7 +52,7 @@ import blueTik from '../../assets/img/blueTik.svg';
                                             </a>
                                         </li>
                                         <li class="max-w-[300px] -mb-px last:mr-0  text-center cursor-pointer">
-                                            <a class="w-full flex items-center text-neutral-800 text-base font-normal font-['Poppins'] leading-tight "
+                                            <a class="w-full flex items-center text-neutral-800 dark:text-white text-base font-normal font-['Poppins'] leading-tight "
                                                 v-on:click="toggleTabs(3);">
                                                 <img class="w-[14px] h-[14px] mr-[2px] lg:mr-[10px]" :src="blueTik" alt=""
                                                     srcset=""
@@ -69,9 +69,9 @@ import blueTik from '../../assets/img/blueTik.svg';
                             </div>
                             <div class="mt-[40px]">
                                 <label
-                                    class="text-zinc-600 text-base font-normal font-['Poppins'] block mb-[16px]">Message</label>
+                                    class="text-zinc-600  dark:text-white text-base font-normal font-['Poppins'] block mb-[16px]">Message</label>
                                 <textarea
-                                    class="max-w-[534px] w-full h-28 relative rounded-xl border border-gray-400"></textarea>
+                                    class="max-w-[534px] w-full h-28 relative rounded-xl border border-gray-400 dark:bg-transparent"></textarea>
 
                             </div>
                             <div class="flex justify-end items-center mt-[30px]">

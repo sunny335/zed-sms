@@ -68,35 +68,37 @@ const filteredPhone = computed(() => {
 
 </script>
 
-<template>
-    <div>
-        <h1 class="text-neutral-800 text-center text-[32px] font-medium font-['Poppins'] leading-[22px]">To Get A Number
+<template >
+
+
+    <div >
+        <h1 class="text-neutral-800 dark:text-white  text-center text-[32px] font-medium font-['Poppins'] leading-[22px]">To Get A Number
         </h1>
-        <p class="text-neutral-800 text-center text-base font-light font-['Poppins'] leading-[11px] mt-[20px]">for any kind
+        <p class="text-neutral-800 dark:text-white  text-center text-base font-light font-['Poppins'] leading-[11px] mt-[20px]">for any kind
             of services</p>
     </div>
-    <div class="flex flex-wrap mt-[30px]">
+    <div class="flex flex-wrap mt-[30px] ">
         <div class="w-full">
             <ul
                 class="flex mb-0 list-none flex-row max-w-[450px] mx-auto rounded-2xl border border-blue-600 overflow-hidden	 h-[58px]">
                 <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                     <a class="w-[150px] flex items-center justify-center text-center text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px] "
                         v-on:click="toggleTabs(1); selectCountry(null); selectPhone(null); selectService(null)"
-                        v-bind:class="{ 'text-neutral-800 bg-white': openTab !== 1, 'text-white bg-blue-600': openTab === 1 }">
+                        v-bind:class="{ 'text-neutral-800  dark:text-white dark:bg-slate-900  bg-white': openTab !== 1, 'text-white bg-blue-600': openTab === 1 }">
                         Shared
                     </a>
                 </li>
                 <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                     <a class="w-[150px] flex items-center justify-center text-center text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px] "
                         v-on:click="toggleTabs(2); selectCountry(null); selectPhone(null); selectService(null)"
-                        v-bind:class="{ 'text-neutral-800 bg-white': openTab !== 2, 'text-white bg-blue-600': openTab === 2 }">
+                        v-bind:class="{ 'text-neutral-800  dark:text-white dark:bg-slate-900 bg-white': openTab !== 2, 'text-white bg-blue-600': openTab === 2 }">
                         Private
                     </a>
                 </li>
                 <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                     <a class="w-[150px] flex items-center justify-center text-center text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px] "
                         v-on:click="toggleTabs(3); selectCountry(null); selectPhone(null); selectService(null)"
-                        v-bind:class="{ 'text-neutral-800 bg-white': openTab !== 3, 'text-white bg-blue-600': openTab === 3 }">
+                        v-bind:class="{ 'text-neutral-800  dark:text-white dark:bg-slate-900  bg-white': openTab !== 3, 'text-white bg-blue-600': openTab === 3 }">
                         Temporary
                     </a>
                 </li>
@@ -110,7 +112,7 @@ const filteredPhone = computed(() => {
                             class="flex items-center gap-[20px] justify-center border-b border-zinc-600 w-max mx-auto pb-[26px]">
                             <div v-if="selectedCountry" class="flex gap-[6px] items-center">
 
-                                <div class="text-center text-zinc-600 text-sm font-normal font-['Poppins']">Country:
+                                <div class="text-center text-zinc-600 dark:text-white  text-sm font-normal font-['Poppins']">Country:
                                 </div>
                                 <div class="flex gap-[6px] items-center">
                                     <!-- <img :src="PhilipinsImg" alt="Image Description" /> -->
@@ -122,7 +124,7 @@ const filteredPhone = computed(() => {
                                 </div>
                             </div>
                             <div class="flex gap-[6px] items-center" v-if="selectedService">
-                                <div class="text-center text-zinc-600 text-sm font-normal font-['Poppins']">Service:
+                                <div class="text-center text-zinc-600 dark:text-white  text-sm font-normal font-['Poppins']">Service:
                                 </div>
 
                                 <div class="flex gap-[6px] items-center">
@@ -133,21 +135,21 @@ const filteredPhone = computed(() => {
                                 </div>
                             </div>
                             <div class="flex gap-[6px] items-center" v-if="selectedPhone">
-                                <div class="text-center text-zinc-600 text-sm font-normal font-['Poppins']">Number:
+                                <div class="text-center text-zinc-600 dark:text-white  text-sm font-normal font-['Poppins']">Number:
                                 </div>
-                                <div class="text-zinc-600 text-sm font-light font-['Poppins']">{{ selectedPhone }}</div>
+                                <div class="text-zinc-600 text-sm dark:text-white  font-light font-['Poppins']">{{ selectedPhone }}</div>
                             </div>
                             <div class="flex gap-[6px] items-center" v-if="selectedPhone && selectedWeek">
 
-                                <div class="text-center text-zinc-600 text-sm font-normal font-['Poppins']">Rent:
+                                <div class="text-center text-zinc-600 dark:text-white  text-sm font-normal font-['Poppins']">Rent:
                                 </div>
-                                <div class="text-zinc-600 text-sm font-light font-['Poppins']">{{ selectedWeek }}</div>
+                                <div class="text-zinc-600 dark:text-white  text-sm font-light font-['Poppins']">{{ selectedWeek }}</div>
                             </div>
                             <div class="flex gap-[6px] items-center"
                                 v-if="openTab === 2 ? selectedCountry?.price : selectedService">
-                                <div class="text-center text-zinc-600 text-sm font-normal font-['Poppins']">Cost:
+                                <div class="text-center text-zinc-600 dark:text-white text-sm font-normal font-['Poppins']">Cost:
                                 </div>
-                                <div class="text-zinc-600 text-sm font-light font-['Poppins']">{{ openTab === 2 ?
+                                <div class="text-zinc-600 dark:text-white text-sm font-light font-['Poppins']">{{ openTab === 2 ?
                                    selectedCountry?.price : selectedService.price }}
                                 </div>
                             </div>
@@ -172,7 +174,7 @@ const filteredPhone = computed(() => {
 
                                                 </div>
                                                 <input type="search" id="default-search"
-                                                    class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                    class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-transparent dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                     placeholder="Enter country" required v-model="selectedSearchCountry">
 
                                             </div>
@@ -195,7 +197,7 @@ const filteredPhone = computed(() => {
                                                             <!-- <img class="w-[30px] h-[30px] rounded-full"
                                                                 :src="PhilipinsImg" /> -->
                                                             <div
-                                                                class="grow shrink basis-0 text-neutral-800 text-base font-light font-['Poppins']">
+                                                                class="grow shrink basis-0 text-neutral-800  dark:text-white text-base font-light font-['Poppins']">
                                                                 {{ country.name }}</div>
                                                         </div>
                                                     </div>
@@ -224,7 +226,7 @@ const filteredPhone = computed(() => {
 
                                                 </div>
                                                 <input type="search" id="default-search"
-                                                    class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                    class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-transparent dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                     placeholder="Enter Service" required
                                                     v-model="selectedSearchService"
                                                     >
@@ -249,11 +251,11 @@ const filteredPhone = computed(() => {
                                                             <img :src="service.flag" class="w-[30px] h-[30px] rounded-full"
                                                                 alt="flag" />
                                                             <div
-                                                                class="grow shrink basis-0 text-neutral-800 text-base font-light font-['Poppins']">
+                                                                class="grow shrink basis-0 text-neutral-800 dark:text-white text-base font-light font-['Poppins']">
                                                                 {{ service.name }}</div>
                                                         </div>
                                                         <div
-                                                            class="text-right text-neutral-800 text-base font-light font-['Poppins']">
+                                                            class="text-right text-neutral-800 dark:text-white text-base font-light font-['Poppins']">
                                                             {{ service.price }}</div>
                                                     </div>
 
@@ -280,7 +282,7 @@ const filteredPhone = computed(() => {
 
                                                 </div>
                                                 <input type="search" id="default-search"
-                                                    class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                    class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-transparent dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                                     placeholder="Enter number" required
                                                     v-model="selectedSearchPhone"
                                                     >
@@ -301,7 +303,7 @@ const filteredPhone = computed(() => {
                                                             class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
 
                                                             <div
-                                                                class="grow shrink basis-0 text-neutral-800 text-base font-light font-['Poppins'] flex items-center gap-[16px]">
+                                                                class="grow shrink basis-0 text-neutral-800 dark:text-white text-base font-light font-['Poppins'] flex items-center gap-[16px]">
                                                                 {{ phoneNumber }}
                                                                 <div v-if="selectedPhone === phoneNumber"
                                                                     class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px]">
@@ -312,7 +314,7 @@ const filteredPhone = computed(() => {
                                                                     <div @click="handleModalOpen(true)"
                                                                         class="flex items-center gap-[6px] border-l border-zinc-600 pl-[3px]">
                                                                         <span
-                                                                            class="text-zinc-600 text-xs font-normal font-['Poppins']">Get
+                                                                            class="text-zinc-600 dark:text-white text-xs font-normal font-['Poppins']">Get
                                                                             Now</span>
                                                                         <svg width="14" height="14" viewBox="0 0 14 14"
                                                                             fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -355,7 +357,7 @@ const filteredPhone = computed(() => {
 
                                         <form>
                                             <label for="default-search"
-                                                class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                                                class="mb-2 text-sm font-medium text-gray-900 dark:text-white sr-only dark:text-white">Search</label>
                                             <div class="relative">
                                                 <div
                                                     class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -393,11 +395,11 @@ const filteredPhone = computed(() => {
                                                             <img :src="country.flag" class="w-[30px] h-[30px] rounded-full"
                                                                 alt="Flag" />
                                                             <div
-                                                                class="grow shrink basis-0 text-neutral-800 text-base font-light font-['Poppins']">
+                                                                class="grow shrink basis-0 text-neutral-800 dark:text-white text-base font-light font-['Poppins']">
                                                                 {{ country.name }}</div>
                                                         </div>
                                                         <div
-                                                            class="text-right text-neutral-800 text-base font-light font-['Poppins']">
+                                                            class="text-right text-neutral-800 dark:text-white text-base font-light font-['Poppins']">
                                                             {{ country.price }}</div>
                                                     </div>
 
@@ -458,7 +460,7 @@ const filteredPhone = computed(() => {
                                                                     <div @click="handleModalOpen(true)"
                                                                         class="flex items-center gap-[6px] border-l border-zinc-600 pl-[3px]">
                                                                         <span
-                                                                            class="text-zinc-600 text-xs font-normal font-['Poppins']">Get
+                                                                            class="text-zinc-600 dark:text-white text-xs font-normal font-['Poppins']">Get
                                                                             Now</span>
                                                                         <svg width="14" height="14" viewBox="0 0 14 14"
                                                                             fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -538,7 +540,7 @@ const filteredPhone = computed(() => {
                                                             <img :src="country.flag" class="w-[30px] h-[30px] rounded-full"
                                                                 alt="Flag" />
                                                             <div
-                                                                class="grow shrink basis-0 text-neutral-800 text-base font-light font-['Poppins']">
+                                                                class="grow shrink basis-0 text-neutral-800 dark:text-white text-base font-light font-['Poppins']">
                                                                 {{ country.name }}</div>
                                                         </div>
                                                     </div>
@@ -591,11 +593,11 @@ const filteredPhone = computed(() => {
                                                             <img :src="service.flag" class="w-[30px] h-[30px] rounded-full"
                                                                 alt="Flag" />
                                                             <div
-                                                                class="grow shrink basis-0 text-neutral-800 text-base font-light font-['Poppins']">
+                                                                class="grow shrink basis-0 text-neutral-800 dark:text-white text-base font-light font-['Poppins']">
                                                                 {{ service.name }}</div>
                                                         </div>
                                                         <div
-                                                            class="text-right text-neutral-800 text-base font-light font-['Poppins']">
+                                                            class="text-right text-neutral-800 dark:text-white text-base font-light font-['Poppins']">
                                                             {{ service.price }}</div>
                                                     </div>
                                                     <div v-if="(selectedService?.name === service?.name) && (selectedService?.flag === service?.flag)"
@@ -604,7 +606,7 @@ const filteredPhone = computed(() => {
                                                         <div @click="handleModalOpen(true)"
                                                             class="flex items-center gap-[6px] pl-[3px]">
                                                             <span
-                                                                class="text-zinc-600 text-xs font-normal font-['Poppins']">Get
+                                                                class="text-zinc-600 dark:text-white text-xs font-normal font-['Poppins']">Get
                                                                 Now</span>
                                                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                                                                 xmlns="http://www.w3.org/2000/svg">
@@ -666,7 +668,7 @@ const filteredPhone = computed(() => {
                                 <div class="">
                                     <div v-if="selectedCountry"
                                         class="flex items-center border-b border-zinc-200 py-[16px]">
-                                        <div class="text-left text-zinc-600 text-sm font-medium font-['Poppins'] w-2/4 ">
+                                        <div class="text-left text-zinc-600  dark:text-white text-sm font-medium font-['Poppins'] w-2/4 ">
                                             Country:
                                         </div>
                                         <div class="flex gap-[6px] items-center w-2/4">
@@ -674,47 +676,47 @@ const filteredPhone = computed(() => {
                                             <img :src="selectedCountry?.flag" class="w-[20px] h-[20px] rounded-full"
                                                 alt="Flag" width="20" />
 
-                                            <div class="text-center text-zinc-600 text-sm font-light font-['Poppins']">
+                                            <div class="text-center text-zinc-600 dark:text-white text-sm font-light font-['Poppins']">
                                                 {{ selectedCountry.name }}
                                             </div>
                                         </div>
                                     </div>
                                     <div v-if="selectedService"
                                         class="flex items-center border-b border-zinc-200 py-[16px]">
-                                        <div class="text-left text-zinc-600 text-sm font-medium font-['Poppins'] w-2/4">
+                                        <div class="text-left text-zinc-600 dark:text-white text-sm font-medium font-['Poppins'] w-2/4">
                                             Service:
                                         </div>
                                         <div class="flex gap-[6px] items-center">
                                             <img :src="selectedService.flag" alt="Image Description" width="20" />
                                             <div
-                                                class="text-center text-zinc-600 text-sm font-light font-['Poppins'] w-2/4	">
+                                                class="text-center text-zinc-600 dark:text-white text-sm font-light font-['Poppins'] w-2/4	">
                                                 {{ selectedService.name }}
                                             </div>
                                         </div>
                                     </div>
                                     <div v-if="selectedPhone" class="flex items-center border-b border-zinc-200 py-[16px]">
-                                        <div class="text-left text-zinc-600 text-sm font-medium font-['Poppins'] w-2/4">
+                                        <div class="text-left text-zinc-600 dark:text-white text-sm font-medium font-['Poppins'] w-2/4">
                                             Number:
                                         </div>
-                                        <div class="text-zinc-600 text-sm font-light font-['Poppins'] w-2/4	">
+                                        <div class="text-zinc-600 dark:text-white text-sm font-light font-['Poppins'] w-2/4	">
                                             {{ selectedPhone }}
                                         </div>
                                     </div>
                                     <div v-if="selectedPhone && selectedWeek"
                                         class="flex items-center border-b border-zinc-200 py-[16px]">
-                                        <div class="text-left text-zinc-600 text-sm font-medium font-['Poppins'] w-2/4">
+                                        <div class="text-left text-zinc-600 dark:text-white text-sm font-medium font-['Poppins'] w-2/4">
                                             Rent:
                                         </div>
-                                        <div class="text-zinc-600 text-sm font-light font-['Poppins'] w-2/4	">
+                                        <div class="text-zinc-600 dark:text-white text-sm font-light font-['Poppins'] w-2/4	">
                                             {{ selectedWeek }}
                                         </div>
                                     </div>
                                     <div v-if="openTab === 2 ? selectedCountry.price : selectedService.price"
                                         class="flex items-center border-b border-zinc-200 py-[16px]">
-                                        <div class="text-left text-zinc-600 text-sm font-medium font-['Poppins'] w-2/4">
+                                        <div class="text-left text-zinc-600 dark:text-white text-sm font-medium font-['Poppins'] w-2/4">
                                             Cost:
                                         </div>
-                                        <div class="text-zinc-600 text-sm font-light font-['Poppins'] w-2/4	">
+                                        <div class="text-zinc-600 dark:text-white text-sm font-light font-['Poppins'] w-2/4	">
                                             {{
                                                 openTab === 2 ? selectedCountry.price : selectedService.price }}
                                         </div>
@@ -730,7 +732,7 @@ const filteredPhone = computed(() => {
                                             <path d="M13 5.5H1M1 5.5L5.5 1M1 5.5L5.5 10" stroke="#495057"
                                                 stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
-                                        <div class="text-zinc-600 text-sm font-light font-['Poppins'] ">
+                                        <div class="text-zinc-600 dark:text-white text-sm font-light font-['Poppins'] ">
                                             Back
                                         </div>
                                     </div>

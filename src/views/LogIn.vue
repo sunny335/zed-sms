@@ -8,21 +8,21 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
 
 </script>
 <template>
-    <section class="bg-white pt-0 lg:pt-10 pb-[39px] flex justify-center items-center">
+    <section class="bg-white dark:bg-[#070F24] pt-0 lg:pt-10 pb-[39px] flex justify-center items-center">
         <div
-            class="min-w-[1112px] min-h-[687px] px-[120px] py-0 lg:py-10 bg-white rounded-none lg:rounded-[30px] shadow-none lg:shadow-custom flex-col justify-start items-center gap-[50px] inline-flex">
-            <h2 class="text-left lg:text-center w-[40%] text-neutral-800 text-[32px] font-medium font-['Poppins']">Log in
+            class="min-w-[1112px] min-h-[687px] px-[120px] py-0 lg:py-10 bg-white dark:bg-[#070F24] rounded-none lg:rounded-[30px] shadow-none lg:shadow-custom flex-col justify-start items-center gap-[50px] inline-flex">
+            <h2 class="text-left lg:text-center w-[40%] text-neutral-800 dark:text-white text-[32px] font-medium font-['Poppins']">Log in
             </h2>
             <div class="flex-col flex lg:flex-row justify-center items-center  w-full min-h-[381px]">
                 <div>
                     <form>
                         <div class="max-w-[354px]">
-                            <label class="text-zinc-600 text-base font-normal font-['Poppins']">Email or Username</label>
-                            <input type="text" class="w-[354px] px-[16px] py-[8px] h-14 relative rounded-xl border border-gray-400 mt-2" />
+                            <label class="text-zinc-600 dark:text-white text-base font-normal font-['Poppins']">Email or Username</label>
+                            <input type="email" class="w-[354px] px-[16px] py-[8px] h-14 relative rounded-xl border border-gray-400 mt-2 dark:bg-transparent" />
                         </div>
                         <div class="max-w-[354px] mt-4">
                             <div class="flex justify-between items-center">
-                                <label class="text-zinc-600 text-base font-normal font-['Poppins'] block ">Password</label>
+                                <label class="text-zinc-600  dark:text-white text-base  font-normal font-['Poppins'] block ">Password</label>
                                 <div class="flex items-center gap-2">
                                     <svg width="19" height="17" viewBox="0 0 19 17" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +41,7 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
 
                                 </div>
                             </div>
-                            <input type="password" class="w-[354px] px-[16px] py-[8px] h-14 relative rounded-xl border border-gray-400 mt-2" />
+                            <input type="password" class="w-[354px] px-[16px] py-[8px] h-14 relative rounded-xl border border-gray-400 mt-2 dark:bg-transparent" />
                         </div>
                         <div class="">
                             <label for="" class="flex gap-4  justify-between items-center my-5">
@@ -65,10 +65,10 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                                         </label>
                                     </div>
 
-                                    <p class="text-zinc-600 text-base font-light font-['Poppins']">Remember me</p>
+                                    <p class="text-zinc-600  dark:text-white text-base font-light font-['Poppins']">Remember me</p>
                                 </div>
                                 <RouterLink to="/reset-password"
-                                    class="text-right text-zinc-600 text-base font-light font-['Poppins'] underline">Forget
+                                    class="text-right text-zinc-600  dark:text-white text-base font-light font-['Poppins'] underline">Forget
                                     password!</RouterLink>
                             </label>
                         </div>
@@ -77,10 +77,10 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                             <div class="text-center text-white text-2xl font-normal font-['Poppins']">Log in</div>
                         </button>
                     </form>
-                    <div class="mt-[24px]"><span class="text-zinc-600 text-base font-normal font-['Poppins']">Don’t have an
-                            ccount? </span><span class="text-zinc-600 text-base font-normal font-['Poppins'] underline">
+                    <div class="mt-[24px]"><span class="text-zinc-600  dark:text-white text-base font-normal font-['Poppins']">Don’t have an
+                            ccount? </span><span class="text-zinc-600  dark:text-white text-base font-normal font-['Poppins'] underline">
                             <RouterLink to="/signUp"
-                                class="text-right text-zinc-600 text-base font-light font-['Poppins'] underline">
+                                class="text-right text-zinc-600  dark:text-white text-base font-light font-['Poppins'] underline">
                                 Sign Up
                             </RouterLink>
                         </span></div>
@@ -104,36 +104,36 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
 
                 <div class="max-w-[354px] max-h-full mt-[50px]">
                     <button
-                        class="max-w-[354px] max-h-[60px] w-full  pt-[17.50px] pb-[18.50px] bg-white rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
+                        class="max-w-[354px] max-h-[60px] w-full  pt-[17.50px] pb-[18.50px] bg-white dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
                         <div class="self-stretch justify-center items-center gap-5 inline-flex">
                             <div class="w-6 h-6 relative">
                                 <img :src="google" alt="" srcset="">
                             </div>
-                            <div class="text-neutral-800 text-base font-light font-['Poppins']">Continue with Google</div>
+                            <div class="text-neutral-800 dark:text-white text-base font-light font-['Poppins']">Continue with Google</div>
                         </div>
                     </button>
                     <button
-                        class="max-w-[354px] max-h-[60px]  w-full  pt-[17.50px] pb-[18.50px] bg-white rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
+                        class="max-w-[354px] max-h-[60px]  w-full  pt-[17.50px] pb-[18.50px] bg-white  dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
                         <div class="self-stretch justify-center items-center gap-5 inline-flex">
                             <div class="w-6 h-6 relative">
                                 <img :src="fb" alt="" srcset="">
                             </div>
-                            <div class="text-neutral-800 text-base font-light font-['Poppins']">Continue with Facebook</div>
+                            <div class="text-neutral-800  dark:text-white text-base font-light font-['Poppins']">Continue with Facebook</div>
                         </div>
                     </button>
                     <button
-                        class="max-w-[354px] max-h-[60px] w-full  pt-[17.50px] pb-[18.50px] bg-white rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
+                        class="max-w-[354px] max-h-[60px] w-full  pt-[17.50px] pb-[18.50px] bg-white dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
                         <div class="self-stretch justify-center items-center gap-5 inline-flex">
                             <div class="w-6 h-6 relative">
                                 <img :src="apple" alt="" srcset="">
                             </div>
-                            <div class="text-neutral-800 text-base font-light font-['Poppins']">Continue with Apple ID</div>
+                            <div class="text-neutral-800 dark:text-white text-base font-light font-['Poppins']">Continue with Apple ID</div>
                         </div>
                     </button>
                     <button
-                        class="max-w-[354px] max-h-[60px]  w-full  pt-[18.50px] pb-[17.50px] bg-white rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
+                        class="max-w-[354px] max-h-[60px]  w-full  pt-[18.50px] pb-[17.50px] bg-white dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
                         <div class="self-stretch justify-center items-center gap-4 inline-flex">
-                            <div class="text-neutral-800 text-base font-light font-['Poppins']">Continue with Others</div>
+                            <div class="text-neutral-800 dark:text-white text-base font-light font-['Poppins']">Continue with Others</div>
                         </div>
                     </button>
                 </div>

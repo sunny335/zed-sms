@@ -18,11 +18,11 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
         <div class="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5">
           <div class="max-w-xl mb-0 lg:mb-6">
             <h3
-              class="max-w-[387px] text-gray-900 text-2xl lg:text-[42px] font-medium font-['Poppins'] leading-[34px] lg:leading-[50px]">
+              class="max-w-[387px] text-gray-900 dark:text-white text-2xl lg:text-[42px] font-medium font-['Poppins'] leading-[34px] lg:leading-[50px]">
               Send & Receive <br />
               Message Online </h3>
             <p
-              class="max-w-[387px] mt-4 lg:mt-[30px] text-zinc-600 text-xs font-light lg:text-base lg:font-normal font-['Poppins'] leading-relaxed">
+              class="max-w-[387px] mt-4 lg:mt-[30px] text-zinc-600 dark:text-white  text-xs font-light lg:text-base lg:font-normal font-['Poppins'] leading-relaxed">
               Powerful,
               self-serve product easy to use for easily communicate with our virtual sim cards, sign up us or see the demo
             </p>
@@ -559,14 +559,16 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
 
         </div>
       </div>
-   <div class="hidden lg:block">
-    <GetANumber />
-   </div>
-   </div>
-      <!-- virtual-->
-      <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
+      <div class="hidden lg:block">
+        <GetANumber />
+      </div>
+    </div>
+    <!-- virtual-->
+    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
       <div class="pt-[136px] lg:pt-[154px]">
-        <h3 class="max-w-[197px]  mx-auto lg:max-w-full text-center text-neutral-800 text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[44px]">Buy virtual sim
+        <h3
+          class="max-w-[197px]  mx-auto lg:max-w-full text-center text-neutral-800 dark:text-white  text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[44px]">
+          Buy virtual sim
           easier than ever</h3>
 
         <div class="mt-[50px] lg:mt-[100px] flex flex-col  items-center">
@@ -577,26 +579,35 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
                 stroke-linecap="round" stroke-linejoin="round" />
             </svg>
             <div
-              class="w-[67px] h-[66px] p-5 rounded-[100px] border border-neutral-800 justify-center items-center gap-2.5 inline-flex">
-              <div class="text-neutral-800 text-2xl font-medium font-['Inter'] leading-relaxed">01</div>
+              class="w-[67px] h-[66px] p-5 rounded-[100px] border border-neutral-800 dark:border-white justify-center items-center gap-2.5 inline-flex">
+              <div class="text-neutral-800 dark:text-white  text-2xl font-medium font-['Inter'] leading-relaxed">01</div>
             </div>
-            <svg class="mr-[30px]" width="292" height="39" viewBox="0 0 292 39" fill="none"
+            <svg v-if="Theme === 'light'"  class="mr-[30px]" width="292" height="39" viewBox="0 0 292 39" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path d="M1 19.6693H291M291 19.6693L273.765 1.16931M291 19.6693L273.765 38.1693" stroke="#1E2329"
                 stroke-linecap="round" stroke-linejoin="round" />
             </svg>
+            <svg v-if="Theme === 'dark'"  class="mr-[30px]" width="292" height="39" viewBox="0 0 292 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 19.6693H291M291 19.6693L273.765 1.16931M291 19.6693L273.765 38.1693" stroke="#F5F5F5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
             <div
-              class="w-[69px] h-[66px] px-[19px] py-5 rounded-[100px] border border-neutral-800 justify-center items-center gap-2.5 inline-flex">
-              <div class="text-neutral-800 text-2xl font-medium font-['Inter'] leading-relaxed">02</div>
+              class="w-[69px] h-[66px] px-[19px] py-5 rounded-[100px] border border-neutral-800 dark:border-white justify-center items-center gap-2.5 inline-flex">
+              <div class="text-neutral-800 dark:text-white  text-2xl font-medium font-['Inter'] leading-relaxed">02</div>
             </div>
-            <svg class="mr-[30px]" width="292" height="39" viewBox="0 0 292 39" fill="none"
+            <svg v-if="Theme === 'light'"  class="mr-[30px]" width="292" height="39" viewBox="0 0 292 39" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path d="M1 19.6693H291M291 19.6693L273.765 1.16931M291 19.6693L273.765 38.1693" stroke="#1E2329"
                 stroke-linecap="round" stroke-linejoin="round" />
             </svg>
+            <svg v-if="Theme === 'dark'"  class="mr-[30px]" width="292" height="39" viewBox="0 0 292 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 19.6693H291M291 19.6693L273.765 1.16931M291 19.6693L273.765 38.1693" stroke="#F5F5F5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
             <div
-              class="w-[69px] h-[66px] px-[19px] py-5 rounded-[100px] border border-neutral-800 justify-center items-center gap-2.5 inline-flex">
-              <div class="text-neutral-800 text-2xl font-medium font-['Inter'] leading-relaxed">03</div>
+              class="w-[69px] h-[66px] px-[19px] py-5 rounded-[100px] border border-neutral-800 dark:border-white justify-center items-center gap-2.5 inline-flex">
+              <div class="text-neutral-800 dark:text-white  text-2xl font-medium font-['Inter'] leading-relaxed">03</div>
             </div>
             <svg width="119" height="39" viewBox="0 0 119 39" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 19.6693H118M118 19.6693L99.25 1.16931M118 19.6693L99.25 38.1693" stroke="#ACB5BD"
@@ -613,7 +624,8 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               <div class="flex flex-col justify-center items-center block lg:hidden">
                 <div
                   class="w-11 h-11 px-3.5 py-[9px] rounded-[100px] border border-zinc-600 justify-center items-center gap-2.5 inline-flex">
-                  <div class="text-zinc-600 text-base font-normal font-['Poppins'] leading-relaxed">01</div>
+                  <div class="text-zinc-600 dark:text-white  text-base font-normal font-['Poppins'] leading-relaxed">01
+                  </div>
                 </div>
                 <svg width="21" height="50" viewBox="0 0 21 50" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.5 1.04687L10.5 49.0469M10.5 49.0469L20 38.99M10.5 49.0469L1 38.99" stroke="#495057"
@@ -623,9 +635,10 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               </div>
 
               <div class="flex-col justify-start items-start lg:items-center gap-4 inline-flex">
-                <h5 class="text-neutral-800 text-2xl font-normal font-['Poppins'] leading-relaxed">Sign in/up</h5>
+                <h5 class="text-neutral-800  dark:text-white text-2xl font-normal font-['Poppins'] leading-relaxed">Sign
+                  in/up</h5>
                 <p
-                  class="text-left lg:text-center text-neutral-800 text-sm lg:text-base font-light font-['Poppins'] leading-relaxed">
+                  class="text-left lg:text-center text-neutral-800 dark:text-white  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed">
                   Get
                   local or toll-free North American phone numbers or port existing fee.</p>
               </div>
@@ -646,9 +659,10 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               </div>
 
               <div class="flex-col justify-start items-start lg:items-center gap-4 inline-flex">
-                <h5 class="text-neutral-800 text-2xl font-normal font-['Poppins'] leading-relaxed">Select the number</h5>
+                <h5 class="text-neutral-800 dark:text-white  text-2xl font-normal font-['Poppins'] leading-relaxed">Select
+                  the number</h5>
                 <p
-                  class="text-left lg:text-center text-neutral-800 text-sm lg:text-base font-light font-['Poppins'] leading-relaxed">
+                  class="text-left lg:text-center text-neutral-800 dark:text-white  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed">
                   Use OpenPhone across all your devices to stay connected.</p>
               </div>
             </div>
@@ -668,23 +682,24 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               </div>
 
               <div class="flex-col justify-start items-start lg:items-center gap-4 inline-flex">
-                <h5 class="text-neutral-800 text-2xl font-normal font-['Poppins'] leading-relaxed">Make Payment</h5>
+                <h5 class="text-neutral-800 dark:text-white  text-2xl font-normal font-['Poppins'] leading-relaxed">Make
+                  Payment</h5>
                 <p
-                  class="text-left lg:text-center text-neutral-800 text-sm lg:text-base font-light font-['Poppins'] leading-relaxed">
+                  class="text-left lg:text-center text-neutral-800 dark:text-white  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed">
                   Try OpenPhone free for 7 days — no
-commitment necessary.</p>
+                  commitment necessary.</p>
               </div>
             </div>
-         
+
           </div>
 
         </div>
 
       </div>
-      </div>
-      <!-- virtual -->
-      <!-- Choose -->
-      <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
+    </div>
+    <!-- virtual -->
+    <!-- Choose -->
+    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
       <div class="pt-[100px] lg:pt-[200px] px-0 sm:px-4">
         <div class="flex flex-col-reverse items-center justify-between w-full mb-10 lg:flex-row">
 
@@ -698,46 +713,54 @@ commitment necessary.</p>
           </div>
           <div class="lg:mb-16 mb-4 lg:max-w-lg lg:pr-5">
             <div class=" mb-6">
-              <h3 class=" text-neutral-800 text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[44px]">Why Choose
+              <h3
+                class=" text-neutral-800 dark:text-white  text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[44px]">
+                Why Choose
                 Us?</h3>
 
               <p
-                class="max-w-[447px] text-neutral-800 lg:text-base text-sm font-light font-['Poppins'] leading-relaxed pt-[10px]">
+                class="max-w-[447px] text-neutral-800 dark:text-white  lg:text-base text-sm font-light font-['Poppins'] leading-relaxed pt-[10px]">
                 Choose
                 us for
                 unparalleled quality, exceptional service.</p>
 
             </div>
             <div class=" mb-6">
-              <h4 class=" text-neutral-800 text-base lg:text-2xl  font-normal font-['Inter'] leading-[44px]">Protect Your
+              <h4
+                class=" text-neutral-800 dark:text-white  text-base lg:text-2xl  font-normal font-['Inter'] leading-[44px]">
+                Protect Your
                 Privacy</h4>
 
               <div
-                class="max-w-[447px] text-neutral-800 text-sm lg:text-base font-light font-['Inter'] leading-relaxed pt-[10px]">
+                class="max-w-[447px] text-neutral-800 dark:text-white  text-sm lg:text-base font-light font-['Inter'] leading-relaxed pt-[10px]">
                 Phone number
                 inboxes are workspaces where teams view and collaborate on contact conversations.</div>
 
             </div>
             <div class=" mb-6">
-              <h4 class=" text-neutral-800 text-base lg:text-2xl font-normal font-['Inter'] leading-[44px]">You can see
+              <h4
+                class=" text-neutral-800 dark:text-white  text-base lg:text-2xl font-normal font-['Inter'] leading-[44px]">
+                You can see
                 your log and
                 service usage</h4>
 
 
               <p
-                class="max-w-[447px] text-neutral-800 text-sm lg:text-base font-light font-['Poppins'] leading-relaxed pt-[10px]">
+                class="max-w-[447px] text-neutral-800 dark:text-white  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed pt-[10px]">
                 Easily
                 track conversations: record calls, transcribe voicemails, view logs all in one place.</p>
 
             </div>
             <div class=" mb-6">
-              <h4 class=" text-neutral-800 text-base lg:text-2xl font-normal font-['Inter'] leading-[44px]">Contact
+              <h4
+                class=" text-neutral-800 dark:text-white  text-base lg:text-2xl font-normal font-['Inter'] leading-[44px]">
+                Contact
                 details all in one
                 place</h4>
 
 
               <p
-                class="max-w-[447px] text-neutral-800 text-sm lg:text-base font-light font-['Poppins'] leading-relaxed pt-[10px]">
+                class="max-w-[447px] text-neutral-800 dark:text-white  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed pt-[10px]">
                 Keep
                 track of important contact details that matter to your business with custom properties and notes.</p>
 
@@ -746,82 +769,99 @@ commitment necessary.</p>
           </div>
         </div>
       </div>
-      </div>
-      <!-- Choose -->
+    </div>
+    <!-- Choose -->
 
-      <!-- demo start -->
-      <div class="bg-neutral-100 bg-opacity-40 mt-[100px] lg:mt-[200px]">
+    <!-- demo start -->
+    <div class="bg-neutral-100 dark:bg-slate-900 bg-opacity-40 mt-[100px] lg:mt-[200px]">
       <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
-      <div class=" px-[37px] lg:px-0 py-[10px] lg:py-[100px]">
-        <div class="flex flex-col items-center justify-between w-full mb-10 lg:flex-row">
+        <div class=" px-[37px] lg:px-0 py-[10px] lg:py-[100px]">
+          <div class="flex flex-col items-center justify-between w-full mb-10 lg:flex-row">
 
-          <div class="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5">
-            <div class="max-w-full mb-6">
-              <h3 class="text-neutral-800 text-2xl lg:text-[32px] font-medium font-['Inter'] leading-[48px] text-center lg:text-left">Get a tour of
-                ZEDSMS </h3>
-              <p
-                class="max-w-[334px]  text-neutral-800 text-sm text-center lg:text-left lg:text-base font-light font-['Inter'] mt-[10px]">
-                Watch the tour you
-                just how easy it is to get your messaging started.
-              </p>
-              <button class="flex justify-center lg:justify-start items-center cursor-pointer lg:mx-0 mx-auto">
-                <div
-                  class="mt-[30px] px-10 py-[15px] rounded-[14px] border border-zinc-600 justify-start items-start inline-flex ">
-                  <div class="text-center text-zinc-600 text-[19px] font-light font-['Inter'] leading-relaxed">Watch demo
-                    ->
+            <div class="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5">
+              <div class="max-w-full mb-6">
+                <h3
+                  class="text-neutral-800 dark:text-white  text-2xl lg:text-[32px] font-medium font-['Inter'] leading-[48px] text-center lg:text-left">
+                  Get a tour of
+                  ZEDSMS </h3>
+                <p
+                  class="max-w-[334px]  text-neutral-800 dark:text-white  text-sm text-center lg:text-left lg:text-base font-light font-['Inter'] mt-[10px]">
+                  Watch the tour you
+                  just how easy it is to get your messaging started.
+                </p>
+                <button class="flex justify-center lg:justify-start items-center cursor-pointer lg:mx-0 mx-auto">
+                  <div
+                    class="mt-[30px] px-10 py-[15px] rounded-[14px] border border-zinc-600 justify-start items-start inline-flex ">
+                    <div
+                      class="text-center text-zinc-600 dark:text-white  text-[19px] font-light font-['Inter'] leading-relaxed">
+                      Watch demo
+                      ->
+                    </div>
                   </div>
-                </div>
-              </button>
+                </button>
+              </div>
+
+            </div>
+            <div class="flex items-center justify-center w-full lg:w-1/2">
+              <div class="pr-0 lg:pr-12">
+                <img class="w-full" :src="playStore" alt="app-store" />
+
+              </div>
+
             </div>
 
           </div>
-          <div class="flex items-center justify-center w-full lg:w-1/2">
-            <div class="pr-0 lg:pr-12">
-              <img class="w-full" :src="playStore" alt="app-store" />
-
-            </div>
-
-          </div>
-
         </div>
       </div>
-      </div>
-      </div>
+    </div>
 
-      <!-- demo end -->
+    <!-- demo end -->
 
-      <!-- available on -->
-      <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
+    <!-- available on -->
+    <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
       <div class="pt-[117px]">
-        <h3 class="text-center text-neutral-800 text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[57.60px]">We
+        <h3
+          class="text-center text-neutral-800 dark:text-white  text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[57.60px]">
+          We
           are available
           on</h3>
-        <div class="flex flex-wrap  items-center justify-between w-full mb-10 lg:mb-0 lg:flex-row mt-[60px] lg:mt-[100px] px-0">
+        <div
+          class="flex flex-wrap  items-center justify-between w-full mb-10 lg:mb-0 lg:flex-row mt-[60px] lg:mt-[100px] px-0">
 
           <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="Webversion" alt="app-store" />
-            <p class="text-neutral-800 text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">Web version</p>
+            <p
+              class="text-neutral-800 dark:text-white  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
+              Web version</p>
 
           </div>
           <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="MobileApp" alt="app-store" />
-            <p class="text-neutral-800 text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">Mobile App</p>
+            <p
+              class="text-neutral-800 dark:text-white  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
+              Mobile App</p>
 
           </div>
           <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="DesktopApp" alt="app-store" />
-            <p class="text-neutral-800 text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">Desktop App</p>
+            <p
+              class="text-neutral-800 dark:text-white  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
+              Desktop App</p>
 
           </div>
           <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="TelegramChatBot" alt="app-store" />
-            <p class="text-neutral-800 text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">Telegram Chat
+            <p
+              class="text-neutral-800 dark:text-white  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
+              Telegram Chat
               Bot</p>
 
           </div>
           <div class="flex flex-col items-center w-2/3 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="WhatsAppChatBot" alt="app-store" />
-            <p class="text-neutral-800 text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">WhatsApp Chat
+            <p
+              class="text-neutral-800 dark:text-white  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
+              WhatsApp Chat
               Bot</p>
 
           </div>
@@ -829,24 +869,27 @@ commitment necessary.</p>
 
         </div>
       </div>
-      </div>
-      <!-- available on -->
+    </div>
+    <!-- available on -->
 
 
-      <!-- FAQ -->
-      <div class=" px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[768px] md:px-24 lg:px-8 ">
+    <!-- FAQ -->
+    <div class=" px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[768px] md:px-24 lg:px-8 ">
       <div class="pt-[107px] lg:pt-[161px]  lg:px-0">
-        <div class="text-gray-900 text-2xl lg:text-[32px] text-center font-medium font-['Poppins'] leading-[44px]">
+        <div
+          class="text-gray-900 dark:text-white  text-2xl lg:text-[32px] text-center font-medium font-['Poppins'] leading-[44px]">
           Frequently asked
           questions</div>
         <div
-          class="text-neutral-800 text-sm lg:text-base text-center  pt-5 font-light font-['Poppins'] leading-[30px] w-[321px] lg:w-full mx-auto">
+          class="text-neutral-800 dark:text-white  text-sm lg:text-base text-center  pt-5 font-light font-['Poppins'] leading-[30px] w-[321px] lg:w-full mx-auto">
           Everything you
           need to know about the product & services</div>
         <div class="space-y-4 mt-[60px]">
           <details class="group  border-t-2 pt-6 pb-4 [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
-              <h3 class="w-[720px] text-neutral-800 text-base font-normal font-['Poppins'] leading-normal">Can I change my
+              <h3
+                class="w-[720px] text-neutral-800 dark:text-white  text-base font-normal font-['Poppins'] leading-normal">
+                Can I change my
                 plan later?</h3>
 
               <span class="relative h-5 w-5 shrink-0">
@@ -863,7 +906,7 @@ commitment necessary.</p>
               </span>
             </summary>
 
-            <p class="mt-4 leading-relaxed text-gray-700">
+            <p class="mt-4 leading-relaxed text-gray-700 dark:text-white ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
               molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
               voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -872,7 +915,9 @@ commitment necessary.</p>
           </details>
           <details class="group  border-t-2 pt-6 pb-4 [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
-              <h3 class="w-[720px] text-neutral-800 text-base font-normal font-['Poppins'] leading-normal">Can I change my
+              <h3
+                class="w-[720px] text-neutral-800 dark:text-white  text-base font-normal font-['Poppins'] leading-normal">
+                Can I change my
                 plan later?</h3>
 
               <span class="relative h-5 w-5 shrink-0">
@@ -889,7 +934,7 @@ commitment necessary.</p>
               </span>
             </summary>
 
-            <p class="mt-4 leading-relaxed text-gray-700">
+            <p class="mt-4 leading-relaxed text-gray-700 dark:text-white ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
               molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
               voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -898,7 +943,9 @@ commitment necessary.</p>
           </details>
           <details class="group  border-t-2 pt-6 pb-4 [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
-              <h3 class="w-[720px] text-neutral-800 text-base font-normal font-['Poppins'] leading-normal">What is your
+              <h3
+                class="w-[720px] text-neutral-800 dark:text-white  text-base font-normal font-['Poppins'] leading-normal">
+                What is your
                 cancellation policy?</h3>
 
               <span class="relative h-5 w-5 shrink-0">
@@ -915,7 +962,7 @@ commitment necessary.</p>
               </span>
             </summary>
 
-            <p class="mt-4 leading-relaxed text-gray-700">
+            <p class="mt-4 leading-relaxed text-gray-700 dark:text-white ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
               molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
               voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -924,7 +971,9 @@ commitment necessary.</p>
           </details>
           <details class="group  border-t-2 pt-6 pb-4 [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
-              <h3 class="w-[720px] text-neutral-800 text-base font-normal font-['Poppins'] leading-normal">Can other info
+              <h3
+                class="w-[720px] text-neutral-800 dark:text-white  text-base font-normal font-['Poppins'] leading-normal">
+                Can other info
                 be
                 added to an invoice?</h3>
 
@@ -942,7 +991,7 @@ commitment necessary.</p>
               </span>
             </summary>
 
-            <p class="mt-4 leading-relaxed text-gray-700">
+            <p class="mt-4 leading-relaxed text-gray-700 dark:text-white ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
               molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
               voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -951,7 +1000,9 @@ commitment necessary.</p>
           </details>
           <details class="group  border-t-2 pt-6 pb-4 [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
-              <h3 class="w-[720px] text-neutral-800 text-base font-normal font-['Poppins'] leading-normal">How does
+              <h3
+                class="w-[720px] text-neutral-800 dark:text-white  text-base font-normal font-['Poppins'] leading-normal">
+                How does
                 billing
                 work?</h3>
 
@@ -969,7 +1020,7 @@ commitment necessary.</p>
               </span>
             </summary>
 
-            <p class="mt-4 leading-relaxed text-gray-700">
+            <p class="mt-4 leading-relaxed text-gray-700 dark:text-white ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
               molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
               voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -978,7 +1029,9 @@ commitment necessary.</p>
           </details>
           <details class="group  border-t-2 pt-6 pb-4 [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
-              <h3 class="w-[720px] text-neutral-800 text-base font-normal font-['Poppins'] leading-normal">How do I change
+              <h3
+                class="w-[720px] text-neutral-800 dark:text-white  text-base font-normal font-['Poppins'] leading-normal">
+                How do I change
                 my account email?</h3>
 
               <span class="relative h-5 w-5 shrink-0">
@@ -995,7 +1048,7 @@ commitment necessary.</p>
               </span>
             </summary>
 
-            <p class="mt-4 leading-relaxed text-gray-700">
+            <p class="mt-4 leading-relaxed text-gray-700 dark:text-white ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
               molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
               voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -1006,10 +1059,57 @@ commitment necessary.</p>
 
         </div>
       </div>
-      </div>
-      <!-- FAQ -->
-   
+    </div>
+    <!-- FAQ -->
 
 
-</main></template>
+
+  </main>
+</template>
+<script >
+const Theme = localStorage.getItem('Theme');
+console.log("Theme", Theme);
+export default {
+  components: {
+
+  },
+  data() {
+
+    return {
+
+      themeIsOpen: false,
+      languageIsOpen: false,
+      notificationIsOpen: false,
+      ringtoneIsOpen: false,
+
+      selectedOptionTheme: this.selectedTheme || Theme, // Default text,
+      selectedOptionLanguage: this.selectedLanguage || 'English', // Default text,
+      selectedOptionNotification: this.selectedNotification || 'ON', // Default text,
+      selectedOptionRingtone: this.selectedRingtone || 'Ubilone Qusen', // Default text,
+      themeOption: [
+        "Light",
+        "Dark"
+      ],
+
+
+
+
+    }
+
+  },
+  created() {
+    // Close the profile popup on outside click
+    window.addEventListener("click", this.handlePopupOpen);
+  },
+  beforeUnmount() {
+    // Remove the event listener when the component is unmounted
+    window.removeEventListener("click", this.handlePopupOpen);
+  },
+  methods: {
+
+  }
+};
+
+
+</script>
 

@@ -26,13 +26,13 @@ import chart from "../../assets/img/blog/chart.png"
                     >
                         <img class="max-w-[159.50px] min-h-[140px] lg:max-w-[360px] lg:min-h-60 rounded-[18px] lg:rounded-[30px]" :src="blog.blogBanner" alt="" srcset="">
                         <p
-                            class="text-zinc-600 text-sm font-light font-['Poppins'] leading-[18.20px] tracking-tight mt-[20px] mb-[8px]">
+                            class="text-zinc-600 dark:text-gray-400 text-sm font-light font-['Poppins'] leading-[18.20px] tracking-tight mt-[20px] mb-[8px]">
                             {{blog.publishDate}}</p>
                         <h3
-                            class="max-w-[360px] text-neutral-800 text-base lg:text-xl font-medium font-['Poppins'] leading-relaxed tracking-tight truncate overflow-hidden">
+                            class="max-w-[360px] text-neutral-800 dark:text-white py-2 text-base lg:text-xl font-medium font-['Poppins'] leading-relaxed tracking-tight truncate overflow-hidden">
                             {{blog.blogTItle}}</h3>
                         <p
-                            class="max-w-[360px] h-[47px] text-zinc-600 text-sm lg:text-base font-light font-['Poppins'] leading-normal mb-[8px] multiline">
+                            class="max-w-[360px] h-[47px] text-zinc-600 dark:text-gray-400 text-sm lg:text-base font-light font-['Poppins'] leading-normal mb-[8px] multiline">
                            {{ blog.blogSubTItle }}</p>
                     </RouterLink>
                 </div>

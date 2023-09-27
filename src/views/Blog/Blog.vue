@@ -26,9 +26,9 @@ import chart from "../../assets/img/blog/chart.png"
                 <div v-for="blog in filteredBlogs" :key="blog.id">
 
                     <nav aria-label="Breadcrumb">
-                        <ol class="flex items-start lg:items-center gap-1 text-sm text-gray-600">
+                        <ol class="flex items-start lg:items-center gap-1 text-sm text-gray-600 dark:text-white">
                             <li>
-                                <a href="#" class="block transition hover:text-gray-700"> Blog </a>
+                                <a href="#" class="block transition hover:text-gray-700  dark:text-white"> Blog </a>
                             </li>
 
                             <li class="rtl:rotate-180">
@@ -40,7 +40,7 @@ import chart from "../../assets/img/blog/chart.png"
                                 </svg>
                             </li>
                             <li>
-                                <a href="#" class="block transition hover:text-gray-700"> {{ blog.blogTItle }} </a>
+                                <a href="#" class="block transition hover:text-gray-700  dark:text-white"> {{ blog.blogTItle }} </a>
                             </li>
 
 
@@ -55,23 +55,23 @@ import chart from "../../assets/img/blog/chart.png"
                         <img class="max-w-[317.47px] max-h-[174px] lg:max-w-[1128px] lg:max-h-[550px] rounded-[20px] lg:rounded-[50px] mt-[22px] lg:mt-[41px] mb-[59px]"
                             :src="blog.largeImg" />
                         <p
-                            class="text-zinc-600 text-sm  lg:text-base font-normal font-['Poppins'] leading-tight tracking-tight">
+                            class="text-zinc-600 dark:text-gray-400 text-sm  lg:text-base font-normal font-['Poppins'] leading-tight tracking-tight">
                             {{ blog.publishDate }}</p>
                         <h1
-                            class="max-w-[343px] lg:max-w-[1061px] text-neutral-800 text-2xl lg:text-4xl tracking-normal font-medium font-['Poppins'] leading-[31.20px] lg:leading-[46.80px] my-[18px]">
+                            class="max-w-[343px] lg:max-w-[1061px] text-neutral-800 dark:text-white text-2xl lg:text-4xl tracking-normal font-medium font-['Poppins'] leading-[31.20px] lg:leading-[46.80px] my-[18px]">
                             {{ blog.blogTItle }}</h1>
                         <p
-                            class="text-zinc-600 text-base lg:text-xl font-normal font-['Poppins'] leading-relaxed tracking-tight">
+                            class="text-zinc-600 dark:text-gray-400 text-base lg:text-xl font-normal font-['Poppins'] leading-relaxed tracking-tight">
                             Writer
                             : {{ blog.Writer }}</p>
                         <h2
-                            class="max-w-[1038px] h-[60px] text-zinc-600 text-base lg:text-2xl font-normal font-['Poppins'] leading-[35.04px] mt-[36px] mb-[75px]">
+                            class="max-w-[1038px] h-[60px] text-zinc-600 dark:text-gray-400 text-base lg:text-2xl font-normal font-['Poppins'] leading-[35.04px] mt-[36px] mb-[75px]">
                             {{ blog.blogSubTItle }}</h2>
                         <p
-                            class="max-w-[1061px] text-zinc-600 text-sm lg:text-base font-light font-['Poppins'] leading-7 tracking-tight mb-[20px]">
+                            class="max-w-[1061px] text-zinc-600  dark:text-gray-400 text-sm lg:text-base font-light font-['Poppins'] leading-7 tracking-tight mb-[20px]">
                             {{ blog.subTitle1 }}</p>
                         <p
-                            class="max-w-[1061px] text-zinc-600 text-sm lg:text-base font-light font-['Poppins'] leading-7 tracking-tight">
+                            class="max-w-[1061px] text-zinc-600  dark:text-gray-400 text-sm lg:text-base font-light font-['Poppins'] leading-7 tracking-tight">
                             {{ blog.subTitle2 }}</p>
                         <!-- subBlogWithImg -->
 
@@ -80,18 +80,18 @@ import chart from "../../assets/img/blog/chart.png"
                                 class="mt-[30px] lg:mt-[83px] flex flex-col lg:flex-row justify-start items-center gap-[95px] lg:gap-[171px]">
                                 <div>
                                     <h5
-                                        class="text-neutral-800 text-sm lg:text-base font-medium font-['Inter'] leading-normal lg:leading-tight tracking-tight">
+                                        class="text-neutral-800 dark:text-neutral-100 text-sm lg:text-base font-medium font-['Inter'] leading-normal lg:leading-tight tracking-tight">
                                         {{ subBlogWithImg.subBlogTitle }}</h5>
                                     <p
-                                        class="max-w-[513px] text-zinc-600 text-sm lg:text-base font-light font-['Poppins'] leading-7 tracking-tight mt-[14px] mb-[24px]">
+                                        class="max-w-[513px] text-zinc-600  dark:text-gray-400 text-sm lg:text-base font-light font-['Poppins'] leading-7 tracking-tight mt-[14px] mb-[24px]">
                                         {{ subBlogWithImg.subBlogDescription }}</p>
                                     <div class="block lg:hidden">
                                         <p
-                                            class="text-neutral-800 text-sm lg:text-base font-normal font-['Poppins'] leading-[34px]">
+                                            class="text-neutral-800 dark:text-neutral-100 text-sm lg:text-base font-normal font-['Poppins'] leading-[34px]">
                                             <span class="text-xl lg:text-2xl">○ </span>{{ subBlogWithImg.subBlogFooter1 }}
                                         </p>
                                         <p
-                                            class="text-neutral-800 text-sm lg:text-base font-normal font-['Poppins'] leading-[34px]">
+                                            class="text-neutral-800 dark:text-neutral-100 text-sm lg:text-base font-normal font-['Poppins'] leading-[34px]">
                                             <span class="text-xl lg:text-2xl">○ </span>{{ subBlogWithImg.subBlogFooter2 }}
                                         </p>
                                     </div>
@@ -100,20 +100,20 @@ import chart from "../../assets/img/blog/chart.png"
                                 <img class="max-w-[291.29px] w-full h-[245.60px]" :src="subBlogWithImg.subBlogImg" alt="">
                             </div>
 
-                            <p class="text-neutral-800 text-sm lg:text-base font-normal font-['Poppins'] leading-[34px]">
+                            <p class="text-neutral-800 dark:text-neutral-100 text-sm lg:text-base font-normal font-['Poppins'] leading-[34px]">
                                 <span class="text-sm lg:text-2xl">○ </span>{{ subBlogWithImg.subBlogFooter1 }}
                             </p>
-                            <p class="text-neutral-800 text-sm lg:text-base font-normal font-['Poppins'] leading-[34px]">
+                            <p class="text-neutral-800 dark:text-neutral-100 text-sm lg:text-base font-normal font-['Poppins'] leading-[34px]">
                                 <span class="text-sm lg:text-2xl">○ </span>{{ subBlogWithImg.subBlogFooter2 }}
                             </p>
 
                         </div>
 
                         <p
-                            class="max-w-[1061px] text-zinc-600 text-base font-light font-['Poppins'] leading-7 tracking-tight mt-[83px] mb-[20px]">
+                            class="max-w-[1061px] text-zinc-600 dark:text-gray-400 text-base font-light font-['Poppins'] leading-7 tracking-tight mt-[83px] mb-[20px]">
                             {{ blog.blogFooter1 }}</p>
                         <p
-                            class="max-w-[1061px] text-zinc-600 text-base font-light font-['Poppins'] leading-7 tracking-tight">
+                            class="max-w-[1061px] text-zinc-600 dark:text-gray-400 text-base font-light font-['Poppins'] leading-7 tracking-tight">
                             {{ blog.blogFooter2 }}</p>
                     </div>
                     <!-- More -->

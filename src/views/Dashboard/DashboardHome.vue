@@ -20,12 +20,12 @@ import num7 from "../../assets/img/NumFlags/7.png"
 </script>
 
 <template>
-    <section class="max-w-[825px]">
+    <section class="max-w-[825px] pl-[17px]">
         <div class="flex flex-wrap ">
             <!-- Recent Message -->
             <div class="max-w-full lg:max-w-[60%] w-full">
-                <div class="max-w-[436px] w-full pl-6 pr-[30px] pt-6 pb-5 bg-white rounded-[20px] shadow">
-                    <h4 class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px]">Recent Message</h4>
+                <div class="max-w-[436px] w-full pl-6 pr-[30px] pt-6 pb-5 bg-white dark:bg-[#09132C] rounded-[20px] shadow">
+                    <h4 class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">Recent Message</h4>
 
 
                     <div
@@ -36,21 +36,21 @@ import num7 from "../../assets/img/NumFlags/7.png"
                                 <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt="" srcset="">
                                 <div class="flex-1 flex flex-wrap ">
                                     <div class="w-full flex justify-between mb-[6px]">
-                                        <h6 class="text-neutral-900 text-sm font-medium font-['Poppins'] leading-[17px]">
+                                        <h6 class="text-neutral-900 dark:text-[#DDE2E5] text-sm font-medium font-['Poppins'] leading-[17px]">
                                             Namepo
                                         </h6>
-                                        <p class="text-neutral-900 text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                        <p class="text-neutral-900 dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[18.89px]">
                                             {{ messageData.messageTime }}
                                         </p>
                                     </div>
                                     <div class="">
                                         <template v-if="!messageData.showFullMessage">
-                                            <div class="w-full text-neutral-800 text-xs font-light font-['Poppins'] leading-normal inline"
+                                            <div class="w-full text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-normal inline"
                                                 v-html="formattedMessage(messageData)">
                                             </div>
                                         </template>
                                         <template v-else>
-                                            <div class=" text-neutral-800 text-xs font-light font-['Poppins'] leading-normal inline"
+                                            <div class=" text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-normal inline"
                                                 v-html="formattedMessage(messageData)">
                                             </div>
                                         </template>
@@ -88,10 +88,10 @@ import num7 from "../../assets/img/NumFlags/7.png"
                 </div>
             </div>
             <!-- All Number -->
-            <div class="max-w-full lg:max-w-[40%] w-full mt-[82px]">
+            <div class="max-w-full lg:max-w-[40%] w-full ">
                 <div class="max-w-[329px] w-full mx-auto h-[546px]">
                     <div class="flex justify-between items-center mb-[30px]">
-                        <h3 class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px]">All Number</h3>
+                        <h3 class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">All Number</h3>
                         <ul
                             class="flex mb-0 list-none flex-row max-w-[168px] mx-auto rounded-xl border border-blue-600 overflow-hidden	 h-[37px]">
                             <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
@@ -132,21 +132,21 @@ import num7 from "../../assets/img/NumFlags/7.png"
                                                 <div class="max-w-[80%] w-[251px]">
                                                     <div class="flex justify-between">
                                                         <p
-                                                            class="text-neutral-800 text-sm font-normal font-['Poppins'] leading-[17px]">
+                                                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
                                                             {{ numbersData?.number }}</p>
                                                         <p
-                                                            class="text-zinc-600 text-xs font-light font-['Poppins'] leading-[17px]">
+                                                            class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]">
                                                             {{ numbersData?.timeLeft }}</p>
                                                     </div>
                                                     <div class="flex justify-between mt-[6px]">
                                                         <p
-                                                            class="text-zinc-600 text-xs font-light font-['Poppins'] leading-[17px]">
+                                                            class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]">
                                                             Type: {{ numbersData?.type }} •</p>
                                                         <p
-                                                            class="text-zinc-600 text-xs font-light font-['Poppins'] leading-[17px]">
+                                                            class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]">
                                                             Service: {{ numbersData?.service }} •</p>
                                                         <p
-                                                            class="text-zinc-600 text-xs font-light font-['Poppins'] leading-[17px]">
+                                                            class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]">
                                                             Rent: {{ numbersData?.rent }}</p>
                                                     </div>
 
@@ -205,38 +205,38 @@ import num7 from "../../assets/img/NumFlags/7.png"
             <!-- Recent Transaction -->
             <div class="max-w-[100%] mt-[48px] w-full">
                 <div class="max-w-[825px]  w-full flex-col justify-start items-start gap-[30px] inline-flex ">
-                    <div class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px] ">Recent Transaction
+                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] ">Recent Transaction
                     </div>
 
                     <table class="border-collapse w-full  table-auto">
                         <thead>
-                            <tr class="shadow-md">
+                            <tr class="shadow-md dark:border-b-[1px]">
                                 <th
-                                    class="px-4 py-8 text-left text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-8 text-left text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px]">
                                     Date & Time</th>
                                 <th
-                                    class="px-4 py-8 text-left text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-8 text-left text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px]">
                                     Action</th>
                                 <th
-                                    class="px-4 py-8 text-left text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-8 text-left text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px]">
                                     Amount</th>
                                 <th
-                                    class="px-4 py-8 text-left text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-8 text-left text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px]">
                                     Description</th>
 
                             </tr>
                         </thead>
                         <tbody v-for="data in visibleData" :key="data.id" class="">
 
-                            <tr class=" border-b-2">
-                                <td class="px-4 py-6 text-neutral-800 text-xs font-light font-['Poppins'] leading-[17px]">{{
+                            <tr class=" border-b-[1px]">
+                                <td class="px-4 py-6 text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">{{
                                     data.dateTime }}</td>
-                                <td class="px-4 py-6 text-neutral-800 text-xs font-light font-['Poppins'] leading-[17px]">
+                                <td class="px-4 py-6 text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
                                     {{ data.action }}</td>
-                                <td class="px-4 py-6 text-neutral-800 text-xs font-light font-['Poppins'] leading-[17px]">
+                                <td class="px-4 py-6 text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
                                     ${{ data.amount }}</td>
                                 <td
-                                    class="px-4 py-6 text-neutral-800 text-xs font-light font-['Poppins'] leading-[17px] max-w-[253px]">
+                                    class="px-4 py-6 text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px] max-w-[253px]">
                                     {{ data.description }} </td>
 
                             </tr>
@@ -245,8 +245,8 @@ import num7 from "../../assets/img/NumFlags/7.png"
                         </tbody>
                     </table>
                     <button @click="loadMore" v-if="tableData.length > 3"
-                        class="max-w-[125px] h-[37px] w-full py-2.5 rounded-[10px] border border-blue-600 justify-center items-center gap-2.5 inline-flex mx-auto mb-[67px]">
-                        <div class="text-blue-600 text-sm font-normal font-['Poppins'] leading-[17px]">{{ tableData.length == itemsToShow ? "See less" : "See More" }}</div>
+                        class="max-w-[125px] h-[37px] w-full py-2.5 rounded-[10px] border border-blue-600 dark:bg-blue-600 justify-center items-center gap-2.5 inline-flex mx-auto mb-[67px]">
+                        <div class="text-blue-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">{{ tableData.length == itemsToShow ? "See less" : "See More" }}</div>
                     </button>
                  
 
@@ -618,7 +618,7 @@ export default {
                             return part;
                         } else {
 
-                            return `<span class="text-neutral-800 text-xs font-medium font-['Poppins'] leading-tight">${part}</span>`;
+                            return `<span class="text-neutral-800 dark:text-[#F5F5F5] text-xs font-medium font-['Poppins'] leading-tight">${part}</span>`;
                         }
                     });
 
@@ -630,7 +630,7 @@ export default {
                     if (index % 2 === 0) {
                         return part;
                     } else {
-                        return `<span class="text-neutral-800 text-xs font-medium font-['Poppins'] leading-tight	">${part}</span>`;
+                        return `<span class="text-neutral-800 dark:text-[#F5F5F5] text-xs font-medium font-['Poppins'] leading-tight	">${part}</span>`;
                     }
                 });
                 const formattedMessage = parts.length > 1 ? formattedParts[0] + formattedParts[1] : formattedParts.join("").slice(0, 100);

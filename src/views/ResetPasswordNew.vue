@@ -5,28 +5,28 @@ import { RouterLink } from 'vue-router'
 
 </script>
 <template>
-    <section class="bg-white pt-[97px] lg:pt-10 pb-[105px] lg:pb-[39px] flex justify-center items-center">
+    <section class="bg-white dark:bg-[#070F24]  pt-[97px] lg:pt-10 pb-[105px] lg:pb-[39px] flex justify-center items-center">
         <div
-            class="max-w-[342.50px] lg:max-w-[786px] max-h-[486px] px-3.5 py-[60px]  lg:px-[220px] lg:py-[90px] bg-white rounded-3xl shadow-none lg:shadow-custom flex-col justify-start items-start gap-[34px] inline-flex">
+            class="max-w-[342.50px] lg:max-w-[786px] max-h-[486px] px-3.5 py-[60px]  lg:px-[220px] lg:py-[90px] bg-white  dark:bg-slate-900 rounded-3xl shadow-none lg:shadow-custom flex-col justify-start items-start gap-[34px] inline-flex">
            <div>
-            <h4 class="text-neutral-800 text-xl font-medium font-['Poppins'] leading-loose tracking-tight">Reset your
+            <h4 class="text-neutral-800  dark:text-white text-xl font-medium font-['Poppins'] leading-loose tracking-tight">Reset your
                 password?</h4>
-            <p class="text-neutral-800 text-sm font-light font-['Poppins'] leading-tight tracking-tight">Type in your
+            <p class="text-neutral-800  dark:text-white text-sm font-light font-['Poppins'] leading-tight tracking-tight">Type in your
                 registered email address or username.</p>
            </div>
 
             <form>
                 <input
-                    class="max-w-[345px] w-full h-[56px] px-[16px] py-[8px] rounded-lg border border-neutral-800 flex-col justify-start items-start inline-flex"
+                    class="max-w-[345px] w-full h-[56px] px-[16px] py-[8px] rounded-lg border  dark:bg-transparent border-neutral-800 flex-col justify-start items-start inline-flex"
                     placeholder="New Password" type="text" />
                 <input
-                    class="max-w-[345px] w-full h-[56px] px-[16px] py-[8px] rounded-lg border border-neutral-800 flex-col justify-start items-start inline-flex mt-[30px]"
+                    class="max-w-[345px] w-full h-[56px] px-[16px] py-[8px] rounded-lg border  dark:bg-transparent border-neutral-800 flex-col justify-start items-start inline-flex mt-[30px]"
                     placeholder="Confirm New Password" type="password" />
 
 
             <div class="flex justify-between items-center mt-[30px] gap-4">
                 <RouterLink to="/logIn"
-                    class="max-w-[200px] max-h-[46px] w-full py-0.5 bg-neutral-800 rounded-[10px] flex-col justify-center items-center inline-flex">
+                    class="max-w-[200px] max-h-[46px] w-full py-0.5 bg-neutral-800 dark:bg-zinc-600 rounded-[10px] flex-col justify-center items-center inline-flex">
                     <div class="px-[22px] py-2 flex-col justify-start items-start gap-2 flex">
                         <div class="justify-start items-center gap-2 inline-flex">
                             <div

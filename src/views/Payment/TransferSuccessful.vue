@@ -7,7 +7,7 @@
     <section>
         <div class="flex justify-center items-center">
             <div
-                class="max-w-[620px] max-h-[378px] px-6 lg:px-[100px] py-6 lg:py-[50px] bg-white rounded-3xl shadow-none lg:shadow-custom flex-col justify-start items-center inline-flex mt-[116px] mb-[137px]">
+                class="max-w-[620px] max-h-[378px] px-6 lg:px-[100px] py-6 lg:py-[50px] bg-white dark:bg-[#09132C] rounded-3xl shadow-none lg:shadow-custom flex-col justify-start items-center inline-flex mt-[116px] mb-[137px]">
 
                 <svg class="mb-[20px]" width="101" height="100" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -17,9 +17,9 @@
 
 
 
-                <h2 class="text-neutral-800 text-[28px] font-medium font-['Poppins'] leading-[34.58px] tracking-tight mb-[10px]">
+                <h2 class="text-neutral-800 dark:text-white text-[28px] font-medium font-['Poppins'] leading-[34.58px] tracking-tight mb-[10px]">
                     Transfer Successful</h2>
-                <p class="text-zinc-600 text-center text-sm lg:text-base font-normal font-['Poppins'] leading-tight tracking-tight mb-[40px]">Your transfer
+                <p class="text-zinc-600 dark:text-white text-center text-sm lg:text-base font-normal font-['Poppins'] leading-tight tracking-tight mb-[40px]">Your transfer
                     of $23.25 was successfully completed</p>
                 <div
                     class="max-w-[258px] h-[53px] px-20 py-3.5 bg-blue-600 rounded-xl justify-center items-center gap-2.5 inline-flex cursor-pointer">

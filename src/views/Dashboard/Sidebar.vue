@@ -2,7 +2,9 @@
 
 <template>
   <aside
-    class="w-[263px] h-[auto] bg-white rounded-2xl shadow-none lg:shadow-custom mb-[40px] flex-col justify-start items-start inline-flex overflow-hidden  hidden lg:block">
+    class="w-[263px] h-[auto] bg-white dark:bg-[#09132C] rounded-2xl shadow-none lg:shadow-custom mb-[40px] flex-col justify-start items-start inline-flex overflow-hidden  hidden lg:block"
+    v-bind:class="{ 'dark-aside': Theme == 'dark', }"
+    >
     <ul class="w-full">
       <li>
         <router-link to="/dashboard"
@@ -15,7 +17,7 @@
               <path d="M15 18H9" stroke="#1E2329" stroke-linecap="round" />
             </svg>
           </span>
-          <span class="text-neutral-800 text-base font-light font-['Poppins'] leading-[36px]"> Home</span>
+          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> Home</span>
         </router-link>
       </li>
       <li>
@@ -32,7 +34,7 @@
             </svg>
 
           </span>
-          <span class="text-neutral-800 text-base font-light font-['Poppins'] leading-[36px]"> My Number</span>
+          <span class="text-neutral-800   dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> My Number</span>
         </router-link>
       </li>
       <li>
@@ -52,7 +54,7 @@
 
 
           </span>
-          <span class="text-neutral-800 text-base font-light font-['Poppins'] leading-[36px]"> Manage Number</span>
+          <span class="text-neutral-800   dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> Manage Number</span>
         </router-link>
       </li>
       <li>
@@ -69,7 +71,7 @@
               <path d="M6 9L9 3" stroke="#1E2329" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span>
-          <span class="text-neutral-800 text-base font-light font-['Poppins'] leading-[36px]"> Buy Number</span>
+          <span class="text-neutral-800   dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> Buy Number</span>
         </router-link>
       </li>
       <li>
@@ -81,7 +83,7 @@
               <path d="M14 20L14 4L20 9.5" stroke="#1E2329" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span>
-          <span class="text-neutral-800 text-base font-light font-['Poppins'] leading-[36px]"> Transaction</span>
+          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> Transaction</span>
         </router-link>
       </li>
       <li>
@@ -98,7 +100,7 @@
               <path d="M2 10L22 10" stroke="#1E2329" stroke-linecap="round" />
             </svg>
           </span>
-          <span class="text-neutral-800 text-base font-light font-['Poppins'] leading-[36px]"> Balance Transfer</span>
+          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> Balance Transfer</span>
         </router-link>
       </li>
       <li>
@@ -117,7 +119,7 @@
             </svg>
 
           </span>
-          <span class="text-neutral-800 text-base font-light font-['Poppins'] leading-[36px]">
+          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]">
             TOP-UP Balance
           </span>
         </router-link>
@@ -134,7 +136,7 @@
 
 
           </span>
-          <span class="text-neutral-800 text-base font-light font-['Poppins'] leading-[36px]">
+          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]">
             Appearance
           </span>
         </router-link>
@@ -153,7 +155,7 @@
 
 
           </span>
-          <span class="text-neutral-800 text-base font-light font-['Poppins'] leading-[36px]"> Account Setting</span>
+          <span class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> Account Setting</span>
 
         </router-link>
       </li>
@@ -162,6 +164,8 @@
 </template>
   
 <script>
+const Theme = localStorage.getItem('Theme');
+console.log("object001", Theme);
 export default {
   // Sidebar component logic
 };
@@ -174,17 +178,27 @@ aside .router-link-exact-active {
   text-decoration: none;
 }
 
-aside .router-link-exact-active span{
+aside .router-link-exact-active span {
 
   color: #fff;
 }
-aside .router-link-exact-active svg path{
 
-stroke: #fff;
-}
-aside .router-link-exact-active svg circle{
+aside .router-link-exact-active svg path {
 
-stroke: #fff;
+  stroke: #fff;
 }
 
+aside .router-link-exact-active svg circle {
+
+  stroke: #fff;
+}
+body.dark aside  svg path {
+
+  stroke: #fff ;
+}
+
+body.dark aside  svg circle {
+
+  stroke: #fff;
+}
 </style>

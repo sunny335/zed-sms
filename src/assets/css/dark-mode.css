@@ -2,7 +2,7 @@
 
 /* Override background and text color for the dark mode */
 body.dark {
-    background-color: #121212;
+    background-color: #070F24;
     color: #ffffff;
   }
   

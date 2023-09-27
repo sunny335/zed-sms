@@ -12,14 +12,14 @@
 
                 <img :src="value.img" alt="" srcset="">
                 <p
-                    class="text-zinc-600 text-sm font-light font-['Poppins'] leading-[18.20px] tracking-tight mt-[20px] mb-[8px]">
+                    class="text-zinc-600 dark:text-gray-400 text-sm font-light font-['Poppins'] leading-[18.20px] tracking-tight mt-[20px] mb-[8px]">
                     {{ value.publishDate }}</p>
 
                 <h3
-                    class="max-w-[360px] text-neutral-800 text-xl font-medium font-['Poppins'] leading-relaxed tracking-tight truncate overflow-hidden">
+                    class="max-w-[360px] text-neutral-800 dark:text-white text-xl py-2 font-medium font-['Poppins'] leading-relaxed tracking-tight truncate overflow-hidden">
                     {{ value.title }}</h3>
                 <p
-                    class="max-w-[360px] h-[47px] text-zinc-600 text-base font-light font-['Poppins'] leading-normal mb-[8px] multiline">
+                    class="max-w-[360px] h-[47px] text-zinc-600  dark:text-gray-400  text-base font-light font-['Poppins'] leading-normal mb-[8px] multiline">
                     {{ value.subTitle }}</p>
              </RouterLink>
             </swiper-slide>

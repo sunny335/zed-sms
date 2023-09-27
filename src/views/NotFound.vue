@@ -4,13 +4,13 @@ import { RouterLink } from 'vue-router'
 
 </script>
 
-
+ 
 <template>
-    <section class="bg-white mt-[206px] mb-[220px] lg:mt-[103px] lg:mb-[118px] flex justify-center items-center">
+    <section class="bg-white dark:bg-[#070F24]  mt-[206px] mb-[220px] lg:mt-[103px] lg:mb-[118px] flex justify-center items-center">
         <div
-            class="max-w-fit lg:max-w-[749px] max-h-fit lg:max-h-[460px] px-0 py-0 lg:px-[180px] lg:py-[140px] bg-white rounded-[30px] shadow-none lg:shadow-custom flex-col justify-start items-center inline-flex">
-            <h4 class="text-neutral-800 text-[64px] lg:text-7xl font-medium font-['Poppins']  mb-0 lg:mb-[22px]">404</h4>
-            <p class="text-center text-neutral-800 text-base lg:text-xl font-light font-['Poppins'] leading-loose mb-[24px]">Sorry, we were unable
+            class="max-w-fit lg:max-w-[749px] max-h-fit lg:max-h-[460px] px-0 py-0 lg:px-[180px] lg:py-[140px] bg-white  dark:bg-slate-900 rounded-[30px] shadow-none lg:shadow-custom flex-col justify-start items-center inline-flex">
+            <h4 class="text-neutral-800  dark:text-white text-[64px] lg:text-7xl font-medium font-['Poppins']  mb-0 lg:mb-[22px]">404</h4>
+            <p class="text-center text-neutral-800  dark:text-white text-base lg:text-xl font-light font-['Poppins'] leading-loose mb-[24px]">Sorry, we were unable
                 to find that page</p>
             <button
                 class="max-w-[189px] max-h-[52px] w-full py-3.5 bg-blue-600 rounded-[10px] justify-center items-center gap-1.5 inline-flex">

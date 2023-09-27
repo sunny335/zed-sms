@@ -10,7 +10,7 @@
         <!-- Dropdown Trigger -->
         <div @click="toggleDropdown" class="cursor-pointer flex items-center">
             <div
-                class=" py-2 px-4 pr-0 rounded-md flex items-center text-zinc-600 text-sm font-normal font-['Poppins'] leading-[17px]">
+                class=" py-2 px-4 pr-0 rounded-md flex items-center text-zinc-600  dark:text-white text-sm font-normal font-['Poppins'] leading-[17px]">
                 <span class="mr-2" v-html="getFlag(selectedOption)"></span>
                 <span> {{ selectedOption }}</span>
             </div>
@@ -22,10 +22,10 @@
             </div>
         </div>
         <!-- Dropdown Menu -->
-        <ul v-show="isOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg">
+        <ul v-show="isOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white dark:bg-slate-900 border border-gray-300 dark:dark:border-slate-700 rounded-md shadow-lg">
             <!-- Render your list of countries and languages here -->
             <li v-for="(item, index) in options" :key="index" @click="selectOption(item)"
-                class="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center">
+                class="px-4 py-2 cursor-pointer hover:bg-gray-100 hover:dark:bg-slate-500 flex items-center">
                 <span class="mr-2" v-html="getFlag(item)"></span>
                 {{ item }}
             </li>

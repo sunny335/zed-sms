@@ -162,7 +162,7 @@ export default {
 
   },
   data() {
-
+ 
     return {
 
       themeIsOpen: false,
