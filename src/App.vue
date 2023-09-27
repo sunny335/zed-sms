@@ -3,6 +3,17 @@ import { RouterView } from 'vue-router'
 import Header from './components/Header/Header.vue'
 import Footer from './components/Footer/Footer.vue';
 
+const Theme = localStorage.getItem('Theme');
+
+if (Theme == "dark") {
+  document.body.classList.toggle('dark', true);
+  localStorage.setItem("Theme", 'dark')
+}
+else if(Theme == "light") {
+  document.body.classList.toggle('dark', false);
+  localStorage.setItem("Theme", 'light')
+}
+
 </script>
 
 <template>
@@ -11,7 +22,7 @@ import Footer from './components/Footer/Footer.vue';
   </div>
   <RouterView />
   <div>
-    <Footer/>
+    <Footer />
   </div>
 </template>
 

@@ -1,26 +1,4 @@
-<script setup>
 
-import { RouterLink } from 'vue-router'
-
-import cash from "../../assets/img/choosePayment/1.png"
-import num1 from "../../assets/img/allNumber/1.png"
-import num2 from "../../assets/img/allNumber/2.png"
-import num3 from "../../assets/img/allNumber/3.png"
-import num4 from "../../assets/img/allNumber/4.png"
-import num5 from "../../assets/img/allNumber/5.png"
-import num6 from "../../assets/img/allNumber/6.png"
-import num7 from "../../assets/img/allNumber/7.png"
-import Namepo from "../../assets/img/Message/Namepo.png"
-import Viveon from "../../assets/img/Message/Viveon.png"
-import Tiktok from "../../assets/img/Message/Tiktok.png"
-import Burgking from "../../assets/img/Message/Burg king.png"
-import Namepo2 from "../../assets/img/Message/Namepo.png"
-import Viveon2 from "../../assets/img/Message/Viveon.png"
-
-
-
- 
-</script>
 
 <template>
   <section class="ml-0 px-6 lg:ml-[74px] mb-[100px] mt-0 lg:mt-10 max-w-[791px] w-full">
@@ -31,7 +9,8 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
     <div class="mt-10 flex justify-between items-center">
       <div>
         <h6 class="text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px] mb-2">Theme</h6>
-        <p class="text-zinc-600 max-w-[200px] lg:max-w-[300px] text-xs font-light font-['Poppins'] leading-[18.89px]">Lorem ipsum dolor sit amet
+        <p class="text-zinc-600 max-w-[200px] lg:max-w-[300px] text-xs font-light font-['Poppins'] leading-[18.89px]">
+          Lorem ipsum dolor sit amet
           consectetur </p>
       </div>
       <div class="relative inline-block text-left">
@@ -66,7 +45,8 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
     <div class="mt-10 flex justify-between items-center">
       <div>
         <h6 class="text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px] mb-2">Language</h6>
-        <p class="text-zinc-600 text-xs  max-w-[200px] lg:max-w-[300px] font-light font-['Poppins'] leading-[18.89px]">Lorem ipsum dolor sit amet
+        <p class="text-zinc-600 text-xs  max-w-[200px] lg:max-w-[300px] font-light font-['Poppins'] leading-[18.89px]">
+          Lorem ipsum dolor sit amet
           consectetur </p>
       </div>
       <div class="relative inline-block text-left">
@@ -101,7 +81,8 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
     <div class="mt-10 flex justify-between items-center">
       <div>
         <h6 class="text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px] mb-2">Notification</h6>
-        <p class="text-zinc-600 text-xs max-w-[200px] lg:max-w-[300px] font-light font-['Poppins'] leading-[18.89px]">Lorem ipsum dolor sit amet
+        <p class="text-zinc-600 text-xs max-w-[200px] lg:max-w-[300px] font-light font-['Poppins'] leading-[18.89px]">
+          Lorem ipsum dolor sit amet
           consectetur </p>
       </div>
       <div class="relative inline-block text-left">
@@ -136,7 +117,8 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
     <div class="mt-10 flex justify-between items-center">
       <div>
         <h6 class="text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px] mb-2">Ringtone</h6>
-        <p class="text-zinc-600 text-xs max-w-[200px] lg:max-w-[300px] font-light font-['Poppins'] leading-[18.89px]">Lorem ipsum dolor sit amet
+        <p class="text-zinc-600 text-xs max-w-[200px] lg:max-w-[300px] font-light font-['Poppins'] leading-[18.89px]">
+          Lorem ipsum dolor sit amet
           consectetur </p>
       </div>
       <div class="relative inline-block text-left">
@@ -174,8 +156,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
   </section>
 </template>
 <script >
-
-
+const Theme = localStorage.getItem('Theme');
 export default {
   components: {
 
@@ -183,16 +164,16 @@ export default {
   data() {
 
     return {
-      
+
       themeIsOpen: false,
       languageIsOpen: false,
       notificationIsOpen: false,
       ringtoneIsOpen: false,
 
-      selectedOptionTheme: this.selectedTheme || 'Light', // Default text,
+      selectedOptionTheme: this.selectedTheme || Theme, // Default text,
       selectedOptionLanguage: this.selectedLanguage || 'English', // Default text,
       selectedOptionNotification: this.selectedNotification || 'ON', // Default text,
-      selectedOptionRingtone: this.selectedRingtone|| 'Ubilone Qusen', // Default text,
+      selectedOptionRingtone: this.selectedRingtone || 'Ubilone Qusen', // Default text,
       themeOption: [
         "Light",
         "Dark"
@@ -216,15 +197,39 @@ export default {
     }
 
   },
+  created() {
+    // Close the profile popup on outside click
+    window.addEventListener("click", this.handlePopupOpen);
+  },
+  beforeUnmount() {
+    // Remove the event listener when the component is unmounted
+    window.removeEventListener("click", this.handlePopupOpen);
+  },
   methods: {
+    handlePopupOpen(event) {
+      if (!this.$el.contains(event.target)) {
+        this.notificationIsOpen = false;
+        this.themeIsOpen = false;
+        this.languageIsOpen = false;
+      }
+    },
     toggleThemeDropdown() {
       this.themeIsOpen = !this.themeIsOpen;
+
     },
     toggleLanguageDropdown() {
       this.languageIsOpen = !this.languageIsOpen;
+      this.notificationIsOpen = false;
     },
     toggleNotificationDropdown() {
       this.notificationIsOpen = !this.notificationIsOpen;
+      this.languageIsOpen = false;
+      this.themeIsOpen = false;
+      if (!this.$el.contains(event.target)) {
+        this.OpenNotificationModal = false;
+        this.OpenModal = false;
+      }
+
     },
     toggleRingtoneDropdown() {
       this.ringtoneIsOpen = !this.ringtoneIsOpen;
@@ -233,26 +238,37 @@ export default {
 
     selectOptionTheme(option) {
       this.selectedOptionTheme = option;
+      localStorage.clear()
+      if (option === "Dark") {
+        document.body.classList.toggle('dark', true);
+        localStorage.setItem("Theme", 'dark')
+      }
+      else {
+        document.body.classList.toggle('dark', false);
+        console.log(option)
+        localStorage.setItem("Theme", 'light');
+      }
       this.themeIsOpen = false;
-   
-      this.$emit('update:selectedTheme', option); 
+
+
+      this.$emit('update:selectedTheme', option);
     },
     selectOptionLanguage(option) {
       this.selectedOptionLanguage = option;
       this.languageIsOpen = false;
- 
-      this.$emit('update:selectedLanguage', option); 
+
+      this.$emit('update:selectedLanguage', option);
     },
     selectOptionNotification(option) {
       this.selectedOptionNotification = option;
       this.notificationIsOpen = false;
-      
-      this.$emit('update:selectedNotification', option); 
+
+      this.$emit('update:selectedNotification', option);
     },
     selectOptionRingtone(option) {
       this.selectedOptionRingtone = option;
       this.ringtoneIsOpen = false;
-      this.$emit('update:selectedRingtone', option); 
+      this.$emit('update:selectedRingtone', option);
     },
   },
 };
