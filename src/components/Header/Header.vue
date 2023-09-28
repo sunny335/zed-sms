@@ -12,8 +12,8 @@ const login = true;
                 <div class="flex-1 md:flex md:items-center md:gap-11">
                     <RouterLink class="block text-teal-600   dark:text-[#F5F5F5]" to="/">
                         <span class="sr-only">Home</span>
-                        <CommunityIcon iconName="siteLogo" />
-                        <!-- <CommunityIcon iconName="siteLogoDark" v-if="Theme === 'dark'" /> -->
+                        <CommunityIcon iconName="siteLogo" v-if="Theme === 'light'" />
+                        <CommunityIcon iconName="siteLogoDark" v-if="Theme === 'dark'" />
 
                     </RouterLink>
                 </div>
