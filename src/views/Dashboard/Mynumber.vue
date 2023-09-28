@@ -68,7 +68,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                             class="w-11 h-11 p-3.5 rounded-[10px] border border-zinc-600 dark:border-[#ACB5BD] justify-start items-start gap-2.5 inline-flex"
                             @click="toggleActiveStatusDropdown">
                             <div class="w-4 h-4 relative rounded-[5px]">
-                                <svg v-if="Theme === 'light'" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                <svg v-if="Theme == 'light'" width="16" height="16" viewBox="0 0 16 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M6.33325 9.33397C7.43782 9.33397 8.33325 10.2294 8.33325 11.334C8.33325 12.4385 7.43782 13.334 6.33325 13.334C5.22868 13.334 4.33325 12.4385 4.33325 11.334C4.33325 10.2294 5.22868 9.33397 6.33325 9.33397Z"
@@ -82,7 +82,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                                     <path d="M14.6667 4.63867L13.3334 4.63867" stroke="#495057" stroke-linecap="round" />
                                 </svg>
 
-                                <svg v-if="Theme === 'dark'" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                <svg v-if="Theme == 'dark'" width="16" height="16" viewBox="0 0 16 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M6.33203 9.33397C7.4366 9.33397 8.33203 10.2294 8.33203 11.334C8.33203 12.4385 7.4366 13.334 6.33203 13.334C5.22746 13.334 4.33203 12.4385 4.33203 11.334C4.33203 10.2294 5.22746 9.33397 6.33203 9.33397Z"
