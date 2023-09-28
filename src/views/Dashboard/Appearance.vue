@@ -3,20 +3,20 @@
 <template>
   <section class="ml-0 px-6 lg:ml-[74px] mb-[100px] mt-0 lg:mt-10 max-w-[791px] w-full">
     <div class=" border-b border-gray-400 pb-[30px]">
-      <h3 class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px]">Appearance</h3>
+      <h3 class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">Appearance</h3>
     </div>
     <!-- Theme -->
     <div class="mt-10 flex justify-between items-center">
       <div>
-        <h6 class="text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px] mb-2">Theme</h6>
-        <p class="text-zinc-600 max-w-[200px] lg:max-w-[300px] text-xs font-light font-['Poppins'] leading-[18.89px]">
+        <h6 class="text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px] mb-2">Theme</h6>
+        <p class="text-zinc-600  dark:text-[#ACB5BD] max-w-[200px] lg:max-w-[300px] text-xs font-light font-['Poppins'] leading-[18.89px]">
           Lorem ipsum dolor sit amet
           consectetur </p>
       </div>
       <div class="relative inline-block text-left">
         <!-- Dropdown Trigger -->
         <div @click="toggleThemeDropdown" class="cursor-pointer flex items-center">
-          <div class="text-zinc-600 text-xs font-normal font-['Poppins'] leading-[17px]">
+          <div class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-normal font-['Poppins'] leading-[17px]">
 
             <span> {{ selectedOptionTheme }}</span>
           </div>
@@ -29,11 +29,11 @@
         </div>
         <!-- Dropdown Menu -->
         <ul v-show="themeIsOpen"
-          class="absolute right-0 mt-2 py-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-50">
+          class="absolute right-0 mt-2 py-2 w-48 bg-white  dark:bg-slate-900 border border-gray-300 rounded-md shadow-lg z-50">
           <!-- Render your list of countries and languages here -->
           <li v-for="(item, index) in themeOption" :key="index" @click="selectOptionTheme(item)"
-            class="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center">
-            <span class="text-neutral-800 text-xs font-light ">
+            class="px-4 py-2 cursor-pointer  dark:hover:bg-slate-600 dark:hover:bg-slate-600 flex items-center">
+            <span class="text-neutral-800  dark:text-[#F5F5F5] text-xs font-light ">
               {{ item }}
 
             </span>
@@ -44,15 +44,15 @@
     <!-- Language -->
     <div class="mt-10 flex justify-between items-center">
       <div>
-        <h6 class="text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px] mb-2">Language</h6>
-        <p class="text-zinc-600 text-xs  max-w-[200px] lg:max-w-[300px] font-light font-['Poppins'] leading-[18.89px]">
+        <h6 class="text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px] mb-2">Language</h6>
+        <p class="text-zinc-600  dark:text-[#ACB5BD] text-xs  max-w-[200px] lg:max-w-[300px] font-light font-['Poppins'] leading-[18.89px]">
           Lorem ipsum dolor sit amet
           consectetur </p>
       </div>
       <div class="relative inline-block text-left">
         <!-- Dropdown Trigger -->
         <div @click="toggleLanguageDropdown" class="cursor-pointer flex items-center">
-          <div class="text-zinc-600 text-xs font-normal font-['Poppins'] leading-[17px]">
+          <div class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-normal font-['Poppins'] leading-[17px]">
 
             <span> {{ selectedOptionLanguage }}</span>
           </div>
@@ -65,11 +65,11 @@
         </div>
         <!-- Dropdown Menu -->
         <ul v-show="languageIsOpen"
-          class="absolute right-0 mt-2 py-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-50">
+          class="absolute right-0 mt-2 py-2 w-48 bg-white  dark:bg-slate-900 border border-gray-300 rounded-md shadow-lg z-50">
           <!-- Render your list of countries and languages here -->
           <li v-for="(item, index) in languageOption" :key="index" @click="selectOptionLanguage(item)"
-            class="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center">
-            <span class="text-neutral-800 text-xs font-light ">
+            class="px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-600 flex items-center">
+            <span class="text-neutral-800  dark:text-[#F5F5F5] text-xs font-light ">
               {{ item }}
 
             </span>
@@ -80,15 +80,15 @@
     <!-- Notification -->
     <div class="mt-10 flex justify-between items-center">
       <div>
-        <h6 class="text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px] mb-2">Notification</h6>
-        <p class="text-zinc-600 text-xs max-w-[200px] lg:max-w-[300px] font-light font-['Poppins'] leading-[18.89px]">
+        <h6 class="text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px] mb-2">Notification</h6>
+        <p class="text-zinc-600  dark:text-[#ACB5BD] text-xs max-w-[200px] lg:max-w-[300px] font-light font-['Poppins'] leading-[18.89px]">
           Lorem ipsum dolor sit amet
           consectetur </p>
       </div>
       <div class="relative inline-block text-left">
         <!-- Dropdown Trigger -->
         <div @click="toggleNotificationDropdown" class="cursor-pointer flex items-center">
-          <div class="text-zinc-600 text-xs font-normal font-['Poppins'] leading-[17px]">
+          <div class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-normal font-['Poppins'] leading-[17px]">
 
             <span> {{ selectedOptionNotification }}</span>
           </div>
@@ -101,11 +101,11 @@
         </div>
         <!-- Dropdown Menu -->
         <ul v-show="notificationIsOpen"
-          class="absolute right-0 mt-2 py-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-50">
+          class="absolute right-0 mt-2 py-2 w-48 bg-white  dark:bg-slate-900 border border-gray-300 rounded-md shadow-lg z-50">
           <!-- Render your list of countries and languages here -->
           <li v-for="(item, index) in notificationOption" :key="index" @click="selectOptionNotification(item)"
-            class="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center z-10">
-            <span class="text-neutral-800 text-xs font-light ">
+            class="px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-600 flex items-center z-10">
+            <span class="text-neutral-800  dark:text-[#F5F5F5] text-xs font-light ">
               {{ item }}
 
             </span>
@@ -116,15 +116,15 @@
     <!-- Ringtone -->
     <div class="mt-10 flex justify-between items-center">
       <div>
-        <h6 class="text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px] mb-2">Ringtone</h6>
-        <p class="text-zinc-600 text-xs max-w-[200px] lg:max-w-[300px] font-light font-['Poppins'] leading-[18.89px]">
+        <h6 class="text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px] mb-2">Ringtone</h6>
+        <p class="text-zinc-600  dark:text-[#ACB5BD] text-xs max-w-[200px] lg:max-w-[300px] font-light font-['Poppins'] leading-[18.89px]">
           Lorem ipsum dolor sit amet
           consectetur </p>
       </div>
       <div class="relative inline-block text-left">
         <!-- Dropdown Trigger -->
         <div @click="toggleRingtoneDropdown" class="cursor-pointer flex items-center">
-          <div class="text-zinc-600 text-xs font-normal font-['Poppins'] leading-[17px]">
+          <div class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-normal font-['Poppins'] leading-[17px]">
 
             <span> {{ selectedOptionRingtone }}</span>
           </div>
@@ -137,11 +137,11 @@
         </div>
         <!-- Dropdown Menu -->
         <ul v-show="ringtoneIsOpen"
-          class="absolute right-0 mt-2 py-2 w-48 bg-white border border-gray-300 rounded-md shadow-lg z-50">
+          class="absolute right-0 mt-2 py-2 w-48 bg-white dark:bg-slate-900 border border-gray-300 rounded-md shadow-lg z-50">
           <!-- Render your list of countries and languages here -->
           <li v-for="(item, index) in ringtoneOption" :key="index" @click="selectOptionRingtone(item)"
-            class="px-4 py-2 cursor-pointer hover:bg-gray-100 flex items-center ">
-            <span class="text-neutral-800 text-xs font-light ">
+            class="px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-600 flex items-center ">
+            <span class="text-neutral-800  dark:text-[#F5F5F5] text-xs font-light ">
               {{ item }}
 
             </span>

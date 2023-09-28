@@ -24,24 +24,24 @@ import num7 from "../../assets/img/NumFlags/7.png"
         <!-- All Transaction -->
         <div class="">
             <div class="  w-full ">
-                <div class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px] ">All Transaction
+                <div class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] ">All Transaction
                 </div>
 
                 <div class=" w-full  overflow-x-auto max-w-[100vw] lg:max-w-[full]">
                     <table class="border-collapse w-full min-w-[825px] lg:min-w-full">
                         <thead>
-                            <tr class="shadow-md">
+                            <tr class="shadow-md dark:border-b-[1px]">
                                 <th
-                                    class="px-4 py-8 text-left text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-8 text-left text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px]">
                                     Date & Time</th>
                                 <th
-                                    class="px-4 py-8 text-left text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-8 text-left text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px]">
                                     Action</th>
                                 <th
-                                    class="px-4 py-8 text-left text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-8 text-left text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px]">
                                     Amount</th>
                                 <th
-                                    class="px-4 py-8 text-left text-neutral-800 text-base font-normal font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-8 text-left text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px]">
                                     Description</th>
 
                             </tr>
@@ -49,14 +49,14 @@ import num7 from "../../assets/img/NumFlags/7.png"
                         <tbody v-for="data in visibleData" :key="data.id" class="">
 
                             <tr class=" border-b-2">
-                                <td class="px-4 py-6 text-neutral-800 text-xs font-light font-['Poppins'] leading-[17px]">{{
+                                <td class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">{{
                                     data.dateTime }}</td>
-                                <td class="px-4 py-6 text-neutral-800 text-xs font-light font-['Poppins'] leading-[17px]">
+                                <td class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
                                     {{ data.action }}</td>
-                                <td class="px-4 py-6 text-neutral-800 text-xs font-light font-['Poppins'] leading-[17px]">
+                                <td class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
                                     ${{ data.amount }}</td>
                                 <td
-                                    class="px-4 py-6 text-neutral-800 text-xs font-light font-['Poppins'] leading-[17px] max-w-[253px]">
+                                    class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px] max-w-[253px]">
                                     {{ data.description }} </td>
 
                             </tr>

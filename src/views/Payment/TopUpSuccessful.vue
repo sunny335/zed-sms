@@ -21,7 +21,7 @@
                     Top-up Successful</h2>
                 <p class="text-zinc-600 dark:text-white text-center text-sm lg:text-base font-normal font-['Poppins'] leading-tight tracking-tight mb-[40px]">Your top-up of $23.25 was successfully completed</p>
                 <div
-                    class="max-w-[258px] h-[53px] px-20 py-3.5 bg-blue-600 rounded-xl justify-center items-center gap-2.5 inline-flex cursor-pointer">
+                    class="max-w-[258px] h-[53px] px-20 py-3.5 bg-[#0057FF] rounded-xl justify-center items-center gap-2.5 inline-flex cursor-pointer">
                     <p class="text-white text-xl font-medium font-['Poppins'] leading-normal tracking-tight">OK</p>
                 </div>
             </div>

@@ -81,17 +81,17 @@ const router = createRouter({
     {
       path: '/privacy-policy',
       name: 'Privacy Policy',
-      component: () => import('../views/About/PrivacyPolicy.vue')
+      component: () => import('../views/PrivacyPolicy/PrivacyPolicy.vue')
     },
     {
       path: '/terms-condition',
       name: 'Terms Condition',
-      component: () => import('../views/About/TermsCondition.vue')
+      component: () => import('../views/TermsCondition/TermsCondition.vue')
     },
     {
       path: '/contact-us',
       name: 'Contact Us',
-      component: () => import('../views/About/ContactUs.vue')
+      component: () => import('../views/ContactUs/ContactUs.vue')
     },
     {
       path: '/blogs',

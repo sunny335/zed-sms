@@ -165,7 +165,7 @@
   
 <script>
 const Theme = localStorage.getItem('Theme');
-console.log("object001", Theme);
+
 export default {
   // Sidebar component logic
 };

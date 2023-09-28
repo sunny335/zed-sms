@@ -11,20 +11,26 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
     <section class="bg-white dark:bg-[#070F24] pt-0 lg:pt-10 pb-[39px] flex justify-center items-center">
         <div
             class="min-w-[1112px] min-h-[687px] px-[120px] py-0 lg:py-10 bg-white dark:bg-[#070F24] rounded-none lg:rounded-[30px] shadow-none lg:shadow-custom flex-col justify-start items-center gap-[50px] inline-flex">
-            <h2 class="text-left lg:text-center w-[40%] text-neutral-800 dark:text-white text-[32px] font-medium font-['Poppins']">Log in
+            <h2
+                class="text-left lg:text-center w-[40%] text-neutral-800  dark:text-[#F5F5F5] text-[32px] font-medium font-['Poppins']">
+                Log in
             </h2>
             <div class="flex-col flex lg:flex-row justify-center items-center  w-full min-h-[381px]">
                 <div>
                     <form>
                         <div class="max-w-[354px]">
-                            <label class="text-zinc-600 dark:text-white text-base font-normal font-['Poppins']">Email or Username</label>
-                            <input type="email" class="w-[354px] px-[16px] py-[8px] h-14 relative rounded-xl border border-gray-400 mt-2 dark:bg-transparent" />
+                            <label class="text-zinc-600  dark:text-[#F5F5F5] text-base font-normal font-['Poppins']">Email
+                                or Username</label>
+                            <input type="email"
+                                class="w-[354px] px-[16px] py-[8px] h-14 relative rounded-xl border border-gray-400 mt-2 dark:bg-transparent" />
                         </div>
                         <div class="max-w-[354px] mt-4">
-                            <div class="flex justify-between items-center">
-                                <label class="text-zinc-600  dark:text-white text-base  font-normal font-['Poppins'] block ">Password</label>
-                                <div class="flex items-center gap-2">
-                                    <svg width="19" height="17" viewBox="0 0 19 17" fill="none"
+                            <div class="flex justify-between items-center ">
+                                <label
+                                    class="text-zinc-600   dark:text-[#F5F5F5] text-base  font-normal font-['Poppins'] block ">Password</label>
+                                <div class="flex items-center gap-2 cursor-pointer w-[72px] justify-between"
+                                    v-on:click="handlePasswordShow(!passwordShow)">
+                                    <svg v-if="passwordShow == true" width="19" height="17" viewBox="0 0 19 17" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g id="Group 1">
                                             <path id="Vector"
@@ -35,13 +41,25 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                                                 fill="#495057" />
                                         </g>
                                     </svg>
-                                    <span>
-                                        Hide
+                                    <svg v-if="passwordShow == false" xmlns="http://www.w3.org/2000/svg" height="17" width="19" viewBox="0 0 612 612"
+                                        xml:space="preserve">
+
+                                        <path
+                                            d="M609.608 315.426a19.767 19.767 0 0 0 0-18.853c-58.464-107.643-172.5-180.72-303.607-180.72S60.857 188.931 2.393 296.573a19.767 19.767 0 0 0 0 18.853C60.858 423.069 174.892 496.147 306 496.147s245.143-73.078 303.608-180.721zM306 451.855c-80.554 0-145.855-65.302-145.855-145.855S225.446 160.144 306 160.144 451.856 225.446 451.856 306 386.554 451.855 306 451.855z"
+                                            fill="#495057" />
+                                        <path
+                                            d="M306 231.67c-6.136 0-12.095.749-17.798 2.15 5.841 6.76 9.383 15.563 9.383 25.198 0 21.3-17.267 38.568-38.568 38.568-9.635 0-18.438-3.541-25.198-9.383a74.513 74.513 0 0 0-2.15 17.798c0 41.052 33.279 74.33 74.33 74.33s74.33-33.279 74.33-74.33S347.052 231.67 306 231.67z"
+                                            fill="#495057" />
+
+                                    </svg>
+                                    <span class="pl-1">
+                                        {{ passwordShow ? "Hide" : "Show" }}
                                     </span>
 
                                 </div>
                             </div>
-                            <input type="password" class="w-[354px] px-[16px] py-[8px] h-14 relative rounded-xl border border-gray-400 mt-2 dark:bg-transparent" />
+                            <input :type="passwordShow ? 'password' : 'text'"
+                                class="w-[354px] px-[16px] py-[8px] h-14 relative rounded-xl border border-gray-400 mt-2 dark:bg-transparent" />
                         </div>
                         <div class="">
                             <label for="" class="flex gap-4  justify-between items-center my-5">
@@ -65,22 +83,26 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                                         </label>
                                     </div>
 
-                                    <p class="text-zinc-600  dark:text-white text-base font-light font-['Poppins']">Remember me</p>
+                                    <p class="text-zinc-600   dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                        Remember me</p>
                                 </div>
                                 <RouterLink to="/reset-password"
-                                    class="text-right text-zinc-600  dark:text-white text-base font-light font-['Poppins'] underline">Forget
+                                    class="text-right text-zinc-600   dark:text-[#F5F5F5] text-base font-light font-['Poppins'] underline">
+                                    Forget
                                     password!</RouterLink>
                             </label>
                         </div>
                         <button
-                            class="max-w-[354px] max-h-[58px] w-full py-[11px] bg-blue-600 rounded-[14px] justify-center items-center gap-2.5 inline-flex">
+                            class="max-w-[354px] max-h-[58px] w-full py-[11px] bg-[#0057FF] rounded-[14px] justify-center items-center gap-2.5 inline-flex">
                             <div class="text-center text-white text-2xl font-normal font-['Poppins']">Log in</div>
                         </button>
                     </form>
-                    <div class="mt-[24px]"><span class="text-zinc-600  dark:text-white text-base font-normal font-['Poppins']">Don’t have an
-                            ccount? </span><span class="text-zinc-600  dark:text-white text-base font-normal font-['Poppins'] underline">
+                    <div class="mt-[24px]"><span
+                            class="text-zinc-600   dark:text-[#F5F5F5] text-base font-normal font-['Poppins']">Don’t have an
+                            ccount? </span><span
+                            class="text-zinc-600   dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] underline">
                             <RouterLink to="/signUp"
-                                class="text-right text-zinc-600  dark:text-white text-base font-light font-['Poppins'] underline">
+                                class="text-right text-zinc-600   dark:text-[#F5F5F5] text-base font-light font-['Poppins'] underline">
                                 Sign Up
                             </RouterLink>
                         </span></div>
@@ -89,14 +111,14 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                 <div class="hidden lg:block">
                     <div class="flex flex-col items-center justify-center px-[81px]">
                         <div class="h-[116.50px] w-[2px] bg-gray-400"></div>
-                        <p class=" text-neutral-800 text-base font-normal font-['Poppins'] py-2">OR</p>
+                        <p class=" text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] py-2">OR</p>
                         <div class="h-[116.50px] w-[2px] bg-gray-400"></div>
                     </div>
                 </div>
                 <div class="block lg:hidden mt-10 mx-12">
                     <div class="flex  items-center justify-center ">
                         <div class="w-[124px] h-[1px] bg-gray-400"></div>
-                        <p class=" text-neutral-800 text-base font-normal font-['Poppins'] px-6">OR</p>
+                        <p class=" text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] px-6">OR</p>
                         <div class="w-[124px] h-[1px] bg-gray-400"></div>
                     </div>
 
@@ -109,7 +131,8 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                             <div class="w-6 h-6 relative">
                                 <img :src="google" alt="" srcset="">
                             </div>
-                            <div class="text-neutral-800 dark:text-white text-base font-light font-['Poppins']">Continue with Google</div>
+                            <div class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                Continue with Google</div>
                         </div>
                     </button>
                     <button
@@ -118,7 +141,8 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                             <div class="w-6 h-6 relative">
                                 <img :src="fb" alt="" srcset="">
                             </div>
-                            <div class="text-neutral-800  dark:text-white text-base font-light font-['Poppins']">Continue with Facebook</div>
+                            <div class="text-neutral-800   dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                Continue with Facebook</div>
                         </div>
                     </button>
                     <button
@@ -127,13 +151,15 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                             <div class="w-6 h-6 relative">
                                 <img :src="apple" alt="" srcset="">
                             </div>
-                            <div class="text-neutral-800 dark:text-white text-base font-light font-['Poppins']">Continue with Apple ID</div>
+                            <div class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                Continue with Apple ID</div>
                         </div>
                     </button>
                     <button
                         class="max-w-[354px] max-h-[60px]  w-full  pt-[18.50px] pb-[17.50px] bg-white dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
                         <div class="self-stretch justify-center items-center gap-4 inline-flex">
-                            <div class="text-neutral-800 dark:text-white text-base font-light font-['Poppins']">Continue with Others</div>
+                            <div class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                Continue with Others</div>
                         </div>
                     </button>
                 </div>
@@ -168,3 +194,30 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
         </div>
     </section>
 </template>
+
+
+<script>
+
+const Theme = localStorage.getItem('Theme');
+export default {
+    components: {
+
+    },
+    data() {
+        return {
+            passwordShow: true,
+        };
+    },
+
+    methods: {
+
+        handlePasswordShow(v) {
+
+            this.passwordShow = v
+            console.log("handlePasswordShow", this.passwordShow = v);
+
+        },
+
+    },
+};
+</script>

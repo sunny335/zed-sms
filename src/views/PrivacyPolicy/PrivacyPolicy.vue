@@ -15,7 +15,7 @@
                 <div class="mb-[40px] lg:mb-[60px]">
                     <h3 class="text-neutral-800  dark:text-white text-xl lg:text-[32px] font-medium font-['Poppins'] leading-9 mb-[16px]">Icons &
                         Graphics</h3>
-                    <p class="text-zinc-600  dark:text-white text-sm lg:text-base font-normal font-['Poppins'] leading-normal">Icons and Graphics
+                    <p class="text-zinc-600   dark:text-[#ACB5BD] text-sm lg:text-base font-normal font-['Poppins'] leading-normal">Icons and Graphics
                         are manually designed by the
                         <a href=""
                             class="text-blue-600 dark:text-blue-600 text-base font-semibold font-['Poppins'] leading-normal">VictorFlow</a>
@@ -24,7 +24,7 @@
                         credit.
                     </p>
                     <br>
-                    <p class="text-zinc-600  dark:text-white text-sm lg:text-base font-normal font-['Poppins'] leading-normal">
+                    <p class="text-zinc-600   dark:text-[#ACB5BD] text-sm lg:text-base font-normal font-['Poppins'] leading-normal">
                         Upon purchasing Software UI Kit Template our team grants you a nonexclusive, worldwide
                         copyright license to download, copy, modify, and use the icons.
                     </p>
@@ -32,7 +32,7 @@
                 <div class="mb-[40px] lg:mb-[60px]">
                     <h3 class="text-neutral-800 dark:text-white text-xl lg:text-[32px] font-medium font-['Poppins'] leading-9 mb-[16px]">Photography
                     </h3>
-                    <p class="text-zinc-600 dark:text-white text-sm lg:text-base font-normal font-['Poppins'] leading-normal">All images used in the
+                    <p class="text-zinc-600  dark:text-[#ACB5BD] text-sm lg:text-base font-normal font-['Poppins'] leading-normal">All images used in the
                         <a href="" class="text-blue-600  dark:text-blue-600 text-sm lg:text-base font-semibold font-['Poppins'] leading-normal">
                             Saasup
                         </a>
@@ -84,7 +84,7 @@
                 <div class="mb-[64px] lg:mb-[60px]">
                     <h3 class="text-neutral-800 dark:text-white text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-9 mb-[16px]">Font
                     </h3>
-                    <p class="text-zinc-600 dark:text-white text-sm lg:text-base font-normal font-['Poppins'] leading-normal">Saasup template uses free
+                    <p class="text-zinc-600  dark:text-[#ACB5BD] text-sm lg:text-base font-normal font-['Poppins'] leading-normal">Saasup template uses free
                         licensed
                         <a href="https://fonts.google.com/"
                             class="text-blue-600 dark:text-blue-600 text-sm lg:text-base font-semibold font-['Poppins'] leading-normal">

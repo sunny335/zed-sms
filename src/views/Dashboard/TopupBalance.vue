@@ -2,20 +2,12 @@
 
 import { RouterLink } from 'vue-router'
 
-import cash from "../../assets/img/choosePayment/1.png"
-import num1 from "../../assets/img/allNumber/1.png"
-import num2 from "../../assets/img/allNumber/2.png"
-import num3 from "../../assets/img/allNumber/3.png"
-import num4 from "../../assets/img/allNumber/4.png"
-import num5 from "../../assets/img/allNumber/5.png"
-import num6 from "../../assets/img/allNumber/6.png"
-import num7 from "../../assets/img/allNumber/7.png"
-import Namepo from "../../assets/img/Message/Namepo.png"
-import Viveon from "../../assets/img/Message/Viveon.png"
-import Tiktok from "../../assets/img/Message/Tiktok.png"
-import Burgking from "../../assets/img/Message/Burg king.png"
-import Namepo2 from "../../assets/img/Message/Namepo.png"
-import Viveon2 from "../../assets/img/Message/Viveon.png"
+import cash1 from "../../assets/img/choosePayment/1.png"
+import cash2 from "../../assets/img/choosePayment/2.png"
+import cash3 from "../../assets/img/choosePayment/3.png"
+import cash4 from "../../assets/img/choosePayment/4.png"
+
+
 
 
 
@@ -29,7 +21,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
             <div class="max-w-[401px] w-full mx-auto">
                 <div class="max-w-[343px] lg:max-w-[401px] h-[635px] mx-auto">
                     <div class="flex  items-center mb-[30px]">
-                        <h3 class="text-neutral-800 text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">Choose
+                        <h3 class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">Choose
                             Payment</h3>
 
                     </div>
@@ -45,11 +37,11 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
 
                                 <div class="flex items-center gap-[20px] py-4 pr-3" v-for="data in paymentsData"
                                     :key="data.id">
-                                    <img :src="cash" alt="" srcset="">
+                                    <img :src="data.img" alt="" srcset="">
                                     <div>
-                                        <h6 class="text-neutral-800 text-base font-medium font-['Poppins'] leading-[17px]">
+                                        <h6 class="text-neutral-800  dark:text-[#F5F5F5] text-base font-medium font-['Poppins'] leading-[17px]">
                                             Cash</h6>
-                                        <p class=" text-zinc-600 text-sm font-light font-['Poppins'] leading-normal">
+                                        <p class=" text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-normal">
                                             Accepting bitcoin payment to staic wallet. Fee 1.5%</p>
                                     </div>
                                 </div>
@@ -62,23 +54,23 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
             </div>
             <!-- Balance TO-UP -->
             <div class="max-w-[360px] w-full mx-auto">
-                <h3 class="text-neutral-800 text-xl font-medium font-['Poppins'] leading-[17px] mb-10 text-center lg:text-left">Balance TO-UP</h3>
+                <h3 class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-medium font-['Poppins'] leading-[17px] mb-10 text-center lg:text-left">Balance TO-UP</h3>
 
-                <div class="max-w-[360px] w-full h-[281px] px-[30px] py-10 bg-white rounded-[20px] shadow-none lg:shadow-custom">
+                <div class="max-w-[360px] w-full h-[281px] px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
                     <form>
 
-                        <h6 class="text-neutral-800 text-base font-normal font-['Poppins'] mb-[14px]">Amount</h6>
+                        <h6 class="text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] mb-[14px]">Amount</h6>
                         <input
-                            class="max-w-[300px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600"
+                            class="max-w-[300px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 dark:bg-transparent"
                             type="text" placeholder="$00.00" />
-                        <p class="text-zinc-600 text-xs font-light font-['Poppins'] mt-[10px]">Minimum Amount: 1 USD</p>
+                        <p class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] mt-[10px]">Minimum Amount: 1 USD</p>
 
 
 
                     <div class="flex justify-end items-center">
                         <button
-                            class="max-w-[166px] h-[45px] w-full py-3 rounded-[10px] shadow border border-blue-600 justify-center items-start gap-2.5 inline-flex mt-10">
-                            <div class="text-center text-blue-600 text-sm font-normal font-['Poppins']">TOP-UP Now</div>
+                            class="max-w-[166px] h-[45px] w-full py-3 rounded-[10px] shadow border border-blue-600 justify-center items-start gap-2.5 inline-flex mt-10  dark:bg-[#0057FF]">
+                            <div class="text-center text-blue-600  dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">TOP-UP Now</div>
                         </button>
                     </div>
                     </form>
@@ -105,55 +97,55 @@ export default {
             paymentsData: [
                 {
                     id: 1,
-                    img: cash,
+                    img: cash1,
                     name: "Cash",
                     text: "Accepting bitcoin payment to staic wallet. Fee 1.5%"
                 },
                 {
                     id: 2,
-                    img: cash,
+                    img: cash2,
                     name: "Cash",
                     text: "Accepting bitcoin payment to staic wallet. Fee 1.5%"
                 },
                 {
                     id: 3,
-                    img: cash,
+                    img: cash3,
                     name: "Cash",
                     text: "Accepting bitcoin payment to staic wallet. Fee 1.5%"
                 },
                 {
                     id: 4,
-                    img: cash,
+                    img: cash4,
                     name: "Cash",
                     text: "Accepting bitcoin payment to staic wallet. Fee 1.5%"
                 },
                 {
                     id: 5,
-                    img: cash,
+                    img: cash1,
                     name: "Cash",
                     text: "Accepting bitcoin payment to staic wallet. Fee 1.5%"
                 },
                 {
                     id: 6,
-                    img: cash,
+                    img: cash2,
                     name: "Cash",
                     text: "Accepting bitcoin payment to staic wallet. Fee 1.5%"
                 },
                 {
                     id: 7,
-                    img: cash,
+                    img: cash3,
                     name: "Cash",
                     text: "Accepting bitcoin payment to staic wallet. Fee 1.5%"
                 },
                 {
                     id: 8,
-                    img: cash,
+                    img: cash4,
                     name: "Cash",
                     text: "Accepting bitcoin payment to staic wallet. Fee 1.5%"
                 },
                 {
                     id: 9,
-                    img: cash,
+                    img: cash1,
                     name: "Cash",
                     text: "Accepting bitcoin payment to staic wallet. Fee 1.5%"
                 },

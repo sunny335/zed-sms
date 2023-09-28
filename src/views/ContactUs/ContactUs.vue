@@ -76,7 +76,7 @@ import blueTik from '../../assets/img/blueTik.svg';
                             </div>
                             <div class="flex justify-end items-center mt-[30px]">
                                 <button
-                                    class="w-[257px] h-[60px] px-12 py-[18px] bg-blue-600 rounded-[14px] shadow justify-center items-center gap-2.5 inline-flex">
+                                    class="w-[257px] h-[60px] px-12 py-[18px] bg-[#0057FF] rounded-[14px] shadow justify-center items-center gap-2.5 inline-flex">
                                     <div class="text-center text-white text-base font-normal font-['Poppins']">Submit
                                         Message
                                     </div>

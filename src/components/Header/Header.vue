@@ -2,7 +2,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import CommunityIcon from '../icons/IconCollections.vue'
-const login = !true;
+const login = true;
 </script>
 
 <template>
@@ -10,12 +10,12 @@ const login = !true;
         <div class="mx-auto max-w-[1192px] px-4 sm:px-6 lg:px-8 w-full">
             <div class="flex h-[126px] items-center justify-between gap-[24px]">
                 <div class="flex-1 md:flex md:items-center md:gap-11">
-                    <a class="block text-teal-600  dark:text-white" href="/">
+                    <RouterLink class="block text-teal-600   dark:text-[#F5F5F5]" to="/">
                         <span class="sr-only">Home</span>
                         <CommunityIcon iconName="siteLogo" v-if="Theme === 'light'" />
                         <CommunityIcon iconName="siteLogoDark" v-if="Theme === 'dark'" />
 
-                    </a>
+                    </RouterLink>
                 </div>
 
                 <div class="md:flex md:items-center md:gap-[42px]">
@@ -23,7 +23,7 @@ const login = !true;
                         <ul class="flex items-center gap-11 text-sm">
                             <li>
                                 <RouterLink
-                                    class="text-neutral-800  dark:text-white text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600"
+                                    class="text-neutral-800   dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600"
                                     to="/service">
                                     Our Service
                                 </RouterLink>
@@ -31,7 +31,7 @@ const login = !true;
 
                             <li>
                                 <RouterLink
-                                    class="text-neutral-800 dark:text-white text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600"
+                                    class="text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600"
                                     to="/about">
                                     About us
                                 </RouterLink>
@@ -39,7 +39,7 @@ const login = !true;
 
                             <li>
                                 <RouterLink
-                                    class="text-neutral-800 dark:text-white text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600"
+                                    class="text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600"
                                     to="/contact-us">
                                     Contact
                                 </RouterLink>
@@ -54,13 +54,13 @@ const login = !true;
                                     class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-blue-600 justify-center items-center inline-flex"
                                     to="/logIn">
                                     <span
-                                        class="text-center text-neutral-800 dark:text-white text-sm font-normal font-['Poppins'] leading-[17px]">
+                                        class="text-center text-neutral-800  dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
                                         Sign In
                                     </span>
                                 </RouterLink>
                             </div>
                             <RouterLink
-                                class="w-24 h-[37px] px-4 py-2.5 bg-blue-600 rounded-[10px] justify-center items-end inline-flex"
+                                class="w-24 h-[37px] px-4 py-2.5 bg-[#0057FF] rounded-[10px] justify-center items-end inline-flex"
                                 to="/signUp">
                                 <span class="text-center text-white text-sm font-medium font-['Poppins'] leading-[17px]">
                                     Sign Up
@@ -105,7 +105,7 @@ const login = !true;
                                     class="w-[369px] absolute z-10 right-0 top-[40px] h-[630px] px-[25px] py-5 bg-neutral-50 rounded-[30px] flex-col justify-start items-start gap-3.5 inline-flex">
                                     <div
                                         class="w-full pb-6 border-b border-gray-400 justify-center items-center gap-2.5 inline-flex">
-                                        <div class="text-neutral-800  dark:text-white text-xl font-medium font-['Poppins']">Notification
+                                        <div class="text-neutral-800   dark:text-[#F5F5F5] text-xl font-medium font-['Poppins']">Notification
                                         </div>
                                     </div>
                                     <div

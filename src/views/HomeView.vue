@@ -18,11 +18,11 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
         <div class="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5">
           <div class="max-w-xl mb-0 lg:mb-6">
             <h3
-              class="max-w-[387px] text-gray-900 dark:text-white text-2xl lg:text-[42px] font-medium font-['Poppins'] leading-[34px] lg:leading-[50px]">
+              class="max-w-[387px] text-gray-900  dark:text-[#F5F5F5] text-2xl lg:text-[42px] font-medium font-['Poppins'] leading-[34px] lg:leading-[50px]">
               Send & Receive <br />
               Message Online </h3>
             <p
-              class="max-w-[387px] mt-4 lg:mt-[30px] text-zinc-600 dark:text-white  text-xs font-light lg:text-base lg:font-normal font-['Poppins'] leading-relaxed">
+              class="max-w-[387px] mt-4 lg:mt-[30px] text-zinc-600  dark:text-[#F5F5F5]  text-xs font-light lg:text-base lg:font-normal font-['Poppins'] leading-relaxed">
               Powerful,
               self-serve product easy to use for easily communicate with our virtual sim cards, sign up us or see the demo
             </p>
@@ -567,7 +567,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
     <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
       <div class="pt-[136px] lg:pt-[154px]">
         <h3
-          class="max-w-[197px]  mx-auto lg:max-w-full text-center text-neutral-800 dark:text-white  text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[44px]">
+          class="max-w-[197px]  mx-auto lg:max-w-full text-center text-neutral-800  dark:text-[#F5F5F5]  text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[44px]">
           Buy virtual sim
           easier than ever</h3>
 
@@ -580,7 +580,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
             </svg>
             <div
               class="w-[67px] h-[66px] p-5 rounded-[100px] border border-neutral-800 dark:border-white justify-center items-center gap-2.5 inline-flex">
-              <div class="text-neutral-800 dark:text-white  text-2xl font-medium font-['Inter'] leading-relaxed">01</div>
+              <div class="text-neutral-800  dark:text-[#F5F5F5]  text-2xl font-medium font-['Inter'] leading-relaxed">01</div>
             </div>
             <svg v-if="Theme === 'light'"  class="mr-[30px]" width="292" height="39" viewBox="0 0 292 39" fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -594,7 +594,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
 
             <div
               class="w-[69px] h-[66px] px-[19px] py-5 rounded-[100px] border border-neutral-800 dark:border-white justify-center items-center gap-2.5 inline-flex">
-              <div class="text-neutral-800 dark:text-white  text-2xl font-medium font-['Inter'] leading-relaxed">02</div>
+              <div class="text-neutral-800  dark:text-[#F5F5F5]  text-2xl font-medium font-['Inter'] leading-relaxed">02</div>
             </div>
             <svg v-if="Theme === 'light'"  class="mr-[30px]" width="292" height="39" viewBox="0 0 292 39" fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -607,7 +607,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
             </svg>
             <div
               class="w-[69px] h-[66px] px-[19px] py-5 rounded-[100px] border border-neutral-800 dark:border-white justify-center items-center gap-2.5 inline-flex">
-              <div class="text-neutral-800 dark:text-white  text-2xl font-medium font-['Inter'] leading-relaxed">03</div>
+              <div class="text-neutral-800  dark:text-[#F5F5F5]  text-2xl font-medium font-['Inter'] leading-relaxed">03</div>
             </div>
             <svg width="119" height="39" viewBox="0 0 119 39" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 19.6693H118M118 19.6693L99.25 1.16931M118 19.6693L99.25 38.1693" stroke="#ACB5BD"
@@ -624,7 +624,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               <div class="flex flex-col justify-center items-center block lg:hidden">
                 <div
                   class="w-11 h-11 px-3.5 py-[9px] rounded-[100px] border border-zinc-600 justify-center items-center gap-2.5 inline-flex">
-                  <div class="text-zinc-600 dark:text-white  text-base font-normal font-['Poppins'] leading-relaxed">01
+                  <div class="text-zinc-600  dark:text-[#F5F5F5]  text-base font-normal font-['Poppins'] leading-relaxed">01
                   </div>
                 </div>
                 <svg width="21" height="50" viewBox="0 0 21 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -635,10 +635,10 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               </div>
 
               <div class="flex-col justify-start items-start lg:items-center gap-4 inline-flex">
-                <h5 class="text-neutral-800  dark:text-white text-2xl font-normal font-['Poppins'] leading-relaxed">Sign
+                <h5 class="text-neutral-800   dark:text-[#F5F5F5] text-2xl font-normal font-['Poppins'] leading-relaxed">Sign
                   in/up</h5>
                 <p
-                  class="text-left lg:text-center text-neutral-800 dark:text-white  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed">
+                  class="text-left lg:text-center text-neutral-800  dark:text-[#F5F5F5]  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed">
                   Get
                   local or toll-free North American phone numbers or port existing fee.</p>
               </div>
@@ -659,10 +659,10 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               </div>
 
               <div class="flex-col justify-start items-start lg:items-center gap-4 inline-flex">
-                <h5 class="text-neutral-800 dark:text-white  text-2xl font-normal font-['Poppins'] leading-relaxed">Select
+                <h5 class="text-neutral-800  dark:text-[#F5F5F5]  text-2xl font-normal font-['Poppins'] leading-relaxed">Select
                   the number</h5>
                 <p
-                  class="text-left lg:text-center text-neutral-800 dark:text-white  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed">
+                  class="text-left lg:text-center text-neutral-800  dark:text-[#F5F5F5]  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed">
                   Use OpenPhone across all your devices to stay connected.</p>
               </div>
             </div>
@@ -682,10 +682,10 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               </div>
 
               <div class="flex-col justify-start items-start lg:items-center gap-4 inline-flex">
-                <h5 class="text-neutral-800 dark:text-white  text-2xl font-normal font-['Poppins'] leading-relaxed">Make
+                <h5 class="text-neutral-800  dark:text-[#F5F5F5]  text-2xl font-normal font-['Poppins'] leading-relaxed">Make
                   Payment</h5>
                 <p
-                  class="text-left lg:text-center text-neutral-800 dark:text-white  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed">
+                  class="text-left lg:text-center text-neutral-800  dark:text-[#F5F5F5]  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed">
                   Try OpenPhone free for 7 days — no
                   commitment necessary.</p>
               </div>
@@ -714,12 +714,12 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
           <div class="lg:mb-16 mb-4 lg:max-w-lg lg:pr-5">
             <div class=" mb-6">
               <h3
-                class=" text-neutral-800 dark:text-white  text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[44px]">
+                class=" text-neutral-800  dark:text-[#F5F5F5]  text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[44px]">
                 Why Choose
                 Us?</h3>
 
               <p
-                class="max-w-[447px] text-neutral-800 dark:text-white  lg:text-base text-sm font-light font-['Poppins'] leading-relaxed pt-[10px]">
+                class="max-w-[447px] text-neutral-800  dark:text-[#F5F5F5]  lg:text-base text-sm font-light font-['Poppins'] leading-relaxed pt-[10px]">
                 Choose
                 us for
                 unparalleled quality, exceptional service.</p>
@@ -727,40 +727,40 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
             </div>
             <div class=" mb-6">
               <h4
-                class=" text-neutral-800 dark:text-white  text-base lg:text-2xl  font-normal font-['Inter'] leading-[44px]">
+                class=" text-neutral-800  dark:text-[#F5F5F5]  text-base lg:text-2xl  font-normal font-['Inter'] leading-[44px]">
                 Protect Your
                 Privacy</h4>
 
               <div
-                class="max-w-[447px] text-neutral-800 dark:text-white  text-sm lg:text-base font-light font-['Inter'] leading-relaxed pt-[10px]">
+                class="max-w-[447px] text-neutral-800  dark:text-[#F5F5F5]  text-sm lg:text-base font-light font-['Inter'] leading-relaxed pt-[10px]">
                 Phone number
                 inboxes are workspaces where teams view and collaborate on contact conversations.</div>
 
             </div>
             <div class=" mb-6">
               <h4
-                class=" text-neutral-800 dark:text-white  text-base lg:text-2xl font-normal font-['Inter'] leading-[44px]">
+                class=" text-neutral-800  dark:text-[#F5F5F5]  text-base lg:text-2xl font-normal font-['Inter'] leading-[44px]">
                 You can see
                 your log and
                 service usage</h4>
 
 
               <p
-                class="max-w-[447px] text-neutral-800 dark:text-white  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed pt-[10px]">
+                class="max-w-[447px] text-neutral-800  dark:text-[#F5F5F5]  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed pt-[10px]">
                 Easily
                 track conversations: record calls, transcribe voicemails, view logs all in one place.</p>
 
             </div>
             <div class=" mb-6">
               <h4
-                class=" text-neutral-800 dark:text-white  text-base lg:text-2xl font-normal font-['Inter'] leading-[44px]">
+                class=" text-neutral-800  dark:text-[#F5F5F5]  text-base lg:text-2xl font-normal font-['Inter'] leading-[44px]">
                 Contact
                 details all in one
                 place</h4>
 
 
               <p
-                class="max-w-[447px] text-neutral-800 dark:text-white  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed pt-[10px]">
+                class="max-w-[447px] text-neutral-800  dark:text-[#F5F5F5]  text-sm lg:text-base font-light font-['Poppins'] leading-relaxed pt-[10px]">
                 Keep
                 track of important contact details that matter to your business with custom properties and notes.</p>
 
@@ -781,11 +781,11 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
             <div class="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5">
               <div class="max-w-full mb-6">
                 <h3
-                  class="text-neutral-800 dark:text-white  text-2xl lg:text-[32px] font-medium font-['Inter'] leading-[48px] text-center lg:text-left">
+                  class="text-neutral-800  dark:text-[#F5F5F5]  text-2xl lg:text-[32px] font-medium font-['Inter'] leading-[48px] text-center lg:text-left">
                   Get a tour of
                   ZEDSMS </h3>
                 <p
-                  class="max-w-[334px]  text-neutral-800 dark:text-white  text-sm text-center lg:text-left lg:text-base font-light font-['Inter'] mt-[10px]">
+                  class="max-w-[334px]  text-neutral-800  dark:text-[#F5F5F5]  text-sm text-center lg:text-left lg:text-base font-light font-['Inter'] mt-[10px]">
                   Watch the tour you
                   just how easy it is to get your messaging started.
                 </p>
@@ -793,7 +793,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
                   <div
                     class="mt-[30px] px-10 py-[15px] rounded-[14px] border border-zinc-600 justify-start items-start inline-flex ">
                     <div
-                      class="text-center text-zinc-600 dark:text-white  text-[19px] font-light font-['Inter'] leading-relaxed">
+                      class="text-center text-zinc-600  dark:text-[#F5F5F5]  text-[19px] font-light font-['Inter'] leading-relaxed">
                       Watch demo
                       ->
                     </div>
@@ -821,7 +821,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
     <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
       <div class="pt-[117px]">
         <h3
-          class="text-center text-neutral-800 dark:text-white  text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[57.60px]">
+          class="text-center text-neutral-800  dark:text-[#F5F5F5]  text-2xl lg:text-[32px] font-medium font-['Poppins'] leading-[57.60px]">
           We
           are available
           on</h3>
@@ -831,28 +831,28 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
           <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="Webversion" alt="app-store" />
             <p
-              class="text-neutral-800 dark:text-white  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
+              class="text-neutral-800  dark:text-[#F5F5F5]  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
               Web version</p>
 
           </div>
           <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="MobileApp" alt="app-store" />
             <p
-              class="text-neutral-800 dark:text-white  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
+              class="text-neutral-800  dark:text-[#F5F5F5]  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
               Mobile App</p>
 
           </div>
           <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="DesktopApp" alt="app-store" />
             <p
-              class="text-neutral-800 dark:text-white  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
+              class="text-neutral-800  dark:text-[#F5F5F5]  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
               Desktop App</p>
 
           </div>
           <div class="flex flex-col items-center w-1/2 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="TelegramChatBot" alt="app-store" />
             <p
-              class="text-neutral-800 dark:text-white  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
+              class="text-neutral-800  dark:text-[#F5F5F5]  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
               Telegram Chat
               Bot</p>
 
@@ -860,7 +860,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
           <div class="flex flex-col items-center w-2/3 lg:w-auto mb-[60px] lg:mb-0">
             <img :src="WhatsAppChatBot" alt="app-store" />
             <p
-              class="text-neutral-800 dark:text-white  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
+              class="text-neutral-800  dark:text-[#F5F5F5]  text-lg lg:text-xl font-normal font-['Poppins'] leading-tight pt-5">
               WhatsApp Chat
               Bot</p>
 
@@ -877,18 +877,18 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
     <div class=" px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[768px] md:px-24 lg:px-8 ">
       <div class="pt-[107px] lg:pt-[161px]  lg:px-0">
         <div
-          class="text-gray-900 dark:text-white  text-2xl lg:text-[32px] text-center font-medium font-['Poppins'] leading-[44px]">
+          class="text-gray-900  dark:text-[#F5F5F5]  text-2xl lg:text-[32px] text-center font-medium font-['Poppins'] leading-[44px]">
           Frequently asked
           questions</div>
         <div
-          class="text-neutral-800 dark:text-white  text-sm lg:text-base text-center  pt-5 font-light font-['Poppins'] leading-[30px] w-[321px] lg:w-full mx-auto">
+          class="text-neutral-800  dark:text-[#F5F5F5]  text-sm lg:text-base text-center  pt-5 font-light font-['Poppins'] leading-[30px] w-[321px] lg:w-full mx-auto">
           Everything you
           need to know about the product & services</div>
         <div class="space-y-4 mt-[60px]">
           <details class="group  border-t-2 pt-6 pb-4 [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
               <h3
-                class="w-[720px] text-neutral-800 dark:text-white  text-base font-normal font-['Poppins'] leading-normal">
+                class="w-[720px] text-neutral-800  dark:text-[#F5F5F5]  text-base font-normal font-['Poppins'] leading-normal">
                 Can I change my
                 plan later?</h3>
 
@@ -906,7 +906,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               </span>
             </summary>
 
-            <p class="mt-4 leading-relaxed text-gray-700 dark:text-white ">
+            <p class="mt-4 leading-relaxed text-gray-700  dark:text-[#F5F5F5] ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
               molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
               voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -916,7 +916,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
           <details class="group  border-t-2 pt-6 pb-4 [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
               <h3
-                class="w-[720px] text-neutral-800 dark:text-white  text-base font-normal font-['Poppins'] leading-normal">
+                class="w-[720px] text-neutral-800  dark:text-[#F5F5F5]  text-base font-normal font-['Poppins'] leading-normal">
                 Can I change my
                 plan later?</h3>
 
@@ -934,7 +934,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               </span>
             </summary>
 
-            <p class="mt-4 leading-relaxed text-gray-700 dark:text-white ">
+            <p class="mt-4 leading-relaxed text-gray-700  dark:text-[#F5F5F5] ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
               molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
               voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -944,7 +944,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
           <details class="group  border-t-2 pt-6 pb-4 [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
               <h3
-                class="w-[720px] text-neutral-800 dark:text-white  text-base font-normal font-['Poppins'] leading-normal">
+                class="w-[720px] text-neutral-800  dark:text-[#F5F5F5]  text-base font-normal font-['Poppins'] leading-normal">
                 What is your
                 cancellation policy?</h3>
 
@@ -962,7 +962,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               </span>
             </summary>
 
-            <p class="mt-4 leading-relaxed text-gray-700 dark:text-white ">
+            <p class="mt-4 leading-relaxed text-gray-700  dark:text-[#F5F5F5] ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
               molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
               voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -972,7 +972,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
           <details class="group  border-t-2 pt-6 pb-4 [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
               <h3
-                class="w-[720px] text-neutral-800 dark:text-white  text-base font-normal font-['Poppins'] leading-normal">
+                class="w-[720px] text-neutral-800  dark:text-[#F5F5F5]  text-base font-normal font-['Poppins'] leading-normal">
                 Can other info
                 be
                 added to an invoice?</h3>
@@ -991,7 +991,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               </span>
             </summary>
 
-            <p class="mt-4 leading-relaxed text-gray-700 dark:text-white ">
+            <p class="mt-4 leading-relaxed text-gray-700  dark:text-[#F5F5F5] ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
               molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
               voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -1001,7 +1001,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
           <details class="group  border-t-2 pt-6 pb-4 [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
               <h3
-                class="w-[720px] text-neutral-800 dark:text-white  text-base font-normal font-['Poppins'] leading-normal">
+                class="w-[720px] text-neutral-800  dark:text-[#F5F5F5]  text-base font-normal font-['Poppins'] leading-normal">
                 How does
                 billing
                 work?</h3>
@@ -1020,7 +1020,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               </span>
             </summary>
 
-            <p class="mt-4 leading-relaxed text-gray-700 dark:text-white ">
+            <p class="mt-4 leading-relaxed text-gray-700  dark:text-[#F5F5F5] ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
               molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
               voluptate dicta quo officiis explicabo consequuntur distinctio corporis
@@ -1030,7 +1030,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
           <details class="group  border-t-2 pt-6 pb-4 [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
               <h3
-                class="w-[720px] text-neutral-800 dark:text-white  text-base font-normal font-['Poppins'] leading-normal">
+                class="w-[720px] text-neutral-800  dark:text-[#F5F5F5]  text-base font-normal font-['Poppins'] leading-normal">
                 How do I change
                 my account email?</h3>
 
@@ -1048,7 +1048,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
               </span>
             </summary>
 
-            <p class="mt-4 leading-relaxed text-gray-700 dark:text-white ">
+            <p class="mt-4 leading-relaxed text-gray-700  dark:text-[#F5F5F5] ">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
               molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
               voluptate dicta quo officiis explicabo consequuntur distinctio corporis
