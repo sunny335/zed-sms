@@ -3,13 +3,16 @@
 import { RouterLink } from 'vue-router'
 import CommunityIcon from '../icons/IconCollections.vue'
 const login = true;
-
+const Theme = localStorage.getItem('Theme');
+console.log(Theme)
 </script>
 
 <template>
-    <header class="bg-white dark:bg-[#070F24]">
+    <header class="bg-white dark:bg-[#070F24] sticky top-0 z-20 "
+    v-bind:class="{ 'shadow-custom':currentPath.includes('dashboard')}"
+    >
         <div class="mx-auto max-w-[1192px] px-4 sm:px-6 lg:px-8 w-full">
-            <div class="flex h-[126px] items-center justify-between gap-[24px]">
+            <div class="flex h-[116px] items-center justify-between gap-[24px]">
                 <div class="flex-1 md:flex md:items-center md:gap-11">
                     <RouterLink class="block text-teal-600   dark:text-[#F5F5F5]" to="/">
                         <span class="sr-only">Home</span>
@@ -402,7 +405,7 @@ const login = true;
 
 
 import HeaderDropdown from './DropDownLanguage.vue';
-const Theme = localStorage.getItem('Theme');
+
 export default {
     components: {
         HeaderDropdown,

@@ -17,9 +17,9 @@ else  {
 </script>
 
 <template>
-  <div>
+  
     <Header />
-  </div>
+  
   <RouterView />
   <div>
     <Footer />
