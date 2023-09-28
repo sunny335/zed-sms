@@ -13,7 +13,7 @@ else  {
   document.body.classList.toggle('dark', false);
   localStorage.setItem("Theme", 'light')
 }
-console.log("console.log(Theme);",Theme);
+
 </script>
 
 <template>
