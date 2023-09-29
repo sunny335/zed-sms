@@ -22,7 +22,7 @@ import num7 from "../../assets/img/NumFlags/7.png"
 <template>
     <section class="max-w-[825px] pl-[17px]">
         <div class="flex flex-wrap ">
-            <!-- Recent Message -->
+            <!-- Recent Message --> 
             <div class="max-w-full lg:max-w-[60%] w-full">
                 <div class="max-w-[436px] w-full pl-6 pr-[30px] pt-6 pb-5 bg-white dark:bg-[#09132C] rounded-[20px] shadow">
                     <h4 class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">
@@ -208,13 +208,14 @@ import num7 from "../../assets/img/NumFlags/7.png"
                 </div>
             </div>
             <!-- Recent Transaction -->
-            <div class="max-w-[100%] mt-[48px] w-full">
-                <div class="max-w-[825px]  w-full flex-col justify-start items-start gap-[30px] inline-flex ">
+            <div class="max-w-[825px] mt-[48px] w-full">
+                <div class="max-w-[825px]  w-full ">
                     <div class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] ">
                         Recent Transaction
                     </div>
 
-                    <table class="border-collapse w-full  table-auto">
+                   <div class="w-full  overflow-x-auto max-w-[100vw] lg:max-w-[full]">
+                    <table class="border-collapse w-full min-w-[825px] lg:min-w-full">
                         <thead>
                             <tr class="shadow-md dark:border-b-[1px]">
                                 <th
@@ -254,11 +255,15 @@ import num7 from "../../assets/img/NumFlags/7.png"
 
                         </tbody>
                     </table>
+                   </div>
+                
+                   <div class="flex justify-center items-center mt-10">
                     <button @click="loadMore" v-if="tableData.length > 3"
                         class="max-w-[125px] h-[37px] w-full py-2.5 rounded-[10px] border border-blue-600 dark:bg-blue-600 justify-center items-center gap-2.5 inline-flex mx-auto mb-[67px]">
                         <div class="text-blue-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
                             {{ tableData.length == itemsToShow ? "See less" : "See More" }}</div>
                     </button>
+                   </div>
 
 
                 </div>

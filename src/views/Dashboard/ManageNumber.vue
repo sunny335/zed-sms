@@ -67,8 +67,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                     +8454655444</p>
                                             </div>
                                             <button @click="deleteModal(true)">
-                                                <svg :class="{ 'hidden': selectedNumber === numberData.id }"
-                                                    v-if="Theme === 'light'" width="24" height="24" viewBox="0 0 24 24"
+                                                <svg class="darkIconStock"  
+                                                     width="24" height="24" viewBox="0 0 24 24"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path
                                                         d="M9.1709 4C9.58273 2.83481 10.694 2 12.0002 2C13.3064 2 14.4177 2.83481 14.8295 4"
@@ -82,19 +82,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                 </svg>
 
 
-                                                <svg v-if="Theme === 'dark' || selectedNumber === numberData.id" width="24"
-                                                    height="24" viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M9.17188 4C9.58371 2.83481 10.695 2 12.0012 2C13.3074 2 14.4186 2.83481 14.8305 4"
-                                                        stroke="#F5F5F5" stroke-linecap="round" />
-                                                    <path d="M20.5001 6H3.5" stroke="#F5F5F5" stroke-linecap="round" />
-                                                    <path
-                                                        d="M18.8346 8.5L18.3747 15.3991C18.1977 18.054 18.1092 19.3815 17.2442 20.1907C16.3792 21 15.0488 21 12.388 21H11.6146C8.95382 21 7.62342 21 6.75841 20.1907C5.8934 19.3815 5.8049 18.054 5.62791 15.3991L5.16797 8.5"
-                                                        stroke="#F5F5F5" stroke-linecap="round" />
-                                                    <path d="M9.5 11L10 16" stroke="#F5F5F5" stroke-linecap="round" />
-                                                    <path d="M14.5 11L14 16" stroke="#F5F5F5" stroke-linecap="round" />
-                                                </svg>
+                                               
 
                                             </button>
 
@@ -106,16 +94,19 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                         v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
 
 
-                                        <div class="flex justify-between items-center w-[270px] h-[58px]"
-                                            v-for="number2Data in numbers2Data" :key="number2Data.id">
+                                        <div class="flex justify-between items-center w-[274px] h-[58px] cursor-pointer px-2 text-neutral-800"
+                                            v-for="numberData in numbersData" :key="numberData.id"
+                                            @click="selectNumber(numberData.id)"
+                                            :class="{ 'bg-[#0057FF] text-white': selectedNumber === numberData.id }">
                                             <div class="flex items-center">
-                                                <img class="pr-[10px]" :src="number2Data.img" alt="" srcset="">
+                                                <img class="pr-[10px]" :src="numberData.img" alt="" srcset="">
                                                 <p
-                                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-light font-['Poppins'] leading-[17px]">
-                                                    {{ number2Data.number }}</p>
+                                                    class="dark:text-[#F5F5F5] text-sm font-light font-['Poppins'] leading-[17px]">
+                                                    +8454655444</p>
                                             </div>
-                                            <button>
-                                                <svg v-if="Theme === 'light'" width="24" height="24" viewBox="0 0 24 24"
+                                            <button @click="deleteModal(true)">
+                                                <svg class="darkIconStock"  
+                                                     width="24" height="24" viewBox="0 0 24 24"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path
                                                         d="M9.1709 4C9.58273 2.83481 10.694 2 12.0002 2C13.3064 2 14.4177 2.83481 14.8295 4"
@@ -129,18 +120,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                 </svg>
 
 
-                                                <svg v-if="Theme === 'dark'" width="24" height="24" viewBox="0 0 24 24"
-                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M9.17188 4C9.58371 2.83481 10.695 2 12.0012 2C13.3074 2 14.4186 2.83481 14.8305 4"
-                                                        stroke="#F5F5F5" stroke-linecap="round" />
-                                                    <path d="M20.5001 6H3.5" stroke="#F5F5F5" stroke-linecap="round" />
-                                                    <path
-                                                        d="M18.8346 8.5L18.3747 15.3991C18.1977 18.054 18.1092 19.3815 17.2442 20.1907C16.3792 21 15.0488 21 12.388 21H11.6146C8.95382 21 7.62342 21 6.75841 20.1907C5.8934 19.3815 5.8049 18.054 5.62791 15.3991L5.16797 8.5"
-                                                        stroke="#F5F5F5" stroke-linecap="round" />
-                                                    <path d="M9.5 11L10 16" stroke="#F5F5F5" stroke-linecap="round" />
-                                                    <path d="M14.5 11L14 16" stroke="#F5F5F5" stroke-linecap="round" />
-                                                </svg>
+                                               
 
                                             </button>
 
@@ -250,9 +230,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                 <div
                                     class="text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
                                     Save</div>
-                                <div class="w-3 h-3 relative flex-col justify-start items-start inline-flex">
+                                <div class="w-3 h-3 relative flex-col justify-start items-start inline-flex darkIconFill">
 
-                                    <svg v-if="Theme === 'light'" width="12" height="13" viewBox="0 0 12 13" fill="none"
+                                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5.25 11.5V10.5M7.25 11.5V10.5" stroke="#1E2329" stroke-width="0.5"
                                             stroke-linecap="round" />
@@ -264,18 +244,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                             d="M8 5.44216V3.2056M8 3.2056V1.81759C8 1.69952 8.08378 1.59806 8.19971 1.57572L8.44275 1.52889C8.7369 1.47221 9.04106 1.49928 9.32058 1.607L9.36017 1.62225C9.63729 1.72905 9.94035 1.749 10.2291 1.67946C10.3672 1.6462 10.5 1.75084 10.5 1.89287V3.00361C10.5 3.1221 10.4188 3.22516 10.3036 3.2529L10.2703 3.26092C9.95474 3.33694 9.62349 3.31513 9.32058 3.1984C9.04106 3.09067 8.7369 3.06361 8.44275 3.12029L8 3.2056Z"
                                             stroke="#1E2329" stroke-width="0.5" stroke-linecap="round" />
                                     </svg>
-                                    <svg v-if="Theme === 'dark'" width="12" height="13" viewBox="0 0 12 13" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5.25 11.5V10.5M7.25 11.5V10.5" stroke="#F5F5F5" stroke-width="0.5"
-                                            stroke-linecap="round" />
-                                        <path
-                                            d="M5.5 10.5V10.75H5.75V10.5H5.5ZM7 10.25C6.86193 10.25 6.75 10.3619 6.75 10.5C6.75 10.6381 6.86193 10.75 7 10.75V10.25ZM8.75 3.25C8.61193 3.25 8.5 3.36193 8.5 3.5C8.5 3.63807 8.61193 3.75 8.75 3.75V3.25ZM3.5 3.25C3.36193 3.25 3.25 3.36193 3.25 3.5C3.25 3.63807 3.36193 3.75 3.5 3.75V3.25ZM4.5 10.25C4.36193 10.25 4.25 10.3619 4.25 10.5C4.25 10.6381 4.36193 10.75 4.5 10.75V10.25ZM7.5 10.75C7.63807 10.75 7.75 10.6381 7.75 10.5C7.75 10.3619 7.63807 10.25 7.5 10.25V10.75ZM5.25 6.125V10.5H5.75V6.125H5.25ZM5.5 10.25H2.11628V10.75H5.5V10.25ZM1.25 9.19767V6.125H0.75V9.19767H1.25ZM2.11628 10.25C1.67261 10.25 1.25 9.8164 1.25 9.19767H0.75C0.75 10.0175 1.32694 10.75 2.11628 10.75V10.25ZM3.25 3.75C4.3198 3.75 5.25 4.77578 5.25 6.125H5.75C5.75 4.57473 4.66548 3.25 3.25 3.25V3.75ZM3.25 3.25C1.83452 3.25 0.75 4.57473 0.75 6.125H1.25C1.25 4.77578 2.1802 3.75 3.25 3.75V3.25ZM10.75 6.125V9.21264H11.25V6.125H10.75ZM9.89655 10.25H7V10.75H9.89655V10.25ZM10.75 9.21264C10.75 9.8231 10.3331 10.25 9.89655 10.25V10.75C10.6788 10.75 11.25 10.0242 11.25 9.21264H10.75ZM11.25 6.125C11.25 4.57473 10.1655 3.25 8.75 3.25V3.75C9.8198 3.75 10.75 4.77578 10.75 6.125H11.25ZM3.5 3.75H9V3.25H3.5V3.75ZM4.5 10.75H7.5V10.25H4.5V10.75Z"
-                                            fill="#F5F5F5" />
-                                        <path d="M2.5 8.5H4" stroke="#F5F5F5" stroke-width="0.5" stroke-linecap="round" />
-                                        <path
-                                            d="M8 5.44216V3.2056M8 3.2056V1.81759C8 1.69952 8.08378 1.59806 8.19971 1.57572L8.44275 1.52889C8.7369 1.47221 9.04106 1.49928 9.32058 1.607L9.36017 1.62225C9.63729 1.72905 9.94035 1.749 10.2291 1.67946C10.3672 1.6462 10.5 1.75084 10.5 1.89287V3.00361C10.5 3.1221 10.4188 3.22516 10.3036 3.2529L10.2703 3.26092C9.95474 3.33694 9.62349 3.31513 9.32058 3.1984C9.04106 3.09067 8.7369 3.06361 8.44275 3.12029L8 3.2056Z"
-                                            stroke="#F5F5F5" stroke-width="0.5" stroke-linecap="round" />
-                                    </svg>
+                                
 
                                 </div>
                             </button>
@@ -293,10 +262,10 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                           
                             <p class="text-sm inline">example@example.com</p>
                             <p
-                                class="max-w-[78px] h-[37px] w-full py-2.5 inline">
+                                class="max-w-[78px] h-[37px] w-full py-2.5 inline darkIconStock">
                                 
                                 
-                                <svg v-if="Theme === 'light'" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                <svg  width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M9.1709 4C9.58273 2.83481 10.694 2 12.0002 2C13.3064 2 14.4177 2.83481 14.8295 4"
@@ -310,18 +279,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                 </svg>
 
 
-                                <svg v-if="Theme === 'dark'" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M9.17188 4C9.58371 2.83481 10.695 2 12.0012 2C13.3074 2 14.4186 2.83481 14.8305 4"
-                                        stroke="#F5F5F5" stroke-linecap="round" />
-                                    <path d="M20.5001 6H3.5" stroke="#F5F5F5" stroke-linecap="round" />
-                                    <path
-                                        d="M18.8346 8.5L18.3747 15.3991C18.1977 18.054 18.1092 19.3815 17.2442 20.1907C16.3792 21 15.0488 21 12.388 21H11.6146C8.95382 21 7.62342 21 6.75841 20.1907C5.8934 19.3815 5.8049 18.054 5.62791 15.3991L5.16797 8.5"
-                                        stroke="#F5F5F5" stroke-linecap="round" />
-                                    <path d="M9.5 11L10 16" stroke="#F5F5F5" stroke-linecap="round" />
-                                    <path d="M14.5 11L14 16" stroke="#F5F5F5" stroke-linecap="round" />
-                                </svg>
+                              
                             </p>
 
 
@@ -373,8 +331,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                     class="text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
                                     Extent Now
                                 </div>
-                                <div class="w-3.5 h-3.5 relative">
-                                    <svg v-if="Theme === 'light'" width="14" height="15" viewBox="0 0 14 15" fill="none"
+                                <div class="w-3.5 h-3.5 relative darkIconStock">
+                                    <svg  width="14" height="15" viewBox="0 0 14 15" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M2.07396 8.81734C1.65485 6.86152 1.4453 5.88361 1.97062 5.2338C2.49594 4.58398 3.49605 4.58398 5.49626 4.58398H8.50402C10.5042 4.58398 11.5043 4.58398 12.0297 5.2338C12.555 5.88361 12.3454 6.86152 11.9263 8.81734L11.6763 9.984C11.3923 11.3097 11.2502 11.9725 10.7689 12.3616C10.2876 12.7507 9.60977 12.7507 8.25402 12.7507H5.74626C4.39052 12.7507 3.71264 12.7507 3.23135 12.3616C2.75006 11.9725 2.60802 11.3097 2.32396 9.984L2.07396 8.81734Z"
@@ -388,20 +346,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                         <path d="M3.5 5.75L5.25 2.25" stroke="#1E2329" stroke-width="0.5"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                    <svg v-if="Theme === 'dark'" width="14" height="15" viewBox="0 0 14 15" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M2.07542 8.81734C1.65632 6.86152 1.44677 5.88361 1.97209 5.2338C2.49741 4.58398 3.49751 4.58398 5.49773 4.58398H8.50548C10.5057 4.58398 11.5058 4.58398 12.0311 5.2338C12.5564 5.88361 12.3469 6.86152 11.9278 8.81734L11.6778 9.984C11.3937 11.3097 11.2517 11.9725 10.7704 12.3616C10.2891 12.7507 9.61123 12.7507 8.25549 12.7507H5.74773C4.39198 12.7507 3.71411 12.7507 3.23282 12.3616C2.75152 11.9725 2.60949 11.3097 2.32542 9.984L2.07542 8.81734Z"
-                                            stroke="#F5F5F5" stroke-width="0.5" />
-                                        <path d="M4.66797 7.5H9.33464" stroke="#F5F5F5" stroke-width="0.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M5.83203 9.25H8.16536" stroke="#F5F5F5" stroke-width="0.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M10.5 5.75L8.75 2.25" stroke="#F5F5F5" stroke-width="0.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M3.5 5.75L5.25 2.25" stroke="#F5F5F5" stroke-width="0.5"
-                                            stroke-linecap="round" stroke-linejoin="round" />
-                                    </svg>
+                            
 
                                 </div>
                             </button>
@@ -415,7 +360,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
         </div>
         <TransitionRoot as="template" :show="isDeleteOpen">
-            <Dialog as="div" class="relative z-10" @close="isDeleteOpen = false">
+            <Dialog as="div" class="relative z-[100]" @close="isDeleteOpen = false">
                 <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100"
                     leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
                     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
@@ -864,3 +809,13 @@ export default {
 
 
 </script>
+<style>
+
+body.dark .darkIconFill path {
+    fill:white;
+}
+body.dark .darkIconStock path {
+    stroke:white;
+}
+
+</style>

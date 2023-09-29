@@ -35,9 +35,9 @@ import { RouterLink } from 'vue-router'
                             class="ml-2 text-xl font-bold tracking-wide text-gray-800  dark:text-white uppercase pt-4">ZEDSMS</span>
                     </a>
                     <div class="flex justify-center items-center gap-4 mt-3">
-                        <a href="">
+                        <a href="" class="darkIcon">
 
-                            <svg v-if="Theme === 'light'" width="16" height="17" viewBox="0 0 16 17" fill="none"
+                            <svg  width="16" height="17" viewBox="0 0 16 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_39_4024)">
                                     <path
@@ -52,17 +52,12 @@ import { RouterLink } from 'vue-router'
                                 </defs>
                             </svg>
 
-                            <svg v-if="Theme === 'dark'" width="9" height="16" viewBox="0 0 9 16" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M2.64297 5.24958H0.761719V7.75791H2.64297V15.2829H5.77838V7.75791H8.03585L8.28672 5.24958H5.77838V4.18353C5.77838 3.61916 5.90381 3.36833 6.46821 3.36833H8.28672V0.23291H5.90381C3.64631 0.23291 2.64297 1.23624 2.64297 3.11749V5.24958Z"
-                                    fill="#F5F5F5" />
-                            </svg>
+                         
 
 
                         </a>
-                        <a href="">
-                            <svg v-if="Theme === 'light'" width="16" height="17" viewBox="0 0 16 17" fill="none"
+                        <a href="" class="darkIcon">
+                            <svg  width="16" height="17" viewBox="0 0 16 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_39_4028)">
                                     <path
@@ -77,17 +72,11 @@ import { RouterLink } from 'vue-router'
                                 </defs>
                             </svg>
 
-                            <svg v-if="Theme === 'dark'" width="16" height="13" viewBox="0 0 16 13" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M4.73309 12.7154C10.4126 12.7154 13.5185 8.13191 13.5185 4.15754C13.5185 4.02732 13.5157 3.89777 13.5096 3.76872C14.1125 3.3442 14.6366 2.8143 15.05 2.21138C14.4967 2.45082 13.9014 2.61205 13.2768 2.68475C13.9143 2.31242 14.4038 1.72318 14.6347 1.02088C14.038 1.36552 13.3773 1.61596 12.6742 1.75102C12.1105 1.16644 11.308 0.800781 10.4201 0.800781C8.71473 0.800781 7.33183 2.14786 7.33183 3.80823C7.33183 4.04433 7.35905 4.27377 7.41177 4.49402C4.84572 4.36847 2.57015 3.17146 1.0474 1.35169C0.781916 1.79604 0.629059 2.31259 0.629059 2.86333C0.629059 3.90677 1.17425 4.828 2.00323 5.36706C1.49673 5.35189 1.02087 5.21616 0.604752 4.99074C0.604068 5.00324 0.604068 5.01591 0.604068 5.02909C0.604068 6.48587 1.66859 7.70206 3.08128 7.97767C2.82195 8.04654 2.5491 8.08355 2.26735 8.08355C2.06844 8.08355 1.87502 8.06421 1.68691 8.02936C2.07992 9.22417 3.21993 10.0939 4.5715 10.1184C3.51451 10.9253 2.18313 11.406 0.736555 11.406C0.4875 11.406 0.241695 11.3921 0 11.3643C1.36647 12.2173 2.98901 12.7154 4.73309 12.7154Z"
-                                    fill="#F5F5F5" />
-                            </svg>
-
+                           
 
                         </a>
-                        <a href="">
-                            <svg v-if="Theme === 'light'" width="16" height="17" viewBox="0 0 16 17" fill="none"
+                        <a href="" class="darkIcon">
+                            <svg  width="16" height="17" viewBox="0 0 16 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_39_4032)">
                                     <path
@@ -103,17 +92,12 @@ import { RouterLink } from 'vue-router'
                             </svg>
 
 
-                            <svg v-if="Theme === 'dark'" width="15" height="15" viewBox="0 0 15 15" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M3.35021 2.34918C3.35021 3.18321 2.6961 3.83851 1.86358 3.83851C1.03107 3.83851 0.376953 3.18321 0.376953 2.34918C0.376953 1.51517 1.03107 0.859863 1.86358 0.859863C2.6961 0.859863 3.35021 1.51517 3.35021 2.34918ZM3.35021 5.02997H0.376953V14.5617H3.35021V5.02997ZM8.10743 5.02997H5.13417V14.5617H8.10743V9.55754C8.10743 6.75758 11.6754 6.51929 11.6754 9.55754V14.5617H14.6486V8.54477C14.6486 3.83851 9.35621 4.01723 8.10743 6.34058V5.02997Z"
-                                    fill="#F5F5F5" />
-                            </svg>
+                           
 
 
                         </a>
-                        <a href="">
-                            <svg v-if="Theme === 'light'" width="16" height="17" viewBox="0 0 16 17" fill="none"
+                        <a href="" class="darkIcon">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_39_4036)">
                                     <path
@@ -128,12 +112,7 @@ import { RouterLink } from 'vue-router'
                                 </defs>
                             </svg>
 
-                            <svg v-if="Theme === 'dark'" width="16" height="12" viewBox="0 0 16 12" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M14.7352 2.2406C14.6501 1.92034 14.4825 1.62803 14.249 1.39295C14.0154 1.15788 13.7242 0.988283 13.4046 0.901153C12.2312 0.584473 7.525 0.584473 7.525 0.584473C7.525 0.584473 2.81874 0.584473 1.64484 0.901153C1.32528 0.988434 1.03425 1.15809 0.800834 1.39315C0.567424 1.62821 0.399823 1.92044 0.314796 2.2406C0 3.42203 0 5.88647 0 5.88647C0 5.88647 0 8.35086 0.314796 9.53229C0.399819 9.85257 0.567495 10.1449 0.801031 10.38C1.03457 10.615 1.32576 10.7846 1.64546 10.8717C2.81874 11.1884 7.525 11.1884 7.525 11.1884C7.525 11.1884 12.2312 11.1884 13.4051 10.8717C13.7248 10.7847 14.0162 10.6151 14.2496 10.3801C14.4832 10.1449 14.6509 9.85267 14.7358 9.53229C15.05 8.35086 15.05 5.88647 15.05 5.88647C15.05 5.88647 15.05 3.42203 14.7352 2.2406ZM5.98551 8.12389V3.64903L9.91917 5.88647L5.98551 8.12389Z"
-                                    fill="#F5F5F5" />
-                            </svg>
+                            
 
 
                         </a>
@@ -215,3 +194,19 @@ import { RouterLink } from 'vue-router'
 const Theme = localStorage.getItem('Theme');
 
 </script>
+
+
+<style>
+
+
+
+
+body.dark .darkIcon path {
+    fill:white;
+}
+body.dark .darkCircle circle{
+    stroke:white;
+}
+
+
+</style>

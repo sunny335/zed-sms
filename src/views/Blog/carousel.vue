@@ -42,17 +42,11 @@ import { RouterLink } from 'vue-router'
 
 import video1 from "../../assets/img/blog/video1.png"
 import video2 from "../../assets/img/blog/video2.png"
-import img1 from "../../assets/img/blog/1.png"
-import img2 from "../../assets/img/blog/2.png"
-import img3 from "../../assets/img/blog/3.png"
-import img4 from "../../assets/img/blog/4.png"
-import img5 from "../../assets/img/blog/5.png"
-import img6 from "../../assets/img/blog/6.png"
+
 import more1 from "../../assets/img/blog/more1.png"
 import more2 from "../../assets/img/blog/more2.png"
 import more3 from "../../assets/img/blog/more3.png"
-import largeImg6 from "../../assets/img/blog/largeImg6.png"
-import chart from "../../assets/img/blog/chart.png"
+
 
 // import required modules
 import { Navigation } from 'swiper/modules';
@@ -124,6 +118,16 @@ export default {
 
 }
 
+
+
+
+.swiper-button-next {
+
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+
 .swiper-button-prev::after {
     content: " ";
 
@@ -137,14 +141,6 @@ export default {
     bottom: 0;
 }
 
-
-
-.swiper-button-next {
-
-    position: absolute;
-    top: 50px;
-    right: 10px;
-}
 
 
 .swiper-button-next::after {

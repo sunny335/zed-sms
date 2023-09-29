@@ -170,7 +170,7 @@ export default {
       notificationIsOpen: false,
       ringtoneIsOpen: false,
 
-      selectedOptionTheme: this.selectedTheme || Theme, // Default text,
+      selectedOptionTheme: this.selectedTheme || Theme == "dark" ? "Dark" : "Light", // Default text,
       selectedOptionLanguage: this.selectedLanguage || 'English', // Default text,
       selectedOptionNotification: this.selectedNotification || 'ON', // Default text,
       selectedOptionRingtone: this.selectedRingtone || 'Ubilone Qusen', // Default text,

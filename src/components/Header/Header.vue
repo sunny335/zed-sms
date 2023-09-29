@@ -14,10 +14,10 @@ console.log(Theme)
         <div class="mx-auto max-w-[1192px] px-4 sm:px-6 lg:px-8 w-full">
             <div class="flex h-[116px] items-center justify-between gap-[24px]">
                 <div class="flex-1 md:flex md:items-center md:gap-11">
-                    <RouterLink class="block text-teal-600   dark:text-[#F5F5F5]" to="/">
+                    <RouterLink class="block text-teal-600   dark:text-[#F5F5F5] header-logo" to="/">
                         <span class="sr-only">Home</span>
-                        <CommunityIcon iconName="siteLogo" v-if="Theme === 'light'" />
-                        <CommunityIcon iconName="siteLogoDark" v-if="Theme === 'dark'" />
+                        <CommunityIcon iconName="siteLogo" />
+                        
 
                     </RouterLink>
                 </div>
@@ -94,8 +94,8 @@ console.log(Theme)
                     <div class="flex items-center gap-4">
                         <div class="hidden sm:flex sm:gap-[24px]" >
                             <div
-                                class="hidden sm:flex relative after:content-[''] after:w-[2px] after:absolute after:top-[6px] after:h-[10px] after:right-[-12px] after:bg-[#495057] dark:after:bg-[#ACB5BD]"  v-if="currentPath.includes('dashboard')" >
-                                <svg v-if="Theme == 'light'"
+                                class="hidden sm:flex relative after:content-[''] after:w-[2px] after:absolute after:top-[6px] after:h-[10px] after:right-[-12px] after:bg-[#495057] dark:after:bg-[#ACB5BD] downArrow"  v-if="currentPath.includes('dashboard') " >
+                                <svg
                                     @click="[OpenNotificationModal = !OpenNotificationModal, this.OpenModal = false]"
                                     class="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -107,17 +107,7 @@ console.log(Theme)
                                     <circle cx="17" cy="8" r="4.5" fill="#0057FF" stroke="white" />
                                 </svg>
 
-                                <svg v-if="Theme == 'dark'"
-                                    @click="[OpenNotificationModal = !OpenNotificationModal, this.OpenModal = false]"
-                                    class="cursor-pointer" width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M19.2491 9.70957V9.00497C19.2491 5.13623 16.2274 2 12.5 2C8.77256 2 5.75087 5.13623 5.75087 9.00497V9.70957C5.75087 10.5552 5.50972 11.3818 5.0578 12.0854L3.95036 13.8095C2.93882 15.3843 3.71105 17.5249 5.47036 18.0229C10.0727 19.3257 14.9273 19.3257 19.5296 18.0229C21.289 17.5249 22.0612 15.3843 21.0496 13.8095L19.9422 12.0854C19.4903 11.3818 19.2491 10.5552 19.2491 9.70957Z"
-                                        stroke="#F5F5F5" />
-                                    <path d="M8 19C8.65503 20.7478 10.4225 22 12.5 22C14.5775 22 16.345 20.7478 17 19"
-                                        stroke="#F5F5F5" stroke-linecap="round" />
-                                    <circle cx="17.5" cy="8" r="4.5" fill="#0057FF" stroke="#070F24" />
-                                </svg>
+                                
 
                                 <!-- Notification Dropdown -->
                                 <div v-if="OpenNotificationModal"
@@ -257,8 +247,8 @@ console.log(Theme)
 
                             </div>
                             <div
-                                class=" justify-center items-center inline-flex gap-[9px] relative after:content-[''] after:w-[2px] after:absolute after:top-[6px] after:h-[10px] after:right-[-12px] after:bg-[#495057] dark:after:bg-[#ACB5BD]"  v-if="currentPath.includes('dashboard')" >
-                                <svg v-if="Theme == 'light'" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                class=" justify-center items-center inline-flex gap-[9px] relative after:content-[''] after:w-[2px] after:absolute after:top-[6px] after:h-[10px] after:right-[-12px] after:bg-[#495057] dark:after:bg-[#ACB5BD] downArrow"  v-if="currentPath.includes('dashboard')" >
+                                <svg  width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6 8H10" stroke="#1E2329" stroke-linecap="round" stroke-linejoin="round" />
                                     <path
@@ -270,18 +260,7 @@ console.log(Theme)
                                     <path d="M17.9912 12H18.0002" stroke="#1E2329" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </svg>
-                                <svg v-if="Theme == 'dark'" width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6.5 8H10.5" stroke="#F5F5F5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path
-                                        d="M21.3333 9H18.7308C16.9465 9 15.5 10.3431 15.5 12C15.5 13.6569 16.9465 15 18.7308 15H21.3333C21.4167 15 21.4583 15 21.4935 14.9979C22.0328 14.965 22.4623 14.5662 22.4977 14.0654C22.5 14.0327 22.5 13.994 22.5 13.9167V10.0833C22.5 10.006 22.5 9.96726 22.4977 9.9346C22.4623 9.43384 22.0328 9.03496 21.4935 9.00214C21.4583 9 21.4167 9 21.3333 9Z"
-                                        stroke="#F5F5F5" />
-                                    <path
-                                        d="M21.465 9C21.3873 7.1277 21.1366 5.97975 20.3284 5.17157C19.1569 4 17.2712 4 13.5 4L10.5 4C6.72876 4 4.84315 4 3.67157 5.17157C2.5 6.34315 2.5 8.22876 2.5 12C2.5 15.7712 2.5 17.6569 3.67157 18.8284C4.84315 20 6.72876 20 10.5 20H13.5C17.2712 20 19.1569 20 20.3284 18.8284C21.1366 18.0203 21.3873 16.8723 21.465 15"
-                                        stroke="#F5F5F5" />
-                                    <path d="M18.4922 12H18.5012" stroke="#F5F5F5" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
+                            
 
                                 <div
                                     class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-light font-['Poppins'] leading-[17px]">
@@ -291,8 +270,8 @@ console.log(Theme)
                             </div>
 
                             <div class="flex gap-[9px] relative items-center">
-                                <div class="flex gap-[9px] relative cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10" @click="handleModalOpen(true)">
-                                    <svg v-if="Theme === 'light'" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                <div class="flex gap-[9px] relative cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 downArrow darkCircle" @click="handleModalOpen(true)">
+                                    <svg  width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="12" cy="9" r="3" stroke="#1E2329" />
                                         <circle cx="12" cy="12" r="10" stroke="#1E2329" />
@@ -300,25 +279,17 @@ console.log(Theme)
                                             d="M17.9691 20C17.81 17.1085 16.9247 15 12 15C7.07521 15 6.18991 17.1085 6.03076 20"
                                             stroke="#1E2329" stroke-linecap="round" />
                                     </svg>
-                                    <svg v-if="Theme === 'dark'" width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="12.5" cy="9" r="3" stroke="#F5F5F5" />
-                                        <circle cx="12.5" cy="12" r="10" stroke="#F5F5F5" />
-                                        <path
-                                            d="M18.4696 20C18.3105 17.1085 17.4252 15 12.5004 15C7.5757 15 6.6904 17.1085 6.53125 20"
-                                            stroke="#F5F5F5" stroke-linecap="round" />
-                                    </svg>
-
+                                   
                                     <span>
                                         ahmad
                                     </span>
-                                <div >
+                                
                                     <svg  class="downArrow block" width="20" height="20" viewBox="0 0 20 20" fill="none"  v-if="!OpenModal"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M15.8333 7.5L9.99996 12.5L4.16663 7.5" stroke="#1E2329" stroke-width="1.1"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                                </div>
+                               
  
                                     <svg class="downArrow" width="20" height="20" viewBox="0 0 24 24" fill="none" v-if="OpenModal"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -462,7 +433,15 @@ header .router-link-exact-active {
     font-weight: 500;
 }
 
-body.dark .downArrow path{
+body.dark .downArrow path {
     stroke:white;
+}
+body.dark .darkCircle circle{
+    stroke:white;
+}
+
+
+body.dark .header-logo path{
+    fill: #fff;
 }
 </style>

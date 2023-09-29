@@ -136,6 +136,42 @@ import num7 from "../../assets/img/NumFlags/7.png"
 
                     </div>
                 </div>
+                <!-- Pagination controls Mobile -->
+                <div class="flex justify-center items-center w-full lg:hidden block">
+
+                    <div class="my-[35px] flex justify-center items-center gap-5">
+                 
+                        <!-- Previous page button -->
+                        <button @click="previousPage" :disabled="currentPage === 1">
+
+                            <svg width="34" height="36" viewBox="0 0 34 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.5 23.834L14.5 18.0007L19.5 12.1673" stroke="#ACB5BD" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <rect x="33.74" y="35.74" width="33.48" height="35.48" rx="6.74"
+                                    transform="rotate(180 33.74 35.74)" stroke="#DDE2E5" stroke-width="0.52" />
+                            </svg>
+
+                        </button>
+
+
+
+
+
+                    
+                        <!-- Next page -->
+                        <button @click="nextPage" :disabled="currentPage === totalPages">
+                            <svg width="34" height="36" viewBox="0 0 34 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.5 12.166L19.5 17.9993L14.5 23.8327" stroke="#ACB5BD" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <rect x="0.26" y="0.26" width="33.48" height="35.48" rx="6.74" stroke="#DDE2E5"
+                                    stroke-width="0.52" />
+                            </svg>
+
+                        </button>
+                   
+
+                    </div>
+                </div>
 
 
 

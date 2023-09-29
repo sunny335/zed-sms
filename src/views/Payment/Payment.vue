@@ -79,9 +79,9 @@ import Elo from '../../assets/img/payment/Elo.png';
                                                 </div>
                                             </div>
                                             <button
-                                                class="max-w-[120px] w-full px-3 h-[41px] rounded-[100px] lg:rounded-[10px] shadow border border-blue-600 bg-[#0057FF] justify-center items-center gap-2.5 flex">
+                                                class="max-w-[120px] w-full px-3 h-[41px] rounded-[100px] lg:rounded-[10px] shadow border border-blue-600 bg-[#0057FF] justify-center items-center gap-2.5 flex text-white dark:text-[#F5F5F5]">
                                                 <RouterLink to="/payment-successful"
-                                                    class="text-center text-blue-600   dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
+                                                    class="text-center text-white dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
                                                     Pay Now</RouterLink>
                                             </button>
                                         </div>
@@ -133,13 +133,13 @@ import Elo from '../../assets/img/payment/Elo.png';
 
 
 
-                                        <button v-on:click="selectNextPaymentPage(true)"
-                                            class="max-w-[300px] w-full h-16 px-10 py-3.5 rounded-xl border border-blue-600 dark:bg-[#0057FF]  justify-center items-center gap-3.5 inline-flex"
+                                        <button :disabled="!this.selectedPayment"  v-on:click="selectNextPaymentPage(true)"
+                                            class="max-w-[300px] w-full h-16 px-10 py-3.5 rounded-xl border border-blue-600 dark:bg-[#0057FF]  justify-center items-center gap-3.5 inline-flex disabled:cursor-not-allowed disabled:opacity-20"
                                             v-bind:class="{ 'hidden': nextPaymentPage == true, 'block': nextPaymentPage === false }">
                                             <div
                                                 class="text-center text-blue-600   dark:text-[#F5F5F5] text-2xl font-normal font-['Poppins']">
                                                 Next</div>
-                                            <div v-if="Theme === 'light'" class=" relative">
+                                            <div class=" relative darkIconStock">
                                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -156,24 +156,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                                                 </svg>
 
                                             </div>
-                                            <div v-if="Theme === 'dark'" class=" relative">
-                                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M4.44454 17.8215C3.54646 13.6304 3.09742 11.5349 4.22311 10.1425C5.34879 8.75 7.49188 8.75 11.7781 8.75H18.2232C22.5094 8.75 24.6525 8.75 25.7782 10.1425C26.9039 11.5349 26.4548 13.6304 25.5568 17.8215L25.0211 20.3215C24.4123 23.1622 24.108 24.5825 23.0766 25.4162C22.0453 26.25 20.5927 26.25 17.6875 26.25H12.3138C9.4086 26.25 7.95601 26.25 6.92467 25.4162C5.89333 24.5825 5.58897 23.1622 4.98025 20.3215L4.44454 17.8215Z"
-                                                        stroke="#F5F5F5" stroke-width="1.5" />
-                                                    <path d="M10 15H20" stroke="#F5F5F5" stroke-width="1.5"
-                                                        stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M12.5 18.75H17.5" stroke="#F5F5F5" stroke-width="1.5"
-                                                        stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M22.5 11.25L18.75 3.75" stroke="#F5F5F5" stroke-width="1.5"
-                                                        stroke-linecap="round" stroke-linejoin="round" />
-                                                    <path d="M7.5 11.25L11.25 3.75" stroke="#F5F5F5" stroke-width="1.5"
-                                                        stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-
-
-                                            </div>
+                                          
                                         </button>
                                         <RouterLink to="/payment-successful"
                                             class="max-w-full lg:max-w-[150px] w-full h-16 px-10 py-3.5 rounded-xl border border-blue-600  justify-center items-center gap-3.5 inline-flex dark:bg-[#0057FF]"
@@ -181,18 +164,14 @@ import Elo from '../../assets/img/payment/Elo.png';
                                             <div
                                                 class="text-center text-blue-600  dark:text-[#F5F5F5]  text-2xl font-normal font-['Poppins']">
                                                 Next</div>
-                                            <div class=" relative">
-                                                <svg v-if="Theme === 'light'" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                            <div class=" relative darkIconStock">
+                                                <svg  width="30" height="30" viewBox="0 0 30 30" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M11.25 6.25L18.75 15L11.25 23.75" stroke="#0057FF"
                                                         stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                                                 </svg>
 
-                                                <svg v-if="Theme === 'dark'" width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M11.25 6.25L18.75 15L11.25 23.75" stroke="#F5F5F5"
-                                                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
+                                               
 
 
 
@@ -317,11 +296,19 @@ export default {
         selectNextPaymentPage(value) {
             this.nextPaymentPage = value;
         },
-        // selectPaymentPage(){
-        //     this.nextPaymentPage = 
-        // }
 
     },
 
 }
 </script>
+
+<style>
+
+body.dark .darkIconFill path {
+    fill:white;
+}
+body.dark .darkIconStock path {
+    stroke:white;
+}
+
+</style>

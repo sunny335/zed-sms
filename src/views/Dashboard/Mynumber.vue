@@ -1,7 +1,4 @@
 <script setup>
-
-import { RouterLink } from 'vue-router'
-
 import num1 from "../../assets/img/allNumber/1.png"
 import num2 from "../../assets/img/allNumber/2.png"
 import num3 from "../../assets/img/allNumber/3.png"
@@ -15,10 +12,6 @@ import Tiktok from "../../assets/img/Message/Tiktok.png"
 import Burgking from "../../assets/img/Message/Burg king.png"
 import Namepo2 from "../../assets/img/Message/Namepo.png"
 import Viveon2 from "../../assets/img/Message/Viveon.png"
-
-
-
-
 </script>
 
 <template>
@@ -38,8 +31,8 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                                 class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
                                 Start Chat
                             </div>
-                            <div class="w-6 h-6 relative">
-                                <svg v-if="Theme === 'light'" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            <div class="w-6 h-6 relative darkIconStock">
+                                <svg  width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M22 10.5V12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2H13.5"
@@ -49,15 +42,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                                         stroke="#1E2329" />
                                 </svg>
 
-                                <svg v-if="Theme === 'dark'" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M22 10.5V12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2H13.5"
-                                        stroke="#F5F5F5" stroke-linecap="round" />
-                                    <path
-                                        d="M16.652 3.45506L17.3009 2.80624C18.3759 1.73125 20.1188 1.73125 21.1938 2.80624C22.2687 3.88124 22.2687 5.62415 21.1938 6.69914L20.5449 7.34795M16.652 3.45506C16.652 3.45506 16.7331 4.83379 17.9497 6.05032C19.1662 7.26685 20.5449 7.34795 20.5449 7.34795M16.652 3.45506L10.6872 9.41993C10.2832 9.82394 10.0812 10.0259 9.90743 10.2487C9.70249 10.5114 9.52679 10.7957 9.38344 11.0965C9.26191 11.3515 9.17157 11.6225 8.99089 12.1646L8.41242 13.9M20.5449 7.34795L14.5801 13.3128C14.1761 13.7168 13.9741 13.9188 13.7513 14.0926C13.4886 14.2975 13.2043 14.4732 12.9035 14.6166C12.6485 14.7381 12.3775 14.8284 11.8354 15.0091L10.1 15.5876M10.1 15.5876L8.97709 15.9619C8.71035 16.0508 8.41626 15.9814 8.21744 15.7826C8.01862 15.5837 7.9492 15.2897 8.03811 15.0229L8.41242 13.9M10.1 15.5876L8.41242 13.9"
-                                        stroke="#F5F5F5" />
-                                </svg>
+                              
 
 
 
@@ -67,8 +52,8 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                         <button
                             class="w-11 h-11 p-3.5 rounded-[10px] border border-zinc-600 dark:border-[#ACB5BD] justify-start items-start gap-2.5 inline-flex"
                             @click="toggleActiveStatusDropdown">
-                            <div class="w-4 h-4 relative rounded-[5px]">
-                                <svg v-if="Theme == 'light'" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                            <div class="w-4 h-4 relative rounded-[5px] darkIconStock">
+                                <svg  width="16" height="16" viewBox="0 0 16 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M6.33325 9.33397C7.43782 9.33397 8.33325 10.2294 8.33325 11.334C8.33325 12.4385 7.43782 13.334 6.33325 13.334C5.22868 13.334 4.33325 12.4385 4.33325 11.334C4.33325 10.2294 5.22868 9.33397 6.33325 9.33397Z"
@@ -82,20 +67,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                                     <path d="M14.6667 4.63867L13.3334 4.63867" stroke="#495057" stroke-linecap="round" />
                                 </svg>
 
-                                <svg v-if="Theme == 'dark'" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M6.33203 9.33397C7.4366 9.33397 8.33203 10.2294 8.33203 11.334C8.33203 12.4385 7.4366 13.334 6.33203 13.334C5.22746 13.334 4.33203 12.4385 4.33203 11.334C4.33203 10.2294 5.22746 9.33397 6.33203 9.33397Z"
-                                        stroke="#ACB5BD" />
-                                    <path
-                                        d="M9.66797 2.666C8.5634 2.666 7.66797 3.56143 7.66797 4.666C7.66797 5.77057 8.5634 6.666 9.66797 6.666C10.7725 6.666 11.668 5.77057 11.668 4.666C11.668 3.56143 10.7725 2.666 9.66797 2.666Z"
-                                        stroke="#ACB5BD" />
-                                    <path d="M10 11.3047L14.6667 11.3047" stroke="#ACB5BD" stroke-linecap="round" />
-                                    <path d="M6 4.63867L1.33333 4.63867" stroke="#ACB5BD" stroke-linecap="round" />
-                                    <path d="M1.33203 11.3047L2.66536 11.3047" stroke="#ACB5BD" stroke-linecap="round" />
-                                    <path d="M14.668 4.63867L13.3346 4.63867" stroke="#ACB5BD" stroke-linecap="round" />
-                                </svg>
-
+                               
                             </div>
                         </button>
                         <div class="relative inline-block text-left">
@@ -206,7 +178,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                         </ul>
                     </div>
                     <div
-                        class="max-w-[400px] w-full h-[45px] px-4  py-3 rounded-[100px] border border-zinc-600 dark:border-[#ACB5BD] justify-start items-center gap-[7px] inline-flex mb-[32px]">
+                        class="max-w-[400px] w-full h-[50px] px-4  py-3 rounded-[100px] border border-zinc-600 dark:border-[#ACB5BD] justify-start items-center gap-[7px] inline-flex mb-[32px]">
 
                         <svg v-if="Theme === 'light'" width="16" height="17" viewBox="0 0 16 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -373,7 +345,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
     <section class="ml-0 lg:ml-[25px] mb-[97px] mt-0 lg:mt-[70px] w-full"
         :class="{ 'block': showMessageCompose === true, 'hidden': showMessageCompose === !true }">
         <div
-            class="max-w-[808px] w-full h-[457px] px-[100px] py-0 lg:py-[50px] bg-white dark:bg-[#09132C] rounded-[30px] shadow-none lg:shadow-custom">
+            class="max-w-[808px] w-full h-[457px] px-[45px] lg:px-[100px] py-0 lg:py-[50px] bg-transparent lg:bg-white lg:dark:bg-[#09132C] rounded-[30px] shadow-none lg:shadow-custom">
             <h3 class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] ">Message
                 Compose</h3>
             <form class="mt-[30px]">
@@ -716,3 +688,13 @@ export default {
 
 
 </script>
+<style>
+
+body.dark .darkIconFill path {
+    fill:white;
+}
+body.dark .darkIconStock path {
+    stroke:white;
+}
+
+</style>
