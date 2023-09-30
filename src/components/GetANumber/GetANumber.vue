@@ -106,7 +106,7 @@ const filteredPhone = computed(() => {
                 </li>
             </ul>
             <!-- Mobile Show Selected data -->
-            {{ console.log(this.containerWidth) }}
+            
 
             <div class="relative px-[22px] mt-[30px] block lg:hidden">
                 <div class="absolute left-[-10px] top-[3px]" v-if="scrollPosition">

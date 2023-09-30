@@ -559,7 +559,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
 
         </div>
       </div>
-      <div class="hidden lg:block">
+      <div class="">
         <GetANumber />
       </div>
     </div>
