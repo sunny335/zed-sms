@@ -200,49 +200,68 @@ const filteredPhone = computed(() => {
                 <div class="w-full">
 
                     <div class="tab-content tab-space w-full">
-                        <div v-if="selectedCountry || selectedPhone || selectedService"
-                            class="items-center gap-[20px] justify-center border-b border-zinc-600 w-max mx-auto pb-[26px] hidden lg:flex">
-                            <div v-if="selectedCountry" class="flex gap-[6px] items-center">
+                        <div class="items-center gap-[20px] min-h-[60px] justify-center border-b border-zinc-600 w-max mx-auto pb-[26px]
+                            hidden lg:flex">
+                            <div class="flex gap-[6px] items-center">
 
-                                <div class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">Country:
+                                <div
+                                    class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">
+                                    Country:
                                 </div>
-                                <div class="flex gap-[6px] items-center">
+                                <div v-if="selectedCountry" class="flex gap-[6px] items-center">
                                     <!-- <img :src="PhilipinsImg" alt="Image Description" /> -->
                                     <img :src="selectedCountry?.flag" class="w-[30px] h-[30px] rounded-full" alt="Flag" />
 
-                                    <div class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
-                                        {{ selectedCountry.name }}
+                                    <div
+                                        class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
+                                        {{ selectedCountry?.name }}
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex gap-[6px] items-center" v-if="selectedService">
-                                <div class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">Service:
+                            <div class="flex gap-[6px] items-center"
+                                v-bind:class="{ 'hidden': openTab == 2, 'block': openTab === 2 || openTab === 1 }">
+                                <div
+                                    class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">
+                                    Service:
                                 </div>
 
-                                <div class="flex gap-[6px] items-center">
-                                    <img :src="selectedService.flag" alt="Image Description" />
-                                    <div class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
+                                <div v-if="selectedService" class="flex gap-[6px] items-center">
+                                    <img class="w-[30px] h-[30px] rounded-full" :src="selectedService.flag"
+                                        alt="Image Description" />
+                                    <div
+                                        class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
                                         {{ selectedService.name }}
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex gap-[6px] items-center" v-if="selectedPhone">
-                                <div class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">Number:
+                            <div class="flex gap-[6px] items-center"
+                                v-bind:class="{ 'hidden': openTab == 3, 'block': openTab === 3 || openTab === 1 }">
+                                <div
+                                    class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">
+                                    Number:
                                 </div>
-                                <div class="text-zinc-600 text-sm dark:text-[#F5F5F5]  font-light font-['Poppins']">{{ selectedPhone }}</div>
+                                <div v-if="selectedPhone"
+                                    class="text-zinc-600 text-sm dark:text-[#F5F5F5]  font-light font-['Poppins']">{{
+                                        selectedPhone }}</div>
                             </div>
                             <div class="flex gap-[6px] items-center" v-if="selectedPhone && selectedWeek">
 
-                                <div class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">Rent:
+                                <div
+                                    class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">
+                                    Rent:
                                 </div>
-                                <div class="text-zinc-600 dark:text-[#F5F5F5]  text-sm font-light font-['Poppins']">{{ selectedWeek }}</div>
+                                <div class="text-zinc-600 dark:text-[#F5F5F5]  text-sm font-light font-['Poppins']">{{
+                                    selectedWeek }}</div>
                             </div>
                             <div class="flex gap-[6px] items-center"
                                 v-if="openTab === 2 ? selectedCountry?.price : selectedService">
-                                <div class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">Cost:
+                                <div
+                                    class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
+                                    Cost:
                                 </div>
-                                <div class="text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">{{ openTab === 2 ?
-                                   selectedCountry?.price : selectedService.price }}
+                                <div class="text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">{{
+                                    openTab === 2 ?
+                                    selectedCountry?.price : selectedService.price }}
                                 </div>
                             </div>
                         </div>
