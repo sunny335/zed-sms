@@ -200,6 +200,7 @@ const filteredPhone = computed(() => {
                 <div class="w-full">
 
                     <div class="tab-content tab-space w-full">
+                        <!-- desktop mode Selected data -->
                         <div class="items-center gap-[20px] min-h-[60px] justify-center border-b border-zinc-600 w-max mx-auto pb-[26px]
                             hidden lg:flex">
                             <div class="flex gap-[6px] items-center">
@@ -265,10 +266,14 @@ const filteredPhone = computed(() => {
                                 </div>
                             </div>
                         </div>
+                        <!-- desktop mode Selected data -->
+                        <!-- openTab start -->
                         <div class="w-full" v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
                             <div class="mt-[30px]">
                                 <div class="flex gap-4">
-                                    <div class="max-w-[306px] w-full">
+                                    <!-- column1 -->
+                                    <div class="max-w-[306px] w-full"
+                                        v-bind:class="{ 'hidden lg:block': this.selectedCountry }">
 
                                         <form>
                                             <label for="default-search"
@@ -320,7 +325,8 @@ const filteredPhone = computed(() => {
                                     </div>
 
                                     <!-- column2 -->
-                                    <div class="max-w-[306px] w-full">
+                                    <div class="max-w-[306px] w-full lg:block"
+                                        v-bind:class="{ 'block': this.selectedCountry, 'hidden lg:block': !this.selectedCountry || this.selectedService }">
 
                                         <form>
                                             <label for="default-search"
@@ -338,9 +344,7 @@ const filteredPhone = computed(() => {
                                                 </div>
                                                 <input type="search" id="default-search"
                                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-transparent dark:border-gray-600 dark:placeholder-gray-400  dark:text-[#F5F5F5] dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Enter Service" required
-                                                    v-model="selectedSearchService"
-                                                    >
+                                                    placeholder="Enter Service" required v-model="selectedSearchService">
 
                                             </div>
                                         </form>
@@ -375,8 +379,9 @@ const filteredPhone = computed(() => {
                                         </div>
                                     </div>
                                     <!-- column2 end -->
-
-                                    <div class="max-w-[423px] w-full">
+                                    <!-- column3 -->
+                                    <div class="max-w-[423px] w-full  lg:block"
+                                        v-bind:class="{ 'block': this.selectedService, 'hidden lg:block': !this.selectedService }">
 
                                         <form>
                                             <label for="default-search"
@@ -394,9 +399,7 @@ const filteredPhone = computed(() => {
                                                 </div>
                                                 <input type="search" id="default-search"
                                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-transparent dark:border-gray-600 dark:placeholder-gray-400  dark:text-[#F5F5F5] dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                                    placeholder="Enter number" required
-                                                    v-model="selectedSearchPhone"
-                                                    >
+                                                    placeholder="Enter number" required v-model="selectedSearchPhone">
 
                                             </div>
                                         </form>
@@ -404,17 +407,17 @@ const filteredPhone = computed(() => {
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
                                                 <li v-for="(phoneNumber, index) in filteredPhone" :key="index"
-                                                    class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
+                                                    class="mr-[13px] rounded-[14px]  lg:h-auto  lg:p-0 border-gray-400 cursor-pointer"
                                                     @click="selectPhone(phoneNumber)"
-                                                    :class="{ 'border': selectedPhone === phoneNumber }">
+                                                    :class="{ 'border pt-[10px] h-[96px]': selectedPhone === phoneNumber }">
 
                                                     <div
-                                                        class=" w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
+                                                        class=" w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex ">
                                                         <div
                                                             class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
 
                                                             <div
-                                                                class="grow shrink basis-0 text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins'] flex items-center gap-[16px]">
+                                                                class="grow shrink basis-0 text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins'] flex flex-col lg:flex-row items-center gap-[16px]">
                                                                 {{ phoneNumber }}
                                                                 <div v-if="selectedPhone === phoneNumber"
                                                                     class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px]">
@@ -425,10 +428,11 @@ const filteredPhone = computed(() => {
                                                                     <div @click="handleModalOpen(true)"
                                                                         class="flex items-center gap-[6px] border-l border-zinc-600 pl-[3px]">
                                                                         <span
-                                                                            class="text-zinc-600 dark:text-[#F5F5F5] text-xs font-normal font-['Poppins']">Get
+                                                                            class="text-zinc-600 dark:text-[#F5F5F5] text-xs font-normal font-['Poppins'] ">Get
                                                                             Now</span>
-                                                                        <svg v-if="Theme === 'light'" width="14" height="14" viewBox="0 0 14 14"
-                                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <svg class="darkIconStock" width="14" height="14"
+                                                                            viewBox="0 0 14 14" fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg">
                                                                             <path
                                                                                 d="M2.07371 8.31669C1.65461 6.36087 1.44506 5.38296 1.97038 4.73315C2.4957 4.08334 3.4958 4.08334 5.49602 4.08334H8.50378C10.504 4.08334 11.5041 4.08334 12.0294 4.73315C12.5547 5.38296 12.3452 6.36087 11.9261 8.31669L11.6761 9.48335C11.392 10.809 11.25 11.4718 10.7687 11.8609C10.2874 12.25 9.60952 12.25 8.25378 12.25H5.74602C4.39027 12.25 3.7124 12.25 3.23111 11.8609C2.74981 11.4718 2.60778 10.809 2.32371 9.48335L2.07371 8.31669Z"
                                                                                 stroke="#495057" stroke-width="0.7" />
@@ -445,24 +449,7 @@ const filteredPhone = computed(() => {
                                                                                 stroke-width="0.7" stroke-linecap="round"
                                                                                 stroke-linejoin="round" />
                                                                         </svg>
-                                                                        <svg v-if="Theme === 'dark'" width="14" height="14" viewBox="0 0 14 14"
-                                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M2.07371 8.31669C1.65461 6.36087 1.44506 5.38296 1.97038 4.73315C2.4957 4.08334 3.4958 4.08334 5.49602 4.08334H8.50378C10.504 4.08334 11.5041 4.08334 12.0294 4.73315C12.5547 5.38296 12.3452 6.36087 11.9261 8.31669L11.6761 9.48335C11.392 10.809 11.25 11.4718 10.7687 11.8609C10.2874 12.25 9.60952 12.25 8.25378 12.25H5.74602C4.39027 12.25 3.7124 12.25 3.23111 11.8609C2.74981 11.4718 2.60778 10.809 2.32371 9.48335L2.07371 8.31669Z"
-                                                                                stroke="#F5F5F5" stroke-width="0.7" />
-                                                                            <path d="M4.66675 7H9.33342" stroke="#F5F5F5"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                            <path d="M5.83325 8.75H8.16659" stroke="#F5F5F5"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                            <path d="M10.5 5.25L8.75 1.75" stroke="#F5F5F5"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                            <path d="M3.5 5.25L5.25 1.75" stroke="#F5F5F5"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                        </svg>
+
 
                                                                     </div>
 
@@ -479,6 +466,7 @@ const filteredPhone = computed(() => {
                                 </div>
                             </div>
                         </div>
+                          <!-- openTab end -->
                         <div v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
                             <div class="mt-[30px]">
                                 <div class="flex gap-4">
