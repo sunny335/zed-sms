@@ -582,29 +582,22 @@ import Webversion from '../assets/img/Web version.png';
               class="w-[67px] h-[66px] p-5 rounded-[100px] border border-neutral-800 dark:border-white justify-center items-center gap-2.5 inline-flex">
               <div class="text-neutral-800  dark:text-[#F5F5F5]  text-2xl font-medium font-['Inter'] leading-relaxed">01</div>
             </div>
-            <svg v-if="Theme === 'light'"  class="mr-[30px]" width="292" height="39" viewBox="0 0 292 39" fill="none"
+            <svg   class="mr-[30px] darkIconStock" width="292" height="39" viewBox="0 0 292 39" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path d="M1 19.6693H291M291 19.6693L273.765 1.16931M291 19.6693L273.765 38.1693" stroke="#1E2329"
                 stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <svg v-if="Theme === 'dark'"  class="mr-[30px]" width="292" height="39" viewBox="0 0 292 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 19.6693H291M291 19.6693L273.765 1.16931M291 19.6693L273.765 38.1693" stroke="#F5F5F5"
-                stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-
+       
             <div
               class="w-[69px] h-[66px] px-[19px] py-5 rounded-[100px] border border-neutral-800 dark:border-white justify-center items-center gap-2.5 inline-flex">
               <div class="text-neutral-800  dark:text-[#F5F5F5]  text-2xl font-medium font-['Inter'] leading-relaxed">02</div>
             </div>
-            <svg v-if="Theme === 'light'"  class="mr-[30px]" width="292" height="39" viewBox="0 0 292 39" fill="none"
+            <svg   class="mr-[30px] darkIconStock" width="292" height="39" viewBox="0 0 292 39" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path d="M1 19.6693H291M291 19.6693L273.765 1.16931M291 19.6693L273.765 38.1693" stroke="#1E2329"
                 stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <svg v-if="Theme === 'dark'"  class="mr-[30px]" width="292" height="39" viewBox="0 0 292 39" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 19.6693H291M291 19.6693L273.765 1.16931M291 19.6693L273.765 38.1693" stroke="#F5F5F5"
-                stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
+    
             <div
               class="w-[69px] h-[66px] px-[19px] py-5 rounded-[100px] border border-neutral-800 dark:border-white justify-center items-center gap-2.5 inline-flex">
               <div class="text-neutral-800  dark:text-[#F5F5F5]  text-2xl font-medium font-['Inter'] leading-relaxed">03</div>
@@ -1113,4 +1106,15 @@ export default {
 
 
 </script>
+
+<style>
+
+body.dark .darkIconFill path {
+    fill:white;
+}
+body.dark .darkIconStock path {
+    stroke:white;
+}
+
+</style>
 
