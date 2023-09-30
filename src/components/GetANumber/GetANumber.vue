@@ -201,7 +201,7 @@ const filteredPhone = computed(() => {
 
                     <div class="tab-content tab-space w-full">
                         <div v-if="selectedCountry || selectedPhone || selectedService"
-                            class="flex items-center gap-[20px] justify-center border-b border-zinc-600 w-max mx-auto pb-[26px] hidden lg:block">
+                            class="items-center gap-[20px] justify-center border-b border-zinc-600 w-max mx-auto pb-[26px] hidden lg:flex">
                             <div v-if="selectedCountry" class="flex gap-[6px] items-center">
 
                                 <div class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">Country:
@@ -992,6 +992,8 @@ export default {
             selectedService: null,
             selectedPhone: null,
             OpenModal: false,
+            scrollPosition: 0,
+            contentWidth: 0,
         }
     },
     methods: {
@@ -1019,6 +1021,28 @@ export default {
         //     console.log(flagFileName)
         //     return require(`../../assets/img/${flagFileName}`);
         // },
+        
+        scrollLeft() {
+            this.scrollPosition -= 100;
+            this.scrollPosition = Math.max(0, this.scrollPosition);
+        },
+
+
+        scrollRight() {
+            this.scrollPosition += 100;
+            console.log("scrollPosition", this.scrollPosition);
+
+            const element = this.$refs.scrollContainer;
+            const elementContent = this.$refs.content;
+            if (element) {
+                const contentWidth = elementContent.getBoundingClientRect().width;
+                const scrollContainertWidth = element.getBoundingClientRect().width;
+                const maxScrollPosition = contentWidth - (scrollContainertWidth);
+                this.scrollPosition = Math.min(maxScrollPosition, this.scrollPosition)
+
+
+            }
+        },
     },
 
 }

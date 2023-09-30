@@ -1059,7 +1059,7 @@ export default {
             OpenModal: false,
             scrollPosition: 0,
             contentWidth: 0,
-            containerWidth: 0,
+          
         }
     },
     methods: {
