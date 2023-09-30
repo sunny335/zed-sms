@@ -69,12 +69,14 @@ const filteredPhone = computed(() => {
 </script>
 
 <template >
-
-
-    <div >
-        <h1 class="text-neutral-800 dark:text-[#F5F5F5]  text-center text-[32px] font-medium font-['Poppins'] leading-[22px]">To Get A Number
+    <div>
+        <h1
+            class="text-neutral-800 dark:text-[#F5F5F5]  text-center text-[32px] font-medium font-['Poppins'] leading-[22px]">
+            To Get A Number
         </h1>
-        <p class="text-neutral-800 dark:text-[#F5F5F5]  text-center text-base font-light font-['Poppins'] leading-[11px] mt-[20px]">for any kind
+        <p
+            class="text-neutral-800 dark:text-[#F5F5F5]  text-center text-base font-light font-['Poppins'] leading-[11px] mt-[20px]">
+            for any kind
             of services</p>
     </div>
     <div class="flex flex-wrap mt-[30px] ">
@@ -103,10 +105,10 @@ const filteredPhone = computed(() => {
                     </a>
                 </li>
             </ul>
-             <!-- Mobile Show Selected data -->
+            <!-- Mobile Show Selected data -->
             
 
-             <div class="relative px-[22px] mt-[30px] block lg:hidden">
+            <div class="relative px-[22px] mt-[30px] block lg:hidden">
                 <div class="absolute left-[-10px] top-[3px]" v-if="scrollPosition">
                     <div @click="scrollLeft" 
                         class="relative border border-white rounded-full cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10">
@@ -194,13 +196,15 @@ const filteredPhone = computed(() => {
                     </div>
                 </div>
             </div>
-             <!-- Mobile Show Selected data -->
+
+            
+
+            <!-- Mobile Show Selected data -->
             <div
-                class="w-full mt-[60px] px-[30px] pt-[34px] pb-[30px] rounded-[36px] border border-zinc-600 flex-col justify-start items-center gap-[30px] inline-flex">
+                class="w-full mt-2  lg:mt-[60px] px-[30px] pt-1 lg:pt-[34px] pb-[30px] rounded-[36px] border border-zinc-600 flex-col justify-start items-center gap-[30px] inline-flex">
                 <div class="w-full">
 
                     <div class="tab-content tab-space w-full">
-                        <!-- desktop mode Selected data -->
                         <div class="items-center gap-[20px] min-h-[60px] justify-center border-b border-zinc-600 w-max mx-auto pb-[26px]
                             hidden lg:flex">
                             <div class="flex gap-[6px] items-center">
@@ -266,8 +270,6 @@ const filteredPhone = computed(() => {
                                 </div>
                             </div>
                         </div>
-                        <!-- desktop mode Selected data -->
-                        <!-- openTab start -->
                         <div class="w-full" v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
                             <div class="mt-[30px]">
                                 <div class="flex gap-4">
@@ -466,11 +468,11 @@ const filteredPhone = computed(() => {
                                 </div>
                             </div>
                         </div>
-                          <!-- openTab end -->
                         <div v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
                             <div class="mt-[30px]">
                                 <div class="flex gap-4">
-                                    <div class="max-w-3/6 w-full">
+                                    <div class="max-w-3/6 w-full"
+                                        v-bind:class="{ 'hidden lg:block': selectedCountry }">
 
                                         <form>
                                             <label for="default-search"
@@ -488,9 +490,7 @@ const filteredPhone = computed(() => {
                                                 </div>
                                                 <input type="search" id="default-search"
                                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:text-[#F5F5F5] dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:bg-transparent"
-                                                    placeholder="Enter country" required
-                                                    v-model="selectedSearchCountry"
-                                                    >
+                                                    placeholder="Enter country" required v-model="selectedSearchCountry">
 
                                             </div>
                                         </form>
@@ -528,7 +528,8 @@ const filteredPhone = computed(() => {
 
                                     <!-- phone part -->
 
-                                    <div class="max-w-3/6 w-full">
+                                    <div class="max-w-3/6 w-full"
+                                        v-bind:class="{ 'block': selectedCountry, 'hidden lg:block': !selectedCountry }">
 
                                         <form>
                                             <label for="default-search"
@@ -546,9 +547,7 @@ const filteredPhone = computed(() => {
                                                 </div>
                                                 <input type="search" id="default-search"
                                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:text-[#F5F5F5] dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:bg-transparent"
-                                                    placeholder="Enter number" required
-                                                    v-model="selectedSearchPhone"
-                                                    >
+                                                    placeholder="Enter number" required v-model="selectedSearchPhone">
 
                                             </div>
                                         </form>
@@ -556,9 +555,9 @@ const filteredPhone = computed(() => {
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
                                                 <li v-for="(phoneNumber, index) in filteredPhone" :key="index"
-                                                    class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
+                                                    class="mr-[13px] rounded-[14px] lg:h-auto border-gray-400 cursor-pointer"
                                                     @click="selectPhone(phoneNumber)"
-                                                    :class="{ 'border': selectedPhone === phoneNumber }">
+                                                    :class="{ 'border pt-[10px] h-[96px]': selectedPhone === phoneNumber }">
 
                                                     <div
                                                         class="max-w-full w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
@@ -566,7 +565,7 @@ const filteredPhone = computed(() => {
                                                             class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
 
                                                             <div
-                                                                class="grow shrink basis-0 text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins'] flex items-center gap-[16px]">
+                                                                class="grow shrink basis-0 text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins'] flex flex-col lg:flex-row items-center gap-[16px]">
                                                                 {{ phoneNumber }}
                                                                 <div v-if="selectedPhone === phoneNumber"
                                                                     class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px]">
@@ -579,8 +578,9 @@ const filteredPhone = computed(() => {
                                                                         <span
                                                                             class="text-zinc-600  dark:text-[#F5F5F5] text-xs font-normal font-['Poppins']">Get
                                                                             Now</span>
-                                                                            <svg v-if="Theme === 'light'" width="14" height="14" viewBox="0 0 14 14"
-                                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <svg class="darkIconStock" width="14" height="14"
+                                                                            viewBox="0 0 14 14" fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg">
                                                                             <path
                                                                                 d="M2.07371 8.31669C1.65461 6.36087 1.44506 5.38296 1.97038 4.73315C2.4957 4.08334 3.4958 4.08334 5.49602 4.08334H8.50378C10.504 4.08334 11.5041 4.08334 12.0294 4.73315C12.5547 5.38296 12.3452 6.36087 11.9261 8.31669L11.6761 9.48335C11.392 10.809 11.25 11.4718 10.7687 11.8609C10.2874 12.25 9.60952 12.25 8.25378 12.25H5.74602C4.39027 12.25 3.7124 12.25 3.23111 11.8609C2.74981 11.4718 2.60778 10.809 2.32371 9.48335L2.07371 8.31669Z"
                                                                                 stroke="#495057" stroke-width="0.7" />
@@ -597,24 +597,7 @@ const filteredPhone = computed(() => {
                                                                                 stroke-width="0.7" stroke-linecap="round"
                                                                                 stroke-linejoin="round" />
                                                                         </svg>
-                                                                        <svg v-if="Theme === 'dark'" width="14" height="14" viewBox="0 0 14 14"
-                                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M2.07371 8.31669C1.65461 6.36087 1.44506 5.38296 1.97038 4.73315C2.4957 4.08334 3.4958 4.08334 5.49602 4.08334H8.50378C10.504 4.08334 11.5041 4.08334 12.0294 4.73315C12.5547 5.38296 12.3452 6.36087 11.9261 8.31669L11.6761 9.48335C11.392 10.809 11.25 11.4718 10.7687 11.8609C10.2874 12.25 9.60952 12.25 8.25378 12.25H5.74602C4.39027 12.25 3.7124 12.25 3.23111 11.8609C2.74981 11.4718 2.60778 10.809 2.32371 9.48335L2.07371 8.31669Z"
-                                                                                stroke="#F5F5F5" stroke-width="0.7" />
-                                                                            <path d="M4.66675 7H9.33342" stroke="#F5F5F5"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                            <path d="M5.83325 8.75H8.16659" stroke="#F5F5F5"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                            <path d="M10.5 5.25L8.75 1.75" stroke="#F5F5F5"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                            <path d="M3.5 5.25L5.25 1.75" stroke="#F5F5F5"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                        </svg>
+
 
                                                                     </div>
 
@@ -633,7 +616,8 @@ const filteredPhone = computed(() => {
                         <div v-bind:class="{ 'hidden': openTab !== 3, 'block': openTab === 3 }">
                             <div class="mt-[30px]">
                                 <div class="flex gap-4">
-                                    <div class="max-w-3/6 w-full">
+                                    <div class="max-w-3/6 w-full"
+                                        v-bind:class="{ 'hidden lg:block': selectedCountry }">
 
                                         <form>
                                             <label for="default-search"
@@ -651,9 +635,7 @@ const filteredPhone = computed(() => {
                                                 </div>
                                                 <input type="search" id="default-search"
                                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:text-[#F5F5F5] dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:bg-transparent"
-                                                    placeholder="Enter country" required
-                                                    v-model="selectedSearchCountry"
-                                                    >
+                                                    placeholder="Enter country" required v-model="selectedSearchCountry">
 
                                             </div>
                                         </form>
@@ -687,7 +669,8 @@ const filteredPhone = computed(() => {
                                     </div>
 
                                     <!-- column2 -->
-                                    <div class="max-w-3/6 w-full">
+                                    <div class="max-w-3/6 w-full"
+                                        v-bind:class="{ 'block': selectedCountry, 'hidden lg:block': !selectedCountry }">
 
                                         <form>
                                             <label for="default-search"
@@ -705,26 +688,22 @@ const filteredPhone = computed(() => {
                                                 </div>
                                                 <input type="search" id="default-search"
                                                     class="block w-full p-4 pl-10 text-sm text-gray-900 border-b border-gray-300 focus:ring-blue-500 focus:border-blue-400 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:text-[#F5F5F5] dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:bg-transparent"
-                                                    placeholder="Enter Service" required
-                                                    v-model="selectedSearchService"
-                                                    >
+                                                    placeholder="Enter Service" required v-model="selectedSearchService">
 
                                             </div>
                                         </form>
                                         <div
                                             class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                             <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
-                                                <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer flex items-center gap-[16px]"
+                                                <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer flex flex-col lg:flex-row items-center gap-1 lg:h-auto lg:gap-[16px]"
                                                     v-for="(service, index) in filteredService" :key="index"
                                                     @click="selectService(service)"
-                                                    :class="{ 'border': (selectedService?.name == service?.name)&& (selectedService?.flag == service?.flag) }">
+                                                    :class="{ 'border  h-[96px]': (selectedService?.name == service?.name) && (selectedService?.flag == service?.flag) }">
                                                     <div
                                                         class="max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
                                                         <div
                                                             class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
-                                                            <!-- <img :src="getFlagImage(country.flag)" class="w-4 h-4 mr-2"
-                
-                alt="Flag" /> -->
+
                                                             <img :src="service.flag" class="w-[30px] h-[30px] rounded-full"
                                                                 alt="Flag" />
                                                             <div
@@ -736,49 +715,33 @@ const filteredPhone = computed(() => {
                                                             {{ service.price }}</div>
                                                     </div>
                                                     <div v-if="(selectedService?.name === service?.name) && (selectedService?.flag === service?.flag)"
-                                                        class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px]">
+                                                        class="border border-gray-400 flex  items-center py-[5px] px-[12px] rounded-[10px]">
 
                                                         <div @click="handleModalOpen(true)"
                                                             class="flex items-center gap-[6px] pl-[3px]">
                                                             <span
                                                                 class="text-zinc-600  dark:text-[#F5F5F5] text-xs font-normal font-['Poppins']">Get
                                                                 Now</span>
-                                                                <svg v-if="Theme === 'light'" width="14" height="14" viewBox="0 0 14 14"
-                                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M2.07371 8.31669C1.65461 6.36087 1.44506 5.38296 1.97038 4.73315C2.4957 4.08334 3.4958 4.08334 5.49602 4.08334H8.50378C10.504 4.08334 11.5041 4.08334 12.0294 4.73315C12.5547 5.38296 12.3452 6.36087 11.9261 8.31669L11.6761 9.48335C11.392 10.809 11.25 11.4718 10.7687 11.8609C10.2874 12.25 9.60952 12.25 8.25378 12.25H5.74602C4.39027 12.25 3.7124 12.25 3.23111 11.8609C2.74981 11.4718 2.60778 10.809 2.32371 9.48335L2.07371 8.31669Z"
-                                                                                stroke="#495057" stroke-width="0.7" />
-                                                                            <path d="M4.66675 7H9.33342" stroke="#495057"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                            <path d="M5.83325 8.75H8.16659" stroke="#495057"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                            <path d="M10.5 5.25L8.75 1.75" stroke="#495057"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                            <path d="M3.5 5.25L5.25 1.75" stroke="#495057"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                        </svg>
-                                                                        <svg v-if="Theme === 'dark'" width="14" height="14" viewBox="0 0 14 14"
-                                                                            fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path
-                                                                                d="M2.07371 8.31669C1.65461 6.36087 1.44506 5.38296 1.97038 4.73315C2.4957 4.08334 3.4958 4.08334 5.49602 4.08334H8.50378C10.504 4.08334 11.5041 4.08334 12.0294 4.73315C12.5547 5.38296 12.3452 6.36087 11.9261 8.31669L11.6761 9.48335C11.392 10.809 11.25 11.4718 10.7687 11.8609C10.2874 12.25 9.60952 12.25 8.25378 12.25H5.74602C4.39027 12.25 3.7124 12.25 3.23111 11.8609C2.74981 11.4718 2.60778 10.809 2.32371 9.48335L2.07371 8.31669Z"
-                                                                                stroke="#F5F5F5" stroke-width="0.7" />
-                                                                            <path d="M4.66675 7H9.33342" stroke="#F5F5F5"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                            <path d="M5.83325 8.75H8.16659" stroke="#F5F5F5"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                            <path d="M10.5 5.25L8.75 1.75" stroke="#F5F5F5"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                            <path d="M3.5 5.25L5.25 1.75" stroke="#F5F5F5"
-                                                                                stroke-width="0.7" stroke-linecap="round"
-                                                                                stroke-linejoin="round" />
-                                                                        </svg>
+                                                            <svg class="darkIconStock" width="14" height="14"
+                                                                viewBox="0 0 14 14" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M2.07371 8.31669C1.65461 6.36087 1.44506 5.38296 1.97038 4.73315C2.4957 4.08334 3.4958 4.08334 5.49602 4.08334H8.50378C10.504 4.08334 11.5041 4.08334 12.0294 4.73315C12.5547 5.38296 12.3452 6.36087 11.9261 8.31669L11.6761 9.48335C11.392 10.809 11.25 11.4718 10.7687 11.8609C10.2874 12.25 9.60952 12.25 8.25378 12.25H5.74602C4.39027 12.25 3.7124 12.25 3.23111 11.8609C2.74981 11.4718 2.60778 10.809 2.32371 9.48335L2.07371 8.31669Z"
+                                                                    stroke="#495057" stroke-width="0.7" />
+                                                                <path d="M4.66675 7H9.33342" stroke="#495057"
+                                                                    stroke-width="0.7" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                                <path d="M5.83325 8.75H8.16659" stroke="#495057"
+                                                                    stroke-width="0.7" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                                <path d="M10.5 5.25L8.75 1.75" stroke="#495057"
+                                                                    stroke-width="0.7" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                                <path d="M3.5 5.25L5.25 1.75" stroke="#495057"
+                                                                    stroke-width="0.7" stroke-linecap="round"
+                                                                    stroke-linejoin="round" />
+                                                            </svg>
+
 
                                                         </div>
 
@@ -802,7 +765,7 @@ const filteredPhone = computed(() => {
     </div>
 
     <TransitionRoot as="template" :show="OpenModal">
-        <Dialog as="div" class="relative z-10" @close="OpenModal = false">
+        <Dialog as="div" class="relative z-[100]" @close="OpenModal = false">
             <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100"
                 leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
                 <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
@@ -821,7 +784,8 @@ const filteredPhone = computed(() => {
                                 <div class="">
                                     <div v-if="selectedCountry"
                                         class="flex items-center border-b border-zinc-200 py-[16px]">
-                                        <div class="text-left text-zinc-600   dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] w-2/4 ">
+                                        <div
+                                            class="text-left text-zinc-600   dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] w-2/4 ">
                                             Country:
                                         </div>
                                         <div class="flex gap-[6px] items-center w-2/4">
@@ -829,14 +793,16 @@ const filteredPhone = computed(() => {
                                             <img :src="selectedCountry?.flag" class="w-[20px] h-[20px] rounded-full"
                                                 alt="Flag" width="20" />
 
-                                            <div class="text-center text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins']">
-                                                {{ selectedCountry.name }}
+                                            <div
+                                                class="text-center text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins']">
+                                                {{ selectedCountry?.name }}
                                             </div>
                                         </div>
                                     </div>
                                     <div v-if="selectedService"
                                         class="flex items-center border-b border-zinc-200 py-[16px]">
-                                        <div class="text-left text-zinc-600  dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] w-2/4">
+                                        <div
+                                            class="text-left text-zinc-600  dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] w-2/4">
                                             Service:
                                         </div>
                                         <div class="flex gap-[6px] items-center">
@@ -848,30 +814,36 @@ const filteredPhone = computed(() => {
                                         </div>
                                     </div>
                                     <div v-if="selectedPhone" class="flex items-center border-b border-zinc-200 py-[16px]">
-                                        <div class="text-left text-zinc-600  dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] w-2/4">
+                                        <div
+                                            class="text-left text-zinc-600  dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] w-2/4">
                                             Number:
                                         </div>
-                                        <div class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] w-2/4	">
+                                        <div
+                                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] w-2/4	">
                                             {{ selectedPhone }}
                                         </div>
                                     </div>
                                     <div v-if="selectedPhone && selectedWeek"
                                         class="flex items-center border-b border-zinc-200 py-[16px]">
-                                        <div class="text-left text-zinc-600  dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] w-2/4">
+                                        <div
+                                            class="text-left text-zinc-600  dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] w-2/4">
                                             Rent:
                                         </div>
-                                        <div class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] w-2/4	">
+                                        <div
+                                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] w-2/4	">
                                             {{ selectedWeek }}
                                         </div>
                                     </div>
-                                    <div v-if="openTab === 2 ? selectedCountry.price : selectedService.price"
+                                    <div v-if="openTab === 2 ? selectedCountry?.price : selectedService.price"
                                         class="flex items-center border-b border-zinc-200 py-[16px]">
-                                        <div class="text-left text-zinc-600  dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] w-2/4">
+                                        <div
+                                            class="text-left text-zinc-600  dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] w-2/4">
                                             Cost:
                                         </div>
-                                        <div class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] w-2/4	">
+                                        <div
+                                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] w-2/4	">
                                             {{
-                                                openTab === 2 ? selectedCountry.price : selectedService.price }}
+                                                openTab === 2 ? selectedCountry?.price : selectedService.price }}
                                         </div>
                                     </div>
                                 </div>
@@ -885,13 +857,16 @@ const filteredPhone = computed(() => {
                                             <path d="M13 5.5H1M1 5.5L5.5 1M1 5.5L5.5 10" stroke="#495057"
                                                 stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
-                                        <div class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] ">
+                                        <div
+                                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] ">
                                             Back
                                         </div>
                                     </div>
                                     <RouterLink to="/payment"
                                         class=" w-2/4 h-[41px] px-6 py-2.5 rounded-[10px] border border-blue-600 dark:bg-blue-600 justify-center items-center gap-2.5 flex">
-                                        <div class="text-center text-blue-600  dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">Next
+                                        <div
+                                            class="text-center text-blue-600  dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
+                                            Next
 
                                         </div>
                                         <svg v-if="Theme === 'light'" width="15" height="15" viewBox="0 0 15 15" fill="none"
@@ -938,6 +913,14 @@ const filteredPhone = computed(() => {
 <script>
 import WeekListDropdown from '../WeekListDropdown/WeekListDropdown.vue';
 const Theme = localStorage.getItem('Theme');
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Import Swiper styles
+import 'swiper/css';
+
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
 const countries = [
     { name: 'United States', price: "$0.35", flag: PhilipinsImg },
     { name: 'Lebanon', price: "$0.35", flag: LebanonImg },
@@ -968,39 +951,43 @@ const services = [
 
 ];
 
-const phoneNumbers= [
-                '+88013-456-7590',
-                '+88015-555-5545',
-                '+88017-654-3510',
-                '+88018-888-8888',
-                '+88015-123-4567',
-                '+88013-456-7890',
-                '+88015-555-5555',
-                '+88017-654-3280',
-                '+88018-888-8458',
-                '+88015-123-4597',
-                '+88013-456-7190',
-                '+88015-555-5255',
-                '+88017-654-3710',
-                '+88018-888-8848',
-                '+88015-123-4557',
-            ];
+const phoneNumbers = [
+    '+88013-456-7590',
+    '+88015-555-5545',
+    '+88017-654-3510',
+    '+88018-888-8888',
+    '+88015-123-4567',
+    '+88013-456-7890',
+    '+88015-555-5555',
+    '+88017-654-3280',
+    '+88018-888-8458',
+    '+88015-123-4597',
+    '+88013-456-7190',
+    '+88015-555-5255',
+    '+88017-654-3710',
+    '+88018-888-8848',
+    '+88015-123-4557',
+];
 
 export default {
     components: {
         WeekListDropdown,
+        Swiper,
+        SwiperSlide,
     },
     name: "pink-tabs",
     data() {
         return {
+            modules: [Navigation],
             selectedWeek: '01 week',
             openTab: 1,
-            selectedCountry: null,
+            selectedCountry: false,
             selectedService: null,
             selectedPhone: null,
             OpenModal: false,
             scrollPosition: 0,
             contentWidth: 0,
+          
         }
     },
     methods: {
@@ -1028,7 +1015,7 @@ export default {
         //     console.log(flagFileName)
         //     return require(`../../assets/img/${flagFileName}`);
         // },
-        
+
         scrollLeft() {
             this.scrollPosition -= 100;
             this.scrollPosition = Math.max(0, this.scrollPosition);
@@ -1051,6 +1038,70 @@ export default {
             }
         },
     },
+    // mounted(){
+    //     this.updateWidths()
+    // }
 
 }
 </script>
+
+
+<style>
+body.dark .darkIconFill path {
+    fill: white;
+}
+
+body.dark .darkIconStock path {
+    stroke: white;
+}
+
+.getNumberSlider .swiper-wrapper {
+    align-items: center !important;
+}
+
+.getNumberSlider .swiper-slide {
+    margin-right: 10px !important;
+}
+
+
+.swiper-button-prev::after {
+    content: " ";
+
+    background-image: url(../../assets/img/about/ArrowLeft.svg);
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+
+
+.swiper-button-next::after {
+    content: " ";
+
+    background-image: url(../../assets/img/about/ArrowRight.svg);
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.scroll-hide::-webkit-scrollbar {
+    display: none;
+
+}
+
+.scroll-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.arrow-right-slider{
+    transform: rotate(178deg);
+}
+</style>

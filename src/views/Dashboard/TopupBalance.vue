@@ -71,7 +71,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
 
                         <div class="flex justify-end items-center">
-                            <button :disabled="!this.selectedPayment" @click="submitModal(true)" type="submit"
+                            <button :disabled="!selectedPayment" @click="submitModal(true)" type="submit"
                                 class="max-w-[166px] h-[45px] w-full py-3 rounded-[10px] shadow border border-blue-600 justify-center items-start gap-2.5 inline-flex mt-10  dark:bg-[#0057FF] disabled:cursor-not-allowed disabled:opacity-20">
                                 <div
                                     class="text-center text-blue-600  dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
