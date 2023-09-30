@@ -103,13 +103,105 @@ const filteredPhone = computed(() => {
                     </a>
                 </li>
             </ul>
+             <!-- Mobile Show Selected data -->
+            
+
+             <div class="relative px-[22px] mt-[30px] block lg:hidden">
+                <div class="absolute left-[-10px] top-[3px]" v-if="scrollPosition">
+                    <div @click="scrollLeft" 
+                        class="relative border border-white rounded-full cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10">
+                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.8327 13.4238H9.16602M9.16602 13.4238L12.416 10.1738M9.16602 13.4238L12.416 16.6738"
+                                stroke="#ACB5BD" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div> 
+                <div class="absolute right-[-10px] top-[3px]" >
+                    <div  @click="scrollRight"  class=" border border-white rounded-full relative cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10">
+                <svg class="arrow-right-slider" width="27" height="27" viewBox="0 0 27 27" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.8327 13.4238H9.16602M9.16602 13.4238L12.416 10.1738M9.16602 13.4238L12.416 16.6738"
+                        stroke="#ACB5BD" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+                </div>
+
+                <div class="max-w-[100%] overflow-x-auto scroll-hide mx-auto" ref="scrollContainer">
+
+                    <div class="items-center gap-[20px] min-h-[60px] justify-center  w-max mx-auto pb-[26px]
+              flex" ref="content" :style="{ transform: `translateX(-${scrollPosition}px)` }">
+                        <div class="flex gap-[6px] items-center">
+
+                            <div
+                                class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">
+                                Country:
+                            </div>
+                            <div v-if="selectedCountry" class="flex gap-[6px] items-center">
+                                <!-- <img :src="PhilipinsImg" alt="Image Description" /> -->
+                                <img :src="selectedCountry?.flag" class="w-[30px] h-[30px] rounded-full" alt="Flag" />
+
+                                <div
+                                    class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
+                                    {{ selectedCountry?.name }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-[6px] items-center"
+                            v-bind:class="{ 'hidden': openTab == 2, 'block': openTab === 2 || openTab === 1 }">
+                            <div
+                                class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">
+                                Service:
+                            </div>
+
+                            <div v-if="selectedService" class="flex gap-[6px] items-center">
+                                <img class="w-[30px] h-[30px] rounded-full" :src="selectedService.flag"
+                                    alt="Image Description" />
+                                <div
+                                    class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
+                                    {{ selectedService.name }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex gap-[6px] items-center"
+                            v-bind:class="{ 'hidden': openTab == 3, 'block': openTab === 3 || openTab === 1 }">
+                            <div
+                                class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">
+                                Number:
+                            </div>
+                            <div v-if="selectedPhone"
+                                class="text-zinc-600 text-sm dark:text-[#F5F5F5]  font-light font-['Poppins']">{{
+                                    selectedPhone }}</div>
+                        </div>
+                        <div class="flex gap-[6px] items-center" v-if="selectedPhone && selectedWeek">
+
+                            <div
+                                class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">
+                                Rent:
+                            </div>
+                            <div class="text-zinc-600 dark:text-[#F5F5F5]  text-sm font-light font-['Poppins']">{{
+                                selectedWeek }}</div>
+                        </div>
+                        <div class="flex gap-[6px] items-center"
+                            v-if="openTab === 2 ? selectedCountry?.price : selectedService">
+                            <div class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
+                                Cost:
+                            </div>
+                            <div class="text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">{{
+                                openTab === 2 ?
+                                selectedCountry?.price : selectedService.price }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- Mobile Show Selected data -->
             <div
                 class="w-full mt-[60px] px-[30px] pt-[34px] pb-[30px] rounded-[36px] border border-zinc-600 flex-col justify-start items-center gap-[30px] inline-flex">
                 <div class="w-full">
 
                     <div class="tab-content tab-space w-full">
                         <div v-if="selectedCountry || selectedPhone || selectedService"
-                            class="flex items-center gap-[20px] justify-center border-b border-zinc-600 w-max mx-auto pb-[26px]">
+                            class="flex items-center gap-[20px] justify-center border-b border-zinc-600 w-max mx-auto pb-[26px] hidden lg:block">
                             <div v-if="selectedCountry" class="flex gap-[6px] items-center">
 
                                 <div class="text-center text-zinc-600 dark:text-[#F5F5F5]  text-sm font-normal font-['Poppins']">Country:
