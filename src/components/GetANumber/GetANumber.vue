@@ -144,7 +144,7 @@ const filteredPhone = computed(() => {
 
                                 <div
                                     class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
-                                    {{ selectedCountry.name }}
+                                    {{ selectedCountry?.name }}
                                 </div>
                             </div>
                         </div>
@@ -291,7 +291,7 @@ const filteredPhone = computed(() => {
 
                                     <div
                                         class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
-                                        {{ selectedCountry.name }}
+                                        {{ selectedCountry?.name }}
                                     </div>
                                 </div>
                             </div>
@@ -867,7 +867,7 @@ const filteredPhone = computed(() => {
 
                                             <div
                                                 class="text-center text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins']">
-                                                {{ selectedCountry.name }}
+                                                {{ selectedCountry?.name }}
                                             </div>
                                         </div>
                                     </div>
@@ -906,7 +906,7 @@ const filteredPhone = computed(() => {
                                             {{ selectedWeek }}
                                         </div>
                                     </div>
-                                    <div v-if="openTab === 2 ? selectedCountry.price : selectedService.price"
+                                    <div v-if="openTab === 2 ? selectedCountry?.price : selectedService.price"
                                         class="flex items-center border-b border-zinc-200 py-[16px]">
                                         <div
                                             class="text-left text-zinc-600  dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] w-2/4">
@@ -915,7 +915,7 @@ const filteredPhone = computed(() => {
                                         <div
                                             class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] w-2/4	">
                                             {{
-                                                openTab === 2 ? selectedCountry.price : selectedService.price }}
+                                                openTab === 2 ? selectedCountry?.price : selectedService.price }}
                                         </div>
                                     </div>
                                 </div>
