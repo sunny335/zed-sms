@@ -22,7 +22,7 @@
             </div>
         </div>
         <!-- Dropdown Menu -->
-        <ul v-show="isOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white z-[9999] dark:bg-[#09132C]  border border-gray-300 rounded-md shadow-lg">
+        <ul v-show="isOpen" class="absolute     right-[-100px] lg:right-0 mt-2 py-2 w-48 bg-white z-[9999] dark:bg-[#09132C]  border border-gray-300 rounded-md shadow-lg">
             <!-- Render your list of countries and languages here -->
             <li v-for="(item, index) in options" :key="index" @click="selectOption(item)"
                 class="px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-600 flex items-center">

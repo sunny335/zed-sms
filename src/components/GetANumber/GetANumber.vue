@@ -111,20 +111,19 @@ const filteredPhone = computed(() => {
             <div class="relative px-[22px] mt-[30px] block lg:hidden">
                 <div class="absolute left-[-10px] top-[3px]" v-if="scrollPosition">
                     <div @click="scrollLeft" 
-                        class="relative border border-white rounded-full cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10">
+                        class="relative border border-gray-800 dark:border-white rounded-full cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 darkIconStock">
                         <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17.8327 13.4238H9.16602M9.16602 13.4238L12.416 10.1738M9.16602 13.4238L12.416 16.6738"
-                                stroke="#ACB5BD" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+<path d="M17.8333 13.4238H9.16663M9.16663 13.4238L12.4166 10.1738M9.16663 13.4238L12.4166 16.6738" stroke="#495057" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
                     </div>
                 </div> 
                 <div class="absolute right-[-10px] top-[3px]" >
-                    <div  @click="scrollRight"  class=" border border-white rounded-full relative cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10">
-                <svg class="arrow-right-slider" width="27" height="27" viewBox="0 0 27 27" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.8327 13.4238H9.16602M9.16602 13.4238L12.416 10.1738M9.16602 13.4238L12.416 16.6738"
-                        stroke="#ACB5BD" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+                    <div  @click="scrollRight"  class=" border border-gray-800 dark:border-white rounded-full relative cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 darkIconStock rotate-180">
+                        <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.8333 13.4238H9.16663M9.16663 13.4238L12.4166 10.1738M9.16663 13.4238L12.4166 16.6738" stroke="#495057" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
             </div>
                 </div>
 
@@ -913,14 +912,7 @@ const filteredPhone = computed(() => {
 <script>
 import WeekListDropdown from '../WeekListDropdown/WeekListDropdown.vue';
 const Theme = localStorage.getItem('Theme');
-// Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from 'swiper/vue';
 
-// Import Swiper styles
-import 'swiper/css';
-
-import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
 const countries = [
     { name: 'United States', price: "$0.35", flag: PhilipinsImg },
     { name: 'Lebanon', price: "$0.35", flag: LebanonImg },
@@ -972,8 +964,7 @@ const phoneNumbers = [
 export default {
     components: {
         WeekListDropdown,
-        Swiper,
-        SwiperSlide,
+       
     },
     name: "pink-tabs",
     data() {
@@ -1004,17 +995,12 @@ export default {
             this.selectedPhone = phone;
         },
         updateSelectedWeek(week) {
-            this.selectedWeek = week; // Update the selected language when the event is emitted from HeaderDropdown
-            // You can perform any additional actions based on the selected language here
+            this.selectedWeek = week; 
         },
         handleModalOpen(open) {
             this.OpenModal = open;
         },
-        // getFlagImage(flagFileName) {
-        //     // Adjust the path to the directory where your flag images are stored
-        //     console.log(flagFileName)
-        //     return require(`../../assets/img/${flagFileName}`);
-        // },
+ 
 
         scrollLeft() {
             this.scrollPosition -= 100;
@@ -1038,9 +1024,7 @@ export default {
             }
         },
     },
-    // mounted(){
-    //     this.updateWidths()
-    // }
+ 
 
 }
 </script>
@@ -1055,42 +1039,6 @@ body.dark .darkIconStock path {
     stroke: white;
 }
 
-.getNumberSlider .swiper-wrapper {
-    align-items: center !important;
-}
-
-.getNumberSlider .swiper-slide {
-    margin-right: 10px !important;
-}
-
-
-.swiper-button-prev::after {
-    content: " ";
-
-    background-image: url(../../assets/img/about/ArrowLeft.svg);
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-}
-
-
-
-.swiper-button-next::after {
-    content: " ";
-
-    background-image: url(../../assets/img/about/ArrowRight.svg);
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-}
 
 .scroll-hide::-webkit-scrollbar {
     display: none;

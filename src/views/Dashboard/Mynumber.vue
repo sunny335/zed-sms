@@ -32,7 +32,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                                 Start Chat
                             </div>
                             <div class="w-6 h-6 relative darkIconStock">
-                                <svg  width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M22 10.5V12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2H13.5"
@@ -42,7 +42,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                                         stroke="#1E2329" />
                                 </svg>
 
-                              
+
 
 
 
@@ -53,7 +53,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                             class="w-11 h-11 p-3.5 rounded-[10px] border border-zinc-600 dark:border-[#ACB5BD] justify-start items-start gap-2.5 inline-flex"
                             @click="toggleActiveStatusDropdown">
                             <div class="w-4 h-4 relative rounded-[5px] darkIconStock">
-                                <svg  width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M6.33325 9.33397C7.43782 9.33397 8.33325 10.2294 8.33325 11.334C8.33325 12.4385 7.43782 13.334 6.33325 13.334C5.22868 13.334 4.33325 12.4385 4.33325 11.334C4.33325 10.2294 5.22868 9.33397 6.33325 9.33397Z"
@@ -67,7 +67,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                                     <path d="M14.6667 4.63867L13.3334 4.63867" stroke="#495057" stroke-linecap="round" />
                                 </svg>
 
-                               
+
                             </div>
                         </button>
                         <div class="relative inline-block text-left">
@@ -90,21 +90,25 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                     <div
                         class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                         <div class="scrollbar h-[620px] mt-[20px]">
-                            <div class="max-w-[337px] h-[93px] px-5 py-7 border-b border-gray-400 flex  items-center gap-4 flex-wrap mx-auto"
-                                v-for="numberData in filteredNumberData" :key="numberData.id">
+                            <div class="max-w-[337px] h-[93px] px-5 py-7 border-b cursor-pointer border-gray-400 flex  items-center gap-4 flex-wrap mx-auto"
+                                v-for="numberData in filteredNumberData" :key="numberData.id"
+                                @click="selectNumber(numberData)"
+                                :class="{ 'bg-[#0057FF] text-white': selectedNumber === numberData.id }"
+                               >
                                 <div class="w-[30px]">
                                     <img class="w-[30px] h-[30px] rounded-full" :src="numberData.img" alt="" srcset="">
                                 </div>
 
                                 <div class="flex-1">
                                     <div class="flex justify-between items-center mb-[10px]">
-                                        <p
-                                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                        <p class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-medium font-['Poppins'] leading-[17px]"
+                                            :class="{ ' text-white': selectedNumber === numberData.id }">
                                             {{ numberData.number }}
                                         </p>
                                         <p class=" text-blue-600 text-xs font-normal font-['Poppins'] leading-[17px] flex justify-center items-center gap-2"
-                                            v-bind:class="{ 'text-blue-600': numberData.status == true, 'text-red-600': numberData.status === false }">
-                                            <svg v-if="numberData.status" xmlns="http://www.w3.org/2000/svg" height="4px"
+                                            v-bind:class="{ 'text-blue-600': numberData.status == true, 'text-red-600': numberData.status === false, 'text-white': selectedNumber === numberData.id, }">
+                                            <svg :class="{ 'whiteIconFill': selectedNumber === numberData.id, 'blueIconFill': selectedNumber !== numberData.id }"
+                                                v-if="numberData.status" xmlns="http://www.w3.org/2000/svg" height="4px"
                                                 viewBox="0 0 512 512">
                                                 <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"
                                                     fill="#0057FF" />
@@ -118,25 +122,25 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
 
                                             {{ numberData.status ? 'Active' : 'Deactive' }}
                                         </p>
-                                        <p
-                                            class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]">
+                                        <p class=" dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]"
+                                            :class="{ 'text-white': selectedNumber === numberData.id, 'text-zinc-600': selectedNumber !== numberData.id }">
                                             {{
                                                 numberData.timeLeft }}</p>
                                     </div>
                                     <div class="flex items-center gap-2 justify-center">
-                                        <p
-                                            class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]">
+                                        <p class=" dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]"
+                                            :class="{ 'text-white': selectedNumber === numberData.id, 'text-zinc-600': selectedNumber !== numberData.id }">
                                             Type: {{
                                                 numberData.type }}
                                         </p>
-                                        <p
-                                            class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]">
+                                        <p class="dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]"
+                                            :class="{ 'text-white': selectedNumber === numberData.id, 'text-zinc-600': selectedNumber !== numberData.id }">
                                             •
                                             Service:
                                             {{ numberData.service }}
                                         </p>
-                                        <p
-                                            class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]">
+                                        <p class="dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]"
+                                            :class="{ 'text-white': selectedNumber === numberData.id, 'text-zinc-600': selectedNumber !== numberData.id }">
                                             • Rent:
                                             {{
                                                 numberData.rent }}
@@ -213,57 +217,123 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                                         v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
 
 
-                                        <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
-                                            v-for="messageData in messagesData" :key="messageData.id">
-                                            <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
-                                                srcset="">
-                                            <div class="flex-1 flex flex-wrap ">
-                                                <div class="w-full flex justify-between mb-[6px]">
-                                                    <h6
-                                                        class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
-                                                        Namepo
-                                                    </h6>
-                                                    <p
-                                                        class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
-                                                        {{ messageData.messageTime }}
-                                                    </p>
+                                        <div v-if="selectedNumberData">
+                                            <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
+                                                v-for="messageData in selectedNumberData.messagesData"
+                                                :key="messageData.id">
+                                                <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
+                                                    srcset="">
+                                                <div class="flex-1 flex flex-wrap ">
+                                                    <div class="w-full flex justify-between mb-[6px]">
+                                                        <h6
+                                                            class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                            {{ messageData.name }}
+                                                        </h6>
+                                                        <p
+                                                            class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                            {{ messageData.messageTime }}
+                                                        </p>
+                                                    </div>
+                                                    <div class="">
+                                                        <template v-if="!messageData.showFullMessage">
+                                                            <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                v-html="formattedMessage(messageData)">
+                                                            </div>
+                                                        </template>
+                                                        <template v-else>
+                                                            <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                v-html="formattedMessage(messageData)">
+                                                            </div>
+                                                        </template>
+                                                        <span v-if="messageData.message.length > 100"
+                                                            class="text-blue-600 text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
+                                                            {{ messageData.showFullMessage ? 'Less' : 'More' }}
+                                                        </span>
+                                                        <svg class="inline pl-1 cursor-pointer"
+                                                            v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
+                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                            viewBox="0 0 384 512">
+                                                            <path
+                                                                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                                                                fill="#0057FF" />
+                                                        </svg>
+
+
+                                                        <svg class="inline pl-1 cursor-pointer"
+                                                            v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
+                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                            viewBox="0 0 384 512">
+                                                            <path
+                                                                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                                                                fill="#0057FF" />
+                                                        </svg>
+                                                    </div>
                                                 </div>
-                                                <div class="">
-                                                    <template v-if="!messageData.showFullMessage">
-                                                        <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
-                                                            v-html="formattedMessage(messageData)">
-                                                        </div>
-                                                    </template>
-                                                    <template v-else>
-                                                        <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
-                                                            v-html="formattedMessage(messageData)">
-                                                        </div>
-                                                    </template>
-                                                    <span v-if="messageData.message.length > 100"
-                                                        class="text-blue-600 text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
-                                                        @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
-                                                        {{ messageData.showFullMessage ? 'Less' : 'More' }}
-                                                    </span>
-                                                    <svg class="inline pl-1 cursor-pointer"
-                                                        v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
-                                                        @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                                        xmlns="http://www.w3.org/2000/svg" height="10px"
-                                                        viewBox="0 0 384 512">
-                                                        <path
-                                                            d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
-                                                            fill="#0057FF" />
-                                                    </svg>
+                                            </div>
+                                        </div>
+                                        <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
+                                            
+                                            <p
+                                                class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                No messages</p>
+                                        </div>
+
+                                        <div v-if="!selectedNumberData">
+                                            <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
+                                                v-for="messageData in messagesData" :key="messageData.id">
+                                                <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
+                                                    srcset="">
+                                                <div class="flex-1 flex flex-wrap ">
+                                                    <div class="w-full flex justify-between mb-[6px]">
+                                                        <h6
+                                                            class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                            Namepo
+                                                        </h6>
+                                                        <p
+                                                            class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                            {{ messageData.messageTime }}
+                                                        </p>
+                                                    </div>
+                                                    <div class="">
+                                                        <template v-if="!messageData.showFullMessage">
+                                                            <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                v-html="formattedMessage(messageData)">
+                                                            </div>
+                                                        </template>
+                                                        <template v-else>
+                                                            <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                v-html="formattedMessage(messageData)">
+                                                            </div>
+                                                        </template>
+                                                        <span v-if="messageData.message.length > 100"
+                                                            class="text-blue-600 text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
+                                                            {{ messageData.showFullMessage ? 'Less' : 'More' }}
+                                                        </span>
+                                                        <svg class="inline pl-1 cursor-pointer"
+                                                            v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
+                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                            viewBox="0 0 384 512">
+                                                            <path
+                                                                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                                                                fill="#0057FF" />
+                                                        </svg>
 
 
-                                                    <svg class="inline pl-1 cursor-pointer"
-                                                        v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
-                                                        @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                                        xmlns="http://www.w3.org/2000/svg" height="10px"
-                                                        viewBox="0 0 384 512">
-                                                        <path
-                                                            d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-                                                            fill="#0057FF" />
-                                                    </svg>
+                                                        <svg class="inline pl-1 cursor-pointer"
+                                                            v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
+                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                            viewBox="0 0 384 512">
+                                                            <path
+                                                                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                                                                fill="#0057FF" />
+                                                        </svg>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -274,57 +344,123 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                                         v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
 
 
-                                        <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
-                                            v-for="messageData in messagesData" :key="messageData.id">
-                                            <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
-                                                srcset="">
-                                            <div class="flex-1 flex flex-wrap ">
-                                                <div class="w-full flex justify-between mb-[6px]">
-                                                    <h6
-                                                        class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
-                                                        Namepo
-                                                    </h6>
-                                                    <p
-                                                        class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
-                                                        {{ messageData.messageTime }}
-                                                    </p>
+                                        <div v-if="selectedNumberData">
+                                            <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
+                                                v-for="messageData in selectedNumberData.messagesData"
+                                                :key="messageData.id">
+                                                <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
+                                                    srcset="">
+                                                <div class="flex-1 flex flex-wrap ">
+                                                    <div class="w-full flex justify-between mb-[6px]">
+                                                        <h6
+                                                            class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                            {{ messageData.name }}
+                                                        </h6>
+                                                        <p
+                                                            class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                            {{ messageData.messageTime }}
+                                                        </p>
+                                                    </div>
+                                                    <div class="">
+                                                        <template v-if="!messageData.showFullMessage">
+                                                            <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                v-html="formattedMessage(messageData)">
+                                                            </div>
+                                                        </template>
+                                                        <template v-else>
+                                                            <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                v-html="formattedMessage(messageData)">
+                                                            </div>
+                                                        </template>
+                                                        <span v-if="messageData.message.length > 100"
+                                                            class="text-blue-600 text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
+                                                            {{ messageData.showFullMessage ? 'Less' : 'More' }}
+                                                        </span>
+                                                        <svg class="inline pl-1 cursor-pointer"
+                                                            v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
+                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                            viewBox="0 0 384 512">
+                                                            <path
+                                                                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                                                                fill="#0057FF" />
+                                                        </svg>
+
+
+                                                        <svg class="inline pl-1 cursor-pointer"
+                                                            v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
+                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                            viewBox="0 0 384 512">
+                                                            <path
+                                                                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                                                                fill="#0057FF" />
+                                                        </svg>
+                                                    </div>
                                                 </div>
-                                                <div class="">
-                                                    <template v-if="!messageData.showFullMessage">
-                                                        <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
-                                                            v-html="formattedMessage(messageData)">
-                                                        </div>
-                                                    </template>
-                                                    <template v-else>
-                                                        <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
-                                                            v-html="formattedMessage(messageData)">
-                                                        </div>
-                                                    </template>
-                                                    <span v-if="messageData.message.length > 100"
-                                                        class="text-blue-600 text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
-                                                        @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
-                                                        {{ messageData.showFullMessage ? 'Less' : 'More' }}
-                                                    </span>
-                                                    <svg class="inline pl-1 cursor-pointer"
-                                                        v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
-                                                        @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                                        xmlns="http://www.w3.org/2000/svg" height="10px"
-                                                        viewBox="0 0 384 512">
-                                                        <path
-                                                            d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
-                                                            fill="#0057FF" />
-                                                    </svg>
+                                            </div>
+                                        </div>
+                                        <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
+                                            
+                                            <p
+                                                class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                No messages</p>
+                                        </div>
+
+                                        <div v-if="!selectedNumberData">
+                                            <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
+                                                v-for="messageData in messagesData" :key="messageData.id">
+                                                <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
+                                                    srcset="">
+                                                <div class="flex-1 flex flex-wrap ">
+                                                    <div class="w-full flex justify-between mb-[6px]">
+                                                        <h6
+                                                            class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                            Namepo
+                                                        </h6>
+                                                        <p
+                                                            class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                            {{ messageData.messageTime }}
+                                                        </p>
+                                                    </div>
+                                                    <div class="">
+                                                        <template v-if="!messageData.showFullMessage">
+                                                            <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                v-html="formattedMessage(messageData)">
+                                                            </div>
+                                                        </template>
+                                                        <template v-else>
+                                                            <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                v-html="formattedMessage(messageData)">
+                                                            </div>
+                                                        </template>
+                                                        <span v-if="messageData.message.length > 100"
+                                                            class="text-blue-600 text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
+                                                            {{ messageData.showFullMessage ? 'Less' : 'More' }}
+                                                        </span>
+                                                        <svg class="inline pl-1 cursor-pointer"
+                                                            v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
+                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                            viewBox="0 0 384 512">
+                                                            <path
+                                                                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                                                                fill="#0057FF" />
+                                                        </svg>
 
 
-                                                    <svg class="inline pl-1 cursor-pointer"
-                                                        v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
-                                                        @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                                        xmlns="http://www.w3.org/2000/svg" height="10px"
-                                                        viewBox="0 0 384 512">
-                                                        <path
-                                                            d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-                                                            fill="#0057FF" />
-                                                    </svg>
+                                                        <svg class="inline pl-1 cursor-pointer"
+                                                            v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
+                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                            viewBox="0 0 384 512">
+                                                            <path
+                                                                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                                                                fill="#0057FF" />
+                                                        </svg>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -409,6 +545,8 @@ export default {
             openTab: 1,
             isOpen: false,
             selectedOption: 'Active', // Default text,
+            selectedNumber: null,
+            selectedNumberData: null,
 
             messageSeenStatus: false,
             toggleArrowIcon: false,
@@ -421,6 +559,50 @@ export default {
                     img: num1,
                     timeLeft: "10 days left",
                     type: "Private",
+                    messagesData: [
+                        {
+                            id: 1,
+                            img: Namepo,
+                            name: "Namepo",
+                            messageTime: "02 days ago",
+                            message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469 adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                        {
+                            id: 2,
+                            img: Viveon,
+                            name: "Viveon",
+                            messageTime: "15 days ago",
+                            message: "Linterdum erdum ullamcorper amet consectetur CODE: 65469 adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                        {
+                            id: 3,
+                            img: Tiktok,
+                            name: "Tiktok",
+                            messageTime: "03 days ago",
+                            message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469 adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                        {
+                            id: 4,
+                            img: Burgking,
+                            name: "Burgking",
+                            messageTime: "04 days ago",
+                            message: " sed pharetra ipsum sene adipiscing elit interdum CODE: 65469. adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                        {
+                            id: 5,
+                            img: Namepo2,
+                            name: "Namepo2",
+                            messageTime: "07 days ago",
+                            message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469. adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                        {
+                            id: 6,
+                            img: Viveon2,
+                            name: "Viveon2",
+                            messageTime: "05 days ago",
+                            message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469. adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                    ],
                     service: "any",
                     rent: " 1 Week"
                 },
@@ -431,6 +613,50 @@ export default {
                     img: num2,
                     timeLeft: "15 days left",
                     type: "Private",
+                    messagesData: [
+                        {
+                            id: 1,
+                            img: Namepo,
+                            name: "Namccepo",
+                            messageTime: "02 days ago",
+                            message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469 adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                        {
+                            id: 2,
+                            img: Viveon,
+                            name: "Viveccon",
+                            messageTime: "15 days ago",
+                            message: "Linterdum erdum ullamcorper amet consectetur CODE: 65469 adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                        {
+                            id: 3,
+                            img: Tiktok,
+                            name: "Ticcktok",
+                            messageTime: "03 days ago",
+                            message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469 adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                        {
+                            id: 4,
+                            img: Burgking,
+                            name: "Burgking",
+                            messageTime: "04 days ago",
+                            message: " sed pharetra ipsum sene adipiscing elit interdum CODE: 65469. adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                        {
+                            id: 5,
+                            img: Namepo2,
+                            name: "Namepo2",
+                            messageTime: "07 days ago",
+                            message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469. adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                        {
+                            id: 6,
+                            img: Viveon2,
+                            name: "Viveon2",
+                            messageTime: "05 days ago",
+                            message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469. adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                    ],
                     service: "any",
                     rent: " 1 Week"
                 },
@@ -451,6 +677,30 @@ export default {
                     img: num4,
                     timeLeft: "15 days left",
                     type: "Private",
+                    messagesData: [
+
+                        {
+                            id: 4,
+                            img: Burgking,
+                            name: 'Burgking',
+                            messageTime: "04 days ago",
+                            message: " sed pharetra ipsum sene adipiscing elit interdum CODE: 65469. adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                        {
+                            id: 5,
+                            img: Namepo2,
+                            name: 'Namepo2',
+                            messageTime: "07 days ago",
+                            message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469. adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                        {
+                            id: 6,
+                            img: Viveon2,
+                            name: 'Viveon2',
+                            messageTime: "05 days ago",
+                            message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469. adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
+                        },
+                    ],
                     service: "any",
                     rent: " 1 Week"
                 },
@@ -569,36 +819,42 @@ export default {
                 {
                     id: 1,
                     img: Namepo,
+                    name: 'Namepo',
                     messageTime: "02 days ago",
                     message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469 adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
                 },
                 {
                     id: 2,
                     img: Viveon,
+                    name: 'Viveon',
                     messageTime: "15 days ago",
                     message: "Linterdum erdum ullamcorper amet consectetur CODE: 65469 adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
                 },
                 {
                     id: 3,
                     img: Tiktok,
+                    name: 'Tiktok',
                     messageTime: "03 days ago",
                     message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469 adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
                 },
                 {
                     id: 4,
                     img: Burgking,
+                    name: 'Burgking',
                     messageTime: "04 days ago",
                     message: " sed pharetra ipsum sene adipiscing elit interdum CODE: 65469. adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
                 },
                 {
                     id: 5,
                     img: Namepo2,
+                    name: 'Namepo2',
                     messageTime: "07 days ago",
                     message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469. adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
                 },
                 {
                     id: 6,
                     img: Viveon2,
+                    name: 'Viveon2',
                     messageTime: "05 days ago",
                     message: "Lorem ipsum dolor sit amet consectetur adipiscing elit interdum Lorem ipsum dolor sit amet consectetur adipiscing. Elit interdum ullamcorper amet consectetur  sed pharetra ipsum sene adipiscing elit interdum CODE: 65469. adipiscing. Elit interdum ullamcorper amet consectetur sed pharetra ipsum"
                 },
@@ -613,9 +869,9 @@ export default {
 
     },
     mounted() {
-    // Log data in the mounted lifecycle hook
-    console.log(this.selectedOption);
-  },
+        // Log data in the mounted lifecycle hook
+        console.log(this.selectedOption);
+    },
     methods: {
         toggleMessageReadMore(messageData) {
             messageData.showFullMessage = !messageData.showFullMessage;
@@ -633,13 +889,38 @@ export default {
         toggleActiveStatusDropdown() {
             this.isOpen = !this.isOpen;
         },
+        selectNumber(data) {
+
+            if (this.selectedNumber === data.id) {
+                this.selectedNumber = null;
+                this.selectedNumberData = null;
+            } else {
+                this.selectedNumber = data.id;
+            this.selectedNumberData = data;
+            }
+         
+            console.log(data)
+        },
+        // selectNumberData(data) {
+        //     this.selectedNumberData = data;
+        //     console.log(this.selectedNumberData.messagesData);
+
+        // },
         selectActiveStatus(option) {
-            this.selectedOption = option ; 
+            this.selectedOption = option;
             console.log(this.selectedOption);
             this.isOpen = false;
 
             this.$emit('update:selectedStatus', option);
 
+        },
+        toggleSelectNumber(id) {
+            if (this.selectedNumber === id) {
+                this.selectedNumber = null;
+                this.selectedNumberData = null;
+            } else {
+                this.selectedNumber = id;
+            }
         },
 
 
@@ -647,10 +928,10 @@ export default {
     computed: {
 
 
-        filteredNumberData(){
-                return this.numbersData.filter((item)=> this.selectedOption == "Active" ? item.status == true : item.status == false)
+        filteredNumberData() {
+            return this.numbersData.filter((item) => this.selectedOption == "Active" ? item.status == true : item.status == false)
         },
-        
+
         formattedMessage() {
             return (messageData) => {
                 const message = messageData.message;
@@ -689,12 +970,19 @@ export default {
 
 </script>
 <style>
-
 body.dark .darkIconFill path {
-    fill:white;
-}
-body.dark .darkIconStock path {
-    stroke:white;
+    fill: white;
 }
 
+body.dark .darkIconStock path {
+    stroke: white;
+}
+
+body .whiteIconFill path {
+    fill: white;
+}
+
+body .blueIconFill path {
+    fill: #0057FF;
+}
 </style>

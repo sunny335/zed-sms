@@ -64,10 +64,14 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                 <img class="pr-[10px]" :src="numberData.img" alt="" srcset="">
                                                 <p
                                                     class="dark:text-[#F5F5F5] text-sm font-light font-['Poppins'] leading-[17px]">
-                                                    +8454655444</p>
+                                                    {{ numberData.number }}</p>
                                             </div>
-                                            <button @click="deleteModal(true)">
+                                            <button @click="deleteModal(true)"
+                                            :class="{ 'whiteIconStock': selectedNumber === numberData.id }" 
+                                            
+                                            >
                                                 <svg class="darkIconStock"  
+                                                
                                                      width="24" height="24" viewBox="0 0 24 24"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -95,17 +99,21 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
 
                                         <div class="flex justify-between items-center w-[274px] h-[58px] cursor-pointer px-2 text-neutral-800"
-                                            v-for="numberData in numbersData" :key="numberData.id"
-                                            @click="selectNumber(numberData.id)"
-                                            :class="{ 'bg-[#0057FF] text-white': selectedNumber === numberData.id }">
+                                            v-for="number2Data in numbers2Data" :key="number2Data.id"
+                                            @click="selectDeActiveNumber(number2Data.id)"
+                                            :class="{ 'bg-[#0057FF] text-white': selectedDeActiveNumber === number2Data.id }">
                                             <div class="flex items-center">
-                                                <img class="pr-[10px]" :src="numberData.img" alt="" srcset="">
+                                                <img class="pr-[10px]" :src="number2Data.img" alt="" srcset="">
                                                 <p
                                                     class="dark:text-[#F5F5F5] text-sm font-light font-['Poppins'] leading-[17px]">
-                                                    +8454655444</p>
+                                                    {{ number2Data.number }}</p>
                                             </div>
-                                            <button @click="deleteModal(true)">
+                                            <button @click="deleteModal(true)"
+                                            :class="{ 'whiteIconStock': selectedDeActiveNumber === number2Data.id }" 
+                                            
+                                            >
                                                 <svg class="darkIconStock"  
+                                                
                                                      width="24" height="24" viewBox="0 0 24 24"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -258,7 +266,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             Message Forward
                         </h3>
 
-                        <button class="mt-[16px] flex  justify-between items-center w-full dark:hover:bg-slate-700">
+                        <button class="mt-[16px] flex  justify-between items-center w-full">
                           
                             <p class="text-sm inline">example@example.com</p>
                             <p
@@ -421,7 +429,8 @@ export default {
             messageSeenStatus: false,
             toggleArrowIcon: false,
             selectedNumber: null,
-            selectedNumberColor: false,
+            selectedDeActiveNumber: null,
+           
             numbersData: [
                 {
                     id: 1,
@@ -577,7 +586,7 @@ export default {
             numbers2Data: [
                 {
                     id: 1,
-                    number: "+845465445",
+                    number: "+84546544s5",
                     status: true,
                     img: num1,
                     timeLeft: "10 days left",
@@ -587,7 +596,7 @@ export default {
                 },
                 {
                     id: 3,
-                    number: "+845464575",
+                    number: "+8454123575",
                     status: false,
                     img: num2,
                     timeLeft: "15 days left",
@@ -597,7 +606,7 @@ export default {
                 },
                 {
                     id: 4,
-                    number: "+845465457",
+                    number: "+845412357",
                     status: true,
                     img: num3,
                     timeLeft: "15 days left",
@@ -762,6 +771,10 @@ export default {
             this.selectedNumber = id;
 
         },
+        selectDeActiveNumber(id) {
+            this.selectedDeActiveNumber = id;
+
+        },
         deleteModal(open) {
             console.log("object", open);
             this.isDeleteOpen = open;
@@ -813,6 +826,9 @@ export default {
 
 body.dark .darkIconFill path {
     fill:white;
+}
+body .whiteIconStock path {
+    stroke:white;
 }
 body.dark .darkIconStock path {
     stroke:white;

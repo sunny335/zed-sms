@@ -9,19 +9,122 @@ console.log(Theme)
 
 <template>
     <header class="bg-white dark:bg-[#070F24] sticky top-0 z-20 "
-    v-bind:class="{ 'shadow-custom':currentPath.includes('dashboard')}"
-    >
+        v-bind:class="{ 'shadow-custom': currentPath.includes('dashboard') }">
         <div class="mx-auto max-w-[1192px] px-4 sm:px-6 lg:px-8 w-full">
-            <div class="flex h-[116px] items-center justify-between gap-[24px]">
+            <div class="flex h-[116px] items-center justify-between ">
                 <div class="flex-1 md:flex md:items-center md:gap-11">
                     <RouterLink class="block text-teal-600   dark:text-[#F5F5F5] header-logo" to="/">
                         <span class="sr-only">Home</span>
                         <CommunityIcon iconName="siteLogo" />
-                        
+
 
                     </RouterLink>
                 </div>
+                <!-- mobile dropdown -->
+                <div class="block md:hidden relative">
+                    <!-- mobile dropdown btn -->
+                    <button v-if="!currentPath.includes('dashboard')" class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                        @click="mobileHandleModalOpen(true)">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 8.75L5 8.75" stroke="#1E2329" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M25 15L5 15" stroke="#1E2329" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M25 21.25L5 21.25" stroke="#1E2329" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
 
+                    </button>
+                    <button v-if="currentPath.includes('dashboard')" class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+                        @click="toggle()">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25 8.75L5 8.75" stroke="#1E2329" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M25 15L5 15" stroke="#1E2329" stroke-width="1.5" stroke-linecap="round" />
+                            <path d="M25 21.25L5 21.25" stroke="#1E2329" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+
+                    </button>
+                    <!-- mobile dropdown -->
+
+
+                    <div v-if="!currentPath.includes('dashboard')">
+                        <div v-if="MobileOpenModal"
+                            class="absolute z-10 right-0 top-[40px] shadow w-[175px] pb-4 bg-neutral-50 dark:bg-[#09132C] rounded-[14px] flex-col justify-start items-start inline-flex">
+                            <RouterLink to="/service" @click="mobileHandleModalOpen(true)"
+                                class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
+                                <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                    Our Service
+                                </div>
+                            </RouterLink>
+                            <RouterLink to="/about" @click="mobileHandleModalOpen(true)"
+                                class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
+                                <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                    About Us</div>
+                            </RouterLink>
+                            <RouterLink to="/contact-us" @click="mobileHandleModalOpen(true)"
+                                class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
+                                <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                    Contact Us
+                                </div>
+                            </RouterLink>
+                            <RouterLink v-if="login" to="/dashboard" @click="mobileHandleModalOpen(true)"
+                                class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
+                                <div
+                                    class="flex gap-[9px] relative cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 downArrow darkCircle">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="9" r="3" stroke="#1E2329" />
+                                        <circle cx="12" cy="12" r="10" stroke="#1E2329" />
+                                        <path
+                                            d="M17.9691 20C17.81 17.1085 16.9247 15 12 15C7.07521 15 6.18991 17.1085 6.03076 20"
+                                            stroke="#1E2329" stroke-linecap="round" />
+                                    </svg>
+
+                                    <span>
+                                        ahmad
+                                    </span>
+
+
+
+                                </div>
+                            </RouterLink>
+
+                            <RouterLink v-if="!login" to="/logIn" @click="mobileHandleModalOpen(true)"
+                                class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
+                                <button
+                                    class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-blue-600 justify-center items-center inline-flex">
+                                    <span
+                                        class="text-center text-neutral-800  dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
+                                        Sign In
+                                    </span>
+                                </button>
+                            </RouterLink>
+                            <RouterLink v-if="!login" to="/signUp" @click="mobileHandleModalOpen(true)"
+                                class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
+                                <button
+                                    class="w-24 h-[37px] px-4 py-2.5 bg-[#0057FF] rounded-[10px] justify-center items-end inline-flex">
+                                    <span
+                                        class="text-center text-white text-sm font-medium font-['Poppins'] leading-[17px]">
+                                        Sign Up
+                                    </span>
+                                </button>
+                            </RouterLink>
+                            <div v-if="!login"
+                                class="self-stretch px-6 py-5  justify-start items-center gap-2.5 inline-flex">
+                                <div>
+
+                                    <HeaderDropdown :selectedLanguage="selectedLanguage"
+                                        @update:selectedLanguage="updateSelectedLanguage" />
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+                <!-- mobile dropdown -->
                 <div v-if="!currentPath.includes('dashboard')" class="md:flex md:items-center md:gap-[42px]">
                     <nav aria-label="Global" class="hidden md:block">
                         <ul class="flex items-center gap-11 text-sm">
@@ -64,7 +167,7 @@ console.log(Theme)
                                 </RouterLink>
                             </div>
                             <RouterLink
-                                class="w-24 h-[37px] px-4 py-2.5 bg-[#0057FF] rounded-[10px] justify-center items-end inline-flex"
+                                class="w-24 h-[37px] px-4 py-2.5 bg-[#0057FF] rounded-[10px] justify-center items-end  hidden lg:inline-flex"
                                 to="/signUp">
                                 <span class="text-center text-white text-sm font-medium font-['Poppins'] leading-[17px]">
                                     Sign Up
@@ -78,25 +181,17 @@ console.log(Theme)
                             </div>
                         </div>
 
-                        <div class="block md:hidden">
-                            <button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
-                            </button>
-                        </div>
+
                     </div>
                 </div>
                 <div class="md:flex md:items-center md:gap-[42px]" v-if="login">
 
 
                     <div class="flex items-center gap-4">
-                        <div class="hidden sm:flex sm:gap-[24px]" >
-                            <div
-                                class="hidden sm:flex relative after:content-[''] after:w-[2px] after:absolute after:top-[6px] after:h-[10px] after:right-[-12px] after:bg-[#495057] dark:after:bg-[#ACB5BD] downArrow"  v-if="currentPath.includes('dashboard') " >
-                                <svg
-                                    @click="[OpenNotificationModal = !OpenNotificationModal, this.OpenModal = false]"
+                        <div class="hidden sm:flex sm:gap-[24px]">
+                            <div class="hidden sm:flex relative after:content-[''] after:w-[2px] after:absolute after:top-[6px] after:h-[10px] after:right-[-12px] after:bg-[#495057] dark:after:bg-[#ACB5BD] downArrow"
+                                v-if="currentPath.includes('dashboard')">
+                                <svg @click="[OpenNotificationModal = !OpenNotificationModal, this.OpenModal = false]"
                                     class="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -107,7 +202,7 @@ console.log(Theme)
                                     <circle cx="17" cy="8" r="4.5" fill="#0057FF" stroke="white" />
                                 </svg>
 
-                                
+
 
                                 <!-- Notification Dropdown -->
                                 <div v-if="OpenNotificationModal"
@@ -246,9 +341,9 @@ console.log(Theme)
                                 </div>
 
                             </div>
-                            <div
-                                class=" justify-center items-center inline-flex gap-[9px] relative after:content-[''] after:w-[2px] after:absolute after:top-[6px] after:h-[10px] after:right-[-12px] after:bg-[#495057] dark:after:bg-[#ACB5BD] downArrow"  v-if="currentPath.includes('dashboard')" >
-                                <svg  width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            <div class=" justify-center items-center inline-flex gap-[9px] relative after:content-[''] after:w-[2px] after:absolute after:top-[6px] after:h-[10px] after:right-[-12px] after:bg-[#495057] dark:after:bg-[#ACB5BD] downArrow"
+                                v-if="currentPath.includes('dashboard')">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path d="M6 8H10" stroke="#1E2329" stroke-linecap="round" stroke-linejoin="round" />
                                     <path
@@ -260,7 +355,7 @@ console.log(Theme)
                                     <path d="M17.9912 12H18.0002" stroke="#1E2329" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" />
                                 </svg>
-                            
+
 
                                 <div
                                     class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-light font-['Poppins'] leading-[17px]">
@@ -270,8 +365,9 @@ console.log(Theme)
                             </div>
 
                             <div class="flex gap-[9px] relative items-center">
-                                <div class="flex gap-[9px] relative cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 downArrow darkCircle" @click="handleModalOpen(true)">
-                                    <svg  width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                <div class="flex gap-[9px] relative cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 downArrow darkCircle"
+                                    @click="handleModalOpen(true)">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="12" cy="9" r="3" stroke="#1E2329" />
                                         <circle cx="12" cy="12" r="10" stroke="#1E2329" />
@@ -279,20 +375,20 @@ console.log(Theme)
                                             d="M17.9691 20C17.81 17.1085 16.9247 15 12 15C7.07521 15 6.18991 17.1085 6.03076 20"
                                             stroke="#1E2329" stroke-linecap="round" />
                                     </svg>
-                                   
+
                                     <span>
                                         ahmad
                                     </span>
-                                
-                                    <svg  class="downArrow block" width="20" height="20" viewBox="0 0 20 20" fill="none"  v-if="!OpenModal"
-                                        xmlns="http://www.w3.org/2000/svg">
+
+                                    <svg class="downArrow block" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                        v-if="!OpenModal" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M15.8333 7.5L9.99996 12.5L4.16663 7.5" stroke="#1E2329" stroke-width="1.1"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                               
- 
-                                    <svg class="downArrow" width="20" height="20" viewBox="0 0 24 24" fill="none" v-if="OpenModal"
-                                        xmlns="http://www.w3.org/2000/svg">
+
+
+                                    <svg class="downArrow" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        v-if="OpenModal" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M5 15L12 9L19 15" stroke="#495057" stroke-width="1.5"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
@@ -301,40 +397,54 @@ console.log(Theme)
                                 </div>
                                 <!-- profile link dropdown -->
                                 <div v-if="OpenModal" @click="handleModalOpen(true)"
-                                    class="absolute z-10 right-0 top-[40px] shadow w-[232px] h-[448px] bg-neutral-50 rounded-[14px] flex-col justify-start items-start inline-flex">
+                                    class="absolute z-10 right-0 top-[40px] shadow w-[232px] h-[448px] bg-neutral-50 dark:bg-[#09132C] rounded-[14px] flex-col justify-start items-start inline-flex">
                                     <RouterLink to="/dashboard"
                                         class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                                        <div class="text-neutral-800 text-base font-light font-['Poppins']">My Dashboard
+                                        <div
+                                            class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                            My Dashboard
                                         </div>
                                     </RouterLink>
                                     <RouterLink to="/dashboard/my-number"
                                         class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                                        <div class="text-neutral-800 text-base font-light font-['Poppins']">My Number</div>
+                                        <div
+                                            class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                            My Number</div>
                                     </RouterLink>
                                     <RouterLink to="/dashboard/topup-balance"
                                         class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                                        <div class="text-neutral-800 text-base font-light font-['Poppins']">TOP-UP Balance
+                                        <div
+                                            class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                            TOP-UP Balance
                                         </div>
                                     </RouterLink>
                                     <RouterLink to="/dashboard/balance-transfer"
                                         class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                                        <div class="text-neutral-800 text-base font-light font-['Poppins']">Transaction
+                                        <div
+                                            class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                            Transaction
                                             History</div>
                                     </RouterLink>
                                     <RouterLink to="/dashboard/appearance"
                                         class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                                        <div class="text-neutral-800 text-base font-light font-['Poppins']">API Connection
+                                        <div
+                                            class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                            API Connection
                                         </div>
                                     </RouterLink>
                                     <RouterLink to="/dashboard/account-settings"
                                         class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                                        <div class="text-neutral-800 text-base font-light font-['Poppins']">Account setting
+                                        <div
+                                            class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                            Account setting
                                         </div>
                                     </RouterLink>
                                     <div class="self-stretch px-10 py-5 justify-start items-center gap-2.5 inline-flex">
-                                        <div class="text-neutral-800 text-base font-light font-['Poppins']">Logout</div>
                                         <div
-                                            class="w-5 h-5 relative rounded-[5px] flex-col justify-start items-start inline-flex">
+                                            class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                            Logout</div>
+                                        <div
+                                            class="w-5 h-5 relative rounded-[5px] flex-col justify-start items-start inline-flex darkIconStock">
                                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path
@@ -355,19 +465,92 @@ console.log(Theme)
 
                         </div>
 
-                        <div class="block md:hidden">
-                            <button class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                                </svg>
-                            </button>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-      
+        <div v-if="open"  class="fixed top-0 right-0 left-0 bg-slate-600 bg-opacity-60 bottom-0 z-[99999]"
+        
+ 
+        >
+
+            <!-- Sidebar Content -->
+            <div ref="content">
+
+                <div
+                v-if="open"
+                
+                
+                    class="absolute z-[99999] right-0 top-2 shadow w-[232px] h-full bg-neutral-50 dark:bg-[#09132C] rounded-[14px] flex-col justify-start items-start inline-flex transition-all duration-700  overflow-hidden">
+                    <div class="flex justify-end items-center mt-3 w-full pr-7">
+
+                        <button @click="toggle()"
+                        class="border border-gray-600 rounded-full h-8 w-8 flex justify-center items-center"
+                        >
+
+                            <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                                viewBox="0 0 384 512">
+                                <path
+                                    d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <RouterLink to="/dashboard" @click="toggle()"
+                        class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
+                        <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                            My Dashboard
+                        </div>
+                    </RouterLink>
+                    <RouterLink to="/dashboard/my-number" @click="toggle()"
+                        class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
+                        <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                            My Number</div>
+                    </RouterLink>
+                    <RouterLink to="/dashboard/topup-balance" @click="toggle()"
+                        class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
+                        <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                            TOP-UP Balance
+                        </div>
+                    </RouterLink>
+                    <RouterLink to="/dashboard/balance-transfer" @click="toggle()"
+                        class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
+                        <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                            Transaction
+                            History</div>
+                    </RouterLink>
+                    <RouterLink to="/dashboard/appearance" @click="toggle()"
+                        class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
+                        <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                            API Connection
+                        </div>
+                    </RouterLink>
+                    <RouterLink to="/dashboard/account-settings" @click="toggle()"
+                        class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
+                        <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                            Account setting
+                        </div>
+                    </RouterLink>
+                    <div class="self-stretch px-10 py-5 justify-start items-center gap-2.5 inline-flex" @click="toggle()">
+                        <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                            Logout</div>
+                        <div
+                            class="w-5 h-5 relative rounded-[5px] flex-col justify-start items-start inline-flex darkIconStock">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M10 16.6667C6.3181 16.6667 3.33333 13.6819 3.33333 9.99999C3.33333 6.3181 6.3181 3.33333 10 3.33333"
+                                    stroke="#1E2329" stroke-linecap="round" />
+                                <path d="M8.33317 10H16.6665M16.6665 10L14.1665 7.5M16.6665 10L14.1665 12.5"
+                                    stroke="#1E2329" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
     </header>
 </template>
 
@@ -385,8 +568,12 @@ export default {
         return {
             selectedLanguage: 'English', // Initialize with an empty string or a default language
             OpenModal: false,
+            MobileOpenModal: false,
             OpenNotificationModal: false,
             currentPath: this.$route.path,
+            open: false,
+            dimmer: true,
+            right: false
         };
     },
     created() {
@@ -407,6 +594,12 @@ export default {
             this.OpenNotificationModal = false;
 
         },
+        mobileHandleModalOpen(open) {
+            this.MobileOpenModal = !this.MobileOpenModal;
+            // this.OpenNotificationModal = false;
+            console.log("MobileOpenModal", this.MobileOpenModal);
+
+        },
         handleNotificationModalOpen(event) {
             if (!this.$el.contains(event.target)) {
                 this.OpenNotificationModal = false;
@@ -415,18 +608,19 @@ export default {
 
 
         },
+        toggle() {
+            this.open = !this.open;
+        }
     },
     watch: {
-    $route(to, from) {
-      // Update currentPath when the route changes
-      this.currentPath = to.path;
+        $route(to, from) {
+            // Update currentPath when the route changes
+            this.currentPath = to.path;
+        },
     },
-  },
 };
 </script>
 <style>
-
-
 header .router-link-exact-active {
     color: #0074d9 !important;
     text-decoration: underline;
@@ -434,14 +628,32 @@ header .router-link-exact-active {
 }
 
 body.dark .downArrow path {
-    stroke:white;
+    stroke: white;
 }
-body.dark .darkCircle circle{
-    stroke:white;
+
+body.dark .darkCircle circle {
+    stroke: white;
 }
 
 
-body.dark .header-logo path{
+body.dark .header-logo path {
     fill: #fff;
 }
-</style>
+
+body.dark .darkIconFill path {
+    fill: white;
+}
+
+body.dark .darkIconStock path {
+    stroke: white;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 1s ease-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}</style>
