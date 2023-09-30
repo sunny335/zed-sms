@@ -1053,7 +1053,7 @@ export default {
             modules: [Navigation],
             selectedWeek: '01 week',
             openTab: 1,
-            selectedCountry: null,
+            selectedCountry: false,
             selectedService: null,
             selectedPhone: null,
             OpenModal: false,
