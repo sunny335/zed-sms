@@ -6,7 +6,7 @@ import DesktopApp from '../assets/img/Desktop App.png';
 import cuate from '../assets/img/cuate.png';
 import MobileApp from '../assets/img/Mobile App.png';
 import Webversion from '../assets/img/Web version.png';
-import GetANumber from '../components/GetANumber/GetANumber.vue';
+
 
 
 </script>
@@ -1067,11 +1067,12 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
   </main>
 </template>
 <script >
+import GetANumber from '../components/GetANumber/GetANumber.vue';
 const Theme = localStorage.getItem('Theme');
-console.log("Theme", Theme);
+
 export default {
   components: {
-
+    GetANumber
   },
   data() {
 
