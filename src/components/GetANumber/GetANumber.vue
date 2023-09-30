@@ -273,7 +273,7 @@ const filteredPhone = computed(() => {
                                 <div class="flex gap-4">
                                     <!-- column1 -->
                                     <div class="max-w-[306px] w-full"
-                                        v-bind:class="{ 'hidden lg:block': this.selectedCountry }">
+                                        v-bind:class="{ 'hidden lg:block': selectedCountry }">
 
                                         <form>
                                             <label for="default-search"
@@ -326,7 +326,7 @@ const filteredPhone = computed(() => {
 
                                     <!-- column2 -->
                                     <div class="max-w-[306px] w-full lg:block"
-                                        v-bind:class="{ 'block': this.selectedCountry, 'hidden lg:block': !this.selectedCountry || this.selectedService }">
+                                        v-bind:class="{ 'block': selectedCountry, 'hidden lg:block': !selectedCountry || selectedService }">
 
                                         <form>
                                             <label for="default-search"
@@ -381,7 +381,7 @@ const filteredPhone = computed(() => {
                                     <!-- column2 end -->
                                     <!-- column3 -->
                                     <div class="max-w-[423px] w-full  lg:block"
-                                        v-bind:class="{ 'block': this.selectedService, 'hidden lg:block': !this.selectedService }">
+                                        v-bind:class="{ 'block': selectedService, 'hidden lg:block': !selectedService }">
 
                                         <form>
                                             <label for="default-search"
