@@ -128,7 +128,7 @@ const filteredPhone = computed(() => {
                                             alt="Flag" />
 
                                         <div class="text-center text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins']">
-                                            {{ selectedCountry.name }}
+                                            {{ selectedCountry?.name }}
                                         </div>
                                     </div>
                                 </div>
@@ -799,14 +799,14 @@ const filteredPhone = computed(() => {
                                             {{ selectedWeek }}
                                         </div>
                                     </div>
-                                    <div v-if="openTab === 2 ? selectedCountry.price : selectedService.price"
+                                    <div v-if="openTab === 2 ? selectedCountry?.price : selectedService.price"
                                         class="flex items-center border-b border-zinc-200 py-[16px]">
                                         <div class="text-left text-zinc-600  dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] w-2/4">
                                             Cost:
                                         </div>
                                         <div class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] w-2/4	">
                                             {{
-                                                openTab === 2 ? selectedCountry.price : selectedService.price }}
+                                                openTab === 2 ? selectedCountry?.price : selectedService.price }}
                                         </div>
                                     </div>
                                 </div>
@@ -935,7 +935,7 @@ export default {
         return {
             selectedWeek: '01 week',
             openTab: 1,
-            selectedCountry: null,
+            selectedCountry: false,
             selectedService: null,
             selectedPhone: null,
             OpenModal: false,
