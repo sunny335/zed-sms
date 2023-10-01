@@ -93,8 +93,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                             <div class="max-w-[337px] h-[93px] px-5 py-7 border-b cursor-pointer border-gray-400 flex  items-center gap-4 flex-wrap mx-auto"
                                 v-for="numberData in filteredNumberData" :key="numberData.id"
                                 @click="selectNumber(numberData)"
-                                :class="{ 'bg-[#0057FF] text-white': selectedNumber === numberData.id }"
-                               >
+                                :class="{ 'bg-[#0057FF] text-white': selectedNumber === numberData.id }">
                                 <div class="w-[30px]">
                                     <img class="w-[30px] h-[30px] rounded-full" :src="numberData.img" alt="" srcset="">
                                 </div>
@@ -275,7 +274,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                                             </div>
                                         </div>
                                         <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
-                                            
+
                                             <p
                                                 class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
                                                 No messages</p>
@@ -402,7 +401,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                                             </div>
                                         </div>
                                         <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
-                                            
+
                                             <p
                                                 class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
                                                 No messages</p>
@@ -508,6 +507,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                         <input
                             class="max-w-[284px] w-full h-10 bg-white rounded-lg border border-gray-400 outline-none px-4 dark:bg-transparent"
                             type="text" placeholder="+85 654 646 655 874" />
+                            
                     </div>
                 </div>
                 <div class="mt-[24px]">
@@ -533,11 +533,14 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
     </section>
 </template>
 <script >
+// Import the vue-phone-number-input component
+import VuePhoneNumberInput from 'vue-phone-number-input';
+import 'vue-phone-number-input/dist/vue-phone-number-input.css';
 const Theme = localStorage.getItem('Theme');
 
 export default {
     components: {
-
+        VuePhoneNumberInput,
     },
     data() {
 
@@ -547,7 +550,7 @@ export default {
             selectedOption: 'Active', // Default text,
             selectedNumber: null,
             selectedNumberData: null,
-
+            phoneNumber: '',
             messageSeenStatus: false,
             toggleArrowIcon: false,
             showMessageCompose: false,
@@ -896,9 +899,9 @@ export default {
                 this.selectedNumberData = null;
             } else {
                 this.selectedNumber = data.id;
-            this.selectedNumberData = data;
+                this.selectedNumberData = data;
             }
-         
+
             console.log(data)
         },
         // selectNumberData(data) {
@@ -921,6 +924,10 @@ export default {
             } else {
                 this.selectedNumber = id;
             }
+        },
+        handlePhoneNumberChange(value) {
+            // Handle phone number changes here
+            console.log('Selected Phone Number:', value);
         },
 
 

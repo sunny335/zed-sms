@@ -125,7 +125,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                                         </div>
                                     </div>
                                     <div
-                                        class="flex flex-col lg:flex-row justify-center lg:justify-end items-start mt-[45px] gap-4">
+                                        class="flex flex-col lg:flex-row justify-center items-center lg:justify-end  mt-[45px] gap-4">
                                         <input
                                             class="max-w-[358px] w-full h-16 pl-10 pr-[200px] py-3 dark:bg-transparent rounded-xl border border-gray-400 justify-center items-center gap-2.5 inline-flex"
                                             v-bind:class="{ 'hidden': nextPaymentPage == false, 'block': nextPaymentPage === true }"
@@ -133,7 +133,7 @@ import Elo from '../../assets/img/payment/Elo.png';
 
 
 
-                                        <button :disabled="!this.selectedPayment"  v-on:click="selectNextPaymentPage(true)"
+                                        <button :disabled="!selectedPayment"  v-on:click="selectNextPaymentPage(true)"
                                             class="max-w-[300px] w-full h-16 px-10 py-3.5 rounded-xl border border-blue-600 dark:bg-[#0057FF]  justify-center items-center gap-3.5 inline-flex disabled:cursor-not-allowed disabled:opacity-20"
                                             v-bind:class="{ 'hidden': nextPaymentPage == true, 'block': nextPaymentPage === false }">
                                             <div
@@ -159,7 +159,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                                           
                                         </button>
                                         <RouterLink to="/payment-successful"
-                                            class="max-w-full lg:max-w-[150px] w-full h-16 px-10 py-3.5 rounded-xl border border-blue-600  justify-center items-center gap-3.5 inline-flex dark:bg-[#0057FF]"
+                                            class="max-w-[358px] lg:max-w-[150px] w-full h-16  px-10 py-3.5 rounded-xl border border-blue-600  justify-center items-center gap-3.5 inline-flex dark:bg-[#0057FF]"
                                             v-bind:class="{ 'hidden': nextPaymentPage == false, 'block': nextPaymentPage === true }">
                                             <div
                                                 class="text-center text-blue-600  dark:text-[#F5F5F5]  text-2xl font-normal font-['Poppins']">

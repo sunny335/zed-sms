@@ -20,11 +20,11 @@ import num7 from "../../assets/img/NumFlags/7.png"
 </script>
 
 <template>
-    <section class="max-w-[825px] pl-[17px]">
-        <div class="flex flex-wrap ">
+    <section class="max-w-[925px] pl-0 lg:pl-[17px]">
+        <div class="flex flex-wrap gap-[58px]">
             <!-- Recent Message --> 
-            <div class="max-w-full lg:max-w-[60%] w-full">
-                <div class="max-w-[436px] w-full pl-6 pr-[30px] pt-6 pb-5 bg-white dark:bg-[#09132C] rounded-[20px] shadow">
+            <div class="max-w-full lg:max-w-[436px] w-full">
+                <div class="max-w-[436px] w-full pl-6 pr-[30px] pt-6 pb-5 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
                     <h4 class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">
                         Recent Message</h4>
 
@@ -91,7 +91,7 @@ import num7 from "../../assets/img/NumFlags/7.png"
                 </div>
             </div>
             <!-- All Number -->
-            <div class="max-w-full lg:max-w-[40%] w-full ">
+            <div class="max-w-full lg:max-w-[329px] w-full ">
                 <div class="max-w-[329px] w-full mx-auto h-[546px]">
                     <div class="flex justify-between items-center mb-[30px]">
                         <h3
@@ -210,7 +210,7 @@ import num7 from "../../assets/img/NumFlags/7.png"
             <!-- Recent Transaction -->
             <div class="max-w-[825px] mt-[48px] w-full">
                 <div class="max-w-[825px]  w-full ">
-                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] ">
+                    <div class="text-neutral-800 text-center lg:text-left dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] ">
                         Recent Transaction
                     </div>
 
