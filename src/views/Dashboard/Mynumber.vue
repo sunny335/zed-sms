@@ -533,14 +533,12 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
     </section>
 </template>
 <script >
-// Import the vue-phone-number-input component
-import VuePhoneNumberInput from 'vue-phone-number-input';
-import 'vue-phone-number-input/dist/vue-phone-number-input.css';
+;
 const Theme = localStorage.getItem('Theme');
 
 export default {
     components: {
-        VuePhoneNumberInput,
+     
     },
     data() {
 
@@ -925,10 +923,7 @@ export default {
                 this.selectedNumber = id;
             }
         },
-        handlePhoneNumberChange(value) {
-            // Handle phone number changes here
-            console.log('Selected Phone Number:', value);
-        },
+  
 
 
     },
