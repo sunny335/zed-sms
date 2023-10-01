@@ -1,19 +1,6 @@
 <script setup>
 
-import { RouterLink } from 'vue-router'
-import Namepo from "../../assets/img/Message/Namepo.png"
-import Viveon from "../../assets/img/Message/Viveon.png"
-import Tiktok from "../../assets/img/Message/Tiktok.png"
-import Burgking from "../../assets/img/Message/Burg king.png"
-import Namepo2 from "../../assets/img/Message/Namepo.png"
-import Viveon2 from "../../assets/img/Message/Viveon.png"
-import num1 from "../../assets/img/NumFlags/1.png"
-import num2 from "../../assets/img/NumFlags/2.png"
-import num3 from "../../assets/img/NumFlags/3.png"
-import num4 from "../../assets/img/NumFlags/4.png"
-import num5 from "../../assets/img/NumFlags/5.png"
-import num6 from "../../assets/img/NumFlags/6.png"
-import num7 from "../../assets/img/NumFlags/7.png"
+
 
 
 
@@ -24,7 +11,8 @@ import num7 from "../../assets/img/NumFlags/7.png"
         <!-- All Transaction -->
         <div class="">
             <div class="  w-full ">
-                <div class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] ">All Transaction
+                <div class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] ">All
+                    Transaction
                 </div>
 
                 <div class=" w-full  overflow-x-auto max-w-[100vw] lg:max-w-[full]">
@@ -49,15 +37,26 @@ import num7 from "../../assets/img/NumFlags/7.png"
                         <tbody v-for="data in visibleData" :key="data.id" class="">
 
                             <tr class=" border-b-2">
-                                <td class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">{{
-                                    data.dateTime }}</td>
-                                <td class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
+                                <td
+                                    class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
+                                    {{
+                                        data.dateTime }}</td>
+                                <td
+                                    class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
                                     {{ data.action }}</td>
-                                <td class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
+                                <td
+                                    class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
                                     ${{ data.amount }}</td>
                                 <td
                                     class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px] max-w-[253px]">
-                                    {{ data.description }} </td>
+                                    {{ showFullMessage[data.id] || data.description.length < 100 ? data.description :
+                                        data.description.substring(0, 100) }} <button v-if="data.description.length > 100"
+                                        class="text-blue-600 text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                        @click="toggleMessage(data.id)">
+                                        {{ showFullMessage[data.id] ? 'Less' : 'More' }}
+                                        </button>
+
+                                </td>
 
                             </tr>
 
@@ -97,10 +96,6 @@ import num7 from "../../assets/img/NumFlags/7.png"
 
                         </button>
 
-
-
-
-
                         <template v-for="page in displayedPageRange" :key="page">
                             <button @click="goToPage(page)"
                                 class="w-[34px] h-9 px-2 py-1.5 rounded-[7px] border border-zinc-200 flex-col justify-center items-center gap-2.5 inline-flex"
@@ -138,9 +133,7 @@ import num7 from "../../assets/img/NumFlags/7.png"
                 </div>
                 <!-- Pagination controls Mobile -->
                 <div class="flex justify-center items-center w-full lg:hidden block">
-
                     <div class="my-[35px] flex justify-center items-center gap-5">
-                 
                         <!-- Previous page button -->
                         <button @click="previousPage" :disabled="currentPage === 1">
 
@@ -152,12 +145,6 @@ import num7 from "../../assets/img/NumFlags/7.png"
                             </svg>
 
                         </button>
-
-
-
-
-
-                    
                         <!-- Next page -->
                         <button @click="nextPage" :disabled="currentPage === totalPages">
                             <svg width="34" height="36" viewBox="0 0 34 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -168,8 +155,6 @@ import num7 from "../../assets/img/NumFlags/7.png"
                             </svg>
 
                         </button>
-                   
-
                     </div>
                 </div>
 
@@ -201,21 +186,21 @@ export default {
                     dateTime: 'Sep 25, 2023',
                     action: 'Top-up',
                     amount: '81.26',
-                    description: 'A number rental 33765837850 on 7 days, Revolut. Exp: 31.05.2023 07:48. Mor'
+                    description: 'A number rental 33765837850 on 7 days, Revolut. Exp: 31.05.2023 07:48. Mor '
                 },
                 {
                     id: 2,
                     dateTime: 'Sep 25, 2023',
                     action: 'Top-up',
                     amount: '95.19',
-                    description: 'A number rental 33765837850 on 7 days, Revolut. Exp: 31.05.2023 07:48. Mor'
+                    description: 'A number rental 33765837850 on 7 days, Revolut. Exp: 31.05.2023 07:48. Mor A number rental 33765837850 on 7 days, Revolut. Exp: 31.05.2023 07:48. MorA number rental 33765837850 on 7 days, Revolut. Exp: 31.05.2023 07:48. Mor'
                 },
                 {
                     id: 3,
                     dateTime: 'Sep 25, 2023',
                     action: 'Top-up',
                     amount: '56.02',
-                    description: 'A number rental 33765837850 on 7 days, Revolut. Exp: 31.05.2023 07:48. Mor'
+                    description: 'A number rental 33765837850 on 7 days, Revolut. Exp: 31.05.2023 07:48. Mor A number rental 33765837850 on 7 days, Revolut. Exp: 31.05.2023 07:48. MorA number rental 33765837850 on 7 days, Revolut. Exp: 31.05.2023 07:48. Mor'
                 },
                 {
                     id: 4,
@@ -546,7 +531,8 @@ export default {
                     amount: '59.00',
                     description: 'A number rental 33765837850 on 7 days, Revolut. Exp: 31.05.2023 07:48. Mor'
                 }
-            ]
+            ],
+            showFullMessage: {}
 
         }
 
@@ -583,16 +569,11 @@ export default {
             const totalPageCount = this.totalPages;
             const currentPage = this.currentPage;
             const pageItemsToShow = this.pageItemsToShow;
-
-            // Calculate the range of displayed page numbers
             let startPage = Math.max(currentPage - Math.floor(pageItemsToShow / 2), 1);
             const endPage = Math.min(startPage + pageItemsToShow - 1, totalPageCount);
-
-            // Adjust the startPage if necessary
             if (endPage === totalPageCount) {
                 startPage = Math.max(endPage - pageItemsToShow + 1, 1);
             }
-
             return Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
         },
 
@@ -601,6 +582,10 @@ export default {
                 this.currentPage = page;
             }
         },
+        toggleMessage(id) {
+            // Toggle the show/hide state for the given notification ID
+            this.showFullMessage[id] = !this.showFullMessage[id];
+        }
 
     },
     computed: {

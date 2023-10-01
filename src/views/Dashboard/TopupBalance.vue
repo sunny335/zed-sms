@@ -71,7 +71,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
 
                         <div class="flex justify-end items-center">
-                            <button :disabled="!selectedPayment" @click="submitModal(true)" type="submit"
+                            <button :disabled="!selectedPayment"  type="submit"
                                 class="max-w-[166px] h-[45px] w-full py-3 rounded-[10px] shadow border border-blue-600 justify-center items-start gap-2.5 inline-flex mt-10  dark:bg-[#0057FF] disabled:cursor-not-allowed disabled:opacity-20">
                                 <div
                                     class="text-center text-blue-600  dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
@@ -84,51 +84,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
 
         </div>
-        <TransitionRoot as="template" :show="isSubmitOpen">
-            <Dialog as="div" class="relative z-[100]" @close="isSubmitOpen = false">
-                <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100"
-                    leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
-                    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
-                </TransitionChild>
-
-                <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-                    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
-                        <TransitionChild as="template" enter="ease-out duration-300"
-                            enter-from="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                            enter-to="opacity-100 translate-y-0 sm:scale-100" leave="ease-in duration-200"
-                            leave-from="opacity-100 translate-y-0 sm:scale-100"
-                            leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
-                            <DialogPanel
-                                class=" relative transform overflow-hidden rounded-lg bg-neutral-50 dark:bg-[#09132C] text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg md:max-w-[322px] lg:max-w-[361px]">
-                                <div>
-                                    <div
-                                        class="max-w-[361px] w-full h-[196px] p-[50px] bg-neutral-50 dark:bg-[#09132C] rounded-3xl">
-                                        <p
-                                            class="text-zinc-600 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] mb-[30px]">
-                                            Do you want to transfer money?</p>
-                                        <div class="flex justify-between items-center">
-
-                                            <button
-                                                class="max-w-[119px] w-full h-9  py-1.5 rounded-[10px] border border-zinc-600 justify-center items-center gap-1.5 inline-flex"
-                                                @click="submitModal(false)">
-                                                <div
-                                                    class="text-zinc-600 dark:text-[#ACB5BD] text-base font-normal font-['Poppins']">
-                                                    Back</div>
-                                            </button>
-                                            <button
-                                                class="max-w-[108px] w-full h-9 py-1.5 bg-[#0057FF] rounded-[10px] justify-center items-center gap-1.5 inline-flex"
-                                                @click="submitModal(false)">
-                                                <div class="text-white text-base font-normal font-['Poppins']">Yes</div>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </DialogPanel>
-                        </TransitionChild>
-                    </div>
-                </div>
-            </Dialog>
-        </TransitionRoot>
+       
     </section>
 </template>
 <script >
@@ -142,7 +98,7 @@ export default {
 
         return {
             openTab: 1,
-            isSubmitOpen: false,
+            
             messageSeenStatus: false,
             toggleArrowIcon: false,
             selectedPayment: null,
@@ -205,7 +161,7 @@ export default {
             ]
 
 
-        }
+        } 
 
     },
     methods: {
@@ -222,10 +178,7 @@ export default {
             this.selectedPayment = id;
 
         },
-        submitModal(open) {
-            console.log("object", open);
-            this.isSubmitOpen = open;
-        },
+ 
         onSubmit(e) {
             e.preventDefault();
         }
