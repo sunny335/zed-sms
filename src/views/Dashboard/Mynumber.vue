@@ -20,7 +20,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
         <div class="flex  gap-[25px] lg:flex-row flex-col">
             <!-- All Number -->
             <div class="max-w-[342px] lg:max-w-[357px] w-full mx-auto">
-                <div class="max-w-[342px] lg:max-w-[357px] h-[711px]  ">
+                <div class="max-w-[342px] lg:max-w-[357px] max-h-[711px]  ">
                     <div class="flex justify-between items-center">
                         <h3
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">
@@ -89,7 +89,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                     </div>
                     <div
                         class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
-                        <div class="scrollbar h-[620px] mt-[20px]">
+                        <div class="scrollbar max-h-[620px] mt-[20px]">
                             <div class="max-w-[337px] h-[93px] px-5 py-7 border-b cursor-pointer border-gray-400 flex  items-center gap-4 flex-wrap mx-auto"
                                 v-for="numberData in filteredNumberData" :key="numberData.id"
                                 @click="selectNumber(numberData)"
@@ -155,7 +155,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
             <!-- All Message -->
             <div class="max-w-[460px] w-full">
                 <div
-                    class="max-w-[375px] lg:max-w-[460px] h-[716px] p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+                    class="max-w-[375px] lg:max-w-[460px] h-[716px] mt-[58px] p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
                     <div class="flex lg:justify-start justify-center  items-center mb-[30px]">
                         <h3
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">
@@ -504,9 +504,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                             class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-['Poppins'] leading-[17px] mb-[14px] ">
                             From Number
                         </p>
-                        <!-- <input
-                            class="max-w-[284px] w-full h-10 bg-white rounded-lg border border-gray-400 outline-none px-4 dark:bg-transparent"
-                            type="text" placeholder="+85 654 646 655 874" /> -->
+                 
 
                             <vue-tel-input class="max-w-[284px] w-full h-10 bg-white rounded-lg border border-gray-400 outline-none dark:bg-transparent" :value="phone" @input="onInput" placeholder="+85 654 646 655 874"></vue-tel-input>
                     </div>

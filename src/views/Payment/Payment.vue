@@ -25,9 +25,9 @@ import Elo from '../../assets/img/payment/Elo.png';
                         v-bind:class="{ 'hidden': nextPaymentPage == true, 'block': nextPaymentPage === false }">
                         <a class="w-full  flex items-center  text-neutral-800   dark:text-[#F5F5F5] text-base lg:text-xl font-normal font-['Poppins'] leading-[17px] "
                             v-on:click="toggleTabs(1); selectCountry(null); selectPhone(null); selectService(null)">
-                            <img class="w-[24px] h-[24px] mr-[6px] lg:mr-4" :src="blueTik" alt="" srcset=""
+                            <img class="h-[12px] lg:w-[24px] w-[12px] lg:h-[24px] mr-[6px] lg:mr-4" :src="blueTik" alt="" srcset=""
                                 v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
-                            <div class="w-6 h-6 rounded-full bg-slate-100 mr-[6px] lg:mr-4"
+                            <div class="h-[12px] lg:w-6 w-[12px] lg:h-6 rounded-full bg-slate-100 mr-[6px] lg:mr-4"
                                 v-bind:class="{ 'block': openTab !== 1, 'hidden': openTab === 1 }"></div>
 
                             Account Balance
@@ -36,9 +36,9 @@ import Elo from '../../assets/img/payment/Elo.png';
                     <li class="max-w-[300px] -mb-px last:mr-0  text-center cursor-pointer">
                         <a class="w-full flex items-center  text-neutral-800   dark:text-[#F5F5F5] text-base lg:text-xl font-normal font-['Poppins'] leading-[17px] "
                             v-on:click="toggleTabs(2); selectCountry(null); selectPhone(null); selectService(null)">
-                            <img class="w-[24px] h-[24px] mr-[6px] lg:mr-4" :src="blueTik" alt="" srcset=""
+                            <img class="h-[12px] lg:w-[24px] w-[12px] lg:h-[24px] mr-[6px] lg:mr-4" :src="blueTik" alt="" srcset=""
                                 v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
-                            <div class="w-6 h-6 rounded-full bg-slate-100 mr-[6px] lg:mr-4"
+                            <div class="h-[12px] lg:w-6 w-[12px] lg:h-6 rounded-full bg-slate-100 mr-[6px] lg:mr-4"
                                 v-bind:class="{ 'block': openTab !== 2, 'hidden': openTab === 2 }"></div>
                             Payment Method
                         </a>
@@ -61,7 +61,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                             <div class="w-full" v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
                                 <div class="mt-[30px] flex justify-center items-center">
                                     <div
-                                        class="max-w-[376px] lg:max-w-[612px] max-h-[293px] px-[42px] py-[100px] lg:px-40 lg:py-[100px] bg-white  dark:bg-[#09132C] rounded-3xl shadow-none lg:shadow-custom flex-col justify-start items-start gap-7 inline-flex">
+                                        class="max-w-[376px] lg:max-w-[612px] max-h-[293px] px-[6px] py-[100px] lg:px-40 lg:py-[100px] bg-white  dark:bg-[#09132C] rounded-3xl shadow-none lg:shadow-custom flex-col justify-start items-start gap-7 inline-flex">
                                         <div
                                             class="text-neutral-800   dark:text-[#F5F5F5] text-base font-normal font-['Poppins']">
                                             Payment

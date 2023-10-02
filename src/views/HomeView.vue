@@ -13,7 +13,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
 
 <template>
   <main class="pb-[103px]">
-    <div class="px-4 pt-21 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 lg:pt-[84px]">
+    <div class="px-4 pt-[50px] mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 lg:pt-[84px]">
       <div class="flex flex-col items-center justify-between w-full mb-[157px] lg:flex-row px-[24px] lg:px-0">
         <div class="mb-16 lg:mb-0 lg:max-w-lg lg:pr-5">
           <div class="max-w-xl mb-0 lg:mb-6">

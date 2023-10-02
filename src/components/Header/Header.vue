@@ -223,7 +223,7 @@ const Theme = localStorage.getItem("Theme");
           <div v-if="!currentPath.includes('dashboard')">
             <div
               v-if="MobileOpenModal"
-              class="absolute z-10 right-0 top-[50px] shadow w-[175px] pb-4 bg-neutral-50 dark:bg-[#09132C] rounded-[14px] flex-col justify-start items-start inline-flex"
+              class="absolute z-10 right-0 top-[50px] shadow w-[175px]  bg-neutral-50 dark:bg-[#09132C] rounded-[14px] flex-col justify-start items-start inline-flex"
             >
               <RouterLink
                 to="/service"
@@ -262,7 +262,7 @@ const Theme = localStorage.getItem("Theme");
                 v-if="login"
                 to="/dashboard"
                 @click="mobileHandleModalOpen(true)"
-                class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex text-neutral-800 dark:text-[#F5F5F5]"
+                class="self-stretch px-10 py-5 justify-start items-center gap-2.5 inline-flex text-neutral-800 dark:text-[#F5F5F5]"
               >
                 <div
                   class="flex gap-[9px] relative cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 downArrow darkCircle"
@@ -748,7 +748,7 @@ const Theme = localStorage.getItem("Theme");
             <div
               class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
             >
-              My Dashboard
+              Home
             </div>
           </RouterLink>
           <RouterLink
@@ -770,18 +770,51 @@ const Theme = localStorage.getItem("Theme");
             <div
               class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
             >
-              TOP-UP Balance
+            Manage Number
             </div>
           </RouterLink>
           <RouterLink
-            to="/dashboard/balance-transfer"
+            to="/dashboard/manage-number"
             @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex"
           >
             <div
               class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
             >
-              Transaction History
+            Buy Number
+            </div>
+          </RouterLink>
+          <RouterLink
+            to="/dashboard/buy-number"
+            @click="toggle()"
+            class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex"
+          >
+            <div
+              class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
+            >
+            Transaction
+            </div>
+          </RouterLink>
+          <RouterLink
+            to="/dashboard/transaction"
+            @click="toggle()"
+            class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex"
+          >
+            <div
+              class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
+            >
+            Balance Transfer
+            </div>
+          </RouterLink>
+          <RouterLink
+            to="/dashboard/topup-balance"
+            @click="toggle()"
+            class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex"
+          >
+            <div
+              class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
+            >
+            TOP-UP Balance
             </div>
           </RouterLink>
           <RouterLink
@@ -792,7 +825,7 @@ const Theme = localStorage.getItem("Theme");
             <div
               class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
             >
-              API Connection
+            Appearance
             </div>
           </RouterLink>
           <RouterLink
@@ -803,9 +836,10 @@ const Theme = localStorage.getItem("Theme");
             <div
               class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
             >
-              Account setting
+            Account Setting
             </div>
           </RouterLink>
+         
           <div
             class="self-stretch px-10 py-5 justify-start items-center gap-2.5 inline-flex"
             @click="toggle()"
