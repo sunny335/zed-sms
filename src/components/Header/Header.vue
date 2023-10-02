@@ -796,7 +796,7 @@ const Theme = localStorage.getItem("Theme");
             </div>
           </RouterLink>
           <RouterLink
-            to="/dashboard/transaction"
+            to="/dashboard/balance-transfer"
             @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex"
           >
