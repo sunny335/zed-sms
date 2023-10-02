@@ -65,7 +65,7 @@ interdum ullamcorper sed pharetra sene." />
                         <h3 class="max-w-[456px] text-center text-neutral-800   dark:text-[#F5F5F5]  text-2xl px-[25px] lg:px-0 lg:text-[32px] font-medium font-['Poppins'] leading-9 mb-[82px]">The
                             story and values behind our company</h3>
                     </div>
-                    <div class="flex flex-col lg:flex-row flex-wrap justify-center items-center gap-[80px]">
+                    <div class="flex flex-col lg:flex-row flex-wrap justify-center items-center gap-[50px] lg:gap-[80px]">
                         <div class="flex flex-col lg:flex-row  w-full lg:w-[45%] gap-[30px]"
                         v-for="(value, index) in valuesData" :key="index"
                         >
@@ -73,7 +73,7 @@ interdum ullamcorper sed pharetra sene." />
                             <div>
                                 <h6 class="text-neutral-800   dark:text-[#F5F5F5] text-2xl font-medium font-['Poppins'] leading-relaxed">
                                     {{value.title}}</h6>
-                                <p class=" text-zinc-600    dark:text-[#ACB5BD] text-base font-light font-['Poppins'] leading-normal">Long
+                                <p class=" text-zinc-600    dark:text-[#ACB5BD] text-sm lg:text-base font-light font-['Poppins'] leading-normal">
                                     {{ value.description }}</p>
                             </div>
                         </div>
