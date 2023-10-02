@@ -13,7 +13,7 @@ import balanceTransfer from "../../assets/img/balanceTransfer.png"
 <template>
     <section class="max-w-[376px] lg:max-w-[584px] w-full h-[656px] px-[38px] lg:px-20 pt-0 lg:pt-10 pb-[50px] bg-white  dark:bg-[#09132C] rounded-3xl shadow-none mx-auto lg:shadow-custom ml-0 lg:ml-[147px] mb-[112px]">
         <h3 class="text-zinc-600  dark:text-[#F5F5F5]  text-xl font-medium font-['Poppins']">Account</h3>
-        <form class="mt-[26px] w-full">
+        <form v-on:submit="onSubmit" class="mt-[26px] w-full">
             <div>
 
                 <label class="text-zinc-600  dark:text-[#F5F5F5]  text-base font-normal font-['Poppins']">User Name</label>
@@ -90,7 +90,9 @@ export default {
 
     },
     methods: {
-
+        onSubmit(e) {
+            e.preventDefault();
+        }
 
     },
     computed: {

@@ -18,7 +18,7 @@ import google from '../assets/img/google.png';
                     <RouterLink class="text-neutral-800  dark:text-white text-base font-light font-['Poppins'] underline " to="/login">Log in
                         instead</RouterLink>
                 </div>
-                <form class="mt-10">
+                <form v-on:submit="onSubmit" class="mt-10">
                     <div>
                         <label class="text-zinc-600  dark:text-white text-base font-normal font-['Poppins'] block mb-2">User Name</label>
                         <input type="text" class="px-[16px] dark:bg-transparent py-[8px] w-full h-14 relative rounded-xl border border-zinc-600" />
@@ -69,8 +69,8 @@ import google from '../assets/img/google.png';
                             <label class="text-zinc-600  dark:text-white text-base font-normal font-['Poppins'] block mb-2">Confirm
                                 Password</label>
                                 <div class="flex items-center gap-2 cursor-pointer w-[72px] justify-between"
-                                    v-on:click="handlePasswordShow(!passwordShow)">
-                                    <svg v-if="passwordShow == true" width="19" height="17" viewBox="0 0 19 17" fill="none"
+                                    v-on:click="handleConfirmPasswordShow(!confirmPasswordShow)">
+                                    <svg v-if="confirmPasswordShow == true" width="19" height="17" viewBox="0 0 19 17" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <g id="Group 1">
                                             <path id="Vector"
@@ -81,7 +81,7 @@ import google from '../assets/img/google.png';
                                                 fill="#495057" />
                                         </g>
                                     </svg>
-                                    <svg v-if="passwordShow == false" xmlns="http://www.w3.org/2000/svg" height="17" width="19" viewBox="0 0 612 612"
+                                    <svg v-if="confirmPasswordShow == false" xmlns="http://www.w3.org/2000/svg" height="17" width="19" viewBox="0 0 612 612"
                                         xml:space="preserve">
 
                                         <path
@@ -93,12 +93,12 @@ import google from '../assets/img/google.png';
 
                                     </svg>
                                     <span class="pl-1">
-                                        {{ passwordShow ? "Hide" : "Show" }}
+                                        {{ confirmPasswordShow ? "Hide" : "Show" }}
                                     </span>
 
                                 </div>
                         </div>
-                        <input :type="passwordShow ? 'password' : 'text'" class="px-[16px]  dark:bg-transparent py-[8px] w-full h-14 relative rounded-xl border border-zinc-600" />
+                        <input :type="confirmPasswordShow ? 'password' : 'text'" class="px-[16px]  dark:bg-transparent py-[8px] w-full h-14 relative rounded-xl border border-zinc-600" />
                     </div>
                     <div class="">
                         <label for="" class="flex justify-start items-start my-5">
@@ -122,16 +122,21 @@ import google from '../assets/img/google.png';
 
                             <div><span class="text-zinc-600  dark:text-white text-sm lg:text-base font-normal font-['Poppins']">By creating
                                     an account,I agree to our </span>
-                                <span
+                                <RouterLink
+
+                                to="/terms-condition"
                                     class="text-neutral-800  dark:text-white text-sm lg:text-base font-normal font-['Poppins'] underline">Terms
                                     of
-                                    use</span>
+                                    use</RouterLink>
                                 <span class="text-zinc-600  dark:text-white text-sm lg:text-base font-normal font-['Poppins']">
                                     and
                                 </span>
-                                <span
+                                <RouterLink
+                                to="/privacy-policy"
                                     class="text-neutral-800  dark:text-white text-sm lg:text-base font-normal font-['Poppins'] underline">Privacy
-                                    Policy</span><span
+                                    Policy</RouterLink>
+                                    
+                                    <span
                                     class="text-zinc-600 text-sm lg:text-base font-normal font-['Poppins'] underline">
                                 </span>
                             </div>
@@ -176,13 +181,20 @@ import google from '../assets/img/google.png';
 <script>
 
 const Theme = localStorage.getItem('Theme');
+import { onMounted } from 'vue';
 export default {
     components: {
 
     },
+    setup() {
+        onMounted(() => {
+            window.scrollTo(0, 0); // Scrolls to the top of the page when the component is mounted
+        });
+    },
     data() {
         return {
             passwordShow: true,
+            confirmPasswordShow: true,
         };
     },
 
@@ -191,10 +203,20 @@ export default {
         handlePasswordShow(v) {
 
             this.passwordShow = v
-            console.log("handlePasswordShow", this.passwordShow = v);
+            
 
         },
+        handleConfirmPasswordShow(v) {
+
+            this.confirmPasswordShow = v
+            
+
+        },
+        onSubmit(e) {
+            e.preventDefault();
+        }
 
     },
+    
 };
 </script>

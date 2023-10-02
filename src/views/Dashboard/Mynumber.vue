@@ -20,7 +20,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
         <div class="flex  gap-[25px] lg:flex-row flex-col">
             <!-- All Number -->
             <div class="max-w-[342px] lg:max-w-[357px] w-full mx-auto">
-                <div class="max-w-[342px] lg:max-w-[357px] max-h-[711px]  ">
+                <div class="max-w-[342px] lg:max-w-[357px] h-[711px]  ">
                     <div class="flex justify-between items-center">
                         <h3
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">
@@ -93,8 +93,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                             <div class="max-w-[337px] h-[93px] px-5 py-7 border-b cursor-pointer border-gray-400 flex  items-center gap-4 flex-wrap mx-auto"
                                 v-for="numberData in filteredNumberData" :key="numberData.id"
                                 @click="selectNumber(numberData)"
-                                :class="{ 'bg-[#0057FF] text-white': selectedNumber === numberData.id }"
-                               >
+                                :class="{ 'bg-[#0057FF] text-white': selectedNumber === numberData.id }">
                                 <div class="w-[30px]">
                                     <img class="w-[30px] h-[30px] rounded-full" :src="numberData.img" alt="" srcset="">
                                 </div>
@@ -275,7 +274,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                                             </div>
                                         </div>
                                         <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
-                                            
+
                                             <p
                                                 class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
                                                 No messages</p>
@@ -402,7 +401,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                                             </div>
                                         </div>
                                         <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
-                                            
+
                                             <p
                                                 class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
                                                 No messages</p>
@@ -484,7 +483,7 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
             class="max-w-[808px] w-full h-[457px] px-[45px] lg:px-[100px] py-0 lg:py-[50px] bg-transparent lg:bg-white lg:dark:bg-[#09132C] rounded-[30px] shadow-none lg:shadow-custom">
             <h3 class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] ">Message
                 Compose</h3>
-            <form class="mt-[30px]">
+            <form v-on:submit="onSubmit" class="mt-[30px]">
 
 
                 <div class="flex flex-col lg:flex-row justify-between items-center">
@@ -505,9 +504,11 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
                             class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-['Poppins'] leading-[17px] mb-[14px] ">
                             From Number
                         </p>
-                        <input
+                        <!-- <input
                             class="max-w-[284px] w-full h-10 bg-white rounded-lg border border-gray-400 outline-none px-4 dark:bg-transparent"
-                            type="text" placeholder="+85 654 646 655 874" />
+                            type="text" placeholder="+85 654 646 655 874" /> -->
+
+                            <vue-tel-input class="max-w-[284px] w-full h-10 bg-white rounded-lg border border-gray-400 outline-none dark:bg-transparent" :value="phone" @input="onInput" placeholder="+85 654 646 655 874"></vue-tel-input>
                     </div>
                 </div>
                 <div class="mt-[24px]">
@@ -533,15 +534,18 @@ import Viveon2 from "../../assets/img/Message/Viveon.png"
     </section>
 </template>
 <script >
+import { VueTelInput } from "vue3-tel-input";
+import "vue3-tel-input/dist/vue3-tel-input.css";
 const Theme = localStorage.getItem('Theme');
 
 export default {
     components: {
-
+        VueTelInput,
     },
     data() {
 
         return {
+            phone: "",
             openTab: 1,
             isOpen: false,
             selectedOption: 'Active', // Default text,
@@ -865,12 +869,11 @@ export default {
             ],
 
 
-        } 
+        }
 
     },
     mounted() {
-        // Log data in the mounted lifecycle hook
-        console.log(this.selectedOption);
+        document.getElementsByName('telephone')[0].placeholder='+85 654 646 655 874';
     },
     methods: {
         toggleMessageReadMore(messageData) {
@@ -896,9 +899,9 @@ export default {
                 this.selectedNumberData = null;
             } else {
                 this.selectedNumber = data.id;
-            this.selectedNumberData = data;
+                this.selectedNumberData = data;
             }
-         
+
             console.log(data)
         },
         // selectNumberData(data) {
@@ -922,6 +925,14 @@ export default {
                 this.selectedNumber = id;
             }
         },
+        onInput(phone, phoneObject, input) {
+            if (phoneObject?.formatted) {
+                this.phone = phoneObject.formatted;
+            }
+        },
+        onSubmit(e) {
+            e.preventDefault();
+        }
 
 
     },
@@ -984,5 +995,42 @@ body .whiteIconFill path {
 
 body .blueIconFill path {
     fill: #0057FF;
+}
+
+body.dark .vti__dropdown:hover{
+ background-color: #223361;
+}
+body.dark .open{
+ background-color: #223361;
+}
+body.dark .vue-tel-input {
+
+ border-radius: 0.5rem !important;
+}
+body.dark .vue-tel-input input{
+ background-color: #070F24;
+ 
+}
+.vue-tel-input{
+ outline: none !important;
+ /* border: 1px red  !important; */
+ --tw-border-opacity: 1;
+    border-color: rgb(156 163 175 / var(--tw-border-opacity));
+    border-width: 1px;
+ box-shadow: none !important;
+ 
+}
+body.dark .vti__dropdown-list{
+ background-color: #070F24;
+}
+body.dark .vti__dropdown-list .highlighted{
+ background-color: #2f3e6a;
+}
+body.dark .vti__input{
+    width: 220px !important;
+}
+.vti__input::-webkit-input-placeholder::before {
+  color:#666;
+  content:"Line 1\A Line 2\A Line 3\A";
 }
 </style>

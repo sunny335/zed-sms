@@ -3,13 +3,13 @@ import { RouterLink } from "vue-router";
 import CommunityIcon from "../icons/IconCollections.vue";
 const login = true;
 const Theme = localStorage.getItem("Theme");
-console.log(Theme);
 </script>
 
 <template>
   <header
     class="bg-white dark:bg-[#070F24] sticky top-0 z-[9999]"
-    v-bind:class="{ 'shadow-custom': currentPath.includes('dashboard') }"
+    v-bind:class="{ 'shadow-custom': currentPath.includes('dashboard'),'shadow-custom shadow-transition': hasShadow }"
+    
   >
     <div class="mx-auto max-w-[1192px] px-4 sm:px-6 lg:px-8 w-full">
       <div class="flex h-[116px] items-center justify-between">
@@ -137,7 +137,7 @@ console.log(Theme);
           <!-- mobile dropdown btn -->
           <button
             v-if="!currentPath.includes('dashboard')"
-            class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+            class="rounded bg-transparent lg:bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 darkIconStock"
             v-bind:class="{ hidden: MobileOpenModal }"
             @click="mobileHandleModalOpen(true)"
           >
@@ -170,7 +170,7 @@ console.log(Theme);
           </button>
           <button
             v-if="!currentPath.includes('dashboard')"
-            class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 flex justify-center items-center"
+            class="rounded bg-transparent lg:bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 flex justify-center items-center darkIconFill"
             v-bind:class="{ hidden: !MobileOpenModal }"
             @click="mobileHandleModalOpen(true)"
           >
@@ -188,7 +188,7 @@ console.log(Theme);
 
           <button
             v-if="currentPath.includes('dashboard')"
-            class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+            class="rounded bg-transparent lg:bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 darkIconStock"
             @click="toggle()"
           >
             <svg
@@ -360,7 +360,9 @@ console.log(Theme);
 
               <li>
                 <RouterLink
-                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600 mr-8"
+                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600"
+                  v-bind:class="{ 'mr-8': login }"
+              
                   to="/contact-us"
                 >
                   Contact
@@ -908,20 +910,28 @@ export default {
         },
       ],
       showFullMessage: {},
+      hasShadow: false,
+      
     };
   },
   created() {
-    // Close the profile popup on outside click
+
     window.addEventListener("click", this.handleNotificationModalOpen);
   },
-  beforeUnmount() {
-    // Remove the event listener when the component is unmounted
-    window.removeEventListener("click", this.handleNotificationModalOpen);
+  mounted() {
+
+    window.addEventListener('scroll', this.toggleShadow);
   },
+  beforeUnmount() {
+
+    window.removeEventListener("click", this.handleNotificationModalOpen);
+    window.removeEventListener('scroll', this.toggleShadow);
+  },
+
+
   methods: {
     updateSelectedLanguage(language) {
-      this.selectedLanguage = language; // Update the selected language when the event is emitted from HeaderDropdown
-      // You can perform any additional actions based on the selected language here
+      this.selectedLanguage = language; 
     },
     handleModalOpen(open) {
       this.OpenModal = !this.OpenModal;
@@ -929,7 +939,7 @@ export default {
     },
     mobileHandleModalOpen(open) {
       this.MobileOpenModal = !this.MobileOpenModal;
-      // this.OpenNotificationModal = false;
+
       console.log("MobileOpenModal", this.MobileOpenModal);
     },
     handleNotificationModalOpen(event) {
@@ -942,16 +952,22 @@ export default {
       this.open = !this.open;
     },
     toggleMessage(id) {
-      // Toggle the show/hide state for the given notification ID
+   
       this.showFullMessage[id] = !this.showFullMessage[id];
     },
+    toggleShadow() {
+      this.hasShadow = window.scrollY > 100;
+    
+    },
   },
+  
   watch: {
     $route(to, from) {
       // Update currentPath when the route changes
       this.currentPath = to.path;
     },
   },
+ 
 };
 </script>
 <style>
@@ -990,4 +1006,9 @@ body.dark .darkIconStock path {
 .fade-leave-to {
   opacity: 0;
 }
+.shadow-transition {
+  transition: box-shadow 0.5s ease-in-out; /* Add animation to the shadow */
+}
+
+
 </style>

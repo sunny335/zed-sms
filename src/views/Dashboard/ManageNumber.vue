@@ -299,7 +299,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             Extent Number
                         </h3>
 
-                        <form class="mt-[16px] flex justify-between items-center">
+                        <form v-on:submit="onSubmit" class="mt-[16px] flex justify-between items-center">
                             <div
                                 class="w-32 h-10 px-2 outline-none py-2.5 rounded-lg border border-zinc-600 justify-center items-center gap-1.5 inline-flex">
                                 <div class="relative inline-block text-left">
@@ -779,9 +779,9 @@ export default {
             console.log("object", open);
             this.isDeleteOpen = open;
         },
-        deleteNumber(id) {
-
-        },
+        onSubmit(e) {
+            e.preventDefault();
+        }
 
     },
     computed: {

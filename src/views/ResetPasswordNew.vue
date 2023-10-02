@@ -15,7 +15,7 @@ import { RouterLink } from 'vue-router'
                 registered email address or username.</p>
            </div>
 
-            <form>
+            <form v-on:submit="onSubmit">
                 <input
                     class="max-w-[345px] w-full h-[56px] px-[16px] py-[8px] rounded-lg border  dark:bg-transparent border-neutral-800 flex-col justify-start items-start inline-flex"
                     placeholder="New Password" type="text" />
@@ -26,7 +26,7 @@ import { RouterLink } from 'vue-router'
 
             <div class="flex justify-between items-center mt-[30px] gap-4">
                 <RouterLink to="/logIn"
-                    class="max-w-[200px] max-h-[46px] w-full py-0.5 bg-neutral-800 dark:bg-zinc-600 rounded-[10px] flex-col justify-center items-center inline-flex">
+                    class="max-w-[200px] max-h-[46px] w-full py-0.5 bg-[#1E2329] dark:bg-zinc-600 rounded-[10px] flex-col justify-center items-center inline-flex">
                     <div class="px-[22px] py-2 flex-col justify-start items-start gap-2 flex">
                         <div class="justify-start items-center gap-2 inline-flex">
                             <div
@@ -63,4 +63,30 @@ import { RouterLink } from 'vue-router'
 
 
         </div>
-</section></template>
+</section>
+
+</template>
+
+<script>
+
+export default {
+    components: {
+
+    },
+    data() {
+        return {
+          
+        };
+    },
+
+    methods: {
+
+     
+        onSubmit(e) {
+            e.preventDefault();
+        }
+
+    },
+};
+
+</script>

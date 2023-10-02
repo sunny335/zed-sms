@@ -114,7 +114,7 @@ export default {
         },
         onSubmit(e) {
             e.preventDefault();
-        }
+        } 
 
     },
     computed: {

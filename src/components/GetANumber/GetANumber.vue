@@ -407,8 +407,9 @@ const filteredPhone = computed(() => {
               </div>
             </div>
             <div
-              class="w-full"
+              
               v-bind:class="{ hidden: openTab !== 1, block: openTab === 1 }"
+              class="w-full"
             >
               <div class="mt-[30px]">
                 <div class="flex gap-4">

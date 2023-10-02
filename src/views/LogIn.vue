@@ -17,7 +17,7 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
             </h2>
             <div class="flex-col flex lg:flex-row justify-center items-center  w-full min-h-[381px]">
                 <div>
-                    <form>
+                    <form v-on:submit="onSubmit">
                         <div class="max-w-[354px]">
                             <label class="text-zinc-600  dark:text-[#F5F5F5] text-base font-normal font-['Poppins']">Email
                                 or Username</label>
@@ -217,6 +217,9 @@ export default {
             console.log("handlePasswordShow", this.passwordShow = v);
 
         },
+        onSubmit(e) {
+            e.preventDefault();
+        }
 
     },
 };

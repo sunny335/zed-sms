@@ -70,7 +70,7 @@ const filteredPhone = computed(() => {
 
 <template>
     <div class="pl-[7px]">
-        <div class="flex gap-[30px]">
+        <div class="flex justify-center lg:justify-start items-center lg:flex-row flex-col gap-[30px]">
             <div>
                 <h1
                     class="text-neutral-800 dark:text-[#F5F5F5] text-left text-[24px] font-medium font-['Poppins'] leading-[17px]">
@@ -84,102 +84,231 @@ const filteredPhone = computed(() => {
             </div>
             <div>
                 <ul
-                    class="flex mb-0 list-none flex-row max-w-[450px] mx-auto rounded-2xl border border-blue-600 overflow-hidden	 h-[53px]">
+                    class="flex mb-0 list-none flex-row max-w-[300px] lg:max-w-[450px] w-full mx-auto rounded-2xl border border-blue-600 overflow-hidden h-[58px]">
                     <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                        <a class="w-[117px] flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[53px]  dark:text-[#F5F5F5]"
-                            v-on:click="toggleTabs(1); selectCountry(null); selectPhone(null); selectService(null)"
-                            v-bind:class="{ 'text-neutral-800  bg-white dark:bg-transparent': openTab !== 1, 'text-white bg-blue-600': openTab === 1 }">
+                        <a class="max-w-[100px] lg:max-w-[150px] w-[100px] lg:w-[150px] flex items-center justify-center dark:text-[#F5F5F5] text-center text-sm lg:text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px]"
+                            v-on:click="
+                                toggleTabs(1);
+                            selectCountry(null);
+                            selectPhone(null);
+                            selectService(null);
+                            " v-bind:class="{
+    'text-neutral-800  dark:text-[#F5F5F5] dark:bg-[#09132C]  bg-white':
+        openTab !== 1,
+    'text-white bg-blue-600': openTab === 1,
+}">
                             Shared
                         </a>
                     </li>
                     <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                        <a class="w-[117px] flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[53px]  dark:text-[#F5F5F5]"
-                            v-on:click="toggleTabs(2); selectCountry(null); selectPhone(null); selectService(null)"
-                            v-bind:class="{ 'text-neutral-800 bg-white  dark:bg-transparent': openTab !== 2, 'text-white bg-blue-600': openTab === 2 }">
+                        <a class="max-w-[100px] lg:max-w-[150px] w-[100px] lg:w-[150px] flex items-center justify-center text-center text-sm lg:text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px] dark:text-[#F5F5F5]"
+                            v-on:click="
+                                toggleTabs(2);
+                            selectCountry(null);
+                            selectPhone(null);
+                            selectService(null);
+                            " v-bind:class="{
+    'text-neutral-800   dark:text-[#F5F5F5] dark:bg-[#09132C] bg-white':
+        openTab !== 2,
+    'text-white bg-blue-600': openTab === 2,
+}">
                             Private
                         </a>
                     </li>
                     <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                        <a class="w-[117px] flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[53px]  dark:text-[#F5F5F5]"
-                            v-on:click="toggleTabs(3); selectCountry(null); selectPhone(null); selectService(null)"
-                            v-bind:class="{ 'text-neutral-800 bg-white  dark:bg-transparent': openTab !== 3, 'text-white bg-blue-600': openTab === 3 }">
+                        <a class="max-w-[100px] lg:max-w-[150px] w-[100px] lg:w-[150px] flex items-center justify-center text-center text-sm lg:text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px] dark:text-[#F5F5F5]"
+                            v-on:click="
+                                toggleTabs(3);
+                            selectCountry(null);
+                            selectPhone(null);
+                            selectService(null);
+                            " v-bind:class="{
+    'text-neutral-800   dark:text-[#F5F5F5] dark:bg-[#09132C]  bg-white':
+        openTab !== 3,
+    'text-white bg-blue-600': openTab === 3,
+}">
                             Temporary
                         </a>
                     </li>
                 </ul>
+
             </div>
         </div>
+        <!-- Mobile Show Selected data -->
+
+        <div class="relative px-[22px] mt-[30px] block lg:hidden">
+            <div class="absolute left-[10px] top-[3px]" v-if="scrollPosition">
+                <div @click="scrollLeft"
+                    class="relative border border-gray-800 dark:border-white rounded-full cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 darkIconStock">
+                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.8333 13.4238H9.16663M9.16663 13.4238L12.4166 10.1738M9.16663 13.4238L12.4166 16.6738"
+                            stroke="#495057" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+            <div class="absolute right-[10px] top-[3px]">
+                <div @click="scrollRight"
+                    class="border border-gray-800 dark:border-white rounded-full relative cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 darkIconStock rotate-180">
+                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.8333 13.4238H9.16663M9.16663 13.4238L12.4166 10.1738M9.16663 13.4238L12.4166 16.6738"
+                            stroke="#495057" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="max-w-[300px] overflow-x-auto scroll-hide mx-auto" ref="scrollContainer">
+                <div class="items-center gap-[20px] min-h-[60px] justify-center w-max mx-auto pb-[26px] flex" ref="content"
+                    :style="{ transform: `translateX(-${scrollPosition}px)` }">
+                    <div class="flex gap-[6px] items-center">
+                        <div class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
+                            Country:
+                        </div>
+                        <div v-if="selectedCountry" class="flex gap-[6px] items-center">
+                            <!-- <img :src="PhilipinsImg" alt="Image Description" /> -->
+                            <img :src="selectedCountry?.flag" class="w-[30px] h-[30px] rounded-full" alt="Flag" />
+
+                            <div class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
+                                {{ selectedCountry?.name }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-[6px] items-center" v-bind:class="{
+                        hidden: openTab == 2,
+                        block: openTab === 2 || openTab === 1,
+                    }">
+                        <div class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
+                            Service:
+                        </div>
+
+                        <div v-if="selectedService" class="flex gap-[6px] items-center">
+                            <img class="w-[30px] h-[30px] rounded-full" :src="selectedService.flag"
+                                alt="Image Description" />
+                            <div class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
+                                {{ selectedService.name }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-[6px] items-center" v-bind:class="{
+                        hidden: openTab == 3,
+                        block: openTab === 3 || openTab === 1,
+                    }">
+                        <div class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
+                            Number:
+                        </div>
+                        <div v-if="selectedPhone"
+                            class="text-zinc-600 text-sm dark:text-[#F5F5F5] font-light font-['Poppins']">
+                            {{ selectedPhone }}
+                        </div>
+                    </div>
+                    <div class="flex gap-[6px] items-center" v-if="selectedPhone && selectedWeek">
+                        <div class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
+                            Rent:
+                        </div>
+                        <div class="text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
+                            {{ selectedWeek }}
+                        </div>
+                    </div>
+                    <div class="flex gap-[6px] items-center"
+                        v-if="openTab === 2 ? selectedCountry?.price : selectedService">
+                        <div class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
+                            Cost:
+                        </div>
+                        <div class="text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
+                            {{
+                                openTab === 2 ? selectedCountry?.price : selectedService.price
+                            }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Show Selected data -->
         <div class="flex flex-wrap ">
             <div class="w-full">
                 <div class="w-full mt-[0px] px-[0px] pb-[30px] flex-col justify-start items-center gap-[30px] inline-flex">
                     <div class="w-full">
                         <div class="tab-content tab-space w-full">
-                            <div v-if="selectedCountry || selectedPhone || selectedService"
-                                class="flex items-center gap-[20px] justify-center border-b border-zinc-600 w-max mx-auto pb-[26px] mt-[50px]">
-                                <div v-if="selectedCountry" class="flex gap-[6px] items-center">
-
+                            <!-- desktop selected data -->
+                            <div
+                                class="items-center gap-[20px] min-h-[60px] justify-center border-b border-zinc-600 w-max mx-auto pt-[50px] pb-[26px] hidden lg:flex">
+                                <div class="flex gap-[6px] items-center">
                                     <div
-                                        class="text-center text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-['Poppins']">
+                                        class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
                                         Country:
                                     </div>
-                                    <div class="flex gap-[6px] items-center">
+                                    <div v-if="selectedCountry" class="flex gap-[6px] items-center">
                                         <!-- <img :src="PhilipinsImg" alt="Image Description" /> -->
                                         <img :src="selectedCountry?.flag" class="w-[30px] h-[30px] rounded-full"
                                             alt="Flag" />
 
                                         <div
-                                            class="text-center text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins']">
+                                            class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
                                             {{ selectedCountry?.name }}
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex gap-[6px] items-center" v-if="selectedService">
+                                <div class="flex gap-[6px] items-center" v-bind:class="{
+                                    hidden: openTab == 2,
+                                    block: openTab === 2 || openTab === 1,
+                                }">
                                     <div
-                                        class="text-center text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-['Poppins']">
+                                        class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
                                         Service:
                                     </div>
 
-                                    <div class="flex gap-[6px] items-center">
-                                        <img :src="selectedService.flag" alt="Image Description" />
+                                    <div v-if="selectedService" class="flex gap-[6px] items-center">
+                                        <img class="w-[30px] h-[30px] rounded-full" :src="selectedService.flag"
+                                            alt="Image Description" />
                                         <div
-                                            class="text-center text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins']">
+                                            class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
                                             {{ selectedService.name }}
                                         </div>
                                     </div>
                                 </div>
-                                <div class="flex gap-[6px] items-center" v-if="selectedPhone">
+                                <div class="flex gap-[6px] items-center" v-bind:class="{
+                                    hidden: openTab == 3,
+                                    block: openTab === 3 || openTab === 1,
+                                }">
                                     <div
-                                        class="text-center text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-['Poppins']">
+                                        class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
                                         Number:
                                     </div>
-                                    <div class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins']">{{
-                                        selectedPhone }}</div>
+                                    <div v-if="selectedPhone"
+                                        class="text-zinc-600 text-sm dark:text-[#F5F5F5] font-light font-['Poppins']">
+                                        {{ selectedPhone }}
+                                    </div>
                                 </div>
                                 <div class="flex gap-[6px] items-center" v-if="selectedPhone && selectedWeek">
-
                                     <div
-                                        class="text-center text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-['Poppins']">
+                                        class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
                                         Rent:
                                     </div>
-                                    <div class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins']">{{
-                                        selectedWeek }}</div>
+                                    <div class="text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
+                                        {{ selectedWeek }}
+                                    </div>
                                 </div>
                                 <div class="flex gap-[6px] items-center"
                                     v-if="openTab === 2 ? selectedCountry?.price : selectedService">
                                     <div
-                                        class="text-center text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-['Poppins']">
+                                        class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
                                         Cost:
                                     </div>
-                                    <div class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins']">{{
-                                        openTab === 2 ?
-                                        selectedCountry?.price : selectedService.price }}
+                                    <div class="text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
+                                        {{
+                                            openTab === 2
+                                            ? selectedCountry?.price
+                                            : selectedService.price
+                                        }}
                                     </div>
                                 </div>
                             </div>
+                            <!-- desktop selected data -->
                             <div class="w-full" v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
-                                <div class="mt-[30px]">
+                                <div class="mt-0 lg:mt-[30px]">
                                     <div class="flex gap-4">
-                                        <div class="max-w-[306px] w-full">
+                                        <div class="max-w-[95%] lg:max-w-[306px] w-full"
+                                            v-bind:class="{ 'hidden lg:block': selectedCountry }">
 
                                             <form>
                                                 <label for="default-search"
@@ -232,7 +361,10 @@ const filteredPhone = computed(() => {
                                         </div>
 
                                         <!-- column2 -->
-                                        <div class="max-w-[306px] w-full">
+                                        <div class="max-w-[95%] lg:max-w-[306px] w-full" v-bind:class="{
+                                            block: selectedCountry,
+                                            'hidden lg:block': !selectedCountry || selectedService,
+                                        }">
 
                                             <form>
                                                 <label for="default-search"
@@ -287,7 +419,10 @@ const filteredPhone = computed(() => {
                                         </div>
                                         <!-- column2 end -->
 
-                                        <div class="max-w-[423px] w-full">
+                                        <div class="max-w-[95%] lg:max-w-[423px] w-full" v-bind:class="{
+                                            block: selectedService,
+                                            'hidden lg:block': !selectedService,
+                                        }">
 
                                             <form>
                                                 <label for="default-search"
@@ -320,7 +455,7 @@ const filteredPhone = computed(() => {
                                                         <div
                                                             class=" w-full h-[auto] pl-6 pr-[10px] py-3 justify-between items-center inline-flex">
                                                             <div
-                                                                class="grow shrink basis-0 h-[auto] justify-start items-center gap-2.5 flex">
+                                                                class="grow shrink basis-0 h-[auto] justify-center lg:justify-start items-center gap-2.5 flex">
 
                                                                 <div
                                                                     class="grow shrink basis-0 text-neutral-800 dark:text-[#F5F5F5] text-sm font-light font-['Poppins'] flex flex-col gap-[16px]">
@@ -401,7 +536,8 @@ const filteredPhone = computed(() => {
                             <div v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
                                 <div class="mt-[30px]">
                                     <div class="flex gap-4">
-                                        <div class="max-w-3/6 w-full">
+                                        <div class="max-w-[95%] lg:max-w-3/6 w-full"
+                                            v-bind:class="{ 'hidden lg:block': selectedCountry }">
 
                                             <form>
                                                 <label for="default-search"
@@ -458,7 +594,10 @@ const filteredPhone = computed(() => {
 
                                         <!-- phone part -->
 
-                                        <div class="max-w-3/6 w-full">
+                                        <div class="max-w-[95%] lg:max-w-3/6 w-full" v-bind:class="{
+                                            block: selectedCountry,
+                                            'hidden lg:block': !selectedCountry,
+                                        }">
 
                                             <form>
                                                 <label for="default-search"
@@ -571,7 +710,8 @@ const filteredPhone = computed(() => {
                             <div v-bind:class="{ 'hidden': openTab !== 3, 'block': openTab === 3 }">
                                 <div class="mt-[30px]">
                                     <div class="flex gap-4">
-                                        <div class="max-w-3/6 w-full">
+                                        <div class="max-w-[95%] lg:max-w-3/6 w-full"
+                                            v-bind:class="{ 'hidden lg:block': selectedCountry }">
 
                                             <form>
                                                 <label for="default-search"
@@ -624,7 +764,10 @@ const filteredPhone = computed(() => {
                                         </div>
 
                                         <!-- column2 -->
-                                        <div class="max-w-3/6 w-full">
+                                        <div class="max-w-3/6 w-full" v-bind:class="{
+                                            block: selectedCountry,
+                                            'hidden lg:block': !selectedCountry,
+                                        }">
 
                                             <form>
                                                 <label for="default-search"
@@ -956,7 +1099,7 @@ export default {
             selectedPhone: null,
             OpenModal: false,
             scrollPosition: 0,
-      contentWidth: 0,
+            contentWidth: 0,
         }
     },
     methods: {
@@ -980,23 +1123,23 @@ export default {
             this.OpenModal = open;
         },
         scrollLeft() {
-      this.scrollPosition -= 100;
-      this.scrollPosition = Math.max(0, this.scrollPosition);
-    },
+            this.scrollPosition -= 100;
+            this.scrollPosition = Math.max(0, this.scrollPosition);
+        },
 
-    scrollRight() {
-      this.scrollPosition += 100;
-      console.log("scrollPosition", this.scrollPosition);
+        scrollRight() {
+            this.scrollPosition += 100;
+            console.log("scrollPosition", this.scrollPosition);
 
-      const element = this.$refs.scrollContainer;
-      const elementContent = this.$refs.content;
-      if (element) {
-        const contentWidth = elementContent.getBoundingClientRect().width;
-        const scrollContainertWidth = element.getBoundingClientRect().width;
-        const maxScrollPosition = contentWidth - scrollContainertWidth;
-        this.scrollPosition = Math.min(maxScrollPosition, this.scrollPosition);
-      }
-    },
+            const element = this.$refs.scrollContainer;
+            const elementContent = this.$refs.content;
+            if (element) {
+                const contentWidth = elementContent.getBoundingClientRect().width;
+                const scrollContainertWidth = element.getBoundingClientRect().width;
+                const maxScrollPosition = contentWidth - scrollContainertWidth;
+                this.scrollPosition = Math.min(maxScrollPosition, this.scrollPosition);
+            }
+        },
     },
 
 }
@@ -1004,14 +1147,15 @@ export default {
 
 <style>
 .scroll-hide::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .scroll-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+
 .arrow-right-slider {
-  transform: rotate(178deg);
+    transform: rotate(178deg);
 }
 </style>

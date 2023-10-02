@@ -16,7 +16,7 @@ import blueTik from '../../assets/img/blueTik.svg';
                     class="flex flex-col lg:flex-row justify-center items-center gap-[30px] lg:gap-[100px] mt-[52px] mb-[60px] lg:mb-[153px]">
                     <img :src="ContactUs" alt="" srcset="">
                     <div class="max-w-[534px] w-full">
-                        <form>
+                        <form v-on:submit="onSubmit">
                             <label class="text-zinc-600 dark:text-white text-base font-normal font-['Poppins']">Email or Username</label>
                             <input class="max-w-[534px] w-full h-14 relative rounded-xl border border-gray-400 mt-[16px] dark:bg-transparent" />
 
@@ -130,6 +130,9 @@ export default {
         toggleTabs: function (tabNumber) {
             this.openTab = tabNumber
         },
+        onSubmit(e) {
+            e.preventDefault();
+        }
 
 
 

@@ -47,7 +47,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                 </ul>
             </div>
 
-            <div class="max-w-[1113px] h-[.5px] border border-gray-400"></div>
+            <div class="max-w-[1113px] h-[.5px] border-[1px] border-gray-300"></div>
         </div>
         <div class="flex flex-wrap mt-[30px]">
             <div class="w-full flex justify-start">
@@ -103,7 +103,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                                                         >
 
                                                         <div
-                                                            class="max-w-[525px] h-[100px] pl-5 pr-9 py-5 border-b border-gray-400 justify-start items-center gap-5 inline-flex"
+                                                            class="max-w-[525px] h-[100px] pl-5 pr-9 py-5 border-b border-gray-300 justify-start items-center gap-5 inline-flex"
                                                             @click="selectPayment(payment)"
                                                         :class="{ 'bg-[#0057FF] text-white': selectedPayment === payment }"
                                                             >
