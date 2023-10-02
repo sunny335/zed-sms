@@ -24,7 +24,7 @@ import num7 from "../../assets/img/NumFlags/7.png"
         <div class="flex flex-wrap gap-[58px]">
             <!-- Recent Message --> 
             <div class="max-w-full lg:max-w-[436px] w-full">
-                <div class="max-w-[436px] w-full pl-5 lg:pl-6 pr-[22px] lg:pr-[30px] pt-6 pb-5 bg-transparent lg:bg-white lg:dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+                <div class="max-w-[436px] w-full pl-5 lg:pl-6 pr-[24px] lg:pr-[30px] pt-6 pb-5 bg-transparent lg:bg-white lg:dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
                     <h4 class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">
                         Recent Message</h4>
 
