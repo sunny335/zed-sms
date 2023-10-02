@@ -12,7 +12,7 @@ const Theme = localStorage.getItem("Theme");
     
   >
     <div class="mx-auto max-w-[1192px] px-4 sm:px-6 lg:px-8 w-full">
-      <div class="flex h-[116px] items-center justify-between">
+      <div class="flex h-[70px] lg:h-[116px] items-center justify-between">
         <div class="flex-1 md:flex md:items-center md:gap-11">
           <RouterLink
             class="block text-teal-600 dark:text-[#F5F5F5] header-logo"
