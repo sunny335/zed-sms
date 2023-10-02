@@ -57,7 +57,7 @@ const Theme = localStorage.getItem("Theme");
             <!-- Notification Dropdown -->
             <div
               v-if="OpenNotificationModal"
-              class="w-[369px] absolute z-10 right-[-135px] top-[40px] h-[630px] px-[25px] py-5 bg-neutral-50 dark:bg-slate-800 rounded-[30px] flex-col justify-start items-start gap-3.5 inline-flex"
+              class="w-[348px] lg:w-[369px] absolute z-10 right-[-148px] top-[40px] h-[630px] px-[25px] py-5 bg-neutral-50 dark:bg-slate-800 rounded-[30px] flex-col justify-start items-start gap-3.5 inline-flex"
             >
               <div
                 class="w-full pb-6 border-b border-gray-400 justify-center items-center gap-2.5 inline-flex"

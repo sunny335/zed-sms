@@ -8,7 +8,7 @@
             
             <swiper-slide v-for="(value, index) in blogImages1" :key="index">
                 
-             <RouterLink class="max-w-[360px] mb-[80px]" :to="'/blogs/' + value.id">
+             <RouterLink class="max-w-1/2 w-[50%] lg-w-auto lg:max-w-[360px] mb-[80px]" :to="'/blogs/' + value.id">
 
                 <img :src="value.img" alt="" srcset="">
                 <p
@@ -158,6 +158,23 @@ export default {
 
 .swiper {
     padding-top: 100px;
+}
+
+.swiper-wrapper{}
+
+@media (max-width: 767px) {
+    .swiper-slide{
+        max-width: 50% !important;
+        width: 159px !important;
+        margin-right: 24px !important;
+    }
+
+    .swiper-button-prev {
+
+
+left: 76%;
+
+}
 }
 </style>
   
