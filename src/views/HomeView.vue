@@ -766,7 +766,7 @@ import GetANumber from '../components/GetANumber/GetANumber.vue';
     <!-- Choose -->
 
     <!-- demo start -->
-    <div class="bg-neutral-100 dark:bg-slate-900 bg-opacity-40 mt-[100px] lg:mt-[200px]">
+    <div class="bg-neutral-100 dark:bg-[#09132C] bg-opacity-40 mt-[100px] lg:mt-[200px]">
       <div class="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 ">
         <div class=" px-[37px] lg:px-0 py-[10px] lg:py-[100px]">
           <div class="flex flex-col items-center justify-between w-full mb-10 lg:flex-row">
