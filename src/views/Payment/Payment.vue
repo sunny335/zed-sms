@@ -79,9 +79,9 @@ import Elo from '../../assets/img/payment/Elo.png';
                                                 </div>
                                             </div>
                                             <button
-                                                class="max-w-[120px] w-full px-3 h-[41px] rounded-[100px] lg:rounded-[10px] shadow border border-blue-600 bg-[#0057FF] justify-center items-center gap-2.5 flex text-white dark:text-[#F5F5F5]">
+                                                class="max-w-[120px] w-full px-3 h-[41px] rounded-[100px] lg:rounded-[10px] shadow border border-[#0057FF] bg-[#0057FF] justify-center items-center gap-2.5 flex text-white dark:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#F5F5F5] hover:text-[#0057FF]">
                                                 <RouterLink to="/payment-successful"
-                                                    class="text-center text-white dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
+                                                    class="text-center dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
                                                     Pay Now</RouterLink>
                                             </button>
                                         </div>
@@ -115,7 +115,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                                                                     v-bind:class="{ 'text-white': selectedPayment == payment, }">
                                                                     {{ payment.name }}</h5>
                                                                 <p class=" text-neutral-800   dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-normal"
-                                                                    v-bind:class="{ 'text-white': selectedPayment == payment, }">
+                                                                    v-bind:class="{ 'text-white dark:text-white ': selectedPayment == payment, }">
                                                                     {{ payment.text }}</p>
                                                             </div>
                                                         </div>
@@ -134,10 +134,10 @@ import Elo from '../../assets/img/payment/Elo.png';
 
 
                                         <button :disabled="!selectedPayment"  v-on:click="selectNextPaymentPage(true)"
-                                            class="max-w-[300px] w-full h-16 px-10 py-3.5 rounded-xl border border-blue-600 dark:bg-[#0057FF]  justify-center items-center gap-3.5 inline-flex disabled:cursor-not-allowed disabled:opacity-20"
+                                            class="max-w-[300px] w-full h-16 px-10 py-3.5 rounded-xl justify-center items-center gap-3.5 inline-flex  text-[#0057FF]   dark:text-[#F5F5F5] border border-[#0057FF] dark:bg-[#0057FF]  disabled:cursor-not-allowed disabled:opacity-20 hover:bg-[#0057FF] hover:text-[#F5F5F5] iconStock disabled:hover:bg-[#F5F5F5 disabled:hover:text-[#0057FF] disabled:hover:bg-[#F5F5F5]"
                                             v-bind:class="{ 'hidden': nextPaymentPage == true, 'block': nextPaymentPage === false }">
                                             <div
-                                                class="text-center text-blue-600   dark:text-[#F5F5F5] text-2xl font-normal font-['Poppins']">
+                                                class="text-center  text-2xl font-normal font-['Poppins']">
                                                 Next</div>
                                             <div class=" relative darkIconStock">
                                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
@@ -159,10 +159,10 @@ import Elo from '../../assets/img/payment/Elo.png';
                                           
                                         </button>
                                         <RouterLink to="/payment-successful"
-                                            class="max-w-[358px] lg:max-w-[150px] w-full h-16  px-10 py-3.5 rounded-xl border border-blue-600  justify-center items-center gap-3.5 inline-flex dark:bg-[#0057FF]"
+                                            class="max-w-[358px] lg:max-w-[150px] w-full h-16  px-10 py-3.5 rounded-xl  justify-center items-center gap-3.5 inline-flex  text-[#0057FF]   dark:text-[#F5F5F5] border border-[#0057FF] dark:bg-[#0057FF]  disabled:cursor-not-allowed disabled:opacity-20 hover:bg-[#0057FF] hover:text-[#F5F5F5] iconStock disabled:hover:bg-[#F5F5F5 disabled:hover:text-[#0057FF] disabled:hover:bg-[#F5F5F5]"
                                             v-bind:class="{ 'hidden': nextPaymentPage == false, 'block': nextPaymentPage === true }">
                                             <div
-                                                class="text-center text-blue-600  dark:text-[#F5F5F5]  text-2xl font-normal font-['Poppins']">
+                                                class="text-center t text-2xl font-normal font-['Poppins']">
                                                 Next</div>
                                             <div class=" relative darkIconStock">
                                                 <svg  width="30" height="30" viewBox="0 0 30 30" fill="none"
@@ -309,6 +309,13 @@ body.dark .darkIconFill path {
 }
 body.dark .darkIconStock path {
     stroke:white;
+}
+.iconStock:hover path {
+    stroke: white;
+}
+
+.iconStock:disabled:hover path {
+    stroke: #1E2329;
 }
 
 </style>

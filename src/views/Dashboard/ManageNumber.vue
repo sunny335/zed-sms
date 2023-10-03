@@ -67,12 +67,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                     {{ numberData.number }}</p>
                                             </div>
                                             <button @click="deleteModal(true)"
-                                            :class="{ 'whiteIconStock': selectedNumber === numberData.id }" 
-                                            
-                                            >
-                                                <svg class="darkIconStock"  
-                                                
-                                                     width="24" height="24" viewBox="0 0 24 24"
+                                                :class="{ 'whiteIconStock': selectedNumber === numberData.id }">
+                                                <svg class="darkIconStock" width="24" height="24" viewBox="0 0 24 24"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path
                                                         d="M9.1709 4C9.58273 2.83481 10.694 2 12.0002 2C13.3064 2 14.4177 2.83481 14.8295 4"
@@ -86,7 +82,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                 </svg>
 
 
-                                               
+
 
                                             </button>
 
@@ -109,12 +105,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                     {{ number2Data.number }}</p>
                                             </div>
                                             <button @click="deleteModal(true)"
-                                            :class="{ 'whiteIconStock': selectedDeActiveNumber === number2Data.id }" 
-                                            
-                                            >
-                                                <svg class="darkIconStock"  
-                                                
-                                                     width="24" height="24" viewBox="0 0 24 24"
+                                                :class="{ 'whiteIconStock': selectedDeActiveNumber === number2Data.id }">
+                                                <svg class="darkIconStock" width="24" height="24" viewBox="0 0 24 24"
                                                     fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path
                                                         d="M9.1709 4C9.58273 2.83481 10.694 2 12.0002 2C13.3064 2 14.4177 2.83481 14.8295 4"
@@ -128,7 +120,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                 </svg>
 
 
-                                               
+
 
                                             </button>
 
@@ -234,9 +226,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                 type="email" placeholder="Email Here" />
 
                             <button
-                                class="w-[87px] h-[37px] px-5 py-2.5 rounded-lg border border-zinc-600 justify-center items-center gap-1.5 inline-flex">
+                                class="w-[87px] h-[37px] px-5 py-2.5 rounded-lg border border-zinc-600 justify-center items-center gap-1.5 inline-flex text-neutral-800 dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#0057FF] iconStock">
                                 <div
-                                    class="text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
+                                    class="text-xs font-light font-['Poppins'] leading-[17px]">
                                     Save</div>
                                 <div class="w-3 h-3 relative flex-col justify-start items-start inline-flex darkIconFill">
 
@@ -252,7 +244,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                             d="M8 5.44216V3.2056M8 3.2056V1.81759C8 1.69952 8.08378 1.59806 8.19971 1.57572L8.44275 1.52889C8.7369 1.47221 9.04106 1.49928 9.32058 1.607L9.36017 1.62225C9.63729 1.72905 9.94035 1.749 10.2291 1.67946C10.3672 1.6462 10.5 1.75084 10.5 1.89287V3.00361C10.5 3.1221 10.4188 3.22516 10.3036 3.2529L10.2703 3.26092C9.95474 3.33694 9.62349 3.31513 9.32058 3.1984C9.04106 3.09067 8.7369 3.06361 8.44275 3.12029L8 3.2056Z"
                                             stroke="#1E2329" stroke-width="0.5" stroke-linecap="round" />
                                     </svg>
-                                
+
 
                                 </div>
                             </button>
@@ -267,13 +259,12 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         </h3>
 
                         <button class="mt-[16px] flex  justify-between items-center w-full">
-                          
+
                             <p class="text-sm inline">example@example.com</p>
-                            <p
-                                class="max-w-[78px] h-[37px] w-full py-2.5 inline darkIconStock">
-                                
-                                
-                                <svg  width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            <p class="max-w-[78px] h-[37px] w-full py-2.5 inline darkIconStock">
+
+
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M9.1709 4C9.58273 2.83481 10.694 2 12.0002 2C13.3064 2 14.4177 2.83481 14.8295 4"
@@ -287,7 +278,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                 </svg>
 
 
-                              
+
                             </p>
 
 
@@ -333,14 +324,13 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                 </div>
                             </div>
 
-                            <button
-                                class="max-w-[131px] h-[41px] w-full py-3 rounded-lg border border-zinc-600 justify-center items-center gap-1 inline-flex">
-                                <div
-                                    class="text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
+                            <button @click="handleExtentNow"
+                                class="max-w-[131px] h-[41px] w-full py-3 rounded-lg border border-zinc-600 justify-center items-center gap-1 inline-flex text-neutral-800 dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#0057FF] iconStock">
+                                <div class="text-xs font-light font-['Poppins'] leading-[17px]">
                                     Extent Now
                                 </div>
                                 <div class="w-3.5 h-3.5 relative darkIconStock">
-                                    <svg  width="14" height="15" viewBox="0 0 14 15" fill="none"
+                                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M2.07396 8.81734C1.65485 6.86152 1.4453 5.88361 1.97062 5.2338C2.49594 4.58398 3.49605 4.58398 5.49626 4.58398H8.50402C10.5042 4.58398 11.5043 4.58398 12.0297 5.2338C12.555 5.88361 12.3454 6.86152 11.9263 8.81734L11.6763 9.984C11.3923 11.3097 11.2502 11.9725 10.7689 12.3616C10.2876 12.7507 9.60977 12.7507 8.25402 12.7507H5.74626C4.39052 12.7507 3.71264 12.7507 3.23135 12.3616C2.75006 11.9725 2.60802 11.3097 2.32396 9.984L2.07396 8.81734Z"
@@ -354,7 +344,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                         <path d="M3.5 5.75L5.25 2.25" stroke="#1E2329" stroke-width="0.5"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
-                            
+
 
                                 </div>
                             </button>
@@ -368,7 +358,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
         </div>
         <TransitionRoot as="template" :show="isDeleteOpen">
-            <Dialog as="div" class="relative z-[100]" @close="isDeleteOpen = false">
+            <Dialog as="div" class="relative z-[9999]" @close="isDeleteOpen = false">
                 <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100"
                     leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
                     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
@@ -384,22 +374,25 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             <DialogPanel
                                 class=" relative transform overflow-hidden rounded-lg bg-neutral-50 dark:bg-[#09132C] text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg md:max-w-[322px] lg:max-w-[361px]">
                                 <div>
-                                    <div class="max-w-[361px] w-full h-[196px] p-[50px] bg-neutral-50 dark:bg-[#09132C] rounded-3xl">
-                                        <p class="text-zinc-600 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] mb-[30px]">Do you want
+                                    <div
+                                        class="max-w-[361px] w-full h-[196px] p-[50px] bg-neutral-50 dark:bg-[#09132C] rounded-3xl">
+                                        <p
+                                            class="text-zinc-600 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] mb-[30px]">
+                                            Do you want
                                             to remove it?</p>
                                         <div class="flex justify-between items-center">
 
                                             <button
                                                 class="max-w-[119px] w-full h-9  py-1.5 rounded-[10px] border border-zinc-600 justify-center items-center gap-1.5 inline-flex"
-                                                @click="deleteModal(false)"
-                                                >
-                                                <div class="text-zinc-600 dark:text-[#ACB5BD] text-base font-normal font-['Poppins']">Back</div>
+                                                @click="deleteModal(false)">
+                                                <div
+                                                    class="text-zinc-600 dark:text-[#ACB5BD] text-base font-normal font-['Poppins']">
+                                                    Back</div>
                                             </button>
                                             <button
                                                 class="max-w-[108px] w-full h-9 py-1.5 bg-[#0057FF] rounded-[10px] justify-center items-center gap-1.5 inline-flex"
-                                                @click="deleteModal(false)"
-                                                >
-                                                <div class="text-white text-base font-normal font-['Poppins']" >Yes</div>
+                                                @click="deleteModal(false)">
+                                                <div class="text-white text-base font-normal font-['Poppins']">Yes</div>
                                             </button>
                                         </div>
                                     </div>
@@ -430,7 +423,7 @@ export default {
             toggleArrowIcon: false,
             selectedNumber: null,
             selectedDeActiveNumber: null,
-           
+
             numbersData: [
                 {
                     id: 1,
@@ -765,7 +758,7 @@ export default {
         selectOption(option) {
             this.selectedOption = option;
             this.isOpen = false;
-            this.$emit('update:selectedWeek', option); // Emit an event to update the selected language in the parent component
+            this.$emit('update:selectedWeek', option);
         },
         selectNumber(id) {
             this.selectedNumber = id;
@@ -781,6 +774,9 @@ export default {
         },
         onSubmit(e) {
             e.preventDefault();
+        },
+        handleExtentNow() {
+            this.$router.push({ path: '/payment' })
         }
 
     },
@@ -823,15 +819,23 @@ export default {
 
 </script>
 <style>
-
 body.dark .darkIconFill path {
-    fill:white;
-}
-body .whiteIconStock path {
-    stroke:white;
-}
-body.dark .darkIconStock path {
-    stroke:white;
+    fill: white;
 }
 
+body .whiteIconStock path {
+    stroke: white;
+}
+
+body.dark .darkIconStock path {
+    stroke: white;
+}
+
+.iconStock:hover path {
+    stroke: white;
+}
+
+.iconStock:disabled:hover path {
+    stroke: #1E2329;
+}
 </style>

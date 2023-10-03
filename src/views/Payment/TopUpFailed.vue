@@ -23,8 +23,10 @@
                     Top-up Failed</h2>
                 <p class="text-zinc-600 dark:text-white text-center text-sm lg:text-base font-normal font-['Poppins'] leading-tight tracking-tight mb-[40px]">Your top-up of $23.25 was unfortunately failed.</p>
                 <div
-                    class="max-w-[258px] h-[53px] px-20 py-3.5 bg-[#0057FF] rounded-xl justify-center items-center gap-2.5 inline-flex cursor-pointer">
-                    <p class="text-white text-xl font-medium font-['Poppins'] leading-normal tracking-tight">Try Again</p>
+                    class="max-w-[258px] h-[53px] px-20 py-3.5 rounded-xl justify-center items-center gap-2.5 inline-flex cursor-pointer
+                    border border-[#0057FF]  bg-[#0057FF]  text-white dark:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#F5F5F5] hover:text-[#0057FF]
+                    ">
+                    <p class="text-xl font-medium font-['Poppins'] leading-normal tracking-tight">Try Again</p>
                 </div>
             </div>
     </div>

@@ -166,7 +166,7 @@ import num7 from "../../assets/img/NumFlags/7.png"
                                     <div class="w-full " v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
 
 
-                                        <div class="" v-for="numbersData in numbersData" :key="numbersData.id">
+                                        <div class="" v-for="numbersData in numbers2Data" :key="numbersData.id">
                                             <div class="mb-[30px] flex flex-wrap items-center">
                                                 <img class="max-w-[30px] max-h-[30px] mr-[16px]" :src="numbersData.img"
                                                     alt="">
@@ -365,6 +365,107 @@ export default {
                     id: 5,
                     img: num5,
                     number: "+8454655444",
+                    timeLeft: "10 days left",
+                    type: "Private",
+                    service: "any",
+                    rent: "1 Week"
+                },
+                {
+                    id: 6,
+                    img: num6,
+                    number: "+8454655444",
+                    timeLeft: "10 days left",
+                    type: "Private",
+                    service: "any",
+                    rent: "1 Week"
+                },
+                {
+                    id: 7,
+                    img: num7,
+                    number: "+8454655444",
+                    timeLeft: "10 days left",
+                    type: "Private",
+                    service: "any",
+                    rent: "1 Week"
+                },
+                {
+                    id: 8,
+                    img: num1,
+                    number: "+8454655444",
+                    timeLeft: "10 days left",
+                    type: "Private",
+                    service: "any",
+                    rent: "1 Week"
+                },
+                {
+                    id: 9,
+                    img: num1,
+                    number: "+8454655444",
+                    timeLeft: "10 days left",
+                    type: "Private",
+                    service: "any",
+                    rent: "1 Week"
+                },
+                {
+                    id: 10,
+                    img: num1,
+                    number: "+8454655444",
+                    timeLeft: "10 days left",
+                    type: "Private",
+                    service: "any",
+                    rent: "1 Week"
+                },
+                {
+                    id: 11,
+                    img: num1,
+                    number: "+8454655444",
+                    timeLeft: "10 days left",
+                    type: "Private",
+                    service: "any",
+                    rent: "1 Week"
+                },
+            ],
+            numbers2Data: [
+                {
+                    id: 1,
+                    img: num1,
+                    number: "+845465222",
+                    timeLeft: "10 days left",
+                    type: "Private",
+                    service: "any",
+                    rent: "1 Week"
+                },
+                {
+                    id: 2,
+                    img: num2,
+                    number: "+8454655454",
+                    timeLeft: "10 days left",
+                    type: "Private",
+                    service: "any",
+                    rent: "1 Week"
+                },
+                {
+                    id: 3,
+                    img: num3,
+                    number: "+8458525477",
+                    timeLeft: "15 days left",
+                    type: "Private",
+                    service: "any",
+                    rent: "1 Week"
+                },
+                {
+                    id: 4,
+                    img: num4,
+                    number: "+84546554000",
+                    timeLeft: "10 days left",
+                    type: "Private",
+                    service: "any",
+                    rent: "1 Week"
+                },
+                {
+                    id: 5,
+                    img: num5,
+                    number: "+84546450444",
                     timeLeft: "10 days left",
                     type: "Private",
                     service: "any",

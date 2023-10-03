@@ -970,7 +970,7 @@ const filteredPhone = computed(() => {
                             <div class="px-[30px] py-[30px]">
                                 <div class=" justify-start items-start gap-5 inline-flex w-full">
                                     <div @click="handleModalOpen(false)" ref="cancelButtonRef"
-                                        class="cursor-pointer px-6 py-[9px] rounded-[10px] border border-zinc-600 justify-center items-center gap-2 flex">
+                                        class="cursor-pointer px-6 py-[9px] rounded-[10px] border border-zinc-600 justify-center items-center gap-2 flex text-zinc-600  dark:text-[#ACB5BD] hover:bg-[#0057FF] hover:text-[#ACB5BD] iconStock">
                                         <svg v-if="Theme === 'light'" width="14" height="11" viewBox="0 0 14 11" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M13 5.5H1M1 5.5L5.5 1M1 5.5L5.5 10" stroke="#495057"
@@ -982,14 +982,14 @@ const filteredPhone = computed(() => {
                                                 stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                         <div
-                                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] ">
+                                            class=" text-sm font-light font-['Poppins'] ">
                                             Back
                                         </div>
                                     </div>
                                     <RouterLink to="/payment"
-                                        class=" w-2/4 h-[41px] px-6 py-2.5 rounded-[10px] border border-blue-600 dark:bg-blue-600 justify-center items-center gap-2.5 flex">
+                                        class=" w-2/4 h-[41px] px-6 py-2.5 rounded-[10px] border border-[#0057FF] dark:bg-[#0057FF] justify-center items-center gap-2.5 flex dark:text-[#F5F5F5] text-[#0057FF] hover:text-[#F5F5F5] hover:bg-[#0057FF] iconStock">
                                         <div
-                                            class="text-center text-blue-600  dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']">
+                                            class="text-center    text-sm font-normal font-['Poppins']">
                                             Next
 
                                         </div>
@@ -1158,4 +1158,11 @@ export default {
 .arrow-right-slider {
     transform: rotate(178deg);
 }
+
+.iconStock:hover path {
+        stroke: white;
+    }
+    .iconStock:disabled:hover path {
+        stroke: #1E2329;
+    }
 </style>
