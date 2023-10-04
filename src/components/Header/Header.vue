@@ -751,14 +751,14 @@ body.dark .darkIconStock path {
 
 .dropDown-hidden{
 
-  width: 0px;
-  height: 0;
-  overflow: hidden;
-  z-index: -1;
-  right: 0;
+  width: 0px !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  z-index: -1 !important;
+  right: 0 !important;
   left: unset !important;
   right: -100px !important;
-  opacity: 0;
+  opacity: 0 !important;
 }
 
 .dropDownBlock {
