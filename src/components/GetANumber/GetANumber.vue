@@ -1175,7 +1175,7 @@ const filteredPhone = computed(() => {
   </div>
 
   <TransitionRoot as="template" :show="OpenModal">
-    <Dialog as="div" class="relative z-[9999]" @close="OpenModal = false">
+    <Dialog as="div" class="relative z-[9999999]" @close="OpenModal = false">
       <TransitionChild
         as="template"
         enter="ease-out duration-300"

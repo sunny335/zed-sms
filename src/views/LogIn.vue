@@ -2,7 +2,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import google from '../assets/img/google.png';
-import fb from '../assets/img/fb.jpg';
+import fb from '../assets/img/fb.png';
 import apple from '../assets/img/apple.png';
 import recaptcha from '../assets/img/google_recaptcha-official 2.png';
 
@@ -93,8 +93,8 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                             </label>
                         </div>
                         <button
-                            class="max-w-[354px] max-h-[58px] w-full py-[11px] bg-[#0057FF] rounded-[14px] justify-center items-center gap-2.5 inline-flex">
-                            <div class="text-center text-white text-2xl font-normal font-['Poppins']">Log in</div>
+                            class="max-w-[354px] max-h-[58px] w-full py-[11px] bg-[#0057FF] rounded-[14px] justify-center items-center gap-2.5 inline-flex text-white hover:bg-white hover:text-[#0057FF] border border-[#0057FF]">
+                            <p class="text-center  text-2xl font-normal font-['Poppins']">Log in</p>
                         </button>
                     </form>
                     <div class="mt-[24px]"><span
@@ -126,39 +126,39 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
 
                 <div class="max-w-[354px] max-h-full mt-[50px]">
                     <button
-                        class="max-w-[354px] max-h-[60px] w-full  pt-[17.50px] pb-[18.50px] bg-white dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
+                        class="max-w-[354px] max-h-[60px] w-full  pt-[17.50px] pb-[18.50px] bg-white dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px] text-neutral-800  dark:text-[#F5F5F5]  hover:bg-[#0057FF] hover:text-[#F5F5F5] hover:border-[#0057FF] dark:hover:bg-[#0057FF]">
                         <div class="self-stretch justify-center items-center gap-5 inline-flex">
                             <div class="w-6 h-6 relative">
                                 <img :src="google" alt="" srcset="">
                             </div>
-                            <div class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
-                                Continue with Google</div>
+                            <p class=" text-base font-light font-['Poppins']">
+                                Continue with Google</p>
                         </div>
                     </button>
                     <button
-                        class="max-w-[354px] max-h-[60px]  w-full  pt-[17.50px] pb-[18.50px] bg-white  dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
+                        class="max-w-[354px] max-h-[60px]  w-full  pt-[17.50px] pb-[18.50px] bg-white  dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px] text-neutral-800  dark:text-[#F5F5F5]  hover:bg-[#0057FF] hover:text-[#F5F5F5] hover:border-[#0057FF] dark:hover:bg-[#0057FF]">
                         <div class="self-stretch justify-center items-center gap-5 inline-flex">
                             <div class="w-6 h-6 relative">
                                 <img :src="fb" alt="" srcset="">
                             </div>
-                            <div class="text-neutral-800   dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                            <div class=" text-base font-light font-['Poppins']">
                                 Continue with Facebook</div>
                         </div>
                     </button>
                     <button
-                        class="max-w-[354px] max-h-[60px] w-full  pt-[17.50px] pb-[18.50px] bg-white dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
+                        class="max-w-[354px] max-h-[60px] w-full  pt-[17.50px] pb-[18.50px] bg-white dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px] text-neutral-800  dark:text-[#F5F5F5]  hover:bg-[#0057FF] hover:text-[#F5F5F5] hover:border-[#0057FF] dark:hover:bg-[#0057FF]">
                         <div class="self-stretch justify-center items-center gap-5 inline-flex">
                             <div class="w-6 h-6 relative">
                                 <img :src="apple" alt="" srcset="">
                             </div>
-                            <div class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                            <div class="text-base font-light font-['Poppins']">
                                 Continue with Apple ID</div>
                         </div>
                     </button>
                     <button
-                        class="max-w-[354px] max-h-[60px]  w-full  pt-[18.50px] pb-[17.50px] bg-white dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px]">
+                        class="max-w-[354px] max-h-[60px]  w-full  pt-[18.50px] pb-[17.50px] bg-white dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px] text-neutral-800  dark:text-[#F5F5F5]  hover:bg-[#0057FF] hover:text-[#F5F5F5] hover:border-[#0057FF] dark:hover:bg-[#0057FF]">
                         <div class="self-stretch justify-center items-center gap-4 inline-flex">
-                            <div class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                            <div class=" text-base font-light font-['Poppins']">
                                 Continue with Others</div>
                         </div>
                     </button>

@@ -26,22 +26,22 @@ import { RouterLink } from 'vue-router'
 
             <div class="flex justify-between items-center mt-[30px] gap-4">
                 <RouterLink to="/logIn"
-                    class="max-w-[200px] max-h-[46px] w-full py-0.5 bg-[#1E2329] dark:bg-zinc-600 rounded-[10px] flex-col justify-center items-center inline-flex">
+                    class="max-w-[200px] max-h-[46px] w-full py-0.5 bg-[#1E2329] dark:bg-zinc-600 rounded-[10px] flex-col justify-center items-center inline-flex text-white hover:bg-white dark:hover:bg-white dark:text-white dark:hover:text-[#0057FF] hover:text-[#0057FF] border border-[#0057FF]">
                     <div class="px-[22px] py-2 flex-col justify-start items-start gap-2 flex">
                         <div class="justify-start items-center gap-2 inline-flex">
                             <div
-                                class="text-white text-[15px] font-normal font-['Poppins'] uppercase leading-relaxed tracking-wide">
+                                class=" text-[15px] font-normal font-['Poppins'] uppercase leading-relaxed tracking-wide">
                                 BACK to login</div>
                         </div>
                     </div>
                 </RouterLink>
                 <RouterLink
                 to="/confirm-email"
-                    class="max-w-[114px] max-h-[46px] w-full px-2.5 py-0.5 bg-[#0057FF] rounded-[10px] flex-col justify-center items-center inline-flex">
+                    class="max-w-[114px] max-h-[46px] w-full px-2.5 py-0.5 bg-[#0057FF] rounded-[10px] flex-col justify-center items-center inline-flex text-white hover:bg-white dark:text-white hover:text-[#0057FF] border border-[#0057FF] iconFillBlack">
                     <div class="px-[22px] py-2 flex-col justify-start items-start gap-2 flex">
                         <div class="justify-start items-center gap-2 inline-flex">
                             <div
-                                class="text-white text-[15px] font-normal font-['Poppins'] uppercase leading-relaxed tracking-wide">
+                                class=" text-[15px] font-normal font-['Poppins'] uppercase leading-relaxed tracking-wide">
                                 Reset</div>
                             <div class="h-[22px] flex-col justify-center items-center inline-flex">
                                 <div class="w-6 h-6 relative flex-col justify-start items-start flex">
@@ -90,3 +90,11 @@ export default {
 };
 
 </script>
+
+<style>
+
+
+.iconFillBlack:hover path {
+    fill: #0057FF;
+}
+</style>

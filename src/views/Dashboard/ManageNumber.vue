@@ -264,7 +264,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             <p class="max-w-[78px] h-[37px] w-full py-2.5 inline darkIconStock">
 
 
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                <svg  @click="deleteModal(true)" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M9.1709 4C9.58273 2.83481 10.694 2 12.0002 2C13.3064 2 14.4177 2.83481 14.8295 4"
@@ -358,7 +358,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
         </div>
         <TransitionRoot as="template" :show="isDeleteOpen">
-            <Dialog as="div" class="relative z-[9999]" @close="isDeleteOpen = false">
+            <Dialog as="div" class="relative z-[9999999]" @close="isDeleteOpen = false">
                 <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100"
                     leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
                     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />

@@ -143,9 +143,9 @@ import google from '../assets/img/google.png';
                         </label>
                     </div>
                     <button
-                        class="max-w-[534px] w-full h-[70px]  pt-[19.50px] pb-[20.50px] bg-[#0057FF] rounded-[14px] justify-center items-center inline-flex">
+                        class="max-w-[534px] w-full h-[70px]  pt-[19.50px] pb-[20.50px] bg-[#0057FF] rounded-[14px] justify-center items-center inline-flex text-white hover:bg-white hover:text-[#0057FF] border border-[#0057FF]">
                         <div class="self-stretch justify-center items-center gap-4 inline-flex">
-                            <div class="text-white text-xl font-normal font-['Poppins']">Create an account</div>
+                            <div class=" text-xl font-normal font-['Poppins']">Create an account</div>
                         </div>
                     </button>
                 </form>
@@ -156,18 +156,18 @@ import google from '../assets/img/google.png';
                         <div class="w-[226.50px] h-[1px] bg-gray-400"></div>
                     </div>
                     <button
-                        class="max-w-[534px] w-full max-h-16  pt-[16.50px] pb-[17.50px] bg-white  dark:bg-slate-900 rounded-[14px] border border-zinc-600 justify-center items-center inline-flex cursor-pointe my-6">
+                        class="max-w-[534px] w-full max-h-16  pt-[16.50px] pb-[17.50px] bg-white  dark:bg-slate-900 rounded-[14px] border border-zinc-600 justify-center items-center inline-flex cursor-pointe my-6 text-zinc-600  dark:text-[#F5F5F5]  hover:bg-[#0057FF] hover:text-[#F5F5F5] hover:border-[#0057FF] dark:hover:bg-[#0057FF]">
                         <div class="self-stretch justify-center items-center gap-4 inline-flex">
                             <div class="w-6 h-6 relative">
                                 <img :src="google" alt="">
                             </div>
-                            <div class="text-zinc-600  dark:text-white  text-xl  font-normal font-['Poppins']">Continue with Google</div>
+                            <div class="  text-xl  font-normal font-['Poppins']">Continue with Google</div>
                         </div>
                     </button>
                     <button
-                        class="max-w-[534px] w-full max-h-16 pt-[16.50px] pb-[17.50px] bg-white   dark:bg-slate-900 rounded-[14px] border border-zinc-600 justify-center items-center inline-flex cursor-pointer">
+                        class="max-w-[534px] w-full max-h-16 pt-[16.50px] pb-[17.50px] bg-white   dark:bg-slate-900 rounded-[14px] border border-zinc-600 justify-center items-center inline-flex cursor-pointer text-zinc-600  dark:text-[#F5F5F5]  hover:bg-[#0057FF] hover:text-[#F5F5F5] hover:border-[#0057FF] dark:hover:bg-[#0057FF]">
                         <div class="self-stretch justify-center items-center gap-4 inline-flex">
-                            <div class="text-zinc-600  dark:text-white text-xl font-normal font-['Poppins']">Continue with Others</div>
+                            <div class="text-xl font-normal font-['Poppins']">Continue with Others</div>
                         </div>
                     </button>
                 </div>

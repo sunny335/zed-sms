@@ -23,22 +23,22 @@ import { RouterLink } from 'vue-router'
 
             <div class="flex justify-between items-center mt-[30px] gap-4">
                 <RouterLink to="/logIn"
-                    class="max-w-[200px] max-h-[46px] py-0.5 bg-neutral-800 rounded-[10px] flex-col justify-center items-center inline-flex">
+                    class="max-w-[200px] max-h-[46px] py-0.5 bg-neutral-800 rounded-[10px] flex-col justify-center items-center inline-flex text-white hover:bg-white hover:text-[#0057FF] border border-[#0057FF]">
                     <div class="px-[22px] py-2 flex-col justify-start items-start gap-2 flex">
                         <div class="justify-start items-center gap-2 inline-flex">
                             <div
-                                class="text-white  text-[15px] font-normal font-['Poppins'] uppercase leading-relaxed tracking-normal lg:tracking-wide">
+                                class="  text-[15px] font-normal font-['Poppins'] uppercase leading-relaxed tracking-normal lg:tracking-wide">
                                 BACK to login</div>
                         </div>
                     </div>
                 </RouterLink>
                 <RouterLink
-                to="/confirm-email"
-                    class="w-32 h-[46px] px-2.5 py-0.5 bg-[#0057FF] rounded-[10px] flex-col justify-center items-center inline-flex">
-                    <div class="px-[22px] py-2 flex-col justify-start items-start gap-2 flex">
+                    to="/confirm-email"
+                    class="w-32 h-[46px] px-2.5 py-0.5 bg-[#0057FF] rounded-[10px] flex-col justify-center items-center inline-flex text-white hover:bg-white hover:text-[#0057FF] border border-[#0057FF] iconFillBlack">
+                    <div class="px-[22px] py-2 flex-col justify-start items-start gap-2 flex ">
                         <div class="justify-start items-center gap-2 inline-flex">
                             <div
-                                class="text-white text-[15px] font-normal font-['Poppins'] uppercase leading-relaxed tracking-normal lg:tracking-wide">
+                                class="text-[15px] font-normal font-['Poppins'] uppercase leading-relaxed tracking-normal lg:tracking-wide">
                                 Next</div>
                             <div class="h-[22px] flex-col justify-center items-center inline-flex">
                                 <div class="w-6 h-6 relative flex-col justify-start items-start flex">
@@ -59,3 +59,11 @@ import { RouterLink } from 'vue-router'
 </section>
 
 </template>
+
+<style>
+
+
+.iconFillBlack:hover path {
+    fill: #0057FF;
+}
+</style>

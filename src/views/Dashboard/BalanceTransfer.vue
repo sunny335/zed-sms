@@ -42,7 +42,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                 </form>
                 <TransitionRoot as="template" :show="isSubmitOpen">
-            <Dialog as="div" class="relative z-[9999]" @close="isSubmitOpen = false">
+            <Dialog as="div" class="relative z-[9999999]" @close="isSubmitOpen = false">
                 <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100"
                     leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
                     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
