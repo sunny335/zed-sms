@@ -69,7 +69,7 @@ const Theme = localStorage.getItem("Theme");
 
             <!-- Notification Dropdown -->
             <div
-              class=" lg:w-[369px] absolute z-[101] right-[-113px] h-[630px] px-[25px] py-5 bg-neutral-50 dark:bg-slate-800 rounded-[30px] flex-col justify-start items-start gap-3.5 ease-custom-dropdown"
+              class=" lg:w-[369px] absolute z-[101] right-[-124px] h-[530px] px-[25px] py-5 bg-neutral-50 dark:bg-slate-800 rounded-[30px] flex-col justify-start items-start gap-3.5 ease-custom-dropdown"
               :class="{ ' dropDownBlock': OpenNotificationModal, 'dropDown-hidden': !OpenNotificationModal }">
               <div class="w-full pb-6 border-b border-gray-400 justify-center items-center gap-2.5 inline-flex">
                 <div class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-medium font-['Poppins']">
