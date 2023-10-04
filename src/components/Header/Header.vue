@@ -478,11 +478,14 @@ const Theme = localStorage.getItem("Theme");
         </div>
       </div>
     </div>
-    <div v-if="open" class="fixed top-0 right-0 left-0 bg-slate-600 bg-opacity-60 bottom-0 z-[99999]">
+    <div  class="fixed top-0 right-0 left-0  bg-slate-600 bg-opacity-60 bottom-0 z-[999999]"
+    :class="{ ' dropDownBlock-sidebar': open, 'dropDown-hidden-sidebar': !open }"
+    >
       <!-- Sidebar Content -->
       <div ref="content">
-        <div v-if="open"
-          class="absolute z-[99999] right-0 shadow w-[232px] h-full bg-neutral-50 dark:bg-[#09132C] flex-col justify-start items-start inline-flex transition-all duration-700 overflow-hidden">
+        <div 
+        :class="{ ' dropDownBlock-sidebar': open, 'dropDown-hidden-sidebar': !open }"
+          class="absolute z-[999999] right-0 shadow w-[232px] h-full bg-neutral-50 dark:bg-[#09132C] flex-col justify-start items-start inline-flex transition-all duration-700 overflow-hidden">
           <div class="flex justify-end items-center mt-3 w-full pr-7">
             <button @click="toggle()" class="h-8 w-8 flex justify-center items-center darkIconFill">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -764,6 +767,31 @@ body.dark .darkIconStock path {
   height: auto;
   overflow: hidden;
   z-index: 101;
+  opacity: 1;
+}
+
+
+.ease-custom-dropdown-sidebar {
+  top: -50px;
+  transition: all 0.3s linear;
+}
+
+.dropDown-hidden-sidebar{
+
+  width: 0px;
+  height: 0;
+  overflow: hidden;
+  z-index: 999999;
+  right: 0;
+  left: unset !important;
+  right: -100px !important;
+  opacity: 0;
+}
+
+.dropDownBlock-sidebar {
+  height: auto;
+  overflow: hidden;
+  z-index: 999999;
   opacity: 1;
 }
 </style>
