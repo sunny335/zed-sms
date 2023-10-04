@@ -18,7 +18,7 @@ const Theme = localStorage.getItem("Theme");
         </div>
         <!-- dashboard mobile notification icon and balance -->
         <div class="flex items-center gap-4 mr-4">
-          <div class="lg:hidden flex relative downArrow" v-if="currentPath.includes('dashboard')">
+          <div class="lg:hidden md:hidden flex relative downArrow" v-if="currentPath.includes('dashboard')">
             <div
               class="relative z-[102] cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-[102] downArrow darkCircle"
               @click="
@@ -30,8 +30,8 @@ const Theme = localStorage.getItem("Theme");
               <button class="w-[40px] h-[40px]  rounded-full flex justify-center items-center relative "
                 v-bind:class="{ 'bg-[#0057FF] border-2 border-[#6B9EFF]': OpenNotificationModal, 'bg-neutral-100 border-none ': !OpenNotificationModal }">
 
-                <svg class="darkIconStockBlack" v-if="!OpenNotificationModal" width="18" height="18" viewBox="0 0 22 22" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                <svg class="darkIconStockBlack" v-if="!OpenNotificationModal" width="18" height="18" viewBox="0 0 22 22"
+                  fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M17.1867 8.90109V8.2552C17.1867 4.70886 14.4168 1.83398 11 1.83398C7.58318 1.83398 4.8133 4.70886 4.8133 8.2552V8.90109C4.8133 9.67621 4.59224 10.434 4.17798 11.0789L3.16283 12.6594C2.23559 14.103 2.94346 16.0652 4.55617 16.5217C8.77501 17.7159 13.225 17.7159 17.4438 16.5217C19.0565 16.0652 19.7644 14.103 18.8372 12.6594L17.822 11.0789C17.4078 10.434 17.1867 9.67621 17.1867 8.90109Z"
                     stroke="#1E2329" />
@@ -63,13 +63,14 @@ const Theme = localStorage.getItem("Theme");
                 (this.OpenModal = false),
               ]
               " v-if="OpenNotificationModal"
-              class="fixed top-0 bottom-0 right-0 left-0 bg-black bg-opacity-20 z-[100]">
+              class="fixed top-0 bottom-0 right-0 left-0 bg-black bg-opacity-50 z-[100]">
 
             </div>
 
             <!-- Notification Dropdown -->
-            <div v-if="OpenNotificationModal"
-              class="w-[300px] lg:w-[369px] absolute z-[101] right-[-113px] top-[50px] h-[630px] px-[25px] py-5 bg-neutral-50 dark:bg-slate-800 rounded-[30px] flex-col justify-start items-start gap-3.5 inline-flex">
+            <div
+              class=" lg:w-[369px] absolute z-[101] right-[-113px] h-[630px] px-[25px] py-5 bg-neutral-50 dark:bg-slate-800 rounded-[30px] flex-col justify-start items-start gap-3.5 ease-custom-dropdown"
+              :class="{ ' dropDownBlock': OpenNotificationModal, 'dropDown-hidden': !OpenNotificationModal }">
               <div class="w-full pb-6 border-b border-gray-400 justify-center items-center gap-2.5 inline-flex">
                 <div class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-medium font-['Poppins']">
                   Notification
@@ -107,7 +108,7 @@ const Theme = localStorage.getItem("Theme");
             </div>
           </div>
 
-          <div class="justify-center items-center inline-flex gap-[9px] relative downArrow block lg:hidden"
+          <div class="justify-center items-center inline-flex gap-[9px] relative downArrow  md:hidden  lg:hidden"
             v-if="currentPath.includes('dashboard')">
             <div class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-light font-['Poppins'] leading-[17px]">
               $00.00
@@ -271,7 +272,7 @@ const Theme = localStorage.getItem("Theme");
         </div>
         <div class="md:flex md:items-center md:gap-[42px]" v-if="login">
           <div class="flex items-center gap-4">
-            <div class="hidden sm:flex sm:gap-[30px] ">
+            <div class="hidden md:flex md:gap-[30px] ">
 
 
               <div
@@ -299,8 +300,8 @@ const Theme = localStorage.getItem("Theme");
                   <button class="w-[46px] h-[46px]  rounded-full flex justify-center items-center relative"
                     v-bind:class="{ 'bg-[#0057FF] border-2 border-[#6B9EFF]': OpenNotificationModal, 'bg-neutral-100 border-none ': !OpenNotificationModal }">
 
-                    <svg class="darkIconStockBlack" v-if="!OpenNotificationModal" width="22" height="22" viewBox="0 0 22 22" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
+                    <svg class="darkIconStockBlack" v-if="!OpenNotificationModal" width="22" height="22"
+                      viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M17.1867 8.90109V8.2552C17.1867 4.70886 14.4168 1.83398 11 1.83398C7.58318 1.83398 4.8133 4.70886 4.8133 8.2552V8.90109C4.8133 9.67621 4.59224 10.434 4.17798 11.0789L3.16283 12.6594C2.23559 14.103 2.94346 16.0652 4.55617 16.5217C8.77501 17.7159 13.225 17.7159 17.4438 16.5217C19.0565 16.0652 19.7644 14.103 18.8372 12.6594L17.822 11.0789C17.4078 10.434 17.1867 9.67621 17.1867 8.90109Z"
                         stroke="#1E2329" />
@@ -332,12 +333,14 @@ const Theme = localStorage.getItem("Theme");
                     (this.OpenModal = false),
                   ]
                   " v-if="OpenNotificationModal"
-                  class="fixed top-0 bottom-0 right-0 left-0 bg-black bg-opacity-20 z-[100]">
+                  class="fixed top-0 bottom-0 right-0 left-0 bg-black bg-opacity-50 z-[100]">
 
                 </div>
                 <!-- Notification Dropdown -->
-                <div v-if="OpenNotificationModal"
-                  class="z-[102] w-[369px] absolute  right-[-8px] top-[53px] h-[530px] px-[25px] py-5 bg-neutral-50 dark:bg-slate-800 rounded-[30px] flex-col justify-start items-start gap-3.5 inline-flex">
+                <div 
+                  class="z-[102] w-[369px] absolute  right-[-8px] top-[53px] h-[530px] px-[25px] py-5 bg-neutral-50 dark:bg-slate-800 rounded-[30px] flex-col justify-start items-start gap-3.5 inline-flex ease-custom-dropdown"
+                  :class="{ ' dropDownBlock': OpenNotificationModal, 'dropDown-hidden': !OpenNotificationModal }"
+                  >
                   <div class="w-full pb-6 border-b border-gray-400 justify-center items-center gap-2.5 inline-flex">
                     <div class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-medium font-['Poppins']">
                       Notification
@@ -389,7 +392,7 @@ const Theme = localStorage.getItem("Theme");
 
                   <button class="w-[46px] h-[46px] rounded-full flex justify-center items-center"
                     v-bind:class="{ 'bg-[#0057FF] border-2 border-[#6B9EFF]': OpenModal, 'bg-neutral-100 border-none ': !OpenModal }">
-                    <svg  v-if="!OpenModal" width="22" height="22" viewBox="0 0 22 22" fill="none"
+                    <svg v-if="!OpenModal" width="22" height="22" viewBox="0 0 22 22" fill="none"
                       xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M14.9307 11.5834L14.5868 11.8525L14.993 12.0128C16.8157 12.7322 18.407 13.9313 19.5965 15.4814C20.7858 17.0313 21.5285 18.8738 21.7452 20.8112C21.769 21.0335 21.7037 21.2564 21.563 21.4313C21.4249 21.6029 21.2252 21.7148 21.0058 21.7434L20.8993 21.7434L20.8978 21.7434C20.6859 21.7446 20.4813 21.6678 20.3234 21.528C20.1655 21.3883 20.0655 21.1956 20.0424 20.9873L20.0423 20.9869C19.7926 18.7764 18.7328 16.7351 17.0657 15.253C15.3987 13.7709 13.2413 12.9518 11.0057 12.9518C8.77015 12.9518 6.61273 13.7709 4.94569 15.253C3.27861 16.7351 2.21879 18.7764 1.96911 20.9869L1.96905 20.9874C1.94413 21.2127 1.83024 21.4192 1.65191 21.5614C1.47354 21.7036 1.24539 21.7698 1.01769 21.7448C0.789998 21.7199 0.581933 21.6061 0.439084 21.4289C0.368359 21.3412 0.31576 21.2406 0.284223 21.1328C0.252687 21.025 0.242814 20.9121 0.255152 20.8006C0.470745 18.8685 1.20949 17.0306 2.3928 15.483C3.57616 13.9352 5.1598 12.7357 6.97499 12.0125L7.37915 11.8515L7.03651 11.5834C5.99364 10.7674 5.23265 9.64857 4.85915 8.38276C4.48566 7.11696 4.51816 5.76689 4.95214 4.5203C5.38613 3.27369 6.20012 2.19236 7.2811 1.42691C8.3621 0.661446 9.65629 0.25 10.9836 0.25C12.3109 0.25 13.6051 0.661446 14.6861 1.42691C15.7671 2.19236 16.5811 3.27369 17.0151 4.5203C17.4491 5.76689 17.4815 7.11696 17.1081 8.38276C16.7346 9.64857 15.9736 10.7674 14.9307 11.5834ZM8.38866 10.4668C9.15689 10.9773 10.0599 11.2497 10.9836 11.2497C12.2222 11.2497 13.4103 10.7604 14.2865 9.88898C15.1628 9.01752 15.6553 7.83527 15.6553 6.60224C15.6553 5.68275 15.3812 4.78402 14.8676 4.01972C14.3541 3.25543 13.6244 2.65994 12.7709 2.30836C11.9175 1.95677 10.9784 1.86481 10.0725 2.04402C9.16649 2.22324 8.33412 2.66564 7.68068 3.3155C7.02723 3.96537 6.58206 4.79352 6.40169 5.69531C6.22133 6.5971 6.31391 7.53181 6.66768 8.3812C7.02144 9.23057 7.62042 9.95631 8.38866 10.4668Z"
@@ -410,11 +413,13 @@ const Theme = localStorage.getItem("Theme");
                 <!-- profile link dropdown -->
 
                 <div v-if="OpenModal" @click="handleModalOpen(true)"
-                  class="fixed top-0 z-[104] bottom-0 right-0 left-0 bg-black bg-opacity-20 ">
+                  class="fixed top-0 z-[104] bottom-0 right-0 left-0 bg-black  bg-opacity-50 ">
 
                 </div>
-                <div v-if="OpenModal" @click="handleModalOpen(true)"
-                  class="absolute z-[105] right-[5px] top-[53px] shadow w-[232px] h-[448px] bg-neutral-50 dark:bg-[#09132C] rounded-[14px] flex-col justify-start items-start inline-flex">
+                <div  @click="handleModalOpen(true)"
+                  class="absolute z-[105] right-[5px] top-[53px] shadow w-[232px] h-[448px] bg-neutral-50 dark:bg-[#09132C] rounded-[14px] flex-col justify-start items-start inline-flex ease-custom-dropdown"
+                  :class="{ ' dropDownBlock': OpenModal, 'dropDown-hidden': !OpenModal }"
+                  >
                   <RouterLink to="/dashboard"
                     class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
                     <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
@@ -696,9 +701,11 @@ header .router-link-exact-active {
 body.dark .downArrow path {
   stroke: white;
 }
+
 body.dark .darkIconStockBlack path {
-    stroke: #1E2329;
+  stroke: #1E2329;
 }
+
 body.dark .darkCircle circle {
   stroke: white;
 }
@@ -728,5 +735,35 @@ body.dark .darkIconStock path {
 .shadow-transition {
   transition: box-shadow 0.5s ease-in-out;
   /* Add animation to the shadow */
+}
+
+.ease-custom {
+  transition-timing-function: cubic-bezier(.61, -0.53, .43, 1.43);
+}
+
+.ease-custom-dropdown {
+  top: -50px;
+  transition: all 0.3s linear;
+}
+
+.dropDown-hidden{
+
+  width: 0px;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  right: 0;
+  left: unset !important;
+  right: -100px !important;
+  opacity: 0;
+}
+
+.dropDownBlock {
+  top: 50px;
+  width: 330px;
+  height: auto;
+  overflow: hidden;
+  z-index: 101;
+  opacity: 1;
 }
 </style>
