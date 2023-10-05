@@ -24,7 +24,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
             :class="{'hidden lg:block':selectedNumber}"
             >
                 <div class="max-w-[342px] lg:max-w-[357px] max-h-[711px]  ">
-                    <div class="flex justify-between items-center mx-auto ">
+                    <div class="flex justify-between items-center w-[342px]">
                         <h3
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">
                             All Number</h3>
@@ -62,8 +62,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         </button>
                         </div>
                         <button
-                            class="w-11 h-11 p-3.5 rounded-[10px] border  hover:bg-[#0057FF] hover:border-[#0057FF] dark:border-[#ACB5BD] justify-start items-start gap-2.5 inline-flex iconStock z-[99999]"
-                            :class="{ 'bg-[#0057FF] border-[#0057FF] iconStockWhite': isOpen, 'border-zinc-600': !isOpen }"
+                            class="w-11 h-11 p-3.5 rounded-[10px] border  hover:bg-[#0057FF] hover:border-[#0057FF] dark:border-[#ACB5BD] justify-start items-start gap-2.5 inline-flex iconStock "
+                            :class="{ 'bg-[#0057FF] border-[#0057FF] iconStockWhite z-[999999999]': isOpen, 'z-[99999] border-zinc-600': !isOpen }"
                             @click="toggleActiveStatusDropdown">
                             <div class="w-4 h-4 relative rounded-[5px] darkIconStock">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -83,16 +83,20 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                             </div>
                         </button>
-                        <div v-if="isOpen" class="fixed top-0 bottom-0 right-0 left-0 bg-black bg-opacity-20 z-[9999]">
+                        <div v-if="isOpen" class="fixed top-0 bottom-0 right-0 left-0 bg-black bg-opacity-20 z-[9999]"
+                        :class="{ 'z-[99999999]': isOpen, 'z-[99999]': !isOpen }"
+                        >
 
                         </div>
-                        <div class="relative inline-block text-left">
+                        <div class="relative inline-block text-left" >
                             <!-- Dropdown Trigger -->
 
                             <!-- Dropdown Menu -->
 
                             <ul v-show="isOpen"
-                                class="absolute right-3 top-5 mt-2  w-48 bg-white   dark:bg-slate-900 border border-[#0057FF] rounded-md shadow-lg z-[99999]">
+                                class="absolute right-3 top-5 mt-2  w-48 bg-white   dark:bg-slate-900 border border-[#0057FF] rounded-md shadow-lg z-[99999]"
+                                :class="{ 'z-[99999999]': isOpen, 'z-[99999] ': !isOpen }"
+                                >
                                 <!-- Render your list of countries and languages here -->
                                 <li v-for="(item, index) in option" :key="index" @click="selectActiveStatus(item)"
                                     class="px-4 py-2 cursor-pointer   dark:hover:bg-slate-600 flex items-center text-neutral-800  dark:text-[#F5F5F5] hover:bg-slate-700 hover:text-white"

@@ -136,7 +136,7 @@ const filteredPhone = computed(() => {
 
             </div>
         </div>
-        <!-- Mobile Show Selected data -->
+        <!-- Mobile Show Selected data  start-->
 
         <div class="relative px-[22px] mt-[30px] block lg:hidden">
             <div class="absolute left-[10px] top-[3px]">
@@ -239,7 +239,7 @@ const filteredPhone = computed(() => {
             </div>
         </div>
 
-        <!-- Mobile Show Selected data -->
+        <!-- Mobile Show Selected data end -->
         <div class="flex flex-wrap ">
             <div class="w-full">
                 <div class="w-full mt-[0px] px-[0px] pb-[30px] flex-col justify-start items-center gap-[30px] inline-flex">
@@ -639,9 +639,12 @@ const filteredPhone = computed(() => {
                                                 class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                                 <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
                                                     <li v-for="(phoneNumber, index) in filteredPhone" :key="index"
-                                                        class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
+                                                        class="mr-[13px] rounded-[14px] lg:h-auto border-gray-400 cursor-pointer"
                                                         @click="selectPhone(phoneNumber)"
-                                                        :class="{ 'border': selectedPhone === phoneNumber }">
+                                                        :class="{
+                            'border pt-[10px] h-[96px]':
+                              selectedPhone === phoneNumber,
+                          }">
 
                                                         <div
                                                             class="max-w-full w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
@@ -649,7 +652,7 @@ const filteredPhone = computed(() => {
                                                                 class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
 
                                                                 <div
-                                                                    class="grow shrink basis-0 text-neutral-800  dark:text-[#F5F5F5] text-sm font-light font-['Poppins'] flex items-center gap-[16px]">
+                                                                    class="grow shrink basis-0 text-neutral-800  dark:text-[#F5F5F5] text-sm font-light font-['Poppins'] flex flex-col lg:flex-row items-center gap-[16px]">
                                                                     {{ phoneNumber }}
                                                                     <div v-if="selectedPhone === phoneNumber"
                                                                         class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px]">
@@ -809,17 +812,15 @@ const filteredPhone = computed(() => {
                                             <div
                                                 class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                                 <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
-                                                    <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer flex items-center gap-[16px]"
+                                                    <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer flex flex-col lg:flex-row items-center gap-0 lg:gap-[16px] h-auto"
                                                         v-for="(service, index) in filteredService" :key="index"
                                                         @click="selectService(service)"
-                                                        :class="{ 'border': (selectedService?.name == service?.name) && (selectedService?.flag == service?.flag) }">
+                                                        :class="{ 'border h-[96px]': (selectedService?.name == service?.name) && (selectedService?.flag == service?.flag) }">
                                                         <div
                                                             class="max-w-[250px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
                                                             <div
                                                                 class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
-                                                                <!-- <img :src="getFlagImage(country.flag)" class="w-4 h-4 mr-2"
-                
-                alt="Flag" /> -->
+                                                                
                                                                 <img :src="service.flag"
                                                                     class="w-[30px] h-[30px] rounded-full" alt="Flag" />
                                                                 <div
@@ -831,10 +832,10 @@ const filteredPhone = computed(() => {
                                                                 {{ service.price }}</div>
                                                         </div>
                                                         <div v-if="(selectedService?.name === service?.name) && (selectedService?.flag === service?.flag)"
-                                                            class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px]">
+                                                            class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px] mb-4 lg:mb-0">
 
                                                             <div @click="handleModalOpen(true)"
-                                                                class="flex items-center gap-[6px] pl-[3px]">
+                                                                class="flex items-center gap-[6px] pl-[3px] ">
                                                                 <span
                                                                     class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-normal font-['Poppins']">Get
                                                                     Now</span>

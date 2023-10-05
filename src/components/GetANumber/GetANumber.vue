@@ -188,7 +188,7 @@ const filteredPhone = computed(() => {
     
 
         <div
-          class="max-w-[100%] overflow-x-auto scroll-hide mx-auto"
+          class="max-w-full overflow-x-auto scroll-hide mx-auto"
           ref="scrollContainer"
         >
           <div
@@ -659,10 +659,10 @@ const filteredPhone = computed(() => {
                                   </div>
                                   <div
                                     @click="handleModalOpen(true)"
-                                    class="flex items-center gap-[6px] border-l border-zinc-600 pl-[3px]"
+                                    class="flex items-center gap-[6px] border-l border-zinc-600 pl-[3px] text-zinc-600 dark:text-[#F5F5F5]"
                                   >
                                     <span
-                                      class="text-zinc-600 dark:text-[#F5F5F5] text-xs font-normal font-['Poppins']"
+                                      class=" text-xs font-normal font-['Poppins']"
                                       >Get Now</span
                                     >
                                     <svg
