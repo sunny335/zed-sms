@@ -506,19 +506,19 @@ const Theme = localStorage.getItem("Theme");
               My Number
             </div>
           </RouterLink>
-          <RouterLink to="/dashboard/topup-balance" @click="toggle()"
+          <RouterLink to="/dashboard/manage-number" @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
             <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
               Manage Number
             </div>
           </RouterLink>
-          <RouterLink to="/dashboard/manage-number" @click="toggle()"
+          <RouterLink to="/dashboard/buy-number" @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
             <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
               Buy Number
             </div>
           </RouterLink>
-          <RouterLink to="/dashboard/buy-number" @click="toggle()"
+          <RouterLink to="/dashboard/transaction" @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
             <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
               Transaction
