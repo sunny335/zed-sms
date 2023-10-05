@@ -83,6 +83,7 @@ const filteredPhone = computed(() => {
     <div class="w-full">
       <ul
         class="flex mb-0 list-none flex-row max-w-[300px] lg:max-w-[450px] w-full mx-auto rounded-2xl border border-blue-600 overflow-hidden h-[58px]"
+        :class="{'hidden lg:flex' : selectedCountry || selectedService || selectedPhone}"
       >
         <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
           <a
@@ -141,10 +142,31 @@ const filteredPhone = computed(() => {
       </ul>
       <!-- Mobile Show Selected data -->
 
-      <div class="relative px-[22px] mt-[30px] block lg:hidden">
-        <div class="absolute left-[-10px] top-[3px]" v-if="scrollPosition">
+      <div class="relative px-[22px] mt-[30px]  block lg:hidden">
+        <div class="absolute left-[-10px] top-[3px]" >
           <div
-            @click="scrollLeft"
+           @click="handleBackStateTab1_3(data)"
+           v-if="openTab == 1 || openTab == 3"
+            class="relative border border-gray-800 dark:border-white rounded-full cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 darkIconStock"
+          >
+            <svg
+              width="27"
+              height="27"
+              viewBox="0 0 27 27"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.8333 13.4238H9.16663M9.16663 13.4238L12.4166 10.1738M9.16663 13.4238L12.4166 16.6738"
+                stroke="#495057"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div
+           @click="handleBackStateTab2(data)"
+           v-if="openTab == 2"
             class="relative border border-gray-800 dark:border-white rounded-full cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 darkIconStock"
           >
             <svg
@@ -163,79 +185,59 @@ const filteredPhone = computed(() => {
             </svg>
           </div>
         </div>
-        <div class="absolute right-[-10px] top-[3px]">
-          <div
-            @click="scrollRight"
-            class="border border-gray-800 dark:border-white rounded-full relative cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 darkIconStock rotate-180"
-          >
-            <svg
-              width="27"
-              height="27"
-              viewBox="0 0 27 27"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M17.8333 13.4238H9.16663M9.16663 13.4238L12.4166 10.1738M9.16663 13.4238L12.4166 16.6738"
-                stroke="#495057"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
-        </div>
+    
 
         <div
           class="max-w-[100%] overflow-x-auto scroll-hide mx-auto"
           ref="scrollContainer"
         >
           <div
-            class="items-center gap-[20px] min-h-[60px] justify-center w-max mx-auto pb-[26px] flex"
+            class="items-center gap-[20px] min-h-[60px] justify-center w-max mx-auto pb-[26px] flex pl-2"
             ref="content"
             :style="{ transform: `translateX(-${scrollPosition}px)` }"
           >
-            <div class="flex gap-[6px] items-center">
+            <div class="flex gap-[6px] items-center ">
               <div
-                class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']"
+                class="text-center text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-normal font-['Poppins']"
               >
                 Country:
               </div>
               <div v-if="selectedCountry" class="flex gap-[6px] items-center">
-                <!-- <img :src="PhilipinsImg" alt="Image Description" /> -->
+                
                 <img
                   :src="selectedCountry?.flag"
-                  class="w-[30px] h-[30px] rounded-full"
+                  class="w-[20px] h-[20px] rounded-full"
                   alt="Flag"
                 />
 
                 <div
-                  class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']"
+                  class="text-center text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-light font-['Poppins']"
                 >
                   {{ selectedCountry?.name }}
                 </div>
               </div>
             </div>
             <div
-              class="flex gap-[6px] items-center"
+              class="flex gap-[6px] items-center "
               v-bind:class="{
                 hidden: openTab == 2,
                 block: openTab === 2 || openTab === 1,
               }"
             >
               <div
-                class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']"
+                class="text-center text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-normal font-['Poppins']"
               >
                 Service:
               </div>
 
               <div v-if="selectedService" class="flex gap-[6px] items-center">
                 <img
-                  class="w-[30px] h-[30px] rounded-full"
+                  class="w-[20px] h-[20px] rounded-full"
                   :src="selectedService.flag"
                   alt="Image Description"
                 />
                 <div
-                  class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']"
+                  class="text-center text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-light font-['Poppins']"
                 >
                   {{ selectedService.name }}
                 </div>
@@ -244,54 +246,54 @@ const filteredPhone = computed(() => {
             <div
               class="flex gap-[6px] items-center"
               v-bind:class="{
-                hidden: openTab == 3,
-                block: openTab === 3 || openTab === 1,
+                hidden: openTab == 3 || openTab === 1,
+                block: openTab === 2 ,
               }"
             >
               <div
-                class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']"
+                class="text-center text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-normal font-['Poppins']"
               >
                 Number:
               </div>
               <div
                 v-if="selectedPhone"
-                class="text-zinc-600 text-sm dark:text-[#F5F5F5] font-light font-['Poppins']"
+                class="text-zinc-600 text-[11px] dark:text-[#F5F5F5] font-light font-['Poppins']"
               >
                 {{ selectedPhone }}
               </div>
             </div>
-            <div
+            <!-- <div
               class="flex gap-[6px] items-center"
               v-if="selectedPhone && selectedWeek"
             >
               <div
-                class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']"
+                class="text-center text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-normal font-['Poppins']"
               >
                 Rent:
               </div>
               <div
-                class="text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']"
+                class="text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-light font-['Poppins']"
               >
                 {{ selectedWeek }}
               </div>
-            </div>
-            <div
+            </div> -->
+            <!-- <div
               class="flex gap-[6px] items-center"
               v-if="openTab === 2 ? selectedCountry?.price : selectedService"
             >
               <div
-                class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins']"
+                class="text-center text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-normal font-['Poppins']"
               >
                 Cost:
               </div>
               <div
-                class="text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']"
+                class="text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-light font-['Poppins']"
               >
                 {{
                   openTab === 2 ? selectedCountry?.price : selectedService.price
                 }}
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -1538,6 +1540,27 @@ export default {
         this.scrollPosition = Math.min(maxScrollPosition, this.scrollPosition);
       }
     },
+    handleBackStateTab1_3(){
+      
+      if(this.selectedService !== null){
+        this.selectedService = null,
+        this.selectedPhone = null
+      }else if(this.selectedService === null){
+        this.selectedCountry = null
+      }
+  
+    },
+    handleBackStateTab2(){
+      if(this.selectedPhone !== null){
+     
+        this.selectedPhone = null
+        // this.selectedCountry = null
+      }else if(this.selectedService === null){
+        this.selectedCountry = null
+      }
+      
+    }
+
   },
 };
 </script>

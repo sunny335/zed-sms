@@ -11,7 +11,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
     <section class="ml-0 lg:ml-[25px] mb-[97px]">
         <div class="flex flex-wrap gap-[49px]">
             <!-- Choose Payment -->
-            <div class="max-w-[401px] w-full mx-auto">
+            <div class="max-w-[401px] w-full mx-auto"
+            :class="{ 'hidden lg:block' : selectedPayment}"
+            >
                 <div class="max-w-[343px] lg:max-w-[401px] h-[635px] mx-auto">
                     <div class="flex  items-center mb-[30px]">
                         <h3
@@ -52,9 +54,16 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
             </div>
             <!-- Balance TO-UP -->
             <div class="max-w-[360px] w-full mx-auto">
-                <h3
-                    class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-medium font-['Poppins'] leading-[17px] mb-10 text-center lg:text-left">
+               <div class="flex justify-between lg:justify-center lg:hidden px-2 lg:px-0 items-center">
+                    <button @click="handleBack" class="w-12 h-12 border-2 rounded-full flex justify-center items-center">
+                           
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                            
+                        </button>
+                    <h3
+                    class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-medium font-['Poppins'] leading-[17px] mb-0 lg:mb-10 text-center lg:text-left">
                     Balance TO-UP</h3>
+               </div>
 
                 <div
                     class="max-w-[360px] w-full h-[281px] px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
@@ -181,6 +190,9 @@ export default {
  
         onSubmit(e) {
             e.preventDefault();
+        },
+        handleBack(){
+            this.selectedPayment = null
         }
 
     },

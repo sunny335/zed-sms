@@ -61,7 +61,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                     <div
                                         class="max-w-[420px] w-full h-[196px] p-[50px] bg-neutral-50 dark:bg-[#09132C] rounded-3xl">
                                         <p
-                                            class="text-zinc-600 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] mb-[30px]">
+                                            class="text-zinc-600 dark:text-[#F5F5F5] text-center text-base lg:text-xl font-normal font-['Poppins'] mb-[30px]">
                                             Do you want to transfer money?</p>
                                         <div class="flex justify-between items-center">
 

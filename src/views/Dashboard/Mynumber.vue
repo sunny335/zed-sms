@@ -20,14 +20,16 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
         :class="{ 'block': showMessageCompose === !true, 'hidden': showMessageCompose === true }">
         <div class="flex  gap-[25px] lg:flex-row flex-col">
             <!-- All Number -->
-            <div class="max-w-[342px] lg:max-w-[357px] w-full mx-auto">
+            <div class="max-w-[342px] lg:max-w-[357px] w-full mx-auto"
+            :class="{'hidden lg:block':selectedNumber}"
+            >
                 <div class="max-w-[342px] lg:max-w-[357px] max-h-[711px]  ">
-                    <div class="flex justify-between items-center">
+                    <div class="flex justify-between items-center mx-auto ">
                         <h3
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">
                             All Number</h3>
                         
-                        <div class="relative">
+                        <div class="relative hidden lg:block">
 
                             <div  class="cursor-pointer absolute left-0 right-0 top-0 bottom-0 z-[3]" 
                             :class="{ 'hidden': selectedNumber }"
@@ -171,8 +173,39 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
             <!-- All Message -->
             <div class="max-w-[460px] w-full">
                 <div
-                    class="max-w-[375px] lg:max-w-[460px] h-[716px] mt-[58px] p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
-                    <div class="flex lg:justify-start justify-center  items-center mb-[30px]">
+                    class="max-w-[375px] lg:max-w-[460px] h-[716px] mt-0 lg:mt-[58px] p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+                    <div class="flex justify-between item-center px-4  lg:hidden">
+
+                        <button @click="handleBack" class="w-12 h-12 border-2 rounded-full flex justify-center items-center">
+                            <div>
+                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                            </div>
+                        </button>
+                        <button  v-on:click="toggleShowMessageCompose(true)"
+                            class="max-w-[164px] max-h-11 w-full py-2.5 px-2  rounded-[10px] shadow border border-neutral-800 dark:border-[#F5F5F5]  justify-center items-center gap-2 inline-flex  hover:text-[#F5F5F5] iconStock text-neutral-800 dark:text-[#F5F5F5] disabled:cursor-not-allowed disabled:opacity-20 disabled:border-neutral-800 disabled:bg-white disabled:hover:text-black disabled:dark:text-black iconStockBlack hover:border-[#0057FF] hover:bg-[#0057FF]">
+                            <p class=" text-sm font-normal font-['Poppins'] leading-[17px]">
+                                Start Chat
+                            </p>
+                            <div class="w-6 h-6 relative darkIconStock ">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22 10.5V12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2H13.5"
+                                        stroke="#1E2329" stroke-linecap="round" />
+                                    <path
+                                        d="M16.652 3.45506L17.3009 2.80624C18.3759 1.73125 20.1188 1.73125 21.1938 2.80624C22.2687 3.88124 22.2687 5.62415 21.1938 6.69914L20.5449 7.34795M16.652 3.45506C16.652 3.45506 16.7331 4.83379 17.9497 6.05032C19.1662 7.26685 20.5449 7.34795 20.5449 7.34795M16.652 3.45506L10.6872 9.41993C10.2832 9.82394 10.0812 10.0259 9.90743 10.2487C9.70249 10.5114 9.52679 10.7957 9.38344 11.0965C9.26191 11.3515 9.17157 11.6225 8.99089 12.1646L8.41242 13.9M20.5449 7.34795L14.5801 13.3128C14.1761 13.7168 13.9741 13.9188 13.7513 14.0926C13.4886 14.2975 13.2043 14.4732 12.9035 14.6166C12.6485 14.7381 12.3775 14.8284 11.8354 15.0091L10.1 15.5876M10.1 15.5876L8.97709 15.9619C8.71035 16.0508 8.41626 15.9814 8.21744 15.7826C8.01862 15.5837 7.9492 15.2897 8.03811 15.0229L8.41242 13.9M10.1 15.5876L8.41242 13.9"
+                                        stroke="#1E2329" />
+                                </svg>
+
+
+
+
+
+
+                            </div>
+                        </button>
+                    </div>
+                    <div class="flex lg:justify-start justify-center  mt-10 lg:mt-0  items-center mb-[30px]">
                         <h3
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">
                             All
@@ -500,7 +533,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                 </TransitionChild>
 
                 <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
-                    <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                    <div class="flex min-h-full items-center justify-center p-4 text-center sm:items-center sm:p-0">
                         <TransitionChild as="template" enter="ease-out duration-300"
                             enter-from="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                             enter-to="opacity-100 translate-y-0 sm:scale-100" leave="ease-in duration-200"
@@ -989,6 +1022,9 @@ export default {
         },
         openErrorModal(){
             this.numberSelectedShowModal = !this.numberSelectedShowModal;
+        },
+        handleBack(){
+            this.selectedNumber = null
         }
 
 
