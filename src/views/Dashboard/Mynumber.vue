@@ -62,7 +62,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         </button>
                         </div>
                         <button
-                            class="w-11 h-11 p-3.5 rounded-[10px] border  hover:bg-[#0057FF] hover:border-[#0057FF] dark:border-[#ACB5BD] justify-start items-start gap-2.5 inline-flex iconStock "
+                            class="w-11 h-11 p-3.5 rounded-[10px] border  hover:bg-[#0057FF] hover:border-[#0057FF] dark:border-[#ACB5BD] justify-start items-start gap-2.5 inline-flex iconStock ml-[150px] lg:ml-0"
                             :class="{ 'bg-[#0057FF] border-[#0057FF] iconStockWhite z-[999999999]': isOpen, 'z-[99999] border-zinc-600': !isOpen }"
                             @click="toggleActiveStatusDropdown">
                             <div class="w-4 h-4 relative rounded-[5px] darkIconStock">
