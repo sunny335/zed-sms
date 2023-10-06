@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import CommunityIcon from "../icons/IconCollections.vue";
-const login = true;
+
 const Theme = localStorage.getItem("Theme");
 </script>
 
@@ -456,7 +456,9 @@ const Theme = localStorage.getItem("Theme");
                       Account setting
                     </div>
                   </RouterLink>
-                  <div class="self-stretch px-10 py-5 justify-start items-center gap-2.5 inline-flex">
+                  <div class="self-stretch px-10 py-5 justify-start items-center gap-2.5 inline-flex cursor-pointer"
+                  v-on:click="handleLogOut()"
+                  >
                     <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
                       Logout
                     </div>
@@ -549,7 +551,9 @@ const Theme = localStorage.getItem("Theme");
             </div>
           </RouterLink>
 
-          <div class="self-stretch px-10 py-5 justify-start items-center gap-2.5 inline-flex" @click="toggle()">
+          <div class="self-stretch px-10 py-5 justify-start items-center gap-2.5 inline-flex cursor-pointer" @click="toggle(), handleLogOut()"
+         
+          >
             <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
               Logout
             </div>
@@ -586,6 +590,7 @@ export default {
       open: false,
       dimmer: true,
       right: false,
+      login: true,
       notificationData: [
         {
           id: 1,
@@ -683,6 +688,9 @@ export default {
       this.hasShadow = window.scrollY > 100;
 
     },
+    handleLogOut(){
+      this.login= !this.login
+    }
   },
 
   watch: {

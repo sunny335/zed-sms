@@ -9,11 +9,10 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
 <template>
     <section class="ml-0 lg:ml-[25px] mb-[97px]">
+
         <div class="flex flex-wrap gap-[49px]">
             <!-- Choose Payment -->
-            <div class="max-w-[401px] w-full mx-auto"
-            :class="{ 'hidden lg:block' : selectedPayment}"
-            >
+            <div class="max-w-[401px] w-full mx-auto" :class="{ 'hidden lg:block': selectedPayment }">
                 <div class="max-w-[343px] lg:max-w-[401px] h-[635px] mx-auto">
                     <div class="flex  items-center mb-[30px]">
                         <h3
@@ -52,19 +51,78 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                 </div>
             </div>
-            <!-- Balance TO-UP -->
-            <div class="max-w-[360px] w-full mx-auto">
-               <div class="flex justify-between lg:justify-center lg:hidden px-2 lg:px-0 items-center">
-                    <button @click="handleBack" class="w-12 h-12 border-2 rounded-full flex justify-center items-center">
-                           
-                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-                            
-                        </button>
-                    <h3
-                    class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-medium font-['Poppins'] leading-[17px] mb-0 lg:mb-10 text-center lg:text-left">
-                    Balance TO-UP</h3>
-               </div>
+            <!-- Balance TO-UP  for mobile-->
+            <div class="max-w-[360px] w-full mx-auto block lg:hidden">
+                <div v-if="isLoading" class="flex justify-center items-center my-40">
+                    <div class="loader-mobile loader"></div>
+                </div>
 
+
+
+                <div v-else>
+                    <div class="flex justify-between lg:justify-center lg:hidden px-2 lg:px-0 items-center">
+                        <button @click="handleBack"
+                            class="">
+
+                            <svg width="70" height="69" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17.8337 13H9.16699M9.16699 13L12.417 9.75M9.16699 13L12.417 16.25"
+                                    stroke="#495057" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+
+                        </button>
+                        <h3
+                            class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-medium font-['Poppins'] leading-[17px] mb-0 lg:mb-10 text-center lg:text-left">
+                            Balance TO-UP</h3>
+                    </div>
+                    <div
+                        class="max-w-[360px] w-full h-[281px] px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+                        <form v-on:submit="onSubmit">
+
+                            <h6
+                                class="text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] mb-[14px]">
+                                Amount</h6>
+                            <input
+                                class="max-w-[300px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 dark:bg-transparent"
+                                type="text" placeholder="$00.00" />
+                            <p class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] mt-[10px]">
+                                Minimum
+                                Amount: 1 USD</p>
+
+
+
+                            <div class="flex justify-end items-center">
+                                <button :disabled="!selectedPayment" type="submit"
+                                    class="max-w-[166px] h-[45px] w-full py-3 rounded-[10px] shadow border border-[#0057FF] justify-center items-start gap-2.5 inline-flex mt-10  dark:bg-[#0057FF] disabled:cursor-not-allowed disabled:opacity-20  disabled:hover:border-[#0057FF] disabled:hover:text-blue-600 disabled:hover:bg-[#F5F5F5] text-[#0057FF]  dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:bg-[#0057FF]">
+                                    <div class="text-center text-sm font-normal font-['Poppins']">
+                                        TOP-UP Now</div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Balance TO-UP  for desktop-->
+            <div class="max-w-[360px] w-full mx-auto hidden lg:block">
+
+
+
+
+
+                <div class="flex justify-between lg:justify-center lg:hidden px-2 lg:px-0 items-center">
+                    <button @click="handleBack" class="w-12 h-12 border-2 rounded-full flex justify-center items-center">
+
+                        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
+                            <path
+                                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                        </svg>
+
+                    </button>
+                    <h3
+                        class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-medium font-['Poppins'] leading-[17px] mb-0 lg:mb-10 text-center lg:text-left">
+                        Balance TO-UP</h3>
+                </div>
                 <div
                     class="max-w-[360px] w-full h-[281px] px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
                     <form v-on:submit="onSubmit">
@@ -74,26 +132,28 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         <input
                             class="max-w-[300px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 dark:bg-transparent"
                             type="text" placeholder="$00.00" />
-                        <p class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] mt-[10px]">Minimum
+                        <p class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] mt-[10px]">
+                            Minimum
                             Amount: 1 USD</p>
 
 
 
                         <div class="flex justify-end items-center">
-                            <button :disabled="!selectedPayment"  type="submit"
+                            <button :disabled="!selectedPayment" type="submit"
                                 class="max-w-[166px] h-[45px] w-full py-3 rounded-[10px] shadow border border-[#0057FF] justify-center items-start gap-2.5 inline-flex mt-10  dark:bg-[#0057FF] disabled:cursor-not-allowed disabled:opacity-20  disabled:hover:border-[#0057FF] disabled:hover:text-blue-600 disabled:hover:bg-[#F5F5F5] text-blue-600  dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:bg-[#0057FF]">
-                                <div
-                                    class="text-center text-sm font-normal font-['Poppins']">
+                                <div class="text-center text-sm font-normal font-['Poppins']">
                                     TOP-UP Now</div>
                             </button>
                         </div>
                     </form>
                 </div>
+
             </div>
 
 
+
         </div>
-       
+
     </section>
 </template>
 <script >
@@ -107,7 +167,7 @@ export default {
 
         return {
             openTab: 1,
-            
+
             messageSeenStatus: false,
             toggleArrowIcon: false,
             selectedPayment: null,
@@ -167,10 +227,11 @@ export default {
                     name: "Cash",
                     text: "Accepting bitcoin payment to staic wallet. Fee 1.5%"
                 },
-            ]
+            ],
+            isLoading: false, 
 
 
-        } 
+        }
 
     },
     methods: {
@@ -184,15 +245,25 @@ export default {
             this.toggleArrowIcon = v
         },
         selectPayment(id) {
+            this.isLoading = true; // Show loader
             this.selectedPayment = id;
 
+            // Simulate an asynchronous operation (e.g., an HTTP request)
+            setTimeout(() => {
+                this.isLoading = false; // Hide loader after the operation is complete
+            }, 1000); // Adjust the timeout as needed
         },
- 
+
         onSubmit(e) {
             e.preventDefault();
         },
-        handleBack(){
-            this.selectedPayment = null
+        handleBack() {
+            this.isLoading = false; // Hide loader
+            this.selectedPayment = null; // Clear selectedPayment
+            // Simulate an asynchronous operation (e.g., an HTTP request)
+            setTimeout(() => {
+                this.isLoading = false; // Hide loader after the operation is complete
+            }, 1000); // Adjust the timeout as needed
         }
 
     },
@@ -234,3 +305,44 @@ export default {
 
 
 </script>
+<style scoped>
+/* Add styles for the mobile loader */
+
+.loader {
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    border-top: 4px solid #0057FF;
+    /* Change the loader color as needed */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    /* Adjust animation duration as needed */
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-mobile {
+    display: none;
+    /* Add your loader styles here */
+}
+
+/* Media query to show the loader on mobile screens */
+@media (max-width: 768px) {
+    .loader-mobile {
+        display: block;
+    }
+
+    /* Hide other elements on mobile screens */
+    .max-w-[360px] {
+        display: none;
+    }
+}</style>

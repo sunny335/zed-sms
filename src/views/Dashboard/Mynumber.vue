@@ -174,357 +174,724 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                 </div>
             </div>
-            <!-- All Message -->
-            <div class="max-w-[460px] w-full">
-                <div
-                    class="max-w-[375px] lg:max-w-[460px] h-[716px] mt-0 lg:mt-[58px] p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
-                    <div class="flex justify-between item-center px-4  lg:hidden">
+            <!-- All Message Desktop-->
 
-                        <button @click="handleBack" class="w-12 h-12 border-2 rounded-full flex justify-center items-center">
-                            <div>
-                                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-                            </div>
-                        </button>
-                        <button  v-on:click="toggleShowMessageCompose(true)"
-                            class="max-w-[164px] max-h-11 w-full py-2.5 px-2  rounded-[10px] shadow border border-neutral-800 dark:border-[#F5F5F5]  justify-center items-center gap-2 inline-flex  hover:text-[#F5F5F5] iconStock text-neutral-800 dark:text-[#F5F5F5] disabled:cursor-not-allowed disabled:opacity-20 disabled:border-neutral-800 disabled:bg-white disabled:hover:text-black disabled:dark:text-black iconStockBlack hover:border-[#0057FF] hover:bg-[#0057FF]">
-                            <p class=" text-sm font-normal font-['Poppins'] leading-[17px]">
-                                Start Chat
-                            </p>
-                            <div class="w-6 h-6 relative darkIconStock ">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M22 10.5V12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2H13.5"
-                                        stroke="#1E2329" stroke-linecap="round" />
-                                    <path
-                                        d="M16.652 3.45506L17.3009 2.80624C18.3759 1.73125 20.1188 1.73125 21.1938 2.80624C22.2687 3.88124 22.2687 5.62415 21.1938 6.69914L20.5449 7.34795M16.652 3.45506C16.652 3.45506 16.7331 4.83379 17.9497 6.05032C19.1662 7.26685 20.5449 7.34795 20.5449 7.34795M16.652 3.45506L10.6872 9.41993C10.2832 9.82394 10.0812 10.0259 9.90743 10.2487C9.70249 10.5114 9.52679 10.7957 9.38344 11.0965C9.26191 11.3515 9.17157 11.6225 8.99089 12.1646L8.41242 13.9M20.5449 7.34795L14.5801 13.3128C14.1761 13.7168 13.9741 13.9188 13.7513 14.0926C13.4886 14.2975 13.2043 14.4732 12.9035 14.6166C12.6485 14.7381 12.3775 14.8284 11.8354 15.0091L10.1 15.5876M10.1 15.5876L8.97709 15.9619C8.71035 16.0508 8.41626 15.9814 8.21744 15.7826C8.01862 15.5837 7.9492 15.2897 8.03811 15.0229L8.41242 13.9M10.1 15.5876L8.41242 13.9"
-                                        stroke="#1E2329" />
+            <div  class="max-w-[460px] w-full hidden lg:block">
+                    <div
+                        class="max-w-[375px] lg:max-w-[460px] h-[716px] mt-0 lg:mt-[58px] p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+                        <div class="flex justify-between items-center px-4  lg:hidden">
+    
+                            <button @click="handleBack" class="">
+                                <div>
+                                    <svg width="70" height="69" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.8337 13H9.16699M9.16699 13L12.417 9.75M9.16699 13L12.417 16.25"
+                                        stroke="#495057" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
-
-
-
-
-
-
-                            </div>
-                        </button>
-                    </div>
-                    <div class="flex lg:justify-start justify-center  mt-10 lg:mt-0  items-center mb-[30px]">
-                        <h3
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">
-                            All
-                            Message</h3>
-                        <ul
-                            class="flex mb-0 list-none flex-row max-w-[168px]  rounded-xl border border-[#0057FF] overflow-hidden	 h-[37px]">
-                            <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                                <a class="w-20 flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px] 
-                                    h-[37px] dark:text-[#F5F5F5]" v-on:click="toggleTabs(1)"
-                                    v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 1, 'text-white bg-[#0057FF] dark:text-[#F5F5F5]': openTab === 1 }">
-                                    Inbox
-                                </a>
-                            </li>
-                            <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                                <a class="w-20 flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px]  
-                                    h-[37px] dark:text-[#F5F5F5]" v-on:click="toggleTabs(2)"
-                                    v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 2, 'text-white bg-[#0057FF] dark:text-[#F5F5F5]': openTab === 2 }">
-                                    Sent
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                    <div
-                        class="max-w-[400px] w-full h-[50px] px-4  py-3 rounded-[100px] border border-zinc-600 dark:border-[#ACB5BD] justify-start items-center gap-[7px] inline-flex mb-[32px]">
-
-                        <svg v-if="Theme === 'light'" width="16" height="17" viewBox="0 0 16 17" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="7.66658" cy="8.16732" r="6.33333" stroke="#495057" />
-                            <path d="M12.3333 12.834L14.6666 15.1673" stroke="#495057" stroke-linecap="round" />
-                        </svg>
-                        <svg v-if="Theme === 'dark'" width="16" height="17" viewBox="0 0 16 17" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="7.66536" cy="8.16732" r="6.33333" stroke="#ACB5BD" />
-                            <path d="M12.332 12.834L14.6654 15.1673" stroke="#ACB5BD" stroke-linecap="round" />
-                        </svg>
-
-                        <input class="w-full outline-none h-[44px] dark:bg-transparent" type="text"
-                            placeholder="Find Message">
-
-
-
-                    </div>
-
-
-
-                    <div
-                        class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
+                                </div>
+                            </button>
+                            <button  v-on:click="toggleShowMessageCompose(true)"
+                                class="max-w-[164px] max-h-11 w-full py-2.5 px-2  rounded-[10px] shadow border border-neutral-800 dark:border-[#F5F5F5]  justify-center items-center gap-2 inline-flex  hover:text-[#F5F5F5] iconStock text-neutral-800 dark:text-[#F5F5F5] disabled:cursor-not-allowed disabled:opacity-20 disabled:border-neutral-800 disabled:bg-white disabled:hover:text-black disabled:dark:text-black iconStockBlack hover:border-[#0057FF] hover:bg-[#0057FF]">
+                                <p class=" text-sm font-normal font-['Poppins'] leading-[17px]">
+                                    Start Chat
+                                </p>
+                                <div class="w-6 h-6 relative darkIconStock ">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M22 10.5V12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2H13.5"
+                                            stroke="#1E2329" stroke-linecap="round" />
+                                        <path
+                                            d="M16.652 3.45506L17.3009 2.80624C18.3759 1.73125 20.1188 1.73125 21.1938 2.80624C22.2687 3.88124 22.2687 5.62415 21.1938 6.69914L20.5449 7.34795M16.652 3.45506C16.652 3.45506 16.7331 4.83379 17.9497 6.05032C19.1662 7.26685 20.5449 7.34795 20.5449 7.34795M16.652 3.45506L10.6872 9.41993C10.2832 9.82394 10.0812 10.0259 9.90743 10.2487C9.70249 10.5114 9.52679 10.7957 9.38344 11.0965C9.26191 11.3515 9.17157 11.6225 8.99089 12.1646L8.41242 13.9M20.5449 7.34795L14.5801 13.3128C14.1761 13.7168 13.9741 13.9188 13.7513 14.0926C13.4886 14.2975 13.2043 14.4732 12.9035 14.6166C12.6485 14.7381 12.3775 14.8284 11.8354 15.0091L10.1 15.5876M10.1 15.5876L8.97709 15.9619C8.71035 16.0508 8.41626 15.9814 8.21744 15.7826C8.01862 15.5837 7.9492 15.2897 8.03811 15.0229L8.41242 13.9M10.1 15.5876L8.41242 13.9"
+                                            stroke="#1E2329" />
+                                    </svg>
+    
+    
+    
+    
+    
+    
+                                </div>
+                            </button>
+                        </div>
+                        <div class="flex lg:justify-start justify-center  mt-10 lg:mt-0  items-center mb-[30px]">
+                            <h3
+                                class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">
+                                All
+                                Message</h3>
+                            <ul
+                                class="flex mb-0 list-none flex-row max-w-[168px]  rounded-xl border border-[#0057FF] overflow-hidden	 h-[37px]">
+                                <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
+                                    <a class="w-20 flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px] 
+                                        h-[37px] dark:text-[#F5F5F5]" v-on:click="toggleTabs(1)"
+                                        v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 1, 'text-white bg-[#0057FF] dark:text-[#F5F5F5]': openTab === 1 }">
+                                        Inbox
+                                    </a>
+                                </li>
+                                <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
+                                    <a class="w-20 flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px]  
+                                        h-[37px] dark:text-[#F5F5F5]" v-on:click="toggleTabs(2)"
+                                        v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 2, 'text-white bg-[#0057FF] dark:text-[#F5F5F5]': openTab === 2 }">
+                                        Sent
+                                    </a>
+                                </li>
+    
+                            </ul>
+                        </div>
                         <div
-                            class="w-full px-[2px] pt-[0px] pb-[30px] flex-col justify-start items-center gap-[30px] inline-flex overflow-y-auto scrollbar max-h-[500px]">
-                            <div class="w-full">
-
-                                <div class="tab-content tab-space w-full ">
-
-                                    <!-- openTab  1-->
-                                    <div class="w-full pr-[35px]"
-                                        v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
-
-
-                                        <div v-if="selectedNumberData">
-                                            <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
-                                                v-for="messageData in selectedNumberData.messagesData"
-                                                :key="messageData.id">
-                                                <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
-                                                    srcset="">
-                                                <div class="flex-1 flex flex-wrap ">
-                                                    <div class="w-full flex justify-between mb-[6px]">
-                                                        <h6
-                                                            class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
-                                                            {{ messageData.name }}
-                                                        </h6>
-                                                        <p
-                                                            class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
-                                                            {{ messageData.messageTime }}
-                                                        </p>
-                                                    </div>
-                                                    <div class="">
-                                                        <template v-if="!messageData.showFullMessage">
-                                                            <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
-                                                                v-html="formattedMessage(messageData)">
-                                                            </div>
-                                                        </template>
-                                                        <template v-else>
-                                                            <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
-                                                                v-html="formattedMessage(messageData)">
-                                                            </div>
-                                                        </template>
-                                                        <span v-if="messageData.message.length > 100"
-                                                            class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
-                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
-                                                            {{ messageData.showFullMessage ? 'Less' : 'More' }}
-                                                        </span>
-                                                        <svg class="inline pl-1 cursor-pointer"
-                                                            v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
-                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
-                                                            viewBox="0 0 384 512">
-                                                            <path
-                                                                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
-                                                                fill="#0057FF" />
-                                                        </svg>
-
-
-                                                        <svg class="inline pl-1 cursor-pointer"
-                                                            v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
-                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
-                                                            viewBox="0 0 384 512">
-                                                            <path
-                                                                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-                                                                fill="#0057FF" />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
-
-                                            <p
-                                                class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
-                                                No messages</p>
-                                        </div>
-
-                                        <div v-if="!selectedNumberData">
-                                            <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
-                                                v-for="messageData in messagesData" :key="messageData.id">
-                                                <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
-                                                    srcset="">
-                                                <div class="flex-1 flex flex-wrap ">
-                                                    <div class="w-full flex justify-between mb-[6px]">
-                                                        <h6
-                                                            class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
-                                                            Namepo
-                                                        </h6>
-                                                        <p
-                                                            class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
-                                                            {{ messageData.messageTime }}
-                                                        </p>
-                                                    </div>
-                                                    <div class="">
-                                                        <template v-if="!messageData.showFullMessage">
-                                                            <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
-                                                                v-html="formattedMessage(messageData)">
-                                                            </div>
-                                                        </template>
-                                                        <template v-else>
-                                                            <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
-                                                                v-html="formattedMessage(messageData)">
-                                                            </div>
-                                                        </template>
-                                                        <span v-if="messageData.message.length > 100"
-                                                            class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
-                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
-                                                            {{ messageData.showFullMessage ? 'Less' : 'More' }}
-                                                        </span>
-                                                        <svg class="inline pl-1 cursor-pointer"
-                                                            v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
-                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
-                                                            viewBox="0 0 384 512">
-                                                            <path
-                                                                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
-                                                                fill="#0057FF" />
-                                                        </svg>
-
-
-                                                        <svg class="inline pl-1 cursor-pointer"
-                                                            v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
-                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
-                                                            viewBox="0 0 384 512">
-                                                            <path
-                                                                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-                                                                fill="#0057FF" />
-                                                        </svg>
+                            class="max-w-[400px] w-full h-[50px] px-4  py-3 rounded-[100px] border border-zinc-600 dark:border-[#ACB5BD] justify-start items-center gap-[7px] inline-flex mb-[32px]">
+    
+                            <svg v-if="Theme === 'light'" width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="7.66658" cy="8.16732" r="6.33333" stroke="#495057" />
+                                <path d="M12.3333 12.834L14.6666 15.1673" stroke="#495057" stroke-linecap="round" />
+                            </svg>
+                            <svg v-if="Theme === 'dark'" width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="7.66536" cy="8.16732" r="6.33333" stroke="#ACB5BD" />
+                                <path d="M12.332 12.834L14.6654 15.1673" stroke="#ACB5BD" stroke-linecap="round" />
+                            </svg>
+    
+                            <input class="w-full outline-none h-[44px] dark:bg-transparent" type="text"
+                                placeholder="Find Message">
+    
+    
+    
+                        </div>
+    
+    
+    
+                        <div
+                            class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
+                            <div
+                                class="w-full px-[2px] pt-[0px] pb-[30px] flex-col justify-start items-center gap-[30px] inline-flex overflow-y-auto scrollbar max-h-[500px]">
+                                <div class="w-full">
+    
+                                    <div class="tab-content tab-space w-full ">
+    
+                                        <!-- openTab  1-->
+                                        <div class="w-full pr-[35px]"
+                                            v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
+    
+    
+                                            <div v-if="selectedNumberData">
+                                                <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
+                                                    v-for="messageData in selectedNumberData.messagesData"
+                                                    :key="messageData.id">
+                                                    <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
+                                                        srcset="">
+                                                    <div class="flex-1 flex flex-wrap ">
+                                                        <div class="w-full flex justify-between mb-[6px]">
+                                                            <h6
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                {{ messageData.name }}
+                                                            </h6>
+                                                            <p
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                {{ messageData.messageTime }}
+                                                            </p>
+                                                        </div>
+                                                        <div class="">
+                                                            <template v-if="!messageData.showFullMessage">
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <template v-else>
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <span v-if="messageData.message.length > 100"
+                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
+                                                                {{ messageData.showFullMessage ? 'Less' : 'More' }}
+                                                            </span>
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+    
+    
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
+    
+                                                <p
+                                                    class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                    No messages</p>
+                                            </div>
+    
+                                            <div v-if="!selectedNumberData">
+                                                <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
+                                                    v-for="messageData in messagesData" :key="messageData.id">
+                                                    <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
+                                                        srcset="">
+                                                    <div class="flex-1 flex flex-wrap ">
+                                                        <div class="w-full flex justify-between mb-[6px]">
+                                                            <h6
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                Namepo
+                                                            </h6>
+                                                            <p
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                {{ messageData.messageTime }}
+                                                            </p>
+                                                        </div>
+                                                        <div class="">
+                                                            <template v-if="!messageData.showFullMessage">
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <template v-else>
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <span v-if="messageData.message.length > 100"
+                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
+                                                                {{ messageData.showFullMessage ? 'Less' : 'More' }}
+                                                            </span>
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+    
+    
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
                                         </div>
-
+                                        <!-- openTab  2-->
+                                        <div class="w-full pr-[35px]"
+                                            v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
+    
+    
+                                            <div v-if="selectedNumberData">
+                                                <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
+                                                    v-for="messageData in selectedNumberData.messagesData"
+                                                    :key="messageData.id">
+                                                    <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
+                                                        srcset="">
+                                                    <div class="flex-1 flex flex-wrap ">
+                                                        <div class="w-full flex justify-between mb-[6px]">
+                                                            <h6
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                {{ messageData.name }}
+                                                            </h6>
+                                                            <p
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                {{ messageData.messageTime }}
+                                                            </p>
+                                                        </div>
+                                                        <div class="">
+                                                            <template v-if="!messageData.showFullMessage">
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <template v-else>
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <span v-if="messageData.message.length > 100"
+                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
+                                                                {{ messageData.showFullMessage ? 'Less' : 'More' }}
+                                                            </span>
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+    
+    
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
+    
+                                                <p
+                                                    class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                    No messages</p>
+                                            </div>
+    
+                                            <div v-if="!selectedNumberData">
+                                                <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
+                                                    v-for="messageData in messagesData" :key="messageData.id">
+                                                    <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
+                                                        srcset="">
+                                                    <div class="flex-1 flex flex-wrap ">
+                                                        <div class="w-full flex justify-between mb-[6px]">
+                                                            <h6
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                Namepo
+                                                            </h6>
+                                                            <p
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                {{ messageData.messageTime }}
+                                                            </p>
+                                                        </div>
+                                                        <div class="">
+                                                            <template v-if="!messageData.showFullMessage">
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <template v-else>
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <span v-if="messageData.message.length > 100"
+                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
+                                                                {{ messageData.showFullMessage ? 'Less' : 'More' }}
+                                                            </span>
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+    
+    
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+    
                                     </div>
-                                    <!-- openTab  2-->
-                                    <div class="w-full pr-[35px]"
-                                        v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
-
-
-                                        <div v-if="selectedNumberData">
-                                            <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
-                                                v-for="messageData in selectedNumberData.messagesData"
-                                                :key="messageData.id">
-                                                <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
-                                                    srcset="">
-                                                <div class="flex-1 flex flex-wrap ">
-                                                    <div class="w-full flex justify-between mb-[6px]">
-                                                        <h6
-                                                            class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
-                                                            {{ messageData.name }}
-                                                        </h6>
-                                                        <p
-                                                            class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
-                                                            {{ messageData.messageTime }}
-                                                        </p>
-                                                    </div>
-                                                    <div class="">
-                                                        <template v-if="!messageData.showFullMessage">
-                                                            <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
-                                                                v-html="formattedMessage(messageData)">
-                                                            </div>
-                                                        </template>
-                                                        <template v-else>
-                                                            <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
-                                                                v-html="formattedMessage(messageData)">
-                                                            </div>
-                                                        </template>
-                                                        <span v-if="messageData.message.length > 100"
-                                                            class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
-                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
-                                                            {{ messageData.showFullMessage ? 'Less' : 'More' }}
-                                                        </span>
-                                                        <svg class="inline pl-1 cursor-pointer"
-                                                            v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
-                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
-                                                            viewBox="0 0 384 512">
-                                                            <path
-                                                                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
-                                                                fill="#0057FF" />
-                                                        </svg>
-
-
-                                                        <svg class="inline pl-1 cursor-pointer"
-                                                            v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
-                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
-                                                            viewBox="0 0 384 512">
-                                                            <path
-                                                                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-                                                                fill="#0057FF" />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
-
-                                            <p
-                                                class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
-                                                No messages</p>
-                                        </div>
-
-                                        <div v-if="!selectedNumberData">
-                                            <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
-                                                v-for="messageData in messagesData" :key="messageData.id">
-                                                <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
-                                                    srcset="">
-                                                <div class="flex-1 flex flex-wrap ">
-                                                    <div class="w-full flex justify-between mb-[6px]">
-                                                        <h6
-                                                            class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
-                                                            Namepo
-                                                        </h6>
-                                                        <p
-                                                            class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
-                                                            {{ messageData.messageTime }}
-                                                        </p>
-                                                    </div>
-                                                    <div class="">
-                                                        <template v-if="!messageData.showFullMessage">
-                                                            <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
-                                                                v-html="formattedMessage(messageData)">
-                                                            </div>
-                                                        </template>
-                                                        <template v-else>
-                                                            <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
-                                                                v-html="formattedMessage(messageData)">
-                                                            </div>
-                                                        </template>
-                                                        <span v-if="messageData.message.length > 100"
-                                                            class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
-                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
-                                                            {{ messageData.showFullMessage ? 'Less' : 'More' }}
-                                                        </span>
-                                                        <svg class="inline pl-1 cursor-pointer"
-                                                            v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
-                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
-                                                            viewBox="0 0 384 512">
-                                                            <path
-                                                                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
-                                                                fill="#0057FF" />
-                                                        </svg>
-
-
-                                                        <svg class="inline pl-1 cursor-pointer"
-                                                            v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
-                                                            @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
-                                                            xmlns="http://www.w3.org/2000/svg" height="10px"
-                                                            viewBox="0 0 384 512">
-                                                            <path
-                                                                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
-                                                                fill="#0057FF" />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
+    
+    
                     </div>
+                </div>
+            <!-- All Message Mobile-->
 
+            <div class="block lg:hidden">
+                <div v-if="isLoading" class="flex justify-center items-center my-40">
+                    <div class="loader-mobile loader"></div>
+                </div>
 
+                <div v-else class="max-w-[460px] w-full">
+                    <div
+                        class="max-w-[375px] lg:max-w-[460px] h-[716px] mt-0 lg:mt-[58px] p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+                        <div class="flex justify-between items-center px-4  lg:hidden">
+    
+                            <button @click="handleBack" class="">
+                                <div>
+                                    <svg width="70" height="69" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.8337 13H9.16699M9.16699 13L12.417 9.75M9.16699 13L12.417 16.25"
+                                        stroke="#495057" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                                </div>
+                            </button>
+                            <button  v-on:click="toggleShowMessageCompose(true)"
+                                class="max-w-[164px] max-h-11 w-full py-2.5 px-2  rounded-[10px] shadow border border-neutral-800 dark:border-[#F5F5F5]  justify-center items-center gap-2 inline-flex  hover:text-[#F5F5F5] iconStock text-neutral-800 dark:text-[#F5F5F5] disabled:cursor-not-allowed disabled:opacity-20 disabled:border-neutral-800 disabled:bg-white disabled:hover:text-black disabled:dark:text-black iconStockBlack hover:border-[#0057FF] hover:bg-[#0057FF]">
+                                <p class=" text-sm font-normal font-['Poppins'] leading-[17px]">
+                                    Start Chat
+                                </p>
+                                <div class="w-6 h-6 relative darkIconStock ">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M22 10.5V12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2H13.5"
+                                            stroke="#1E2329" stroke-linecap="round" />
+                                        <path
+                                            d="M16.652 3.45506L17.3009 2.80624C18.3759 1.73125 20.1188 1.73125 21.1938 2.80624C22.2687 3.88124 22.2687 5.62415 21.1938 6.69914L20.5449 7.34795M16.652 3.45506C16.652 3.45506 16.7331 4.83379 17.9497 6.05032C19.1662 7.26685 20.5449 7.34795 20.5449 7.34795M16.652 3.45506L10.6872 9.41993C10.2832 9.82394 10.0812 10.0259 9.90743 10.2487C9.70249 10.5114 9.52679 10.7957 9.38344 11.0965C9.26191 11.3515 9.17157 11.6225 8.99089 12.1646L8.41242 13.9M20.5449 7.34795L14.5801 13.3128C14.1761 13.7168 13.9741 13.9188 13.7513 14.0926C13.4886 14.2975 13.2043 14.4732 12.9035 14.6166C12.6485 14.7381 12.3775 14.8284 11.8354 15.0091L10.1 15.5876M10.1 15.5876L8.97709 15.9619C8.71035 16.0508 8.41626 15.9814 8.21744 15.7826C8.01862 15.5837 7.9492 15.2897 8.03811 15.0229L8.41242 13.9M10.1 15.5876L8.41242 13.9"
+                                            stroke="#1E2329" />
+                                    </svg>
+    
+    
+    
+    
+    
+    
+                                </div>
+                            </button>
+                        </div>
+                        <div class="flex lg:justify-start justify-center  mt-10 lg:mt-0  items-center mb-[30px]">
+                            <h3
+                                class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">
+                                All
+                                Message</h3>
+                            <ul
+                                class="flex mb-0 list-none flex-row max-w-[168px]  rounded-xl border border-[#0057FF] overflow-hidden	 h-[37px]">
+                                <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
+                                    <a class="w-20 flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px] 
+                                        h-[37px] dark:text-[#F5F5F5]" v-on:click="toggleTabs(1)"
+                                        v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 1, 'text-white bg-[#0057FF] dark:text-[#F5F5F5]': openTab === 1 }">
+                                        Inbox
+                                    </a>
+                                </li>
+                                <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
+                                    <a class="w-20 flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px]  
+                                        h-[37px] dark:text-[#F5F5F5]" v-on:click="toggleTabs(2)"
+                                        v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 2, 'text-white bg-[#0057FF] dark:text-[#F5F5F5]': openTab === 2 }">
+                                        Sent
+                                    </a>
+                                </li>
+    
+                            </ul>
+                        </div>
+                        <div
+                            class="max-w-[400px] w-full h-[50px] px-4  py-3 rounded-[100px] border border-zinc-600 dark:border-[#ACB5BD] justify-start items-center gap-[7px] inline-flex mb-[32px]">
+    
+                            <svg v-if="Theme === 'light'" width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="7.66658" cy="8.16732" r="6.33333" stroke="#495057" />
+                                <path d="M12.3333 12.834L14.6666 15.1673" stroke="#495057" stroke-linecap="round" />
+                            </svg>
+                            <svg v-if="Theme === 'dark'" width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="7.66536" cy="8.16732" r="6.33333" stroke="#ACB5BD" />
+                                <path d="M12.332 12.834L14.6654 15.1673" stroke="#ACB5BD" stroke-linecap="round" />
+                            </svg>
+    
+                            <input class="w-full outline-none h-[44px] dark:bg-transparent" type="text"
+                                placeholder="Find Message">
+    
+    
+    
+                        </div>
+    
+    
+    
+                        <div
+                            class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
+                            <div
+                                class="w-full px-[2px] pt-[0px] pb-[30px] flex-col justify-start items-center gap-[30px] inline-flex overflow-y-auto scrollbar max-h-[500px]">
+                                <div class="w-full">
+    
+                                    <div class="tab-content tab-space w-full ">
+    
+                                        <!-- openTab  1-->
+                                        <div class="w-full pr-[35px]"
+                                            v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
+    
+    
+                                            <div v-if="selectedNumberData">
+                                                <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
+                                                    v-for="messageData in selectedNumberData.messagesData"
+                                                    :key="messageData.id">
+                                                    <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
+                                                        srcset="">
+                                                    <div class="flex-1 flex flex-wrap ">
+                                                        <div class="w-full flex justify-between mb-[6px]">
+                                                            <h6
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                {{ messageData.name }}
+                                                            </h6>
+                                                            <p
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                {{ messageData.messageTime }}
+                                                            </p>
+                                                        </div>
+                                                        <div class="">
+                                                            <template v-if="!messageData.showFullMessage">
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <template v-else>
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <span v-if="messageData.message.length > 100"
+                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
+                                                                {{ messageData.showFullMessage ? 'Less' : 'More' }}
+                                                            </span>
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+    
+    
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
+    
+                                                <p
+                                                    class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                    No messages</p>
+                                            </div>
+    
+                                            <div v-if="!selectedNumberData">
+                                                <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
+                                                    v-for="messageData in messagesData" :key="messageData.id">
+                                                    <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
+                                                        srcset="">
+                                                    <div class="flex-1 flex flex-wrap ">
+                                                        <div class="w-full flex justify-between mb-[6px]">
+                                                            <h6
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                Namepo
+                                                            </h6>
+                                                            <p
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                {{ messageData.messageTime }}
+                                                            </p>
+                                                        </div>
+                                                        <div class="">
+                                                            <template v-if="!messageData.showFullMessage">
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <template v-else>
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <span v-if="messageData.message.length > 100"
+                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
+                                                                {{ messageData.showFullMessage ? 'Less' : 'More' }}
+                                                            </span>
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+    
+    
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+                                        <!-- openTab  2-->
+                                        <div class="w-full pr-[35px]"
+                                            v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
+    
+    
+                                            <div v-if="selectedNumberData">
+                                                <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
+                                                    v-for="messageData in selectedNumberData.messagesData"
+                                                    :key="messageData.id">
+                                                    <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
+                                                        srcset="">
+                                                    <div class="flex-1 flex flex-wrap ">
+                                                        <div class="w-full flex justify-between mb-[6px]">
+                                                            <h6
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                {{ messageData.name }}
+                                                            </h6>
+                                                            <p
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                {{ messageData.messageTime }}
+                                                            </p>
+                                                        </div>
+                                                        <div class="">
+                                                            <template v-if="!messageData.showFullMessage">
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <template v-else>
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <span v-if="messageData.message.length > 100"
+                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
+                                                                {{ messageData.showFullMessage ? 'Less' : 'More' }}
+                                                            </span>
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+    
+    
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
+    
+                                                <p
+                                                    class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                    No messages</p>
+                                            </div>
+    
+                                            <div v-if="!selectedNumberData">
+                                                <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
+                                                    v-for="messageData in messagesData" :key="messageData.id">
+                                                    <img class="w-[24px] h-[24px] mr-[14px]" :src="messageData.img" alt=""
+                                                        srcset="">
+                                                    <div class="flex-1 flex flex-wrap ">
+                                                        <div class="w-full flex justify-between mb-[6px]">
+                                                            <h6
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                Namepo
+                                                            </h6>
+                                                            <p
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                {{ messageData.messageTime }}
+                                                            </p>
+                                                        </div>
+                                                        <div class="">
+                                                            <template v-if="!messageData.showFullMessage">
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <template v-else>
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                    v-html="formattedMessage(messageData)">
+                                                                </div>
+                                                            </template>
+                                                            <span v-if="messageData.message.length > 100"
+                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
+                                                                {{ messageData.showFullMessage ? 'Less' : 'More' }}
+                                                            </span>
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == false, 'hidden': toggleArrowIcon == true }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+    
+    
+                                                            <svg class="inline pl-1 cursor-pointer"
+                                                                v-bind:class="{ 'block': toggleArrowIcon == true, 'hidden': toggleArrowIcon == false }"
+                                                                @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)"
+                                                                xmlns="http://www.w3.org/2000/svg" height="10px"
+                                                                viewBox="0 0 384 512">
+                                                                <path
+                                                                    d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2l105.4 105.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                                                                    fill="#0057FF" />
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+    
+                                        </div>
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+    
+                    </div>
                 </div>
             </div>
 
@@ -648,6 +1015,7 @@ export default {
             showMessageCompose: false,
             inputPhoneValue: '',
             numberSelectedShowModal: false,
+            isLoading: false,
             numbersData: [
                 {
                     id: 1,
@@ -994,10 +1362,14 @@ export default {
                 this.selectedNumber = data.id;
                 this.selectedNumberData = data;
                 this.inputPhoneValue = data?.number
+                this.isLoading = true;
+                setTimeout(() => {
+                    this.isLoading = false;
+                }, 1000);
                 // console.log("selectedNumberData",this.selectedNumberData.number);
             }
 
-            console.log(data)
+          
         },
         
         selectActiveStatus(option) {
@@ -1156,5 +1528,45 @@ body.dark .vti__input {
 .vti__input::-webkit-input-placeholder::before {
     color: #666;
     content: "Line 1\A Line 2\A Line 3\A";
+}
+
+
+.loader {
+    border: 4px solid rgba(0, 0, 0, 0.2);
+    border-top: 4px solid #0057FF;
+    /* Change the loader color as needed */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    /* Adjust animation duration as needed */
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-mobile {
+    display: none;
+    /* Add your loader styles here */
+}
+
+/* Media query to show the loader on mobile screens */
+@media (max-width: 768px) {
+    .loader-mobile {
+        display: block;
+    }
+
+    /* Hide other elements on mobile screens */
+    .max-w-[360px] {
+        display: none;
+    }
 }
 </style>
