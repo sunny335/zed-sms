@@ -533,7 +533,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                 </div>
             <!-- All Message Mobile-->
 
-            <div class="block lg:hidden">
+            <div class=""
+            :class="{'block lg:hidden':selectedNumber, 'hidden':!selectedNumber }"
+            >
                 <div v-if="isLoading" class="flex justify-center items-center my-40">
                     <div class="loader-mobile loader"></div>
                 </div>

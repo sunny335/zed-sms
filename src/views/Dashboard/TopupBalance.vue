@@ -52,14 +52,18 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                 </div>
             </div>
             <!-- Balance TO-UP  for mobile-->
-            <div class="max-w-[360px] w-full mx-auto block lg:hidden">
+            <div class="max-w-[360px] w-full mx-auto "
+            :class="{ 'block lg:hidden': selectedPayment,'hidden': !selectedPayment }"
+            >
                 <div v-if="isLoading" class="flex justify-center items-center my-40">
                     <div class="loader-mobile loader"></div>
                 </div>
 
 
 
-                <div v-else>
+                <div v-else
+                
+                >
                     <div class="flex justify-between lg:justify-center lg:hidden px-2 lg:px-0 items-center">
                         <button @click="handleBack"
                             class="">
