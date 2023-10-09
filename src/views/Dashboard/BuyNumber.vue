@@ -83,10 +83,8 @@ const filteredPhone = computed(() => {
 
             </div>
             <div>
-                <ul
-                    class="flex mb-0 list-none flex-row max-w-[300px] lg:max-w-[450px] w-full mx-auto rounded-2xl border border-blue-600 overflow-hidden h-[58px]"
-                    :class="{'hidden lg:flex' : selectedCountry || selectedService || selectedPhone}"
-                    >
+                <ul class="flex mb-0 list-none flex-row max-w-[300px] lg:max-w-[450px] w-full mx-auto rounded-2xl border border-blue-600 overflow-hidden h-[58px]"
+                    :class="{ 'hidden lg:flex': selectedCountry || selectedService || selectedPhone }">
                     <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                         <a class="max-w-[100px] lg:max-w-[150px] w-[100px] lg:w-[150px] flex items-center justify-center dark:text-[#F5F5F5] text-center text-sm lg:text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px]"
                             v-on:click="
@@ -377,9 +375,9 @@ const filteredPhone = computed(() => {
                                         </div>
 
                                         <!-- column2 -->
-                                        <div class="max-w-[95%] lg:max-w-[306px] w-full" v-bind:class="{
+                                        <div class="max-w-[95%] lg:max-w-[306px] w-full " v-bind:class="{
                                             block: selectedCountry,
-                                            'hidden lg:block': !selectedCountry || selectedService,
+                                            'hidden lg:block ': !selectedCountry || selectedService,
                                         }">
 
                                             <form>
@@ -405,7 +403,7 @@ const filteredPhone = computed(() => {
                                             </form>
                                             <div
                                                 class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
-                                                <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
+                                                <ul class="mt-6 overflow-y-auto h-[491px] scrollbar ">
                                                     <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
                                                         v-for="(service, index) in filteredService" :key="index"
                                                         @click="selectService(service)"
@@ -415,9 +413,7 @@ const filteredPhone = computed(() => {
                                                             class="max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
                                                             <div
                                                                 class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
-                                                                <!-- <img :src="getFlagImage(country.flag)" class="w-4 h-4 mr-2"
-                
-                alt="Flag" /> -->
+                                                                
                                                                 <img :src="service.flag"
                                                                     class="w-[30px] h-[30px] rounded-full" alt="flag" />
                                                                 <div
@@ -479,8 +475,43 @@ const filteredPhone = computed(() => {
                                                                     <div v-if="selectedPhone === phoneNumber"
                                                                         class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px] w-[max-content]">
                                                                         <div class="pr-[3px]">
-                                                                            <WeekListDropdown :selectedWeek="selectedWeek"
-                                                                                @update:selectedWeek="updateSelectedWeek" />
+                                                                            <div class="relative inline-block text-left">
+                                                                                <!-- Dropdown Trigger -->
+                                                                                <div @click="toggleDropdown"
+                                                                                    class="cursor-pointer flex items-center">
+                                                                                    <div
+                                                                                        class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-normal font-['Poppins'] leading-[17px]">
+
+                                                                                        <span> {{ selectedOption }}</span>
+                                                                                    </div>
+                                                                                    <div class="ml-2">
+                                                                                        <svg width="16" height="18"
+                                                                                            viewBox="0 0 16 18" fill="none"
+                                                                                            xmlns="http://www.w3.org/2000/svg">
+                                                                                            <path
+                                                                                                d="M12.6667 6.77771L8.00004 11.2222L3.33337 6.77771"
+                                                                                                stroke="#495057"
+                                                                                                stroke-linecap="round"
+                                                                                                stroke-linejoin="round" />
+                                                                                        </svg>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- Dropdown Menu -->
+                                                                                <ul v-show="isOpen"
+                                                                                    class="absolute     right-[-100px] lg:right-[-102px] mt-2 py-2 w-48 bg-white z-[9999] dark:bg-[#09132C]  border border-gray-300 rounded-md shadow-lg">
+                                                                                    <!-- Render your list of countries and languages here -->
+                                                                                    <li v-for="(item, index) in options"
+                                                                                        :key="index"
+                                                                                        @click="selectOption(item)"
+                                                                                        class="px-4 py-2 cursor-pointer hover:bg-gray-100 dark:hover:bg-slate-600 flex items-center">
+                                                                                        <span
+                                                                                            class="text-neutral-800  dark:text-[#F5F5F5] text-xs font-light ">
+                                                                                            {{ item }}
+
+                                                                                        </span>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </div>
                                                                         </div>
                                                                         <div @click="handleModalOpen(true)"
                                                                             class="flex items-center gap-[6px] border-l border-zinc-600 pl-[3px]">
@@ -640,11 +671,10 @@ const filteredPhone = computed(() => {
                                                 <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
                                                     <li v-for="(phoneNumber, index) in filteredPhone" :key="index"
                                                         class="mr-[13px] rounded-[14px] lg:h-auto border-gray-400 cursor-pointer"
-                                                        @click="selectPhone(phoneNumber)"
-                                                        :class="{
-                            'border pt-[10px] h-[96px]':
-                              selectedPhone === phoneNumber,
-                          }">
+                                                        @click="selectPhone(phoneNumber)" :class="{
+                                                            'border pt-[10px] h-[96px]':
+                                                                selectedPhone === phoneNumber,
+                                                        }">
 
                                                         <div
                                                             class="max-w-full w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
@@ -820,7 +850,7 @@ const filteredPhone = computed(() => {
                                                             class="max-w-[250px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
                                                             <div
                                                                 class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
-                                                                
+
                                                                 <img :src="service.flag"
                                                                     class="w-[30px] h-[30px] rounded-full" alt="Flag" />
                                                                 <div
@@ -1004,10 +1034,10 @@ const filteredPhone = computed(() => {
                                     </div>
                                     <RouterLink to="/payment"
                                         class=" w-2/4 h-[41px] px-6 py-2.5 rounded-[10px] border border-[#0057FF] dark:bg-[#0057FF] justify-center items-center gap-2.5 flex dark:text-[#F5F5F5] text-[#0057FF] hover:text-[#F5F5F5] hover:bg-[#0057FF] iconStock">
-                                        <div class="text-center    text-sm font-normal font-['Poppins']">
+                                        <p class="text-center  text-sm font-normal font-['Poppins']">
                                             Next
 
-                                        </div>
+                                        </p>
                                         <svg v-if="Theme === 'light'" width="15" height="15" viewBox="0 0 15 15" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -1115,6 +1145,14 @@ export default {
             OpenModal: false,
             scrollPosition: 0,
             contentWidth: 0,
+            isOpen: false,
+            selectedOption: this.selectedWeek || '01 Week', // Default text
+            options: [
+                '01 Week',
+                '02 Week',
+                '01 Month',
+
+            ],
         }
     },
     methods: {
@@ -1123,7 +1161,15 @@ export default {
         },
         selectCountry(country) {
             this.selectedCountry = country;
+
+            // if (this.selectedCountry == country) {
+            //     this.selectedCountry = null;
+            // } else {
+            //     this.selectedCountry = country;
+            // }
         },
+            
+   
         selectService(service) {
             this.selectedService = service;
         },
@@ -1131,11 +1177,11 @@ export default {
             this.selectedPhone = phone;
         },
         updateSelectedWeek(week) {
-            this.selectedWeek = week; // Update the selected language when the event is emitted from HeaderDropdown
-            // You can perform any additional actions based on the selected language here
+            this.selectedWeek = week; 
         },
         handleModalOpen(open) {
             this.OpenModal = open;
+            console.log(this.selectedCountry,this.selectedService,this.selectedPhone);
         },
         scrollLeft() {
             this.scrollPosition -= 100;
@@ -1174,7 +1220,16 @@ export default {
                 this.selectedCountry = null
             }
 
-        }
+        },
+        toggleDropdown() {
+            this.isOpen = !this.isOpen;
+        },
+        selectOption(option) {
+            this.selectedWeek = option;
+            this.selectedOption = option;
+            this.isOpen = false;
+            this.$emit('update:selectedWeek', option); 
+        },
     },
 
 }
@@ -1200,5 +1255,4 @@ export default {
 
 .iconStock:disabled:hover path {
     stroke: #1E2329;
-}
-</style>
+}</style>

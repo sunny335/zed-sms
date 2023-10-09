@@ -24,7 +24,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
             :class="{'hidden lg:block':selectedNumber}"
             >
                 <div class="max-w-[100%] lg:max-w-[357px] max-h-[711px]  ">
-                    <div class="flex justify-between items-center w-full lg:w-[342px] mx-4 lg:mx-0">
+                    <div class="max-w-full w-full lg:w-[342px] flex justify-between items-center px-4 lg:px-0">
                         <h3
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">
                             All Number</h3>

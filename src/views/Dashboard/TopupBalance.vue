@@ -249,13 +249,15 @@ export default {
             this.toggleArrowIcon = v
         },
         selectPayment(id) {
-            this.isLoading = true; // Show loader
-            this.selectedPayment = id;
-
-            // Simulate an asynchronous operation (e.g., an HTTP request)
-            setTimeout(() => {
-                this.isLoading = false; // Hide loader after the operation is complete
-            }, 1000); // Adjust the timeout as needed
+            if (this.selectedPayment === id) {
+                this.selectedPayment = null;
+            } else {
+                this.selectedPayment = id;
+                this.isLoading = true;
+                setTimeout(() => {
+                    this.isLoading = false;
+                }, 1000);
+            }
         },
 
         onSubmit(e) {
