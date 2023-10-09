@@ -20,11 +20,11 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
         :class="{ 'block': showMessageCompose === !true, 'hidden': showMessageCompose === true }">
         <div class="flex  gap-[25px] lg:flex-row flex-col">
             <!-- All Number -->
-            <div class="max-w-[342px] lg:max-w-[357px] w-full mx-auto"
+            <div class="max-w-[100%] lg:max-w-[357px] w-full mx-auto"
             :class="{'hidden lg:block':selectedNumber}"
             >
-                <div class="max-w-[342px] lg:max-w-[357px] max-h-[711px]  ">
-                    <div class="flex justify-between items-center w-[342px]">
+                <div class="max-w-[100%] lg:max-w-[357px] max-h-[711px]  ">
+                    <div class="flex justify-between items-center w-full lg:w-[342px] mx-4 lg:mx-0">
                         <h3
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">
                             All Number</h3>
@@ -112,7 +112,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                     <div
                         class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                         <div class="scrollbar max-h-[620px] mt-[20px]">
-                            <div class="max-w-[337px] h-[93px] px-5 py-7 border-b cursor-pointer border-gray-400 flex  items-center gap-4 flex-wrap mx-auto"
+                            <div class="max-w-full lg:max-w-[337px] h-[93px] px-5 py-7 border-b cursor-pointer border-gray-400 flex  items-center gap-4 flex-wrap mx-auto"
                                 v-for="numberData in filteredNumberData" :key="numberData.id"
                                 @click="selectNumber(numberData)"
                                 :class="{ 'bg-[#0057FF] text-white': selectedNumber === numberData.id }">
@@ -148,7 +148,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                             {{
                                                 numberData.timeLeft }}</p>
                                     </div>
-                                    <div class="flex items-center gap-2 justify-center">
+                                    <div class="flex items-center gap-2 justify-between lg:justify-center">
                                         <p class=" dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]"
                                             :class="{ 'text-white': selectedNumber === numberData.id, 'text-zinc-600': selectedNumber !== numberData.id }">
                                             Type: {{
@@ -540,9 +540,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                     <div class="loader-mobile loader"></div>
                 </div>
 
-                <div v-else class="max-w-[460px] w-full">
+                <div v-else class="max-w-full lg:max-w-[460px] w-full mx-auto">
                     <div
-                        class="max-w-[375px] lg:max-w-[460px] h-[716px] mt-0 lg:mt-[58px] p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+                        class=" max-w-full lg:max-w-[460px] h-[716px] mt-0 lg:mt-[58px] p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom mx-auto">
                         <div class="flex justify-between items-center px-4  lg:hidden">
     
                             <button @click="handleBack" class="">
@@ -577,7 +577,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                 </div>
                             </button>
                         </div>
-                        <div class="flex lg:justify-start justify-center  mt-10 lg:mt-0  items-center mb-[30px]">
+                        <div class="flex lg:justify-start justify-between  mt-10 lg:mt-0  items-center mb-[30px]">
                             <h3
                                 class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">
                                 All

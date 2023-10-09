@@ -10,11 +10,11 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 <template>
     <section class="ml-0 lg:ml-[25px] mb-[97px]">
 
-        <div class="flex flex-wrap gap-[49px]">
+        <div class="flex justify-center lg:justify-between items-center gap-[49px]">
             <!-- Choose Payment -->
-            <div class="max-w-[401px] w-full mx-auto" :class="{ 'hidden lg:block': selectedPayment }">
-                <div class="max-w-[343px] lg:max-w-[401px] h-[635px] mx-auto">
-                    <div class="flex  items-center mb-[30px]">
+            <div class="max-w-full lg:max-w-[401px] w-full mx-auto flex justify-center items-center" :class="{ 'hidden lg:block': selectedPayment }">
+                <div class="max-w-full  lg:max-w-[401px] h-[635px] mx-auto">
+                    <div class="flex items-center mb-[30px]">
                         <h3
                             class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">
                             Choose
@@ -29,9 +29,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                         <div
                             class="w-full px-[2px] pt-[0px] pb-[30px] flex-col justify-start items-center gap-[30px] inline-flex overflow-y-auto scrollbar max-h-[570px]">
-                            <div class="w-full">
+                            <div class="max-w-full">
 
-                                <div class="flex items-center gap-[20px] py-4 pr-3 cursor-pointer max-w-[370px] w-full px-4"
+                                <div class="flex items-center gap-[20px] py-4 pr-3 cursor-pointer max-w-full lg:max-w-[370px] w-full px-4"
                                     v-for="data in paymentsData" :key="data.id" @click="selectPayment(data.id)"
                                     :class="{ 'bg-[#0057FF] text-white': selectedPayment === data.id }">
                                     <img :src="data.img" alt="" srcset="">

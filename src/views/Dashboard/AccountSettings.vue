@@ -10,8 +10,9 @@ import balanceTransfer from "../../assets/img/balanceTransfer.png"
 
 </script>
 
-<template>
-    <section class="max-w-[376px] lg:max-w-[584px] w-full h-[656px] px-[38px] lg:px-20 pt-0 lg:pt-10 pb-[50px] bg-white  dark:bg-[#09132C] rounded-3xl shadow-none mx-auto lg:shadow-custom ml-0 lg:ml-[147px] mb-[112px]">
+<template >
+   <section class="flex justify-center items-center">
+    <div class="max-w-[376px] lg:max-w-[584px] w-full h-[656px] px-[38px] lg:px-20 pt-0 lg:pt-10 pb-[50px] bg-white  dark:bg-[#09132C] rounded-3xl shadow-none mx-auto lg:shadow-custom ml-0 mr-0 lg:ml-[147px] mb-[112px]">
         <h3 class="text-zinc-600  dark:text-[#F5F5F5]  text-xl font-medium font-['Poppins']">Account</h3>
         <form v-on:submit="onSubmit" class="mt-[26px] w-full">
             <div>
@@ -65,12 +66,13 @@ import balanceTransfer from "../../assets/img/balanceTransfer.png"
             <div class="mt-[36px] flex  justify-end items-center">
 
                 <button
-                    class="max-w-[297px] h-[50px] w-full rounded-[14px] border border-blue-600 dark:bg-[#0057FF] justify-center items-center gap-2.5 inline-flex">
-                    <div class="text-blue-600 dark:text-white text-xl font-normal font-['Poppins'] uppercase">Save</div>
+                    class="max-w-[297px] h-[50px] w-full rounded-[14px] border border-blue-600 dark:bg-[#0057FF] justify-center items-center gap-2.5 inline-flex text-blue-600 dark:text-white hover:bg-[#0057FF] hover:text-white">
+                    <p class=" text-xl font-normal font-['Poppins'] uppercase">Save</p>
                 </button>
             </div>
         </form>
-    </section>
+    </div>
+   </section>
 </template>
 <script >
 
