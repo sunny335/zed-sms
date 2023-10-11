@@ -162,7 +162,7 @@
                 <div class="mt-[36px] flex  justify-end items-center">
 
                     <button
-                        class="max-w-full lg:max-w-[297px] h-[50px] w-full rounded-[14px] border border-blue-600 dark:bg-[#0057FF] justify-center items-center gap-2.5 inline-flex text-blue-600 dark:text-white hover:bg-[#0057FF] hover:text-white">
+                        class="max-w-full lg:max-w-[297px] h-[50px] w-full rounded-[14px] border border-blue-600 dark:bg-[#0057FF] justify-center items-center gap-2.5 inline-flex text-blue-600 dark:text-white hover:bg-[#0057FF] hover:text-white dark:hover:bg-white dark:hover:text-[#0057FF]">
                         <p class=" text-xl font-normal font-['Poppins'] uppercase">Save</p>
                     </button>
                 </div>

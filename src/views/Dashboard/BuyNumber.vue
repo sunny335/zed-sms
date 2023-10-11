@@ -1033,12 +1033,12 @@ const filteredPhone = computed(() => {
                                         </p>
                                     </div>
                                     <RouterLink to="/payment"
-                                        class=" w-2/4 h-[41px] px-6 py-2.5 rounded-[10px] border border-[#0057FF] dark:bg-[#0057FF] justify-center items-center gap-2.5 flex dark:text-[#F5F5F5] text-[#0057FF] hover:text-[#F5F5F5] hover:bg-[#0057FF] iconStock">
+                                        class=" w-2/4 h-[41px] px-6 py-2.5 rounded-[10px] border border-[#0057FF] dark:bg-[#0057FF] justify-center items-center gap-2.5 flex dark:text-[#F5F5F5] text-[#0057FF] dark:hover:text-[#0057FF] hover:text-[#F5F5F5] hover:bg-[#0057FF] dark:hover:bg-[#fff] iconStock darkIconStockBlue">
                                         <p class="text-center  text-sm font-normal font-['Poppins']">
                                             Next
 
                                         </p>
-                                        <svg v-if="Theme === 'light'" width="15" height="15" viewBox="0 0 15 15" fill="none"
+                                        <svg class="darkIconStock" width="15" height="15" viewBox="0 0 15 15" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path
                                                 d="M2.57396 8.81673C2.15485 6.86091 1.9453 5.883 2.47062 5.23319C2.99594 4.58337 3.99605 4.58337 5.99626 4.58337H9.00402C11.0042 4.58337 12.0043 4.58337 12.5297 5.23319C13.055 5.883 12.8454 6.86091 12.4263 8.81673L12.1763 9.98339C11.8923 11.309 11.7502 11.9719 11.2689 12.361C10.7876 12.75 10.1098 12.75 8.75402 12.75H6.24626C4.89052 12.75 4.21264 12.75 3.73135 12.361C3.25006 11.9719 3.10802 11.309 2.82396 9.98339L2.57396 8.81673Z"
@@ -1052,20 +1052,7 @@ const filteredPhone = computed(() => {
                                             <path d="M4 5.75L5.75 2.25" stroke="#0057FF" stroke-linecap="round"
                                                 stroke-linejoin="round" />
                                         </svg>
-                                        <svg v-if="Theme === 'dark'" width="15" height="15" viewBox="0 0 15 15" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M2.57396 8.81673C2.15485 6.86091 1.9453 5.883 2.47062 5.23319C2.99594 4.58337 3.99605 4.58337 5.99626 4.58337H9.00402C11.0042 4.58337 12.0043 4.58337 12.5297 5.23319C13.055 5.883 12.8454 6.86091 12.4263 8.81673L12.1763 9.98339C11.8923 11.309 11.7502 11.9719 11.2689 12.361C10.7876 12.75 10.1098 12.75 8.75402 12.75H6.24626C4.89052 12.75 4.21264 12.75 3.73135 12.361C3.25006 11.9719 3.10802 11.309 2.82396 9.98339L2.57396 8.81673Z"
-                                                stroke="#F5F5F5" />
-                                            <path d="M5.1665 7.5H9.83317" stroke="#F5F5F5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path d="M6.3335 9.25H8.66683" stroke="#F5F5F5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path d="M11 5.75L9.25 2.25" stroke="#F5F5F5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                            <path d="M4 5.75L5.75 2.25" stroke="#F5F5F5" stroke-linecap="round"
-                                                stroke-linejoin="round" />
-                                        </svg>
+                                       
 
                                     </RouterLink>
                                 </div>
@@ -1252,7 +1239,18 @@ export default {
 .iconStock:hover path {
     stroke: white;
 }
-
+body .whiteIconFill path {
+    fill: white;
+}
 .iconStock:disabled:hover path {
     stroke: #1E2329;
-}</style>
+}
+body.dark .darkIconStock path {
+    stroke: white;
+}
+
+body.dark .darkIconStockBlue:hover path {
+    stroke: #0057FF;
+}
+
+</style>

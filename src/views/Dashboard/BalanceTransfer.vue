@@ -34,7 +34,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                     <button
                     @click="submitModal(true)"
                     type="submit"
-                        class="max-w-[146px] h-12 w-full py-3 rounded-[10px] shadow border border-blue-600 dark:bg-[#0057FF] justify-center items-start gap-2.5 inline-flex text-blue-600  dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:bg-[#0057FF] ">
+                        class="max-w-[146px] h-12 w-full py-3 rounded-[10px] shadow border border-[#0057FF] dark:bg-[#0057FF] justify-center items-start gap-2.5 inline-flex text-[#0057FF]  dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:bg-[#0057FF] dark:hover:bg-white dark:hover:text-[#0057FF]">
                         <p class="text-center  text-base font-normal font-['Poppins']">Transfer</p>
                     </button>
                 </div>

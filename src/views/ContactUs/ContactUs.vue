@@ -78,10 +78,10 @@ import blueTik from '../../assets/img/blueTik.svg';
                             </div>
                             <div class="flex justify-end items-center mt-[30px]">
                                 <button
-                                    class="w-[257px] h-[60px] px-12 py-[18px] bg-[#0057FF] rounded-[14px] shadow justify-center items-center gap-2.5 inline-flex">
-                                    <div class="text-center text-white text-base font-normal font-['Poppins']">Submit
+                                    class="w-[257px] h-[60px] px-12 py-[18px] bg-[#0057FF] rounded-[14px] shadow justify-center items-center gap-2.5 inline-flex text-white dark:hover:bg-white dark:hover:text-[#0057FF] darkIconStockBlue">
+                                    <p class="text-center  text-base font-normal font-['Poppins']">Submit
                                         Message
-                                    </div>
+                                    </p>
                                     <div class="w-[18px] h-[18px] relative">
 
                                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
@@ -145,3 +145,13 @@ export default {
 
 
 </script>
+
+<style>
+
+
+
+body.dark .darkIconStockBlue:hover path {
+    stroke: #0057FF;
+}
+
+</style>

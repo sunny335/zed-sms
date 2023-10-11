@@ -21,7 +21,7 @@ import paymentSuccessful from "../../assets/img/payment/paymentSuccessful.png"
                 <p class="text-center text-zinc-600   dark:text-[#ACB5BD] text-sms lg:text-base font-normal font-['Poppins'] leading-tight tracking-tight mb-[40px]">Your payment of
                     $23.25 was successfully completed</p>
                 <RouterLink to="/"
-                    class="max-w-[189px] h-[53px] px-20 py-3.5 rounded-xl justify-center items-center gap-2.5 inline-flex cursor-pointer border border-[#0057FF]  bg-[#0057FF]  text-white dark:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#F5F5F5] hover:text-[#0057FF]">
+                    class="max-w-[189px] h-[53px] px-20 py-3.5 rounded-xl justify-center items-center gap-2.5 inline-flex cursor-pointer border border-[#0057FF]  bg-[#0057FF]  text-white dark:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#F5F5F5] hover:text-[#0057FF] dark:hover:bg-white dark:hover:text-[#0057FF]">
                     <p class="t text-xl font-medium font-['Poppins'] leading-normal tracking-tight">OK</p>
                 </RouterLink>
             </div>

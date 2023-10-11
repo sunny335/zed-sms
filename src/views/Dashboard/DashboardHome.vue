@@ -259,9 +259,9 @@ import num7 from "../../assets/img/NumFlags/7.png"
                 
                    <div class="flex justify-center items-center mt-10">
                     <button @click="loadMore" v-if="tableData.length > 3"
-                        class="max-w-[125px] h-[37px] w-full py-2.5 rounded-[10px] border border-blue-600 dark:bg-blue-600 justify-center items-center gap-2.5 inline-flex mx-auto mb-[67px]">
-                        <div class="text-blue-600 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
-                            {{ tableData.length == itemsToShow ? "See less" : "See More" }}</div>
+                        class="max-w-[125px] h-[37px] w-full py-2.5 rounded-[10px] border border-[#0057FF] dark:bg-[#0057FF] justify-center items-center gap-2.5 inline-flex mx-auto mb-[67px] text-[#0057FF] dark:text-[#F5F5F5] dark:hover:bg-white dark:hover:text-[#0057FF]">
+                        <p class=" text-sm font-normal font-['Poppins'] leading-[17px]">
+                            {{ tableData.length == itemsToShow ? "See less" : "See More" }}</p>
                     </button>
                    </div>
 
