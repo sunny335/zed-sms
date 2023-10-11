@@ -10,9 +10,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 <template>
     <section class="ml-0 lg:ml-[25px] mb-[97px]">
 
-        <div class="flex justify-center lg:justify-between items-center gap-[49px]">
+        <div class="flex justify-center lg:justify-between  gap-[49px]">
             <!-- Choose Payment -->
-            <div class="max-w-full lg:max-w-[460px] w-full mx-auto flex justify-center items-center border" :class="{ 'hidden lg:block': selectedPayment }">
+            <div class="max-w-full lg:max-w-[460px] w-full mx-auto flex justify-center items-center" :class="{ 'hidden lg:block': selectedPayment }">
                 <div class="max-w-full  lg:max-w-[450px] h-[635px] mx-auto">
                     <div class="flex items-center mb-[30px]">
                         <h3
