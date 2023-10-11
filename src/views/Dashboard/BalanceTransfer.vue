@@ -19,13 +19,13 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                 <form v-on:submit="onSubmit">
                     <div>
-                        <label class="text-zinc-600  dark:text-[#F5F5F5] text-base font-normal font-['Poppins']">Email or Username</label>
+                        <label class="text-zinc-600  dark:text-[#F5F5F5] text-base font-normal font-[Poppins]">Email or Username</label>
                         <input
                             class="max-w-[390px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 justify-start items-center inline-flex mt-[14px] dark:bg-transparent"
                             type="email" placeholder="Ex: hello@zedsms.com" />
                     </div>
                     <div class="mt-[40px]">
-                        <label class="text-zinc-600  dark:text-[#F5F5F5] text-base font-normal font-['Poppins']">Transfer Amount</label>
+                        <label class="text-zinc-600  dark:text-[#F5F5F5] text-base font-normal font-[Poppins]">Transfer Amount</label>
                         <input
                             class="max-w-[390px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 justify-start items-center inline-flex mt-[14px] dark:bg-transparent"
                             type="text" />
@@ -35,7 +35,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                     @click="submitModal(true)"
                     type="submit"
                         class="max-w-[180px] h-12 w-full py-3 rounded-[10px] shadow border border-[#0057FF] dark:bg-[#0057FF] justify-center items-start gap-2.5 inline-flex text-[#0057FF]  dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:bg-[#0057FF] dark:hover:bg-white dark:hover:text-[#0057FF]">
-                        <p class="text-center  text-base font-normal font-['Poppins']">Transfer</p>
+                        <p class="text-center  text-base font-normal font-[Poppins]">Transfer</p>
                     </button>
                 </div>
 
@@ -61,7 +61,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                     <div
                                         class="max-w-[420px] w-full h-[196px] p-[50px] bg-neutral-50 dark:bg-[#09132C] rounded-3xl">
                                         <p
-                                            class="text-zinc-600 dark:text-[#F5F5F5] text-center text-base lg:text-xl font-normal font-['Poppins'] mb-[30px]">
+                                            class="text-zinc-600 dark:text-[#F5F5F5] text-center text-base lg:text-xl font-normal font-[Poppins] mb-[30px]">
                                             Do you want to transfer money?</p>
                                         <div class="flex justify-between items-center">
 
@@ -69,13 +69,13 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                 class="max-w-[119px] w-full h-9  py-1.5 rounded-[10px] border border-zinc-600 justify-center items-center gap-1.5 inline-flex"
                                                 @click="submitModal(false)">
                                                 <div
-                                                    class="text-zinc-600 dark:text-[#ACB5BD] text-base font-normal font-['Poppins']">
+                                                    class="text-zinc-600 dark:text-[#ACB5BD] text-base font-normal font-[Poppins]">
                                                     Back</div>
                                             </button>
                                             <button
                                                 class="max-w-[108px] w-full h-9 py-1.5 bg-[#0057FF] rounded-[10px] justify-center items-center gap-1.5 inline-flex"
                                                 @click="submitModal(false)">
-                                                <div class="text-white text-base font-normal font-['Poppins']">Yes</div>
+                                                <div class="text-white text-base font-normal font-[Poppins]">Yes</div>
                                             </button>
                                         </div>
                                     </div>

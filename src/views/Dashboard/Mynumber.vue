@@ -20,13 +20,13 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
         :class="{ 'block': showMessageCompose === !true, 'hidden': showMessageCompose === true }">
         <div class="flex  gap-[25px] lg:flex-row flex-col">
             <!-- All Number -->
-            <div class="max-w-[100%] lg:max-w-[357px] w-full mx-auto"
+            <div class="max-w-[100%] lg:max-w-[480px] w-full mx-auto"
             :class="{'hidden lg:block':selectedNumber}"
             >
-                <div class="max-w-[100%] lg:max-w-[357px] max-h-[711px]  ">
-                    <div class="max-w-full w-full lg:w-[342px] flex justify-between items-center px-4 lg:px-0">
+                <div class="max-w-[100%] lg:max-w-[480px] max-h-[711px]  ">
+                    <div class="max-w-full w-full lg:w-[470px] flex justify-around items-center px-4 lg:px-0">
                         <h3
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">
+                            class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px]">
                             All Number</h3>
                         
                         <div class="relative hidden lg:block">
@@ -39,7 +39,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             </div>
                             <button :disabled="!selectedNumber" v-on:click="toggleShowMessageCompose(true)"
                             class="max-w-[164px] max-h-11 w-full py-2.5 px-2  rounded-[10px] shadow border border-neutral-800 dark:border-[#F5F5F5]  justify-center items-center gap-2 inline-flex  hover:text-[#F5F5F5] iconStock text-neutral-800 dark:text-[#F5F5F5] disabled:cursor-not-allowed disabled:opacity-20 disabled:border-neutral-800 disabled:bg-white disabled:hover:text-black disabled:dark:text-black iconStockBlack hover:border-[#0057FF] hover:bg-[#0057FF]">
-                            <p class=" text-sm font-normal font-['Poppins'] leading-[17px]">
+                            <p class=" text-sm font-normal font-[Poppins] leading-[17px]">
                                 Start Chat
                             </p>
                             <div class="w-6 h-6 relative darkIconStock ">
@@ -61,7 +61,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             </div>
                         </button>
                         </div>
-                        <button
+                        <div>
+                            <button
                             class="w-11 h-11 p-3.5 rounded-[10px] border  hover:bg-[#0057FF] hover:border-[#0057FF] dark:border-[#ACB5BD] justify-start items-start gap-2.5 inline-flex iconStock ml-[150px] lg:ml-0"
                             :class="{ 'bg-[#0057FF] border-[#0057FF] iconStockWhite z-[999999999]': isOpen, 'z-[99999] border-zinc-600': !isOpen }"
                             @click="toggleActiveStatusDropdown">
@@ -83,19 +84,14 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                             </div>
                         </button>
-                        <div v-if="isOpen" class="fixed top-0 bottom-0 right-0 left-0 bg-black bg-opacity-20 z-[9999]"
-                        :class="{ 'z-[99999999]': isOpen, 'z-[99999]': !isOpen }"
-                        >
-
-                        </div>
                         <div class="relative inline-block text-left" >
                             <!-- Dropdown Trigger -->
 
                             <!-- Dropdown Menu -->
 
                             <ul v-show="isOpen"
-                                class="absolute right-3 top-5 mt-2  w-48 bg-white   dark:bg-slate-900 border border-[#0057FF] rounded-md shadow-lg z-[99999]"
-                                :class="{ 'z-[99999999]': isOpen, 'z-[99999] ': !isOpen }"
+                                class="absolute right-0 top-5 mt-2  w-48 bg-white   dark:bg-slate-900 border border-[#0057FF] rounded-md shadow-lg z-[99999]"
+                                :class="{ 'z-[99999999] block': isOpen, 'z-[99999] hidden': !isOpen }"
                                 >
                                 <!-- Render your list of countries and languages here -->
                                 <li v-for="(item, index) in option" :key="index" @click="selectActiveStatus(item)"
@@ -108,11 +104,19 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                 </li>
                             </ul>
                         </div>
+                        </div>
+                       
+                        <div  class="fixed top-0 bottom-0 right-0 left-0 bg-black bg-opacity-20 z-[9999]"
+                        :class="{ 'z-[99999999] block': isOpen, 'z-[99999] hidden': !isOpen }"
+                        >
+
+                        </div>
+                       
                     </div>
                     <div
                         class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                         <div class="scrollbar max-h-[620px] mt-[20px]">
-                            <div class="max-w-full lg:max-w-[337px] h-[93px] px-5 py-7 border-b cursor-pointer border-gray-400 flex  items-center gap-4 flex-wrap mx-auto"
+                            <div class="max-w-full lg:max-w-[470px] h-[93px] px-5 py-7 border-b cursor-pointer border-gray-400 flex  items-center gap-4 flex-wrap mx-auto"
                                 v-for="numberData in filteredNumberData" :key="numberData.id"
                                 @click="selectNumber(numberData)"
                                 :class="{ 'bg-[#0057FF] text-white': selectedNumber === numberData.id }">
@@ -122,11 +126,11 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                                 <div class="flex-1">
                                     <div class="flex justify-between items-center mb-[10px]">
-                                        <p class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-medium font-['Poppins'] leading-[17px]"
+                                        <p class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-medium font-[Poppins] leading-[17px]"
                                             :class="{ ' text-white': selectedNumber === numberData.id }">
                                             {{ numberData.number }}
                                         </p>
-                                        <p class="text-xs font-normal font-['Poppins'] leading-[17px] flex justify-center items-center gap-2"
+                                        <p class="text-xs font-normal font-[Poppins] leading-[17px] flex justify-center items-center gap-2"
                                             v-bind:class="{ 'text-[#0057FF]': numberData.status == 'true', 'text-red-600': numberData.status === false, 'text-white': selectedNumber === numberData.id, }">
                                             <svg :class="{ 'whiteIconFill': selectedNumber === numberData.id, 'blueIconFill': selectedNumber !== numberData.id }"
                                                 v-if="numberData.status" xmlns="http://www.w3.org/2000/svg" height="4px"
@@ -143,24 +147,24 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                                             {{ numberData.status ? 'Active' : 'Deactive' }}
                                         </p>
-                                        <p class=" dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]"
+                                        <p class=" dark:text-[#ACB5BD] text-xs font-light font-[Poppins] leading-[17px]"
                                             :class="{ 'text-white': selectedNumber === numberData.id, 'text-zinc-600': selectedNumber !== numberData.id }">
                                             {{
                                                 numberData.timeLeft }}</p>
                                     </div>
-                                    <div class="flex items-center gap-2 justify-between lg:justify-center">
-                                        <p class=" dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]"
+                                    <div class="flex items-center gap-2 justify-between">
+                                        <p class=" dark:text-[#ACB5BD] text-xs font-light font-[Poppins] leading-[17px]"
                                             :class="{ 'text-white': selectedNumber === numberData.id, 'text-zinc-600': selectedNumber !== numberData.id }">
                                             Type: {{
                                                 numberData.type }}
                                         </p>
-                                        <p class="dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]"
+                                        <p class="dark:text-[#ACB5BD] text-xs font-light font-[Poppins] leading-[17px]"
                                             :class="{ 'text-white': selectedNumber === numberData.id, 'text-zinc-600': selectedNumber !== numberData.id }">
                                             •
                                             Service:
                                             {{ numberData.service }}
                                         </p>
-                                        <p class="dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]"
+                                        <p class="dark:text-[#ACB5BD] text-xs font-light font-[Poppins] leading-[17px]"
                                             :class="{ 'text-white': selectedNumber === numberData.id, 'text-zinc-600': selectedNumber !== numberData.id }">
                                             • Rent:
                                             {{
@@ -191,7 +195,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             </button>
                             <button  v-on:click="toggleShowMessageCompose(true)"
                                 class="max-w-[164px] max-h-11 w-full py-2.5 px-2  rounded-[10px] shadow border border-neutral-800 dark:border-[#F5F5F5]  justify-center items-center gap-2 inline-flex  hover:text-[#F5F5F5] iconStock text-neutral-800 dark:text-[#F5F5F5] disabled:cursor-not-allowed disabled:opacity-20 disabled:border-neutral-800 disabled:bg-white disabled:hover:text-black disabled:dark:text-black iconStockBlack hover:border-[#0057FF] hover:bg-[#0057FF]">
-                                <p class=" text-sm font-normal font-['Poppins'] leading-[17px]">
+                                <p class=" text-sm font-normal font-[Poppins] leading-[17px]">
                                     Start Chat
                                 </p>
                                 <div class="w-6 h-6 relative darkIconStock ">
@@ -215,20 +219,20 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         </div>
                         <div class="flex lg:justify-start justify-center  mt-10 lg:mt-0  items-center mb-[30px]">
                             <h3
-                                class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">
+                                class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] pr-[16px]">
                                 All
                                 Message</h3>
                             <ul
                                 class="flex mb-0 list-none flex-row max-w-[168px]  rounded-xl border border-[#0057FF] overflow-hidden	 h-[37px]">
                                 <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                                    <a class="w-20 flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px] 
+                                    <a class="w-20 flex items-center justify-center text-center text-sm font-light font-[Poppins] leading-[13px] 
                                         h-[37px] dark:text-[#F5F5F5]" v-on:click="toggleTabs(1)"
                                         v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 1, 'text-white bg-[#0057FF] dark:text-[#F5F5F5]': openTab === 1 }">
                                         Inbox
                                     </a>
                                 </li>
                                 <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                                    <a class="w-20 flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px]  
+                                    <a class="w-20 flex items-center justify-center text-center text-sm font-light font-[Poppins] leading-[13px]  
                                         h-[37px] dark:text-[#F5F5F5]" v-on:click="toggleTabs(2)"
                                         v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 2, 'text-white bg-[#0057FF] dark:text-[#F5F5F5]': openTab === 2 }">
                                         Sent
@@ -282,27 +286,27 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                     <div class="flex-1 flex flex-wrap ">
                                                         <div class="w-full flex justify-between mb-[6px]">
                                                             <h6
-                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-[Poppins] leading-[17px]">
                                                                 {{ messageData.name }}
                                                             </h6>
                                                             <p
-                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-[Poppins] leading-[18.89px]">
                                                                 {{ messageData.messageTime }}
                                                             </p>
                                                         </div>
                                                         <div class="">
                                                             <template v-if="!messageData.showFullMessage">
-                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <template v-else>
-                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <span v-if="messageData.message.length > 100"
-                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                class="text-[#0057FF] text-xs font-medium font-[Poppins] leading-tight cursor-pointer pl-1"
                                                                 @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
                                                                 {{ messageData.showFullMessage ? 'Less' : 'More' }}
                                                             </span>
@@ -333,7 +337,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                             <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
     
                                                 <p
-                                                    class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                    class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-[Poppins] leading-[17px]">
                                                     No messages</p>
                                             </div>
     
@@ -345,27 +349,27 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                     <div class="flex-1 flex flex-wrap ">
                                                         <div class="w-full flex justify-between mb-[6px]">
                                                             <h6
-                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-[Poppins] leading-[17px]">
                                                                 Namepo
                                                             </h6>
                                                             <p
-                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-[Poppins] leading-[18.89px]">
                                                                 {{ messageData.messageTime }}
                                                             </p>
                                                         </div>
                                                         <div class="">
                                                             <template v-if="!messageData.showFullMessage">
-                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <template v-else>
-                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <span v-if="messageData.message.length > 100"
-                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                class="text-[#0057FF] text-xs font-medium font-[Poppins] leading-tight cursor-pointer pl-1"
                                                                 @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
                                                                 {{ messageData.showFullMessage ? 'Less' : 'More' }}
                                                             </span>
@@ -409,27 +413,27 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                     <div class="flex-1 flex flex-wrap ">
                                                         <div class="w-full flex justify-between mb-[6px]">
                                                             <h6
-                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-[Poppins] leading-[17px]">
                                                                 {{ messageData.name }}
                                                             </h6>
                                                             <p
-                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-[Poppins] leading-[18.89px]">
                                                                 {{ messageData.messageTime }}
                                                             </p>
                                                         </div>
                                                         <div class="">
                                                             <template v-if="!messageData.showFullMessage">
-                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <template v-else>
-                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <span v-if="messageData.message.length > 100"
-                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                class="text-[#0057FF] text-xs font-medium font-[Poppins] leading-tight cursor-pointer pl-1"
                                                                 @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
                                                                 {{ messageData.showFullMessage ? 'Less' : 'More' }}
                                                             </span>
@@ -460,7 +464,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                             <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
     
                                                 <p
-                                                    class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                    class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-[Poppins] leading-[17px]">
                                                     No messages</p>
                                             </div>
     
@@ -472,27 +476,27 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                     <div class="flex-1 flex flex-wrap ">
                                                         <div class="w-full flex justify-between mb-[6px]">
                                                             <h6
-                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-[Poppins] leading-[17px]">
                                                                 Namepo
                                                             </h6>
                                                             <p
-                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-[Poppins] leading-[18.89px]">
                                                                 {{ messageData.messageTime }}
                                                             </p>
                                                         </div>
                                                         <div class="">
                                                             <template v-if="!messageData.showFullMessage">
-                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <template v-else>
-                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <span v-if="messageData.message.length > 100"
-                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                class="text-[#0057FF] text-xs font-medium font-[Poppins] leading-tight cursor-pointer pl-1"
                                                                 @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
                                                                 {{ messageData.showFullMessage ? 'Less' : 'More' }}
                                                             </span>
@@ -555,7 +559,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             </button>
                             <button  v-on:click="toggleShowMessageCompose(true)"
                                 class="max-w-[164px] max-h-11 w-full py-2.5 px-2  rounded-[10px] shadow border border-neutral-800 dark:border-[#F5F5F5]  justify-center items-center gap-2 inline-flex  hover:text-[#F5F5F5] iconStock text-neutral-800 dark:text-[#F5F5F5] disabled:cursor-not-allowed disabled:opacity-20 disabled:border-neutral-800 disabled:bg-white disabled:hover:text-black disabled:dark:text-black iconStockBlack hover:border-[#0057FF] hover:bg-[#0057FF]">
-                                <p class=" text-sm font-normal font-['Poppins'] leading-[17px]">
+                                <p class=" text-sm font-normal font-[Poppins] leading-[17px]">
                                     Start Chat
                                 </p>
                                 <div class="w-6 h-6 relative darkIconStock ">
@@ -579,20 +583,20 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         </div>
                         <div class="flex lg:justify-start justify-between  mt-10 lg:mt-0  items-center mb-[30px]">
                             <h3
-                                class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">
+                                class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] pr-[16px]">
                                 All
                                 Message</h3>
                             <ul
                                 class="flex mb-0 list-none flex-row max-w-[168px]  rounded-xl border border-[#0057FF] overflow-hidden	 h-[37px]">
                                 <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                                    <a class="w-20 flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px] 
+                                    <a class="w-20 flex items-center justify-center text-center text-sm font-light font-[Poppins] leading-[13px] 
                                         h-[37px] dark:text-[#F5F5F5]" v-on:click="toggleTabs(1)"
                                         v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 1, 'text-white bg-[#0057FF] dark:text-[#F5F5F5]': openTab === 1 }">
                                         Inbox
                                     </a>
                                 </li>
                                 <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                                    <a class="w-20 flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px]  
+                                    <a class="w-20 flex items-center justify-center text-center text-sm font-light font-[Poppins] leading-[13px]  
                                         h-[37px] dark:text-[#F5F5F5]" v-on:click="toggleTabs(2)"
                                         v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 2, 'text-white bg-[#0057FF] dark:text-[#F5F5F5]': openTab === 2 }">
                                         Sent
@@ -646,27 +650,27 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                     <div class="flex-1 flex flex-wrap ">
                                                         <div class="w-full flex justify-between mb-[6px]">
                                                             <h6
-                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-[Poppins] leading-[17px]">
                                                                 {{ messageData.name }}
                                                             </h6>
                                                             <p
-                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-[Poppins] leading-[18.89px]">
                                                                 {{ messageData.messageTime }}
                                                             </p>
                                                         </div>
                                                         <div class="">
                                                             <template v-if="!messageData.showFullMessage">
-                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <template v-else>
-                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <span v-if="messageData.message.length > 100"
-                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                class="text-[#0057FF] text-xs font-medium font-[Poppins] leading-tight cursor-pointer pl-1"
                                                                 @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
                                                                 {{ messageData.showFullMessage ? 'Less' : 'More' }}
                                                             </span>
@@ -697,7 +701,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                             <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
     
                                                 <p
-                                                    class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                    class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-[Poppins] leading-[17px]">
                                                     No messages</p>
                                             </div>
     
@@ -709,27 +713,27 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                     <div class="flex-1 flex flex-wrap ">
                                                         <div class="w-full flex justify-between mb-[6px]">
                                                             <h6
-                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-[Poppins] leading-[17px]">
                                                                 Namepo
                                                             </h6>
                                                             <p
-                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-[Poppins] leading-[18.89px]">
                                                                 {{ messageData.messageTime }}
                                                             </p>
                                                         </div>
                                                         <div class="">
                                                             <template v-if="!messageData.showFullMessage">
-                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <template v-else>
-                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <span v-if="messageData.message.length > 100"
-                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                class="text-[#0057FF] text-xs font-medium font-[Poppins] leading-tight cursor-pointer pl-1"
                                                                 @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
                                                                 {{ messageData.showFullMessage ? 'Less' : 'More' }}
                                                             </span>
@@ -773,27 +777,27 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                     <div class="flex-1 flex flex-wrap ">
                                                         <div class="w-full flex justify-between mb-[6px]">
                                                             <h6
-                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-[Poppins] leading-[17px]">
                                                                 {{ messageData.name }}
                                                             </h6>
                                                             <p
-                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-[Poppins] leading-[18.89px]">
                                                                 {{ messageData.messageTime }}
                                                             </p>
                                                         </div>
                                                         <div class="">
                                                             <template v-if="!messageData.showFullMessage">
-                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <template v-else>
-                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <span v-if="messageData.message.length > 100"
-                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                class="text-[#0057FF] text-xs font-medium font-[Poppins] leading-tight cursor-pointer pl-1"
                                                                 @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
                                                                 {{ messageData.showFullMessage ? 'Less' : 'More' }}
                                                             </span>
@@ -824,7 +828,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                             <div v-if="selectedNumberData && !selectedNumberData?.messagesData">
     
                                                 <p
-                                                    class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                    class="text-neutral-800 text-center dark:text-[#ACB5BD] text-sm font-medium font-[Poppins] leading-[17px]">
                                                     No messages</p>
                                             </div>
     
@@ -836,27 +840,27 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                     <div class="flex-1 flex flex-wrap ">
                                                         <div class="w-full flex justify-between mb-[6px]">
                                                             <h6
-                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] leading-[17px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD] text-sm font-medium font-[Poppins] leading-[17px]">
                                                                 Namepo
                                                             </h6>
                                                             <p
-                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-['Poppins'] leading-[18.89px]">
+                                                                class="text-neutral-900 dark:text-[#ACB5BD]   text-xs font-light font-[Poppins] leading-[18.89px]">
                                                                 {{ messageData.messageTime }}
                                                             </p>
                                                         </div>
                                                         <div class="">
                                                             <template v-if="!messageData.showFullMessage">
-                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class="w-full text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <template v-else>
-                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-['Poppins'] leading-normal inline"
+                                                                <div class=" text-neutral-800 dark:text-[#ACB5BD]  text-xs font-light font-[Poppins] leading-normal inline"
                                                                     v-html="formattedMessage(messageData)">
                                                                 </div>
                                                             </template>
                                                             <span v-if="messageData.message.length > 100"
-                                                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                                                class="text-[#0057FF] text-xs font-medium font-[Poppins] leading-tight cursor-pointer pl-1"
                                                                 @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
                                                                 {{ messageData.showFullMessage ? 'Less' : 'More' }}
                                                             </span>
@@ -918,7 +922,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                     <div
                                         class="max-w-[361px] w-full h-[196px] p-[50px] bg-neutral-50 dark:bg-[#09132C] rounded-3xl">
                                         <p
-                                            class="text-zinc-600 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] mb-[30px]">
+                                            class="text-zinc-600 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] mb-[30px]">
                                             Please select a number</p>
                                         <div class="flex justify-center items-center">
 
@@ -926,7 +930,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                             <button
                                                 class="max-w-[108px] w-full h-9 py-1.5 bg-[#0057FF] rounded-[10px] justify-center items-center gap-1.5 inline-flex"
                                                 @click="openErrorModal(false)">
-                                                <div class="text-white text-base font-normal font-['Poppins']">Close</div>
+                                                <div class="text-white text-base font-normal font-[Poppins]">Close</div>
                                             </button>
                                         </div>
                                     </div>
@@ -942,7 +946,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
         :class="{ 'block': showMessageCompose === true, 'hidden': showMessageCompose === !true }">
         <div
             class="max-w-[808px] w-full h-[457px] px-[45px] lg:px-[100px] py-0 lg:py-[50px] bg-transparent lg:bg-white lg:dark:bg-[#09132C] rounded-[30px] shadow-none lg:shadow-custom">
-            <h3 class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] ">Message
+            <h3 class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] ">Message
                 Compose</h3>
             <form v-on:submit="onSubmit" class="mt-[30px]">
 
@@ -951,7 +955,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                     <div class="max-w-[284px] w-full ">
                         <p
-                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-['Poppins'] leading-[17px] mb-[14px] ">
+                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-[Poppins] leading-[17px] mb-[14px] ">
                             From Number
                         </p>
                         <input
@@ -962,7 +966,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                     <div class="max-w-[284px] w-full ">
                         <p
-                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-['Poppins'] leading-[17px] mb-[14px] ">
+                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-[Poppins] leading-[17px] mb-[14px] ">
                             To Number
                         </p>
 
@@ -974,7 +978,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                 </div>
                 <div class="mt-[24px]">
 
-                    <p class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-['Poppins'] leading-[17px]">
+                    <p class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-[Poppins] leading-[17px]">
                         Message</p>
                     <textarea
                         class="max-w-[337px] lg:max-w-[608px] w-full h-[111px] bg-white rounded-xl border border-zinc-600 mt-[14px] outline-none px-4 py-2 resize-none dark:bg-transparent"></textarea>
@@ -982,7 +986,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                 <div class="flex justify-end items-center mt-[24px]">
                     <button v-on:click="toggleShowMessageCompose(true)"
                         class="max-w-[289px] w-full  h-[49px]  rounded-xl border border-[#0057FF] dark:bg-[#0057FF] justify-center items-center gap-2.5 inline-flex hover:text-[#F5F5F5] hover:bg-[#0057FF] text-[#0057FF] text-base  dark:text-[#F5F5F5] dark:hover:bg-[#F5F5F5] dark:hover:text-[#0057FF]">
-                        <div class="    font-normal font-['Poppins'] leading-[17px]">
+                        <div class="    font-normal font-[Poppins] leading-[17px]">
                             Send</div>
                     </button>
                 </div>
@@ -1427,7 +1431,7 @@ export default {
                             return part;
                         } else {
 
-                            return `<span class="text-neutral-800 text-xs font-medium font-['Poppins'] leading-tight">${part}</span>`;
+                            return `<span class="text-neutral-800 text-xs font-medium font-[Poppins] leading-tight">${part}</span>`;
                         }
                     });
 
@@ -1439,7 +1443,7 @@ export default {
                     if (index % 2 === 0) {
                         return part;
                     } else {
-                        return `<span class="text-neutral-800 dark:text-[#ACB5BD]  text-xs font-medium font-['Poppins'] leading-tight	">${part}</span>`;
+                        return `<span class="text-neutral-800 dark:text-[#ACB5BD]  text-xs font-medium font-[Poppins] leading-tight	">${part}</span>`;
                     }
                 });
                 const formattedMessage = parts.length > 1 ? formattedParts[0] + formattedParts[1] : formattedParts.join("").slice(0, 100);

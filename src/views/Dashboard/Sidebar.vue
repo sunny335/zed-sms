@@ -17,7 +17,7 @@
               <path d="M15 18H9" stroke="#1E2329" stroke-linecap="round" />
             </svg>
           </span>
-          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> Home</span>
+          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-[Poppins] leading-[36px]"> Home</span>
         </router-link>
       </li>
       <li>
@@ -34,7 +34,7 @@
             </svg>
 
           </span>
-          <span class="text-neutral-800   dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> My Number</span>
+          <span class="text-neutral-800   dark:text-[#F5F5F5] text-base font-light font-[Poppins] leading-[36px]"> My Number</span>
         </router-link>
       </li>
       <li>
@@ -54,7 +54,7 @@
 
 
           </span>
-          <span class="text-neutral-800   dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> Manage Number</span>
+          <span class="text-neutral-800   dark:text-[#F5F5F5] text-base font-light font-[Poppins] leading-[36px]"> Manage Number</span>
         </router-link>
       </li>
       <li>
@@ -71,7 +71,7 @@
               <path d="M6 9L9 3" stroke="#1E2329" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span>
-          <span class="text-neutral-800   dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> Buy Number</span>
+          <span class="text-neutral-800   dark:text-[#F5F5F5] text-base font-light font-[Poppins] leading-[36px]"> Buy Number</span>
         </router-link>
       </li>
       <li>
@@ -83,7 +83,7 @@
               <path d="M14 20L14 4L20 9.5" stroke="#1E2329" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span>
-          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> Transaction</span>
+          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-[Poppins] leading-[36px]"> Transaction</span>
         </router-link>
       </li>
       <li>
@@ -100,7 +100,7 @@
               <path d="M2 10L22 10" stroke="#1E2329" stroke-linecap="round" />
             </svg>
           </span>
-          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> Balance Transfer</span>
+          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-[Poppins] leading-[36px]"> Balance Transfer</span>
         </router-link>
       </li>
       <li>
@@ -119,7 +119,7 @@
             </svg>
 
           </span>
-          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]">
+          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-[Poppins] leading-[36px]">
             TOP-UP Balance
           </span>
         </router-link>
@@ -136,7 +136,7 @@
 
 
           </span>
-          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]">
+          <span class="text-neutral-800  dark:text-[#F5F5F5] text-base font-light font-[Poppins] leading-[36px]">
             Appearance
           </span>
         </router-link>
@@ -155,7 +155,7 @@
 
 
           </span>
-          <span class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins'] leading-[36px]"> Account Setting</span>
+          <span class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins] leading-[36px]"> Account Setting</span>
 
         </router-link>
       </li>

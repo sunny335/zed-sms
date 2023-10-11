@@ -9,9 +9,9 @@ import { RouterLink } from 'vue-router'
         <div
             class="max-w-[341px] lg:max-w-[764px] h-[420px] px-5 py-[60px] lg:px-[200px] lg:py-[100px] bg-white  dark:bg-[#09132C] rounded-3xl shadow-none lg:shadow-custom flex-col justify-start items-start gap-[34px] inline-flex">
            <div>
-            <h4 class="text-neutral-800   dark:text-[#F5F5F5] text-xl font-medium font-['Poppins'] leading-loose tracking-tight">Reset your
+            <h4 class="text-neutral-800   dark:text-[#F5F5F5] text-xl font-medium font-[Poppins] leading-loose tracking-tight">Reset your
                 password?</h4>
-            <p class="text-neutral-800   dark:text-[#F5F5F5] text-sm font-light font-['Poppins'] leading-tight tracking-tight">Type in your
+            <p class="text-neutral-800   dark:text-[#F5F5F5] text-sm font-light font-[Poppins] leading-tight tracking-tight">Type in your
                 registered email address or username.</p>
            </div>
 
@@ -23,7 +23,7 @@ import { RouterLink } from 'vue-router'
 
             <div class="flex justify-between items-center mt-[30px] gap-4">
                 <RouterLink to="/logIn"
-                    class="max-w-[200px] px-[22px] py-2 max-h-[46px]  bg-neutral-800 rounded-[10px] flex-col justify-center items-center inline-flex text-white hover:bg-white hover:text-[#0057FF] border border-[#0057FF] text-[15px] font-normal font-['Poppins'] uppercase leading-relaxed tracking-normal lg:tracking-wide dark:border-neutral-800 dark:text-white dark:hover:text-[#0057FF]">
+                    class="max-w-[200px] px-[22px] py-2 max-h-[46px]  bg-neutral-800 rounded-[10px] flex-col justify-center items-center inline-flex text-white hover:bg-white hover:text-[#0057FF] border border-[#0057FF] text-[15px] font-normal font-[Poppins] uppercase leading-relaxed tracking-normal lg:tracking-wide dark:border-neutral-800 dark:text-white dark:hover:text-[#0057FF]">
                 
            
                             
@@ -37,7 +37,7 @@ import { RouterLink } from 'vue-router'
                     <div class="px-[22px] py-2 flex-col justify-start items-start gap-2 flex ">
                         <div class="justify-start items-center gap-2 inline-flex dark:text-white dark:hover:text-[#0057FF]">
                             <div
-                                class="text-[15px] font-normal font-['Poppins'] uppercase leading-relaxed tracking-normal lg:tracking-wide">
+                                class="text-[15px] font-normal font-[Poppins] uppercase leading-relaxed tracking-normal lg:tracking-wide">
                                 Next</div>
                             <div class="h-[22px] flex-col justify-center items-center inline-flex">
                                 <div class="w-6 h-6 relative flex-col justify-start items-start flex">

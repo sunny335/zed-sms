@@ -10,7 +10,7 @@
         <!-- Dropdown Trigger -->
         <div @click="toggleDropdown" class="cursor-pointer flex items-center">
             <div
-            class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-normal font-['Poppins'] leading-[17px]">
+            class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-normal font-[Poppins] leading-[17px]">
         
                 <span> {{ selectedOption }}</span>
             </div> 

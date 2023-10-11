@@ -13,24 +13,24 @@ import google from '../assets/img/google.png';
             </div>
             <div class="max-w-[330px] lg:max-w-[534px]">
                 <div class="flex-col flex lg:flex-row justify-start lg:justify-between items-start lg:items-center gap-0 lg:gap-[120px]">
-                    <p class="text-zinc-600 dark:text-white text-2xl lg:text-[32px] font-medium font-['Poppins'] pb-[14px] lg:pb-0">Create
+                    <p class="text-zinc-600 dark:text-white text-2xl lg:text-[32px] font-medium font-[Poppins] pb-[14px] lg:pb-0">Create
                         an account</p>
-                    <RouterLink class="text-neutral-800  dark:text-white text-base font-light font-['Poppins'] underline " to="/login">Log in
+                    <RouterLink class="text-neutral-800  dark:text-white text-base font-light font-[Poppins] underline " to="/login">Log in
                         instead</RouterLink>
                 </div>
                 <form v-on:submit="onSubmit" class="mt-10">
                     <div>
-                        <label class="text-zinc-600  dark:text-white text-base font-normal font-['Poppins'] block mb-2">User Name</label>
+                        <label class="text-zinc-600  dark:text-white text-base font-normal font-[Poppins] block mb-2">User Name</label>
                         <input type="text" class="px-[16px] dark:bg-transparent py-[8px] w-full h-14 relative rounded-xl border border-zinc-600" />
                     </div>
                     <div class="mt-5">
-                        <label class="text-zinc-600  dark:text-white text-base font-normal font-['Poppins'] block mb-2">Email</label>
+                        <label class="text-zinc-600  dark:text-white text-base font-normal font-[Poppins] block mb-2">Email</label>
                         <input type="email" class="px-[16px]  dark:bg-transparent py-[8px] w-full h-14 relative rounded-xl border border-zinc-600" />
                     </div>
                     <div class="mt-5">
 
                         <div class="flex justify-between items-center">
-                            <label class="text-zinc-600  dark:text-white text-base font-normal font-['Poppins'] block mb-2">Password</label>
+                            <label class="text-zinc-600  dark:text-white text-base font-normal font-[Poppins] block mb-2">Password</label>
                             <div class="flex items-center gap-2 cursor-pointer w-[72px] justify-between"
                                     v-on:click="handlePasswordShow(!passwordShow)">
                                     <svg v-if="passwordShow == true" width="19" height="17" viewBox="0 0 19 17" fill="none"
@@ -66,7 +66,7 @@ import google from '../assets/img/google.png';
                     <div class="mt-5">
 
                         <div class="flex justify-between items-center">
-                            <label class="text-zinc-600  dark:text-white text-base font-normal font-['Poppins'] block mb-2">Confirm
+                            <label class="text-zinc-600  dark:text-white text-base font-normal font-[Poppins] block mb-2">Confirm
                                 Password</label>
                                 <div class="flex items-center gap-2 cursor-pointer w-[72px] justify-between"
                                     v-on:click="handleConfirmPasswordShow(!confirmPasswordShow)">
@@ -120,24 +120,24 @@ import google from '../assets/img/google.png';
                                 </label>
                             </div>
 
-                            <div><span class="text-zinc-600  dark:text-white text-sm lg:text-base font-normal font-['Poppins']">By creating
+                            <div><span class="text-zinc-600  dark:text-white text-sm lg:text-base font-normal font-[Poppins]">By creating
                                     an account,I agree to our </span>
                                 <RouterLink
 
                                 to="/terms-condition"
-                                    class="text-neutral-800  dark:text-white text-sm lg:text-base font-normal font-['Poppins'] underline">Terms
+                                    class="text-neutral-800  dark:text-white text-sm lg:text-base font-normal font-[Poppins] underline">Terms
                                     of
                                     use</RouterLink>
-                                <span class="text-zinc-600  dark:text-white text-sm lg:text-base font-normal font-['Poppins']">
+                                <span class="text-zinc-600  dark:text-white text-sm lg:text-base font-normal font-[Poppins]">
                                     and
                                 </span>
                                 <RouterLink
                                 to="/privacy-policy"
-                                    class="text-neutral-800  dark:text-white text-sm lg:text-base font-normal font-['Poppins'] underline">Privacy
+                                    class="text-neutral-800  dark:text-white text-sm lg:text-base font-normal font-[Poppins] underline">Privacy
                                     Policy</RouterLink>
                                     
                                     <span
-                                    class="text-zinc-600 text-sm lg:text-base font-normal font-['Poppins'] underline">
+                                    class="text-zinc-600 text-sm lg:text-base font-normal font-[Poppins] underline">
                                 </span>
                             </div>
                         </label>
@@ -145,14 +145,14 @@ import google from '../assets/img/google.png';
                     <button
                         class="max-w-[534px] w-full h-[70px]  pt-[19.50px] pb-[20.50px] bg-[#0057FF] rounded-[14px] justify-center items-center inline-flex text-white hover:bg-white hover:text-[#0057FF] border border-[#0057FF]">
                         <div class="self-stretch justify-center items-center gap-4 inline-flex">
-                            <div class=" text-xl font-normal font-['Poppins']">Create an account</div>
+                            <div class=" text-xl font-normal font-[Poppins]">Create an account</div>
                         </div>
                     </button>
                 </form>
                 <div class="my-[30px]">
                     <div class="flex  items-center justify-center ">
                         <div class="w-[226.50px] h-[1px] bg-gray-400"></div>
-                        <p class=" text-neutral-800  dark:text-white text-base font-normal font-['Poppins'] px-6">OR</p>
+                        <p class=" text-neutral-800  dark:text-white text-base font-normal font-[Poppins] px-6">OR</p>
                         <div class="w-[226.50px] h-[1px] bg-gray-400"></div>
                     </div>
                     <button
@@ -161,13 +161,13 @@ import google from '../assets/img/google.png';
                             <div class="w-6 h-6 relative">
                                 <img :src="google" alt="">
                             </div>
-                            <div class="  text-xl  font-normal font-['Poppins']">Continue with Google</div>
+                            <div class="  text-xl  font-normal font-[Poppins]">Continue with Google</div>
                         </div>
                     </button>
                     <button
                         class="max-w-[534px] w-full max-h-16 pt-[16.50px] pb-[17.50px] bg-white   dark:bg-slate-900 rounded-[14px] border border-zinc-600 justify-center items-center inline-flex cursor-pointer text-zinc-600  dark:text-[#F5F5F5]  hover:bg-[#0057FF] hover:text-[#F5F5F5] hover:border-[#0057FF] dark:hover:bg-[#0057FF]">
                         <div class="self-stretch justify-center items-center gap-4 inline-flex">
-                            <div class="text-xl font-normal font-['Poppins']">Continue with Others</div>
+                            <div class="text-xl font-normal font-[Poppins]">Continue with Others</div>
                         </div>
                     </button>
                 </div>

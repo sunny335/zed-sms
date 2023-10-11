@@ -11,17 +11,17 @@ import { RouterLink } from 'vue-router'
             <div class="flex-col justify-start items-start gap-0.5 flex">
                 <div class="flex-col justify-start items-start flex">
                     <div
-                        class="text-black   dark:text-[#F5F5F5] text-opacity-90 text-xl font-medium font-['Poppins'] leading-loose tracking-tight">
+                        class="text-black   dark:text-[#F5F5F5] text-opacity-90 text-xl font-medium font-[Poppins] leading-loose tracking-tight">
                         Confirm your email address</div>
                 </div>
-                <div class="text-black   dark:text-[#F5F5F5] text-opacity-90 text-sm font-normal font-['Poppins'] leading-tight tracking-tight">
+                <div class="text-black   dark:text-[#F5F5F5] text-opacity-90 text-sm font-normal font-[Poppins] leading-tight tracking-tight">
                     Please check your email for the next step.</div>
             </div>
             <RouterLink to="/logIn"
                 class="max-w-[296px] w-full h-12 px-[22px] py-2 bg-gray-900 dark:bg-zinc-600 rounded-[10px] flex-col justify-center items-center inline-flex text-white hover:bg-white dark:hover:bg-white dark:text-white dark:hover:text-[#0057FF] hover:text-[#0057FF] border border-[#0057FF] dark:border-zinc-600">
     
                         <p
-                            class="text-[15px] font-medium font-['Poppins'] uppercase leading-relaxed tracking-wide">
+                            class="text-[15px] font-medium font-[Poppins] uppercase leading-relaxed tracking-wide">
                             BACK to login</p>
                
             </RouterLink>
@@ -31,7 +31,7 @@ import { RouterLink } from 'vue-router'
                 <div class="px-[22px] py-2 flex-col justify-start items-start gap-2 flex">
                     <div class="justify-start items-center gap-2 inline-flex">
                         <div
-                            class=" text-[15px] font-medium font-['Poppins'] uppercase leading-relaxed tracking-wide">
+                            class=" text-[15px] font-medium font-[Poppins] uppercase leading-relaxed tracking-wide">
                             contact Support</div>
                     </div>
                 </div>

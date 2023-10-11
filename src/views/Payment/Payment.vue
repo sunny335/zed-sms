@@ -15,7 +15,7 @@ import Elo from '../../assets/img/payment/Elo.png';
 
         <div>
             <h1
-                class="text-neutral-800   dark:text-[#F5F5F5] text-left text-2xl  lg:text-[32px] font-medium font-['Poppins'] leading-[22px]">
+                class="text-neutral-800   dark:text-[#F5F5F5] text-left text-2xl  lg:text-[32px] font-medium font-[Poppins] leading-[22px]">
                 Select Payment
                 Source
             </h1>
@@ -23,7 +23,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                 <ul class="flex justify-start mb-0 list-none flex-row mx-auto rounded-2xl overflow-hidden gap-2 lg:gap-8	 ">
                     <li class="max-w-[300px]-mb-px last:mr-0  text-center cursor-pointer"
                         v-bind:class="{ 'hidden': nextPaymentPage == true, 'block': nextPaymentPage === false }">
-                        <a class="w-full  flex items-center  text-neutral-800   dark:text-[#F5F5F5] text-base lg:text-xl font-normal font-['Poppins'] leading-[17px] "
+                        <a class="w-full  flex items-center  text-neutral-800   dark:text-[#F5F5F5] text-base lg:text-xl font-normal font-[Poppins] leading-[17px] "
                             v-on:click="toggleTabs(1); selectCountry(null); selectPhone(null); selectService(null)">
                             <img class="h-[12px] lg:w-[24px] w-[12px] lg:h-[24px] mr-[6px] lg:mr-4" :src="blueTik" alt="" srcset=""
                                 v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
@@ -34,7 +34,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                         </a>
                     </li>
                     <li class="max-w-[300px] -mb-px last:mr-0  text-center cursor-pointer">
-                        <a class="w-full flex items-center  text-neutral-800   dark:text-[#F5F5F5] text-base lg:text-xl font-normal font-['Poppins'] leading-[17px] "
+                        <a class="w-full flex items-center  text-neutral-800   dark:text-[#F5F5F5] text-base lg:text-xl font-normal font-[Poppins] leading-[17px] "
                             v-on:click="toggleTabs(2); selectCountry(null); selectPhone(null); selectService(null)">
                             <img class="h-[12px] lg:w-[24px] w-[12px] lg:h-[24px] mr-[6px] lg:mr-4" :src="blueTik" alt="" srcset=""
                                 v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
@@ -63,25 +63,25 @@ import Elo from '../../assets/img/payment/Elo.png';
                                     <div
                                         class="max-w-[376px] lg:max-w-[612px] max-h-[293px] px-[6px] py-[100px] lg:px-40 lg:py-[100px] bg-white  dark:bg-[#09132C] rounded-3xl shadow-none lg:shadow-custom flex-col justify-start items-start gap-7 inline-flex">
                                         <div
-                                            class="text-neutral-800   dark:text-[#F5F5F5] text-base font-normal font-['Poppins']">
+                                            class="text-neutral-800   dark:text-[#F5F5F5] text-base font-normal font-[Poppins]">
                                             Payment
                                             with
                                             account balance</div>
                                         <div class="justify-start items-center gap-10 inline-flex">
                                             <div class="justify-start items-center gap-3.5 flex">
                                                 <div
-                                                    class="text-zinc-600   dark:text-[#F5F5F5] text-xl font-medium font-['Poppins']">
+                                                    class="text-zinc-600   dark:text-[#F5F5F5] text-xl font-medium font-[Poppins]">
                                                     Cost:
                                                 </div>
                                                 <div
-                                                    class="text-zinc-600   dark:text-[#F5F5F5] text-xl font-normal font-['Poppins']">
+                                                    class="text-zinc-600   dark:text-[#F5F5F5] text-xl font-normal font-[Poppins]">
                                                     $32.54
                                                 </div>
                                             </div>
                                             <button
                                                 class="">
                                                 <RouterLink to="/payment-successful"
-                                                    class="text-center  text-sm font-normal font-['Poppins'] max-w-[120px] w-full px-3 h-[41px] rounded-[100px] lg:rounded-[10px] shadow border border-[#0057FF] bg-[#0057FF] justify-center items-center gap-2.5 flex text-[#F5F5F5] dark:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#F5F5F5] hover:text-[#0057FF] dark:hover:text-[#0057FF]">
+                                                    class="text-center  text-sm font-normal font-[Poppins] max-w-[120px] w-full px-3 h-[41px] rounded-[100px] lg:rounded-[10px] shadow border border-[#0057FF] bg-[#0057FF] justify-center items-center gap-2.5 flex text-[#F5F5F5] dark:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#F5F5F5] hover:text-[#0057FF] dark:hover:text-[#0057FF]">
                                                     Pay Now</RouterLink>
                                             </button>
                                         </div>
@@ -111,10 +111,10 @@ import Elo from '../../assets/img/payment/Elo.png';
                                                                 :src="payment.img" />
                                                             <div
                                                                 class="flex-col justify-start items-start gap-1.5 inline-flex">
-                                                                <h5 class="text-neutral-800   dark:text-[#F5F5F5] text-base font-medium font-['Poppins'] leading-[17px]"
+                                                                <h5 class="text-neutral-800   dark:text-[#F5F5F5] text-base font-medium font-[Poppins] leading-[17px]"
                                                                     v-bind:class="{ 'text-white': selectedPayment == payment, }">
                                                                     {{ payment.name }}</h5>
-                                                                <p class=" text-neutral-800   dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-normal"
+                                                                <p class=" text-neutral-800   dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-normal"
                                                                     v-bind:class="{ 'text-white dark:text-white ': selectedPayment == payment, }">
                                                                     {{ payment.text }}</p>
                                                             </div>
@@ -137,7 +137,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                                             class="max-w-[300px] w-full h-16 px-10 py-3.5 rounded-xl justify-center items-center gap-3.5 inline-flex  text-[#0057FF]   dark:text-[#F5F5F5] border border-[#0057FF] dark:bg-[#0057FF]  disabled:cursor-not-allowed disabled:opacity-20 hover:bg-[#0057FF] hover:text-[#F5F5F5] iconStock disabled:hover:bg-[#F5F5F5 disabled:hover:text-[#0057FF] disabled:hover:bg-[#F5F5F5] dark:hover:bg-white dark:hover:text-[#0057FF] darkIconStockBlue"
                                             v-bind:class="{ 'hidden': nextPaymentPage == true, 'block': nextPaymentPage === false }">
                                             <div
-                                                class="text-center  text-2xl font-normal font-['Poppins']">
+                                                class="text-center  text-2xl font-normal font-[Poppins]">
                                                 Next</div>
                                             <div class=" relative darkIconStock ">
                                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
@@ -162,7 +162,7 @@ import Elo from '../../assets/img/payment/Elo.png';
                                             class="max-w-[358px] lg:max-w-[150px] w-full h-16  px-10 py-3.5 rounded-xl  justify-center items-center gap-3.5 inline-flex  text-[#0057FF]   dark:text-[#F5F5F5] border border-[#0057FF] dark:bg-[#0057FF]  disabled:cursor-not-allowed disabled:opacity-20 hover:bg-[#0057FF] hover:text-[#F5F5F5] iconStock disabled:hover:bg-[#F5F5F5 disabled:hover:text-[#0057FF] disabled:hover:bg-[#F5F5F5] dark:hover:bg-white dark:hover:text-[#0057FF] darkIconStockBlue"
                                             v-bind:class="{ 'hidden': nextPaymentPage == false, 'block': nextPaymentPage === true }">
                                             <div
-                                                class="text-center t text-2xl font-normal font-['Poppins']">
+                                                class="text-center t text-2xl font-normal font-[Poppins]">
                                                 Next</div>
                                             <div class=" relative darkIconStock">
                                                 <svg  width="30" height="30" viewBox="0 0 30 30" fill="none"

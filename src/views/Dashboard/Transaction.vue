@@ -11,7 +11,7 @@
         <!-- All Transaction -->
         <div class="">
             <div class="  w-full ">
-                <div class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] ">All
+                <div class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] ">All
                     Transaction
                 </div>
 
@@ -20,16 +20,16 @@
                         <thead>
                             <tr class="shadow-md dark:border-b-[1px]">
                                 <th
-                                    class="px-4 py-8 text-left text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-8 text-left text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-[17px]">
                                     Date & Time</th>
                                 <th
-                                    class="px-4 py-8 text-left text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-8 text-left text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-[17px]">
                                     Action</th>
                                 <th
-                                    class="px-4 py-8 text-left text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-8 text-left text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-[17px]">
                                     Amount</th>
                                 <th
-                                    class="px-4 py-8 text-left text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-8 text-left text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-[17px]">
                                     Description</th>
 
                             </tr>
@@ -38,20 +38,20 @@
 
                             <tr class=" border-b-2">
                                 <td
-                                    class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-[Poppins] leading-[17px]">
                                     {{
                                         data.dateTime }}</td>
                                 <td
-                                    class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-[Poppins] leading-[17px]">
                                     {{ data.action }}</td>
                                 <td
-                                    class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px]">
+                                    class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-[Poppins] leading-[17px]">
                                     ${{ data.amount }}</td>
                                 <td
-                                    class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px] max-w-[253px]">
+                                    class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-[Poppins] leading-[17px] max-w-[253px]">
                                     {{ showFullMessage[data.id] || data.description.length < 100 ? data.description :
                                         data.description.substring(0, 100) }} <button v-if="data.description.length > 100"
-                                        class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                        class="text-[#0057FF] text-xs font-medium font-[Poppins] leading-tight cursor-pointer pl-1"
                                         @click="toggleMessage(data.id)">
                                         {{ showFullMessage[data.id] ? 'Less' : 'More' }}
                                         </button>
@@ -604,7 +604,7 @@ export default {
                             return part;
                         } else {
 
-                            return `<span class="text-neutral-800 text-xs font-medium font-['Poppins'] leading-tight">${part}</span>`;
+                            return `<span class="text-neutral-800 text-xs font-medium font-[Poppins] leading-tight">${part}</span>`;
                         }
                     });
 
@@ -616,7 +616,7 @@ export default {
                     if (index % 2 === 0) {
                         return part;
                     } else {
-                        return `<span class="text-neutral-800 text-xs font-medium font-['Poppins'] leading-tight	">${part}</span>`;
+                        return `<span class="text-neutral-800 text-xs font-medium font-[Poppins] leading-tight	">${part}</span>`;
                     }
                 });
                 const formattedMessage = parts.length > 1 ? formattedParts[0] + formattedParts[1] : formattedParts.join("").slice(0, 100);

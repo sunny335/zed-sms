@@ -12,14 +12,14 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
         <div
             class="min-w-[1112px] min-h-[687px] px-[120px] py-0 lg:py-10 bg-white dark:bg-[#070F24] rounded-none lg:rounded-[30px] shadow-none lg:shadow-custom flex-col justify-start items-center gap-[50px] inline-flex">
             <h2
-                class="text-left lg:text-center w-[40%] text-neutral-800  dark:text-[#F5F5F5] text-[32px] font-medium font-['Poppins']">
+                class="text-left lg:text-center w-[40%] text-neutral-800  dark:text-[#F5F5F5] text-[32px] font-medium font-[Poppins]">
                 Log in
             </h2>
             <div class="flex-col flex lg:flex-row justify-center items-center  w-full min-h-[381px]">
                 <div>
                     <form v-on:submit="onSubmit">
                         <div class="max-w-[354px]">
-                            <label class="text-zinc-600  dark:text-[#F5F5F5] text-base font-normal font-['Poppins']">Email
+                            <label class="text-zinc-600  dark:text-[#F5F5F5] text-base font-normal font-[Poppins]">Email
                                 or Username</label>
                             <input type="email"
                                 class="w-[354px] px-[16px] py-[8px] h-14 relative rounded-xl border border-gray-400 mt-2 dark:bg-transparent" />
@@ -27,7 +27,7 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                         <div class="max-w-[354px] mt-4">
                             <div class="flex justify-between items-center ">
                                 <label
-                                    class="text-zinc-600   dark:text-[#F5F5F5] text-base  font-normal font-['Poppins'] block ">Password</label>
+                                    class="text-zinc-600   dark:text-[#F5F5F5] text-base  font-normal font-[Poppins] block ">Password</label>
                                 <div class="flex items-center gap-2 cursor-pointer w-[72px] justify-between"
                                     v-on:click="handlePasswordShow(!passwordShow)">
                                     <svg v-if="passwordShow == true" width="19" height="17" viewBox="0 0 19 17" fill="none"
@@ -83,26 +83,26 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                                         </label>
                                     </div>
 
-                                    <p class="text-zinc-600   dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                                    <p class="text-zinc-600   dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
                                         Remember me</p>
                                 </div>
                                 <RouterLink to="/reset-password"
-                                    class="text-right text-zinc-600   dark:text-[#F5F5F5] text-base font-light font-['Poppins'] underline">
+                                    class="text-right text-zinc-600   dark:text-[#F5F5F5] text-base font-light font-[Poppins] underline">
                                     Forget
                                     password!</RouterLink>
                             </label>
                         </div>
                         <button
                             class="max-w-[354px] max-h-[58px] w-full py-[11px] bg-[#0057FF] rounded-[14px] justify-center items-center gap-2.5 inline-flex text-white hover:bg-white hover:text-[#0057FF] border border-[#0057FF]">
-                            <p class="text-center  text-2xl font-normal font-['Poppins']">Log in</p>
+                            <p class="text-center  text-2xl font-normal font-[Poppins]">Log in</p>
                         </button>
                     </form>
                     <div class="mt-[24px]"><span
-                            class="text-zinc-600   dark:text-[#F5F5F5] text-base font-normal font-['Poppins']">Don’t have an
+                            class="text-zinc-600   dark:text-[#F5F5F5] text-base font-normal font-[Poppins]">Don’t have an
                             ccount? </span><span
-                            class="text-zinc-600   dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] underline">
+                            class="text-zinc-600   dark:text-[#F5F5F5] text-base font-normal font-[Poppins] underline">
                             <RouterLink to="/signUp"
-                                class="text-right text-zinc-600   dark:text-[#F5F5F5] text-base font-light font-['Poppins'] underline">
+                                class="text-right text-zinc-600   dark:text-[#F5F5F5] text-base font-light font-[Poppins] underline">
                                 Sign Up
                             </RouterLink>
                         </span></div>
@@ -111,14 +111,14 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                 <div class="hidden lg:block">
                     <div class="flex flex-col items-center justify-center px-[81px]">
                         <div class="h-[116.50px] w-[2px] bg-gray-400"></div>
-                        <p class=" text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] py-2">OR</p>
+                        <p class=" text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-[Poppins] py-2">OR</p>
                         <div class="h-[116.50px] w-[2px] bg-gray-400"></div>
                     </div>
                 </div>
                 <div class="block lg:hidden mt-10 mx-12">
                     <div class="flex  items-center justify-center ">
                         <div class="w-[124px] h-[1px] bg-gray-400"></div>
-                        <p class=" text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] px-6">OR</p>
+                        <p class=" text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-[Poppins] px-6">OR</p>
                         <div class="w-[124px] h-[1px] bg-gray-400"></div>
                     </div>
 
@@ -131,7 +131,7 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                             <div class="w-6 h-6 relative">
                                 <img :src="google" alt="" srcset="">
                             </div>
-                            <p class=" text-base font-light font-['Poppins']">
+                            <p class=" text-base font-light font-[Poppins]">
                                 Continue with Google</p>
                         </div>
                     </button>
@@ -141,7 +141,7 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                             <div class="w-6 h-6 relative">
                                 <img :src="fb" alt="" srcset="">
                             </div>
-                            <div class=" text-base font-light font-['Poppins']">
+                            <div class=" text-base font-light font-[Poppins]">
                                 Continue with Facebook</div>
                         </div>
                     </button>
@@ -151,14 +151,14 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                             <div class="w-6 h-6 relative">
                                 <img :src="apple" alt="" srcset="">
                             </div>
-                            <div class="text-base font-light font-['Poppins']">
+                            <div class="text-base font-light font-[Poppins]">
                                 Continue with Apple ID</div>
                         </div>
                     </button>
                     <button
                         class="max-w-[354px] max-h-[60px]  w-full  pt-[18.50px] pb-[17.50px] bg-white dark:bg-slate-900 rounded-[14px] border border-neutral-800 justify-center items-center inline-flex mb-[30px] text-neutral-800  dark:text-[#F5F5F5]  hover:bg-[#0057FF] hover:text-[#F5F5F5] hover:border-[#0057FF] dark:hover:bg-[#0057FF]">
                         <div class="self-stretch justify-center items-center gap-4 inline-flex">
-                            <div class=" text-base font-light font-['Poppins']">
+                            <div class=" text-base font-light font-[Poppins]">
                                 Continue with Others</div>
                         </div>
                     </button>
@@ -184,7 +184,7 @@ import recaptcha from '../assets/img/google_recaptcha-official 2.png';
                             </div>
                         </label>
                     </div>
-                    <div class="text-center text-zinc-600 text-base font-light font-['Poppins']">I’m not a robot</div>
+                    <div class="text-center text-zinc-600 text-base font-light font-[Poppins]">I’m not a robot</div>
                 </div>
                 <div class="w-12 h-[46.29px] relative flex-col justify-start items-start flex">
                     <img :src="recaptcha" alt="" srcset="">

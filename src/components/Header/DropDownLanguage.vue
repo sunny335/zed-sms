@@ -10,7 +10,7 @@
         <!-- Dropdown Trigger -->
         <div @click="toggleDropdown" class="cursor-pointer flex items-center">
             <div
-                class=" py-2 px-4 pr-0 rounded-md flex items-center text-zinc-600  dark:text-white text-sm font-normal font-['Poppins'] leading-[17px]">
+                class=" py-2 px-4 pr-0 rounded-md flex items-center text-zinc-600  dark:text-white text-sm font-normal font-[Poppins] leading-[17px]">
                 <span class="mr-2" v-html="getFlag(selectedOption)"></span>
                 <span> {{ selectedOption }}</span>
             </div>

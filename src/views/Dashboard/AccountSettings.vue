@@ -5,11 +5,11 @@
     <section class="flex justify-center items-center">
         <div
             class="max-w-full lg:max-w-[700px] w-full h-[656px] px-[38px] lg:px-20 pt-0 lg:pt-10 pb-[50px] bg-white  dark:bg-[#09132C] rounded-3xl shadow-none mx-auto lg:shadow-custom ml-0 mr-0 lg:ml-[80px] mb-[112px]">
-            <h3 class="text-zinc-600  dark:text-[#F5F5F5]  text-xl font-medium font-['Poppins']">Account</h3>
+            <h3 class="text-zinc-600  dark:text-[#F5F5F5]  text-xl font-medium font-[Poppins]">Account</h3>
             <form v-on:submit="onSubmit" class="mt-[26px] w-full">
                 <div>
 
-                    <label class="text-zinc-600 block dark:text-[#F5F5F5]  text-base font-normal font-['Poppins']">User
+                    <label class="text-zinc-600 block dark:text-[#F5F5F5]  text-base font-normal font-[Poppins]">User
                         Name</label>
                     <input
                         class="max-w-full lg:max-w-[540px] h-[50px] w-full px-4 outline-none pt-[15px] pb-[11px] rounded-[10px] border border-zinc-600 mt-[10px] dark:bg-transparent"
@@ -20,7 +20,7 @@
                 <div class="mt-[24px]">
 
                     <label
-                        class="text-zinc-600 block dark:text-[#F5F5F5]  text-base font-normal font-['Poppins']">Email</label>
+                        class="text-zinc-600 block dark:text-[#F5F5F5]  text-base font-normal font-[Poppins]">Email</label>
                     <input
                         class="max-w-full lg:max-w-[540px] h-[50px] w-full px-4 outline-none pt-[15px] pb-[11px] rounded-[10px] border border-zinc-600 mt-[10px] dark:bg-transparent"
                         type="email" placeholder="Ex: hello@zedsms.com" />
@@ -31,7 +31,7 @@
 
                     <div class="flex justify-between items-center">
 
-                        <label class="text-zinc-600  dark:text-[#F5F5F5]  text-base font-normal font-['Poppins']"><span
+                        <label class="text-zinc-600  dark:text-[#F5F5F5]  text-base font-normal font-[Poppins]"><span
                                 class="hidden lg:inline-flex">Change
                                 Password/</span>Old Password</label>
 
@@ -76,7 +76,7 @@
                     <div class="max-w-full  lg:max-w-[250px]">
                         <div class="flex justify-between items-center">
                             <label
-                                class="text-zinc-600  dark:text-[#F5F5F5]  text-base font-normal font-['Poppins'] block">New
+                                class="text-zinc-600  dark:text-[#F5F5F5]  text-base font-normal font-[Poppins] block">New
                                 Password</label>
                             <div class="flex lg:hidden  items-center gap-2 cursor-pointer w-[72px] justify-between"
                                 v-on:click="handlePasswordShow(!passwordShow)">
@@ -118,7 +118,7 @@
                     <div  class="max-w-full  lg:max-w-[250px]">
                         <div class="flex justify-between items-center">
                             <label
-                                class="text-zinc-600  dark:text-[#F5F5F5]  text-base font-normal font-['Poppins'] block">Confirm
+                                class="text-zinc-600  dark:text-[#F5F5F5]  text-base font-normal font-[Poppins] block">Confirm
                                 Password</label>
                             <div class="flex lg:hidden  items-center gap-2 cursor-pointer w-[72px] justify-between"
                                 v-on:click="handleConfirmPasswordShow(!confirmPasswordShow)">
@@ -164,7 +164,7 @@
 
                     <button
                         class="max-w-full lg:max-w-[297px] h-[50px] w-full rounded-[14px] border border-[#0057FF] dark:bg-[#0057FF] justify-center items-center gap-2.5 inline-flex text-[#0057FF] dark:text-white hover:bg-[#0057FF] hover:text-white dark:hover:bg-white dark:hover:text-[#0057FF]">
-                        <p class=" text-xl font-normal font-['Poppins'] uppercase">Save</p>
+                        <p class=" text-xl font-normal font-[Poppins] uppercase">Save</p>
                     </button>
                 </div>
             </form>

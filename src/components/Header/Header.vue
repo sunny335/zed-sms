@@ -75,7 +75,7 @@ const Theme = localStorage.getItem("Theme");
               class=" lg:w-[369px] absolute z-[101] right-[-124px] h-[530px] px-[25px] py-5 bg-neutral-50 dark:bg-slate-800 rounded-[30px] flex-col justify-start items-start gap-3.5 ease-custom-dropdown"
               :class="{ ' dropDownBlock': OpenNotificationModal, 'dropDown-hidden': !OpenNotificationModal }">
               <div class="w-full pb-6 border-b border-gray-400 justify-center items-center gap-2.5 inline-flex">
-                <div class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-medium font-['Poppins']">
+                <div class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-medium font-[Poppins]">
                   Notification
                 </div>
               </div>
@@ -84,23 +84,23 @@ const Theme = localStorage.getItem("Theme");
                   class="self-stretch py-5 border-b border-zinc-200 justify-start items-start gap-5 inline-flex">
                   <div class="grow shrink basis-0 flex-col justify-start items-start gap-1.5 inline-flex">
                     <div class="self-stretch justify-between items-center gap-[15px] inline-flex">
-                      <p class="dark:text-[#F5F5F5] text-neutral-900 text-sm font-normal font-['Poppins'] leading-[17px]">
+                      <p class="dark:text-[#F5F5F5] text-neutral-900 text-sm font-normal font-[Poppins] leading-[17px]">
                         {{ notification?.title }}
                       </p>
                       <p
-                        class="dark:text-[#F5F5F5] text-neutral-900 text-xs font-light font-['Poppins'] leading-[18.89px]">
+                        class="dark:text-[#F5F5F5] text-neutral-900 text-xs font-light font-[Poppins] leading-[18.89px]">
                         {{ notification?.notificationTime }}
                       </p>
                     </div>
                     <div>
-                      <span class="dark:text-[#ACB5BD] text-zinc-600 text-xs font-light font-['Poppins'] leading-tight">
+                      <span class="dark:text-[#ACB5BD] text-zinc-600 text-xs font-light font-[Poppins] leading-tight">
                         {{
                           showFullMessage[notification.id] ||
                           notification.notificationMessage.length < 100 ? notification.notificationMessage :
                           notification.notificationMessage.substring(0, 100) }} </span>
 
                           <button v-if="notification.notificationMessage.length > 100"
-                            class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                            class="text-[#0057FF] text-xs font-medium font-[Poppins] leading-tight cursor-pointer pl-1"
                             @click="toggleMessage(notification.id)">
                             {{ showFullMessage[notification.id] ? "Less" : "More" }}
                           </button>
@@ -113,7 +113,7 @@ const Theme = localStorage.getItem("Theme");
 
           <div class="justify-center items-center inline-flex gap-[9px] relative downArrow  md:hidden  lg:hidden"
             v-if="currentPath.includes('dashboard')">
-            <div class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-light font-['Poppins'] leading-[17px]">
+            <div class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-light font-[Poppins] leading-[17px]">
               $00.00
             </div>
           </div>
@@ -158,19 +158,19 @@ const Theme = localStorage.getItem("Theme");
               class="absolute z-10 right-0 top-[50px] shadow w-[175px]  bg-neutral-50 dark:bg-[#09132C] rounded-[14px] flex-col justify-start items-start inline-flex">
               <RouterLink to="/service" @click="mobileHandleModalOpen(true)"
                 class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
                   Our Service
                 </div>
               </RouterLink>
               <RouterLink to="/about" @click="mobileHandleModalOpen(true)"
                 class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
                   About Us
                 </div>
               </RouterLink>
               <RouterLink to="/contact-us" @click="mobileHandleModalOpen(true)"
                 class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
                   Contact Us
                 </div>
               </RouterLink>
@@ -194,7 +194,7 @@ const Theme = localStorage.getItem("Theme");
                 <button
                   class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-[#0057FF] justify-center items-center inline-flex">
                   <span
-                    class="text-center text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
+                    class="text-center text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
                     Sign In
                   </span>
                 </button>
@@ -203,7 +203,7 @@ const Theme = localStorage.getItem("Theme");
                 class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
                 <button
                   class="w-24 h-[37px] px-4 py-2.5 bg-[#0057FF] rounded-[10px] justify-center items-end inline-flex">
-                  <span class="text-center text-white text-sm font-medium font-['Poppins'] leading-[17px]">
+                  <span class="text-center text-white text-sm font-medium font-[Poppins] leading-[17px]">
                     Sign Up
                   </span>
                 </button>
@@ -223,7 +223,7 @@ const Theme = localStorage.getItem("Theme");
             <ul class="flex items-center gap-11 text-sm">
               <li>
                 <RouterLink
-                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-[#0057FF]"
+                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-normal transition hover:text-[#0057FF]"
                   to="/service">
                   Our Service
                 </RouterLink>
@@ -231,7 +231,7 @@ const Theme = localStorage.getItem("Theme");
 
               <li>
                 <RouterLink
-                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-[#0057FF]"
+                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-normal transition hover:text-[#0057FF]"
                   to="/about">
                   About us
                 </RouterLink>
@@ -239,7 +239,7 @@ const Theme = localStorage.getItem("Theme");
 
               <li>
                 <RouterLink
-                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-[#0057FF]"
+                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-normal transition hover:text-[#0057FF]"
                   v-bind:class="{ 'mr-8': login }" to="/contact-us">
                   Contact
                 </RouterLink>
@@ -254,7 +254,7 @@ const Theme = localStorage.getItem("Theme");
                   class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-[#0057FF] justify-center items-center inline-flex hover:bg-[#0057FF] text-neutral-800 dark:text-[#F5F5F5] hover:text-[#F5F5F5]"
                   to="/logIn">
                   <span
-                    class="text-center  text-sm font-normal font-['Poppins'] leading-[17px]">
+                    class="text-center  text-sm font-normal font-[Poppins] leading-[17px]">
                     Sign In
                   </span>
                 </RouterLink>
@@ -262,7 +262,7 @@ const Theme = localStorage.getItem("Theme");
               <RouterLink
                 class="w-24 h-[37px] px-4 py-2.5 bg-[#0057FF] border border-[#0057FF] text-white rounded-[10px] justify-center items-end hidden lg:inline-flex hover:bg-white hover:text-[#0057FF] hover:border-[#0057FF] dark:text-[#F5F5F5] dark:hover:text-[#0057FF]"
                 to="/signUp">
-                <span class="text-center text-sm font-medium font-['Poppins'] leading-[17px]">
+                <span class="text-center text-sm font-medium font-[Poppins] leading-[17px]">
                   Sign Up
                 </span>
               </RouterLink>
@@ -282,9 +282,9 @@ const Theme = localStorage.getItem("Theme");
                 class="max-w-[175px] w0full h-[46px] px-6 py-[18px] bg-neutral-100 dark:bg-slate-700 rounded-[100px] justify-center items-center  inline-flex dark:after:bg-[#ACB5BD] downArrow"
                 v-if="currentPath.includes('dashboard')">
                 <p
-                  class="text-center text-neutral-800 dark:text-white  text-sm font-normal font-['Poppins'] leading-[10px] justify-center items-center inline-flex gap-1">
+                  class="text-center text-neutral-800 dark:text-white  text-sm font-normal font-[Poppins] leading-[10px] justify-center items-center inline-flex gap-1">
                   My Balance: <span
-                    class="text-center text-neutral-800 dark:text-white text-sm font-semibold font-['Poppins'] leading-[10px]">0.26$</span>
+                    class="text-center text-neutral-800 dark:text-white text-sm font-semibold font-[Poppins] leading-[10px]">0.26$</span>
                 </p>
 
               </div>
@@ -344,7 +344,7 @@ const Theme = localStorage.getItem("Theme");
                   class="z-[102] w-[369px] absolute  right-[-8px] top-[53px] h-[530px] px-[25px] py-5 bg-neutral-50 dark:bg-slate-800 rounded-[30px] flex-col justify-start items-start gap-3.5 inline-flex ease-custom-dropdown"
                   :class="{ ' dropDownBlock': OpenNotificationModal, 'dropDown-hidden': !OpenNotificationModal }">
                   <div class="w-full pb-6 border-b border-gray-400 justify-center items-center gap-2.5 inline-flex">
-                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-medium font-['Poppins']">
+                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-medium font-[Poppins]">
                       Notification
                     </div>
                   </div>
@@ -355,24 +355,24 @@ const Theme = localStorage.getItem("Theme");
                       <div class="grow shrink basis-0 flex-col justify-start items-start gap-1.5 inline-flex">
                         <div class="self-stretch justify-between items-center gap-[15px] inline-flex">
                           <p
-                            class="dark:text-[#F5F5F5] text-neutral-900 text-sm font-normal font-['Poppins'] leading-[17px]">
+                            class="dark:text-[#F5F5F5] text-neutral-900 text-sm font-normal font-[Poppins] leading-[17px]">
                             {{ notification?.title }}
                           </p>
                           <p
-                            class="dark:text-[#F5F5F5] text-neutral-900 text-xs font-light font-['Poppins'] leading-[18.89px]">
+                            class="dark:text-[#F5F5F5] text-neutral-900 text-xs font-light font-[Poppins] leading-[18.89px]">
                             {{ notification?.notificationTime }}
                           </p>
                         </div>
                         <div>
                           <span
-                            class="dark:text-[#ACB5BD] text-zinc-600 text-xs font-light font-['Poppins'] leading-tight">
+                            class="dark:text-[#ACB5BD] text-zinc-600 text-xs font-light font-[Poppins] leading-tight">
                             {{
                               showFullMessage[notification.id] ||
                               notification.notificationMessage.length < 100 ? notification.notificationMessage :
                               notification.notificationMessage.substring(0, 100) }} </span>
 
                               <button v-if="notification.notificationMessage.length > 100"
-                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                class="text-[#0057FF] text-xs font-medium font-[Poppins] leading-tight cursor-pointer pl-1"
                                 @click="toggleMessage(notification.id)">
                                 {{
                                   showFullMessage[notification.id] ? "Less" : "More"
@@ -423,43 +423,43 @@ const Theme = localStorage.getItem("Theme");
                   :class="{ ' dropDownBlock': OpenModal, 'dropDown-hidden': !OpenModal }">
                   <RouterLink to="/dashboard"
                     class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
                       My Dashboard
                     </div>
                   </RouterLink>
                   <RouterLink to="/dashboard/my-number"
                     class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
                       My Number
                     </div>
                   </RouterLink>
                   <RouterLink to="/dashboard/topup-balance"
                     class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
                       TOP-UP Balance
                     </div>
                   </RouterLink>
                   <RouterLink to="/dashboard/balance-transfer"
                     class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
                       Transaction History
                     </div>
                   </RouterLink>
                   <RouterLink to="/dashboard/appearance"
                     class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
                       API Connection
                     </div>
                   </RouterLink>
                   <RouterLink to="/dashboard/account-settings"
                     class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
                       Account setting
                     </div>
                   </RouterLink>
                   <div class="self-stretch px-10 py-5 justify-start items-center gap-2.5 inline-flex cursor-pointer"
                     v-on:click="handleLogOut()">
-                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+                    <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
                       Logout
                     </div>
                     <div
@@ -496,62 +496,62 @@ const Theme = localStorage.getItem("Theme");
           </div>
           <RouterLink to="/dashboard" @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
               Home
             </div>
           </RouterLink>
           <RouterLink to="/dashboard/my-number" @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
               My Number
             </div>
           </RouterLink>
           <RouterLink to="/dashboard/manage-number" @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
               Manage Number
             </div>
           </RouterLink>
           <RouterLink to="/dashboard/buy-number" @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
               Buy Number
             </div>
           </RouterLink>
           <RouterLink to="/dashboard/transaction" @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
               Transaction
             </div>
           </RouterLink>
           <RouterLink to="/dashboard/balance-transfer" @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
               Balance Transfer
             </div>
           </RouterLink>
           <RouterLink to="/dashboard/topup-balance" @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
               TOP-UP Balance
             </div>
           </RouterLink>
           <RouterLink to="/dashboard/appearance" @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
               Appearance
             </div>
           </RouterLink>
           <RouterLink to="/dashboard/account-settings" @click="toggle()"
             class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
-            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
               Account Setting
             </div>
           </RouterLink>
 
           <div class="self-stretch px-10 py-5 justify-start items-center gap-2.5 inline-flex cursor-pointer"
             @click="toggle(), handleLogOut()">
-            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']">
+            <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
               Logout
             </div>
             <div class="w-5 h-5 relative rounded-[5px] flex-col justify-start items-start inline-flex darkIconStock">

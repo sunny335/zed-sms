@@ -17,20 +17,20 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                 <div class="max-w-full lg:max-w-[420px] h-[600px] mx-auto px-12 lg:px-0 xl:px-0">
                     <div class="flex  justify-between items-center mb-[30px]">
                         <h3
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">
+                            class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] pr-[16px]">
                             All
                             Number</h3>
                         <ul
                             class="flex mb-0 list-none flex-row max-w-[168px]  rounded-xl border border-[#0057FF] overflow-hidden	 h-[37px]">
                             <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                                <a class="w-20 flex items-center justify-center  dark:text-[#F5F5F5]  text-center text-sm font-light font-['Poppins'] leading-[13px] 
+                                <a class="w-20 flex items-center justify-center  dark:text-[#F5F5F5]  text-center text-sm font-light font-[Poppins] leading-[13px] 
                                  h-[37px] " v-on:click="toggleTabs(1)"
                                     v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 1, 'text-white bg-[#0057FF]': openTab === 1 }">
                                     Active
                                 </a>
                             </li>
                             <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                                <a class="w-20 flex items-center justify-center dark:text-[#F5F5F5] text-center text-sm font-light font-['Poppins'] leading-[13px]  
+                                <a class="w-20 flex items-center justify-center dark:text-[#F5F5F5] text-center text-sm font-light font-[Poppins] leading-[13px]  
                                  h-[37px] " v-on:click="toggleTabs(2)"
                                     v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 2, 'text-white bg-[#0057FF]': openTab === 2 }">
                                     Deactive
@@ -64,7 +64,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                 <div class="flex items-center">
                                                     <img class="pr-[10px]" :src="numberData.img" alt="" srcset="">
                                                     <p
-                                                        class="dark:text-[#F5F5F5] text-sm font-light font-['Poppins'] leading-[17px]">
+                                                        class="dark:text-[#F5F5F5] text-sm font-light font-[Poppins] leading-[17px]">
                                                         {{ numberData.number }}</p>
                                                 </div>
 
@@ -110,7 +110,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                 <div class="flex items-center">
                                                     <img class="pr-[10px]" :src="number2Data.img" alt="" srcset="">
                                                     <p
-                                                        class="dark:text-[#F5F5F5] text-sm font-light font-['Poppins'] leading-[17px]">
+                                                        class="dark:text-[#F5F5F5] text-sm font-light font-[Poppins] leading-[17px]">
                                                         {{ number2Data.number }}</p>
                                                 </div>
 
@@ -158,82 +158,82 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                 <div
                     class="w-[450px] h-[589px] p-[30px] bg-white dark:bg-[#09132C] rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
                     <h3
-                        class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] mb-[20px]">
+                        class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] mb-[20px]">
                         Number
                         Details</h3>
                     <div class="flex  items-center w-full">
                         <p
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px]  w-2/4">
+                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px]  w-2/4">
                             Country</p>
 
                         <p
-                            class="text-zinc-600 dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px]  w-2/4">
+                            class="text-zinc-600 dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px]  w-2/4">
                             : United States
                         </p>
                     </div>
                     <div class="flex  items-center w-full">
                         <p
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px] w-2/4">
+                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px] w-2/4">
                             Number</p>
 
                         <p
-                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px] w-2/4">
+                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
                             :+87987787465
                         </p>
                     </div>
                     <div class="flex  items-center w-full">
                         <p
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px] w-2/4">
+                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px] w-2/4">
                             Type</p>
 
                         <p
-                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px] w-2/4">
+                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
                             : Private
                         </p>
                     </div>
                     <div class="flex  items-center w-full">
                         <p
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px] w-2/4">
+                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px] w-2/4">
                             Service</p>
 
                         <p
-                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px] w-2/4">
+                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
                             :Any
                         </p>
                     </div>
                     <div class="flex  items-center w-full">
                         <p
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px] w-2/4">
+                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px] w-2/4">
                             Rent</p>
 
                         <p
-                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px] w-2/4">
+                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
                             : 1 Week
                         </p>
                     </div>
                     <div class="flex  items-center w-full">
                         <p
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px] w-2/4">
+                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px] w-2/4">
                             Buy Date</p>
 
                         <p
-                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px] w-2/4">
+                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
                             : 05 July 2023
                         </p>
                     </div>
                     <div class="flex  items-center w-full">
                         <p
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px] w-2/4">
+                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px] w-2/4">
                             Remain</p>
 
                         <p
-                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px] w-2/4">
+                            class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
                             : 12 days left
                         </p>
                     </div>
                     <div class="mt-[24px] w-full">
                         <h3
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
+                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
                             Message Forward
                         </h3>
 
@@ -244,7 +244,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                             <button
                                 class="w-[110px] h-[37px] px-5 py-2.5 rounded-lg border border-zinc-600 justify-center items-center gap-1.5 inline-flex text-neutral-800 dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#0057FF] iconStock">
-                                <div class="text-xs font-light font-['Poppins'] leading-[17px]">
+                                <div class="text-xs font-light font-[Poppins] leading-[17px]">
                                     Save</div>
                                 <div class="w-3 h-3 relative flex-col justify-start items-start inline-flex darkIconFill">
 
@@ -270,7 +270,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                     </div>
                     <div class="mt-[24px] w-full">
                         <h3
-                            class="text-neutral-800  dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
+                            class="text-neutral-800  dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
                             Message Forward
                         </h3>
 
@@ -302,7 +302,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                     </div>
                     <div class="mt-[24px] w-full">
                         <h3
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
+                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
                             Extent Number
                         </h3>
 
@@ -313,7 +313,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                     <!-- Dropdown Trigger -->
                                     <div @click="toggleDropdown" class="cursor-pointer flex items-center">
                                         <div
-                                            class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-normal font-['Poppins'] leading-[17px]">
+                                            class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-normal font-[Poppins] leading-[17px]">
 
                                             <span> {{ selectedOption }}</span>
                                         </div>
@@ -342,7 +342,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                             <button @click="handleExtentNow"
                                 class="max-w-[165px] h-[41px] w-full py-3 rounded-lg border border-zinc-600 justify-center items-center gap-1 inline-flex text-neutral-800 dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#0057FF] iconStock">
-                                <div class="text-xs font-light font-['Poppins'] leading-[17px]">
+                                <div class="text-xs font-light font-[Poppins] leading-[17px]">
                                     Extent Now
                                 </div>
                                 <div class="w-3.5 h-3.5 relative darkIconStock">
@@ -394,82 +394,82 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         <div
                             class="w-[337px] h-[589px] p-[30px] bg-white dark:bg-[#09132C] rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
                             <h3
-                                class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] mb-[20px]">
+                                class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] mb-[20px]">
                                 Number
                                 Details</h3>
                             <div class="flex  items-center w-full">
                                 <p
-                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px]  w-2/4">
+                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px]  w-2/4">
                                     Country</p>
 
                                 <p
-                                    class="text-zinc-600 dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px]  w-2/4">
+                                    class="text-zinc-600 dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px]  w-2/4">
                                     : United States
                                 </p>
                             </div>
                             <div class="flex  items-center w-full">
                                 <p
-                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px] w-2/4">
+                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px] w-2/4">
                                     Number</p>
 
                                 <p
-                                    class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px] w-2/4">
+                                    class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
                                     :+87987787465
                                 </p>
                             </div>
                             <div class="flex  items-center w-full">
                                 <p
-                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px] w-2/4">
+                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px] w-2/4">
                                     Type</p>
 
                                 <p
-                                    class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px] w-2/4">
+                                    class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
                                     : Private
                                 </p>
                             </div>
                             <div class="flex  items-center w-full">
                                 <p
-                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px] w-2/4">
+                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px] w-2/4">
                                     Service</p>
 
                                 <p
-                                    class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px] w-2/4">
+                                    class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
                                     :Any
                                 </p>
                             </div>
                             <div class="flex  items-center w-full">
                                 <p
-                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px] w-2/4">
+                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px] w-2/4">
                                     Rent</p>
 
                                 <p
-                                    class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px] w-2/4">
+                                    class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
                                     : 1 Week
                                 </p>
                             </div>
                             <div class="flex  items-center w-full">
                                 <p
-                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px] w-2/4">
+                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px] w-2/4">
                                     Buy Date</p>
 
                                 <p
-                                    class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px] w-2/4">
+                                    class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
                                     : 05 July 2023
                                 </p>
                             </div>
                             <div class="flex  items-center w-full">
                                 <p
-                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[30px] w-2/4">
+                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px] w-2/4">
                                     Remain</p>
 
                                 <p
-                                    class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] leading-[30px] w-2/4">
+                                    class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
                                     : 12 days left
                                 </p>
                             </div>
                             <div class="mt-[24px] w-full">
                                 <h3
-                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
+                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
                                     Message Forward
                                 </h3>
 
@@ -480,7 +480,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                                     <button
                                         class="w-[87px] h-[37px] px-5 py-2.5 rounded-lg border border-zinc-600 justify-center items-center gap-1.5 inline-flex text-neutral-800 dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#0057FF] iconStock">
-                                        <div class="text-xs font-light font-['Poppins'] leading-[17px]">
+                                        <div class="text-xs font-light font-[Poppins] leading-[17px]">
                                             Save</div>
                                         <div
                                             class="w-3 h-3 relative flex-col justify-start items-start inline-flex darkIconFill">
@@ -508,7 +508,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             </div>
                             <div class="mt-[24px] w-full">
                                 <h3
-                                    class="text-neutral-800  dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
+                                    class="text-neutral-800  dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
                                     Message Forward
                                 </h3>
 
@@ -540,7 +540,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             </div>
                             <div class="mt-[24px] w-full">
                                 <h3
-                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
+                                    class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
                                     Extent Number
                                 </h3>
 
@@ -551,7 +551,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                             <!-- Dropdown Trigger -->
                                             <div @click="toggleDropdown" class="cursor-pointer flex items-center">
                                                 <div
-                                                    class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-normal font-['Poppins'] leading-[17px]">
+                                                    class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-normal font-[Poppins] leading-[17px]">
 
                                                     <span> {{ selectedOption }}</span>
                                                 </div>
@@ -582,7 +582,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                                     <button @click="handleExtentNow"
                                         class="max-w-[131px] h-[41px] w-full py-3 rounded-lg border border-zinc-600 justify-center items-center gap-1 inline-flex text-neutral-800 dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#0057FF] iconStock">
-                                        <div class="text-xs font-light font-['Poppins'] leading-[17px]">
+                                        <div class="text-xs font-light font-[Poppins] leading-[17px]">
                                             Extent Now
                                         </div>
                                         <div class="w-3.5 h-3.5 relative darkIconStock">
@@ -638,7 +638,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                     <div
                                         class="max-w-[361px] w-full h-[196px] p-[50px] bg-neutral-50 dark:bg-[#09132C] rounded-3xl">
                                         <p
-                                            class="text-zinc-600 dark:text-[#F5F5F5]  text-base lg:text-xl font-normal font-['Poppins'] mb-[30px]">
+                                            class="text-zinc-600 dark:text-[#F5F5F5]  text-base lg:text-xl font-normal font-[Poppins] mb-[30px]">
                                             Do you want
                                             to remove it?</p>
                                         <div class="flex justify-between items-center gap-4">
@@ -647,13 +647,13 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                 class="max-w-[119px] w-full h-9  py-1.5 rounded-[10px] border border-zinc-600 justify-center items-center gap-1.5 inline-flex"
                                                 @click="deleteModal(false)">
                                                 <div
-                                                    class="text-zinc-600 dark:text-[#ACB5BD] text-base font-normal font-['Poppins']">
+                                                    class="text-zinc-600 dark:text-[#ACB5BD] text-base font-normal font-[Poppins]">
                                                     Back</div>
                                             </button>
                                             <button
                                                 class="max-w-[108px] w-full h-9 py-1.5 bg-[#0057FF] rounded-[10px] justify-center items-center gap-1.5 inline-flex"
                                                 @click="deleteModal(false)">
-                                                <div class="text-white text-base font-normal font-['Poppins']">Yes</div>
+                                                <div class="text-white text-base font-normal font-[Poppins]">Yes</div>
                                             </button>
                                         </div>
                                     </div>
