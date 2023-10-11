@@ -59,7 +59,7 @@ import google from '../assets/img/google.png';
                                         {{ passwordShow ? "Hide" : "Show" }}
                                     </span>
 
-                                </div>
+                            </div>
                         </div>
                         <input :type="passwordShow ? 'password' : 'text'" class="px-[16px] py-[8px]  dark:bg-transparent w-full h-14 relative rounded-xl border border-zinc-600" />
                     </div>

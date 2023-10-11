@@ -104,7 +104,7 @@ const router = createRouter({
     {
       path: '/tutorial',
       name: 'Tutorial',
-      component: () => import('../views/Blog/Tutorial.vue')
+      component: () => import('../views/Tutorial.vue')
     },
     {
       path: '/test',
@@ -171,5 +171,11 @@ const router = createRouter({
     },
   ]
 })
-
+router.beforeEach((to, from, next) => {
+  if (to.hash) {
+    return;
+  }
+  window.scrollTo(0, 0);
+  next();
+});
 export default router

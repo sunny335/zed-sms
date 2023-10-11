@@ -312,7 +312,7 @@ const filteredPhone = computed(() => {
                                         {{
                                             openTab === 2
                                             ? selectedCountry?.price
-                                            : selectedService.price
+                                            : selectedService?.price
                                         }}
                                     </div>
                                 </div>
@@ -354,7 +354,7 @@ const filteredPhone = computed(() => {
                                                         @click="selectCountry(country)"
                                                         :class="{ 'border': (selectedCountry?.name === country?.name) && (country?.flag && selectedCountry?.name) }">
                                                         <div
-                                                            class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
+                                                            class="max-w-full lg:max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
                                                             <div
                                                                 class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
                                                                 <!-- <img :src="getFlagImage(country.flag)" class="w-4 h-4 mr-2" -->
@@ -410,19 +410,19 @@ const filteredPhone = computed(() => {
                                                         :class="{ 'border': (service?.flag == selectedService?.flag) && (selectedService?.name == service?.name) }">
 
                                                         <div
-                                                            class="max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
+                                                            class="max-w-full lg:max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
                                                             <div
                                                                 class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
                                                                 
-                                                                <img :src="service.flag"
+                                                                <img :src="service?.flag"
                                                                     class="w-[30px] h-[30px] rounded-full" alt="flag" />
                                                                 <div
                                                                     class="grow shrink basis-0 text-neutral-800 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
-                                                                    {{ service.name }}</div>
+                                                                    {{ service?.name }}</div>
                                                             </div>
                                                             <div
                                                                 class="text-right text-neutral-800  dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
-                                                                {{ service.price }}</div>
+                                                                {{ service?.price }}</div>
                                                         </div>
 
                                                     </li>
@@ -622,15 +622,15 @@ const filteredPhone = computed(() => {
                                                                 <!-- <img :src="getFlagImage(country.flag)" class="w-4 h-4 mr-2"
                 
                 alt="Flag" /> -->
-                                                                <img :src="country.flag"
+                                                                <img :src="country?.flag"
                                                                     class="w-[30px] h-[30px] rounded-full" alt="Flag" />
                                                                 <div
                                                                     class="grow shrink basis-0 text-neutral-800  dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
-                                                                    {{ country.name }}</div>
+                                                                    {{ country?.name }}</div>
                                                             </div>
                                                             <div
                                                                 class="text-right text-neutral-800  dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
-                                                                {{ country.price }}</div>
+                                                                {{ country?.price }}</div>
                                                         </div>
 
                                                     </li>
@@ -792,7 +792,7 @@ const filteredPhone = computed(() => {
                                                         @click="selectCountry(country)"
                                                         :class="{ 'border': (selectedCountry?.name == country?.name) && (selectedCountry?.flag == country?.flag) }">
                                                         <div
-                                                            class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
+                                                            class="max-w-full lg:max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
                                                             <div
                                                                 class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
                                                                 <!-- <img :src="getFlagImage(country.flag)" class="w-4 h-4 mr-2"
@@ -851,15 +851,15 @@ const filteredPhone = computed(() => {
                                                             <div
                                                                 class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
 
-                                                                <img :src="service.flag"
+                                                                <img :src="service?.flag"
                                                                     class="w-[30px] h-[30px] rounded-full" alt="Flag" />
                                                                 <div
                                                                     class="grow shrink basis-0 text-neutral-800  dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
-                                                                    {{ service.name }}</div>
+                                                                    {{ service?.name }}</div>
                                                             </div>
                                                             <div
                                                                 class="text-right text-neutral-800  dark:text-[#F5F5F5] text-sm font-light font-['Poppins']">
-                                                                {{ service.price }}</div>
+                                                                {{ service?.price }}</div>
                                                         </div>
                                                         <div v-if="(selectedService?.name === service?.name) && (selectedService?.flag === service?.flag)"
                                                             class="border border-gray-400 flex items-center py-[5px] px-[12px] rounded-[10px] mb-4 lg:mb-0">
@@ -961,7 +961,7 @@ const filteredPhone = computed(() => {
 
                                             <div
                                                 class="text-center text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins']">
-                                                {{ selectedCountry.name }}
+                                                {{ selectedCountry?.name }}
                                             </div>
                                         </div>
                                     </div>
@@ -972,10 +972,10 @@ const filteredPhone = computed(() => {
                                             Service:
                                         </div>
                                         <div class="flex gap-[6px] items-center">
-                                            <img :src="selectedService.flag" alt="Image Description" width="20" />
+                                            <img :src="selectedService?.flag" alt="Image Description" width="20" />
                                             <div
                                                 class="text-center text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] w-2/4	">
-                                                {{ selectedService.name }}
+                                                {{ selectedService?.name }}
                                             </div>
                                         </div>
                                     </div>
@@ -1000,7 +1000,7 @@ const filteredPhone = computed(() => {
                                             {{ selectedWeek }}
                                         </div>
                                     </div>
-                                    <div v-if="openTab === 2 ? selectedCountry?.price : selectedService.price"
+                                    <div v-if="openTab === 2 ? selectedCountry?.price : selectedService?.price"
                                         class="flex items-center border-b border-zinc-200 py-[16px]">
                                         <div
                                             class="text-left text-zinc-600  dark:text-[#ACB5BD] text-sm font-medium font-['Poppins'] w-2/4">
@@ -1009,7 +1009,7 @@ const filteredPhone = computed(() => {
                                         <div
                                             class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] w-2/4	">
                                             {{
-                                                openTab === 2 ? selectedCountry?.price : selectedService.price }}
+                                                openTab === 2 ? selectedCountry?.price : selectedService?.price }}
                                         </div>
                                     </div>
                                 </div>
@@ -1017,7 +1017,7 @@ const filteredPhone = computed(() => {
                             <div class="px-[30px] py-[30px]">
                                 <div class=" justify-start items-start gap-5 inline-flex w-full">
                                     <div @click="handleModalOpen(false)" ref="cancelButtonRef"
-                                        class="cursor-pointer px-6 py-[9px] rounded-[10px] border border-zinc-600 justify-center items-center gap-2 flex text-zinc-600  dark:text-[#ACB5BD] hover:bg-[#0057FF] hover:text-[#ACB5BD] iconStock">
+                                        class="cursor-pointer px-6 py-[9px] rounded-[10px] border border-zinc-600 justify-center items-center gap-2 flex text-zinc-600  dark:text-[#ACB5BD] hover:bg-[#0057FF] hover:text-[#fff] iconStock">
                                         <svg v-if="Theme === 'light'" width="14" height="11" viewBox="0 0 14 11" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M13 5.5H1M1 5.5L5.5 1M1 5.5L5.5 10" stroke="#495057"
@@ -1028,9 +1028,9 @@ const filteredPhone = computed(() => {
                                             <path d="M13 5.5H1M1 5.5L5.5 1M1 5.5L5.5 10" stroke="#F5F5F5"
                                                 stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
-                                        <div class=" text-sm font-light font-['Poppins'] ">
+                                        <p class="text-sm font-light font-['Poppins'] ">
                                             Back
-                                        </div>
+                                        </p>
                                     </div>
                                     <RouterLink to="/payment"
                                         class=" w-2/4 h-[41px] px-6 py-2.5 rounded-[10px] border border-[#0057FF] dark:bg-[#0057FF] justify-center items-center gap-2.5 flex dark:text-[#F5F5F5] text-[#0057FF] hover:text-[#F5F5F5] hover:bg-[#0057FF] iconStock">

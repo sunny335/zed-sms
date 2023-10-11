@@ -13,9 +13,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
     <section class="pl-0 lg:pl-[54px] mb-[97px]">
         <div class="flex flex-col lg:flex-row gap-0 lg:gap-[82px]">
             <!-- All Number -->
-            <div class="max-w-[339px] w-full mx-auto" v-bind:class="{ 'hidden lg:block': selectedNumber }">
-                <div class="max-w-[320px] h-[600px] mx-auto">
-                    <div class="flex  items-center mb-[30px]">
+            <div class="max-w-full lg:max-w-[339px] w-full mx-auto" v-bind:class="{ 'hidden lg:block': selectedNumber }">
+                <div class="max-w-full lg:max-w-[320px] h-[600px] mx-auto px-12 lg:px-0">
+                    <div class="flex  justify-between items-center mb-[30px]">
                         <h3
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">
                             All
@@ -154,7 +154,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
             </div>
 
             <!-- Number Details Desktop -->
-            <div class="max-w-[337px] w-full mx-auto hidden lg:block">
+            <div class="lg:max-w-[337px] w-full mx-auto hidden lg:block">
                 <div
                     class="w-[337px] h-[589px] p-[30px] bg-white dark:bg-[#09132C] rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
                     <h3

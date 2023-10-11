@@ -29,10 +29,10 @@ const open = ref(true);
 const selectedSearchCountry = ref(null);
 
 const filteredCountries = computed(() => {
-  if (!selectedSearchCountry.value) {
+  if (!selectedSearchCountry?.value) {
     return countries;
   } else {
-    const searchTerm = selectedSearchCountry.value.toLowerCase();
+    const searchTerm = selectedSearchCountry?.value.toLowerCase();
     return countries.filter((country) =>
       country.name.toLowerCase().includes(searchTerm)
     );
@@ -233,13 +233,13 @@ const filteredPhone = computed(() => {
               <div v-if="selectedService" class="flex gap-[6px] items-center">
                 <img
                   class="w-[20px] h-[20px] rounded-full"
-                  :src="selectedService.flag"
+                  :src="selectedService?.flag"
                   alt="Image Description"
                 />
                 <div
                   class="text-center text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-light font-['Poppins']"
                 >
-                  {{ selectedService.name }}
+                  {{ selectedService?.name }}
                 </div>
               </div>
             </div>
@@ -344,13 +344,13 @@ const filteredPhone = computed(() => {
                 <div v-if="selectedService" class="flex gap-[6px] items-center">
                   <img
                     class="w-[30px] h-[30px] rounded-full"
-                    :src="selectedService.flag"
+                    :src="selectedService?.flag"
                     alt="Image Description"
                   />
                   <div
                     class="text-center text-zinc-600 dark:text-[#F5F5F5] text-sm font-light font-['Poppins']"
                   >
-                    {{ selectedService.name }}
+                    {{ selectedService?.name }}
                   </div>
                 </div>
               </div>
@@ -403,7 +403,7 @@ const filteredPhone = computed(() => {
                   {{
                     openTab === 2
                       ? selectedCountry?.price
-                      : selectedService.price
+                      : selectedService?.price
                   }}
                 </div>
               </div>
@@ -417,7 +417,7 @@ const filteredPhone = computed(() => {
                 <div class="flex gap-4">
                   <!-- column1 -->
                   <div
-                    class="max-w-[306px] w-full"
+                    class="max-w-full lg:max-w-[306px] w-full"
                     v-bind:class="{ 'hidden lg:block': selectedCountry }"
                   >
                     <form>
@@ -497,7 +497,7 @@ const filteredPhone = computed(() => {
 
                   <!-- column2 -->
                   <div
-                    class="max-w-[306px] w-full lg:block"
+                    class="max-w-full lg:max-w-[306px] w-full lg:block"
                     v-bind:class="{
                       block: selectedCountry,
                       'hidden lg:block': !selectedCountry || selectedService,
@@ -561,20 +561,20 @@ const filteredPhone = computed(() => {
                 
                                                                                                                                      alt="Flag" /> -->
                               <img
-                                :src="service.flag"
+                                :src="service?.flag"
                                 class="w-[30px] h-[30px] rounded-full"
                                 alt="flag"
                               />
                               <div
                                 class="grow shrink basis-0 text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
                               >
-                                {{ service.name }}
+                                {{ service?.name }}
                               </div>
                             </div>
                             <div
                               class="text-right text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
                             >
-                              {{ service.price }}
+                              {{ service?.price }}
                             </div>
                           </div>
                         </li>
@@ -584,7 +584,7 @@ const filteredPhone = computed(() => {
                   <!-- column2 end -->
                   <!-- column3 -->
                   <div
-                    class="max-w-[423px] w-full lg:block"
+                    class="max-w-full lg:max-w-[423px] w-full lg:block"
                     v-bind:class="{
                       block: selectedService,
                       'hidden lg:block': !selectedService,
@@ -784,20 +784,20 @@ const filteredPhone = computed(() => {
                 
                 alt="Flag" /> -->
                               <img
-                                :src="country.flag"
+                                :src="country?.flag"
                                 class="w-[30px] h-[30px] rounded-full"
                                 alt="Flag"
                               />
                               <div
                                 class="grow shrink basis-0 text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
                               >
-                                {{ country.name }}
+                                {{ country?.name }}
                               </div>
                             </div>
                             <div
                               class="text-right text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
                             >
-                              {{ country.price }}
+                              {{ country?.price }}
                             </div>
                           </div>
                         </li>
@@ -1008,14 +1008,14 @@ const filteredPhone = computed(() => {
                                                         
                                                         alt="Flag" /> -->
                               <img
-                                :src="country.flag"
+                                :src="country?.flag"
                                 class="w-[30px] h-[30px] rounded-full"
                                 alt="Flag"
                               />
                               <div
                                 class="grow shrink basis-0 text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
                               >
-                                {{ country.name }}
+                                {{ country?.name }}
                               </div>
                             </div>
                           </div>
@@ -1087,20 +1087,20 @@ const filteredPhone = computed(() => {
                               class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex"
                             >
                               <img
-                                :src="service.flag"
+                                :src="service?.flag"
                                 class="w-[30px] h-[30px] rounded-full"
                                 alt="Flag"
                               />
                               <div
                                 class="grow shrink basis-0 text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
                               >
-                                {{ service.name }}
+                                {{ service?.name }}
                               </div>
                             </div>
                             <div
                               class="text-right text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-['Poppins']"
                             >
-                              {{ service.price }}
+                              {{ service?.price }}
                             </div>
                           </div>
                           <div
@@ -1246,14 +1246,14 @@ const filteredPhone = computed(() => {
                     </div>
                     <div class="flex gap-[6px] items-center">
                       <img
-                        :src="selectedService.flag"
+                        :src="selectedService?.flag"
                         alt="Image Description"
                         width="20"
                       />
                       <div
                         class="text-center text-zinc-600 dark:text-[#ACB5BD] text-sm font-light font-['Poppins'] w-2/4"
                       >
-                        {{ selectedService.name }}
+                        {{ selectedService?.name }}
                       </div>
                     </div>
                   </div>
@@ -1291,7 +1291,7 @@ const filteredPhone = computed(() => {
                     v-if="
                       openTab === 2
                         ? selectedCountry?.price
-                        : selectedService.price
+                        : selectedService?.price
                     "
                     class="flex items-center border-b border-zinc-200 py-[16px]"
                   >
@@ -1306,7 +1306,7 @@ const filteredPhone = computed(() => {
                       {{
                         openTab === 2
                           ? selectedCountry?.price
-                          : selectedService.price
+                          : selectedService?.price
                       }}
                     </div>
                   </div>

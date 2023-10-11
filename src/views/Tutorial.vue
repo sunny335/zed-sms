@@ -1,14 +1,10 @@
 <script setup>
-
-import { RouterLink } from 'vue-router'
-
-import img6 from "../../assets/img/blog/6.png"
-import video1 from "../../assets/img/blog/video1.png"
-import video2 from "../../assets/img/blog/video2.png"
-import video3 from "../../assets/img/blog/video3.png"
-import video4 from "../../assets/img/blog/video4.png"
-import video5 from "../../assets/img/blog/video5.png"
-import video6 from "../../assets/img/blog/video6.png"
+import video1 from "../assets/img/blog/video1.png"
+import video2 from "../assets/img/blog/video2.png"
+import video3 from "../assets/img/blog/video3.png"
+import video4 from "../assets/img/blog/video4.png"
+import video5 from "../assets/img/blog/video5.png"
+import video6 from "../assets/img/blog/video6.png"
 
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 
@@ -22,11 +18,11 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
             <div
                 class="px-4 pt-[47px] mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 pb-[66px] lg:pb-[139px] lg:pt-[90px]">
-                <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-[24px]">
 
                     <div v-for="(videoData, index) in VideosData" :key="index" class="mt-2 lg:mt-[70px]">
                         <div class="relative">
-                            <img class="max-w-[159.50px] min-h-[140px] lg:max-w-[360px] lg:h-60 rounded-[30px]"
+                            <img class="max-w-[159.50px] w-full min-h-[140px] lg:max-w-[360px] lg:h-60 rounded-[30px]"
                                 :src="videoData.videoThumbnail" />
                             <div v-on:click="handleModalOpen(true)"
                                 class="absolute top-0 bottom-0 right-0 left-0 flex justify-center items-center cursor-pointer">
@@ -102,7 +98,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 </template>
 
 <script >
-import SectionHeader from '../../components/SectionHeader/SectionHeader.vue';
+import SectionHeader from '../components/SectionHeader/SectionHeader.vue';
 import { onMounted } from 'vue';
 
 export default {

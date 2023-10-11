@@ -82,3 +82,7 @@ h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
 }
 
+
+.scroll-to-top {
+  transition: scroll-behavior 0.5s;
+}

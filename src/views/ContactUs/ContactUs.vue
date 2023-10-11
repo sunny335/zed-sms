@@ -13,39 +13,41 @@ import blueTik from '../../assets/img/blueTik.svg';
 
             <div class="px-[28px] pt-21 mx-auto sm:max-w-xl md:max-w-full lg:max-w-[1192px] md:px-24 lg:px-8 lg:pt-[84px]">
                 <div
-                    class="flex flex-col lg:flex-row justify-center items-center gap-[30px] lg:gap-[100px] mt-[52px] mb-[60px] lg:mb-[153px]">
+                    class="flex flex-col lg:flex-row justify-center items-center gap-[50px] mt-[52px] mb-[60px] lg:mb-[153px]">
                     <img :src="ContactUs" alt="" srcset="">
-                    <div class="max-w-[534px] w-full">
+                    <div class="max-w-full lg:max-w-[534px] w-full">
                         <form v-on:submit="onSubmit">
                             <label class="text-zinc-600 dark:text-white text-base font-normal font-['Poppins']">Email or Username</label>
-                            <input class="max-w-[534px] w-full h-14 relative rounded-xl border border-gray-400 mt-[16px] dark:bg-transparent" />
+                            <input class="max-w-full lg:max-w-[534px] w-full h-14 relative rounded-xl border border-gray-400 mt-[16px] dark:bg-transparent" />
 
                             <div class="mt-[40px]">
                                 <p class=" text-neutral-800  dark:text-white text-base font-semibold font-['Poppins'] leading-tight">Select
                                     Subject?</p>
                                 <div class="my-[24px] lg:my-[36px]">
                                     <ul
-                                        class="flex flex-col lg:flex-row justify-start mb-0 list-none  mx-auto gap-[20px] lg:gap-[35px] rounded-2xl overflow-hidden 	 ">
+                                        class="flex flex-col lg:flex-row justify-between mb-0 list-none  gap-5 lg:gap-0 mx-auto  rounded-2xl overflow-hidden 	 ">
                                         <li class="max-w-[300px]-mb-px last:mr-0  text-center cursor-pointer">
                                             <a class="w-full  flex items-center  text-neutral-800  dark:text-white text-base font-normal font-['Poppins'] leading-tight "
                                                 v-on:click="toggleTabs(1); selectMessage(1)">
-                                                <img class="w-[14px] h-[14px] mr-[2px] lg:mr-[10px]" :src="blueTik" alt=""
+                                                <img class="w-[14px] h-[14px] mr-[6px]" :src="blueTik" alt=""
                                                     srcset=""
                                                     v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
-                                                <div class="w-[14px] h-[14px] rounded-full bg-slate-100 mr-[2px] lg:mr-[10px]"
+                                                <div class="w-[14px] h-[14px] rounded-full bg-slate-100 mr-[6px]"
                                                     v-bind:class="{ 'block': openTab !== 1, 'hidden': openTab === 1 }">
                                                 </div>
 
-                                                Account Balance
+                                                <span class="inline">
+                                                    Account Balance
+                                                </span>
                                             </a>
                                         </li>
                                         <li class="max-w-[300px] -mb-px last:mr-0  text-center cursor-pointer">
                                             <a class="w-full flex items-center text-neutral-800 dark:text-white text-base font-normal font-['Poppins'] leading-tight "
                                                 v-on:click="toggleTabs(2);">
-                                                <img class="w-[14px] h-[14px] mr-[2px] lg:mr-[10px]" :src="blueTik" alt=""
+                                                <img class="w-[14px] h-[14px] mr-[6px]" :src="blueTik" alt=""
                                                     srcset=""
                                                     v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
-                                                <div class="w-[14px] h-[14px] rounded-full bg-slate-100 mr-[2px] lg:mr-[10px]"
+                                                <div class="w-[14px] h-[14px] rounded-full bg-slate-100 mr-[6px]"
                                                     v-bind:class="{ 'block': openTab !== 2, 'hidden': openTab === 2 }">
                                                 </div>
                                                 General Inquiry
@@ -54,10 +56,10 @@ import blueTik from '../../assets/img/blueTik.svg';
                                         <li class="max-w-[300px] -mb-px last:mr-0  text-center cursor-pointer">
                                             <a class="w-full flex items-center text-neutral-800 dark:text-white text-base font-normal font-['Poppins'] leading-tight "
                                                 v-on:click="toggleTabs(3);">
-                                                <img class="w-[14px] h-[14px] mr-[2px] lg:mr-[10px]" :src="blueTik" alt=""
+                                                <img class="w-[14px] h-[14px] mr-[6px]" :src="blueTik" alt=""
                                                     srcset=""
                                                     v-bind:class="{ 'hidden': openTab !== 3, 'block': openTab === 3 }">
-                                                <div class="w-[14px] h-[14px] rounded-full bg-slate-100 mr-[2px] lg:mr-[10px]"
+                                                <div class="w-[14px] h-[14px] rounded-full bg-slate-100 mr-[6px]"
                                                     v-bind:class="{ 'block': openTab !== 3, 'hidden': openTab === 3 }">
                                                 </div>
                                                 General Inquiry
@@ -71,7 +73,7 @@ import blueTik from '../../assets/img/blueTik.svg';
                                 <label
                                     class="text-zinc-600  dark:text-white text-base font-normal font-['Poppins'] block mb-[16px]">Message</label>
                                 <textarea
-                                    class="max-w-[534px] w-full h-28 relative rounded-xl border border-gray-400 dark:bg-transparent"></textarea>
+                                    class="max-w-full lg:max-w-[534px] w-full h-28 relative rounded-xl border border-gray-400 dark:bg-transparent p-3"></textarea>
 
                             </div>
                             <div class="flex justify-end items-center mt-[30px]">

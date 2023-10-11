@@ -963,7 +963,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                     <div class="max-w-[284px] w-full ">
                         <p
                             class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-['Poppins'] leading-[17px] mb-[14px] ">
-                            From Number
+                            To Number
                         </p>
 
 
