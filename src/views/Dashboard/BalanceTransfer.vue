@@ -14,27 +14,27 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
     <section class="ml-0 lg:ml-[25px] mb-[97px]">
         <div class="flex  flex-col-reverse lg:flex-row justify-center items-center gap-2 mt-0 lg:mt-20">
             <img class="mx-[18px] lg:mx-0" :src="balanceTransfer" alt="">
-            <div class="max-w-[360px] w-full h-96 px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+            <div class="max-w-[450px] w-full h-96 px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
 
 
                 <form v-on:submit="onSubmit">
                     <div>
                         <label class="text-zinc-600  dark:text-[#F5F5F5] text-base font-normal font-['Poppins']">Email or Username</label>
                         <input
-                            class="max-w-[300px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 justify-start items-center inline-flex mt-[14px] dark:bg-transparent"
+                            class="max-w-[390px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 justify-start items-center inline-flex mt-[14px] dark:bg-transparent"
                             type="email" placeholder="Ex: hello@zedsms.com" />
                     </div>
                     <div class="mt-[40px]">
                         <label class="text-zinc-600  dark:text-[#F5F5F5] text-base font-normal font-['Poppins']">Transfer Amount</label>
                         <input
-                            class="max-w-[300px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 justify-start items-center inline-flex mt-[14px] dark:bg-transparent"
+                            class="max-w-[390px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 justify-start items-center inline-flex mt-[14px] dark:bg-transparent"
                             type="text" />
                     </div>
                 <div class="flex justify-end mt-[40px]">
                     <button
                     @click="submitModal(true)"
                     type="submit"
-                        class="max-w-[146px] h-12 w-full py-3 rounded-[10px] shadow border border-[#0057FF] dark:bg-[#0057FF] justify-center items-start gap-2.5 inline-flex text-[#0057FF]  dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:bg-[#0057FF] dark:hover:bg-white dark:hover:text-[#0057FF]">
+                        class="max-w-[180px] h-12 w-full py-3 rounded-[10px] shadow border border-[#0057FF] dark:bg-[#0057FF] justify-center items-start gap-2.5 inline-flex text-[#0057FF]  dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:bg-[#0057FF] dark:hover:bg-white dark:hover:text-[#0057FF]">
                         <p class="text-center  text-base font-normal font-['Poppins']">Transfer</p>
                     </button>
                 </div>

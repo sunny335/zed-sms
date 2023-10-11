@@ -345,6 +345,7 @@ const filteredPhone = computed(() => {
 
                                                 </div>
                                             </form>
+                                            <p class="w-full text-end pr-[50px] pt-1 h-[26px]"></p>
                                             <div
                                                 class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
 
@@ -401,6 +402,7 @@ const filteredPhone = computed(() => {
 
                                                 </div>
                                             </form>
+                                            <p class="w-full text-end pr-[50px] pt-1 h-[26px]">Day</p>
                                             <div
                                                 class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                                 <ul class="mt-6 overflow-y-auto h-[491px] scrollbar ">
@@ -456,6 +458,7 @@ const filteredPhone = computed(() => {
 
                                                 </div>
                                             </form>
+                                            <p class="w-full text-end pr-[50px] pt-1 h-[26px]"></p>
                                             <div
                                                 class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                                                 <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">

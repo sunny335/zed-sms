@@ -314,6 +314,7 @@ const filteredPhone = computed(() => {
                           placeholder="Enter country" required v-model="selectedSearchCountry" />
                       </div>
                     </form>
+                    <p class="w-full text-end pr-[50px] pt-1 h-[26px]"></p>
                     <div
                       class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                       <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
@@ -326,7 +327,7 @@ const filteredPhone = computed(() => {
                               selectedCountry?.name,
                           }">
                           <div
-                            class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
+                            class="max-w-full lg:max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
                             <div class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
                               <!-- <img :src="getFlagImage(country.flag)" class="w-4 h-4 mr-2" -->
                               <img :src="country.flag" class="w-[30px] h-[30px] rounded-full" alt="Flag" />
@@ -364,9 +365,12 @@ const filteredPhone = computed(() => {
                           placeholder="Enter Service" required v-model="selectedSearchService" />
                       </div>
                     </form>
+                    <p class="w-full text-end pr-[50px] pt-1 h-[26px]">Day</p>
                     <div
                       class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
+                      
                       <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
+                        
                         <li class="mr-[13px] rounded-[14px] border-gray-400 cursor-pointer"
                           v-for="(service, index) in filteredService" :key="index" @click="selectService(service)" :class="{
                             border:
@@ -374,7 +378,7 @@ const filteredPhone = computed(() => {
                               selectedService?.name == service?.name,
                           }">
                           <div
-                            class="max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
+                            class="max-w-full lg:max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
                             <div class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
                               <!-- <img :src="getFlagImage(country.flag)" class="w-4 h-4 mr-2"
                 
@@ -416,6 +420,7 @@ const filteredPhone = computed(() => {
                           placeholder="Enter number" required v-model="selectedSearchPhone" />
                       </div>
                     </form>
+                    <p class="w-full text-end pr-[50px] pt-1 h-[26px]"></p>
                     <div
                       class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                       <ul class="mt-6 overflow-y-auto h-[491px] scrollbar">
@@ -621,7 +626,7 @@ const filteredPhone = computed(() => {
                               selectedCountry?.flag == country?.flag,
                           }">
                           <div
-                            class="max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
+                            class="max-w-full lg:max-w-[290px] w-full h-[54px] pl-6 pr-[30px] py-3 justify-between items-center inline-flex">
                             <div class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
                               <!-- <img :src="getFlagImage(country.flag)" class="w-4 h-4 mr-2"
                                                         
@@ -670,7 +675,7 @@ const filteredPhone = computed(() => {
                               selectedService?.flag == service?.flag,
                           }">
                           <div
-                            class="max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
+                            class="max-w-full lg:max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
                             <div class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
                               <img :src="service?.flag" class="w-[30px] h-[30px] rounded-full" alt="Flag" />
                               <div

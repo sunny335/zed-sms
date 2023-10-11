@@ -178,7 +178,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
             <div  class="max-w-[460px] w-full hidden lg:block">
                     <div
-                        class="max-w-[375px] lg:max-w-[460px] h-[716px] mt-0 lg:mt-[58px] p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+                        class="max-w-[375px] lg:max-w-[460px] h-[716px] mt-0  p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
                         <div class="flex justify-between items-center px-4  lg:hidden">
     
                             <button @click="handleBack" class="">

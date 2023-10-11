@@ -12,8 +12,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
         <div class="flex justify-center lg:justify-between items-center gap-[49px]">
             <!-- Choose Payment -->
-            <div class="max-w-full lg:max-w-[401px] w-full mx-auto flex justify-center items-center" :class="{ 'hidden lg:block': selectedPayment }">
-                <div class="max-w-full  lg:max-w-[401px] h-[635px] mx-auto">
+            <div class="max-w-full lg:max-w-[460px] w-full mx-auto flex justify-center items-center border" :class="{ 'hidden lg:block': selectedPayment }">
+                <div class="max-w-full  lg:max-w-[450px] h-[635px] mx-auto">
                     <div class="flex items-center mb-[30px]">
                         <h3
                             class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] pr-[16px]">
@@ -31,7 +31,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             class="w-full px-[2px] pt-[0px] pb-[30px] flex-col justify-start items-center gap-[30px] inline-flex overflow-y-auto scrollbar max-h-[570px]">
                             <div class="max-w-full">
 
-                                <div class="flex items-center gap-[20px] py-4 pr-3 cursor-pointer max-w-full lg:max-w-[370px] w-full px-4"
+                                <div class="flex items-center gap-[20px] py-4 pr-3 cursor-pointer max-w-full lg:max-w-[460px] w-full px-4"
                                     v-for="data in paymentsData" :key="data.id" @click="selectPayment(data.id)"
                                     :class="{ 'bg-[#0057FF] text-white': selectedPayment === data.id }">
                                     <img :src="data.img" alt="" srcset="">
@@ -108,7 +108,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
             </div>
             <!-- Balance TO-UP  for desktop-->
-            <div class="max-w-[360px] w-full mx-auto hidden lg:block">
+            <div class="max-w-[460px] w-full mx-auto hidden lg:block">
 
 
 
@@ -128,13 +128,13 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         Balance TO-UP</h3>
                 </div>
                 <div
-                    class="max-w-[360px] w-full h-[281px] px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+                    class="max-w-[460px] w-full h-[281px] px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
                     <form v-on:submit="onSubmit">
 
                         <h6 class="text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] mb-[14px]">
                             Amount</h6>
                         <input
-                            class="max-w-[300px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 dark:bg-transparent"
+                            class="max-w-[400px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 dark:bg-transparent"
                             type="text" placeholder="$00.00" />
                         <p class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] mt-[10px]">
                             Minimum
@@ -144,7 +144,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                         <div class="flex justify-end items-center">
                             <button :disabled="!selectedPayment" type="submit"
-                                class="max-w-[166px] h-[45px] w-full py-3 rounded-[10px] shadow border border-[#0057FF] justify-center items-start gap-2.5 inline-flex mt-10  dark:bg-[#0057FF] disabled:cursor-not-allowed disabled:opacity-20  disabled:hover:border-[#0057FF] disabled:hover:text-[#0057FF] disabled:hover:bg-[#F5F5F5] text-[#0057FF]  dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:bg-[#0057FF] dark:hover:bg-white dark:hover:text-[#0057FF]">
+                                class="max-w-[200px] h-[45px] w-full py-3 rounded-[10px] shadow border border-[#0057FF] justify-center items-start gap-2.5 inline-flex mt-10  dark:bg-[#0057FF] disabled:cursor-not-allowed disabled:opacity-20  disabled:hover:border-[#0057FF] disabled:hover:text-[#0057FF] disabled:hover:bg-[#F5F5F5] text-[#0057FF]  dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:bg-[#0057FF] dark:hover:bg-white dark:hover:text-[#0057FF]">
                                 <div class="text-center text-sm font-normal font-['Poppins']">
                                     TOP-UP Now</div>
                             </button>

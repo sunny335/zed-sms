@@ -20,17 +20,17 @@ import num7 from "../../assets/img/NumFlags/7.png"
 </script>
 
 <template>
-    <section class="max-w-[925px] pl-0 lg:pl-[17px]">
+    <section class="max-w-[1080px] pl-0 lg:pl-[17px] ">
         <div class="flex flex-wrap gap-[58px] md:gap-0 lg:gap-[58px]">
             <!-- Recent Message --> 
-            <div class="max-w-full lg:max-w-[436px] w-full">
-                <div class="max-w-full lg:max-w-[436px] w-full pl-5 lg:pl-6 pr-[24px] lg:pr-[30px] pt-6 pb-5 bg-transparent lg:bg-white lg:dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom mx-auto">
+            <div class="max-w-full lg:max-w-[500px] w-full">
+                <div class="max-w-full lg:max-w-[446px] w-full pl-5 lg:pl-6 pr-[24px] lg:pr-[30px] pt-6 pb-5 bg-transparent lg:bg-white lg:dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom mx-auto">
                     <h4 class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">
                         Recent Message</h4>
 
 
                     <div
-                        class="max-w-full lg:max-w-[364px] relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
+                        class="max-w-full lg:max-w-[410px] relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                         <div class=" max-h-[512px] w-full overflow-y-auto scrollbar  mt-[30px] mr-0 pb-[30px] pr-[30px]">
                             <div class="w-full flex flex-wrap items-start mx-0 px-0 py-5 border-b border-gray-400 "
                                 v-for="messageData in messagesData" :key="messageData.id">
@@ -91,14 +91,14 @@ import num7 from "../../assets/img/NumFlags/7.png"
                 </div>
             </div>
             <!-- All Number -->
-            <div class="max-w-full lg:max-w-[329px] w-full  mx-4 lg:mx-0">
-                <div class="max-w-full lg:max-w-[329px] w-full mx-auto h-[546px]">
+            <div class="max-w-full lg:max-w-[430px] w-full  mx-4 lg:mx-0">
+                <div class="max-w-full lg:max-w-[400px] w-full mx-auto h-[546px]">
                     <div class="flex justify-between items-center mb-[30px]">
                         <h3
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">
                             All Number</h3>
                         <ul
-                            class="flex mb-0 list-none flex-row max-w-[168px] mx-auto rounded-xl border border-[#0057FF] overflow-hidden	 h-[37px]">
+                            class="flex mb-0 list-none flex-row max-w-[168px]  rounded-xl border border-[#0057FF] overflow-hidden	 h-[37px]">
                             <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                                 <a class="w-20 flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px] 
                                  h-[37px] dark:text-white" v-on:click="toggleTabs(1)"
@@ -134,7 +134,7 @@ import num7 from "../../assets/img/NumFlags/7.png"
                                             <div class="mb-[30px] flex flex-wrap items-center">
                                                 <img class="max-w-[30px] max-h-[30px] mr-[16px]" :src="numbersData.img"
                                                     alt="">
-                                                <div class="max-w-[80%] w-full lg:w-[251px]">
+                                                <div class="max-w-[80%] w-full lg:w-[322px]">
                                                     <div class="flex justify-between">
                                                         <p
                                                             class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
@@ -146,13 +146,13 @@ import num7 from "../../assets/img/NumFlags/7.png"
                                                     <div class="flex justify-between mt-[6px]">
                                                         <p
                                                             class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]">
-                                                            Type: {{ numbersData?.type }} •</p>
+                                                            Type: {{ numbersData?.type }}</p>
                                                         <p
                                                             class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]">
-                                                            Service: {{ numbersData?.service }} •</p>
+                                                            • Service: {{ numbersData?.service }} </p>
                                                         <p
                                                             class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-['Poppins'] leading-[17px]">
-                                                            Rent: {{ numbersData?.rent }}</p>
+                                                            • Rent: {{ numbersData?.rent }}</p>
                                                     </div>
 
                                                 </div>
@@ -208,8 +208,8 @@ import num7 from "../../assets/img/NumFlags/7.png"
                 </div>
             </div>
             <!-- Recent Transaction -->
-            <div class="max-w-[825px] mt-[48px] w-full">
-                <div class="max-w-[825px]  w-full ">
+            <div class="max-w-[1000px] mt-[48px] w-full">
+                <div class="max-w-[1000px]  w-full ">
                     <div class="text-neutral-800 text-center lg:text-left dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px] ">
                         Recent Transaction
                     </div>

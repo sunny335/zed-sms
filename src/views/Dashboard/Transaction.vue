@@ -7,7 +7,7 @@
 </script>
 
 <template>
-    <section class="max-w-[825px]   w-full ml-0 lg:ml-[41px] mx-auto px-2 lg:px-0">
+    <section class="max-w-[950px]   w-full ml-0 lg:ml-[41px] mx-auto px-2 lg:px-0">
         <!-- All Transaction -->
         <div class="">
             <div class="  w-full ">

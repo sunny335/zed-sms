@@ -8,7 +8,10 @@ const Theme = localStorage.getItem("Theme");
 <template>
   <header class="bg-white dark:bg-[#070F24] sticky top-0 z-[999999]"
     v-bind:class="{ 'shadow-custom': currentPath.includes('dashboard'), 'shadow-custom shadow-transition': hasShadow }">
-    <div class="mx-auto max-w-[1192px] px-4 sm:px-6 lg:px-8 w-full">
+    <div class="mx-auto  px-4 sm:px-6 lg:px-8 w-full"
+    v-bind:class="{ 'max-w-[1440px]': currentPath.includes('dashboard'), 'max-w-[1192px]': !currentPath.includes('dashboard')}"
+    
+    >
       <div class="flex h-[70px] lg:h-[116px] items-center justify-between">
         <div class="flex-1 md:flex md:items-center md:gap-11">
           <RouterLink class="block text-teal-600 dark:text-[#F5F5F5] header-logo" to="/">
@@ -248,18 +251,18 @@ const Theme = localStorage.getItem("Theme");
             <div class="sm:flex sm:gap-5">
               <div class="hidden sm:flex">
                 <RouterLink
-                  class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-[#0057FF] justify-center items-center inline-flex"
+                  class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-[#0057FF] justify-center items-center inline-flex hover:bg-[#0057FF] text-neutral-800 dark:text-[#F5F5F5] hover:text-[#F5F5F5]"
                   to="/logIn">
                   <span
-                    class="text-center text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
+                    class="text-center  text-sm font-normal font-['Poppins'] leading-[17px]">
                     Sign In
                   </span>
                 </RouterLink>
               </div>
               <RouterLink
-                class="w-24 h-[37px] px-4 py-2.5 bg-[#0057FF] rounded-[10px] justify-center items-end hidden lg:inline-flex"
+                class="w-24 h-[37px] px-4 py-2.5 bg-[#0057FF] border border-[#0057FF] text-white rounded-[10px] justify-center items-end hidden lg:inline-flex hover:bg-white hover:text-[#0057FF] hover:border-[#0057FF] dark:text-[#F5F5F5] dark:hover:text-[#0057FF]"
                 to="/signUp">
-                <span class="text-center text-white text-sm font-medium font-['Poppins'] leading-[17px]">
+                <span class="text-center text-sm font-medium font-['Poppins'] leading-[17px]">
                   Sign Up
                 </span>
               </RouterLink>
