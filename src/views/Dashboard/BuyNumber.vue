@@ -83,7 +83,7 @@ const filteredPhone = computed(() => {
 
             </div>
             <div>
-                <ul class="flex mb-0 list-none flex-row max-w-[300px] lg:max-w-[450px] w-full mx-auto rounded-2xl border border-blue-600 overflow-hidden h-[58px]"
+                <ul class="flex mb-0 list-none flex-row max-w-[300px] lg:max-w-[450px] w-full mx-auto rounded-2xl border border-[#0057FF] overflow-hidden h-[58px]"
                     :class="{ 'hidden lg:flex': selectedCountry || selectedService || selectedPhone }">
                     <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                         <a class="max-w-[100px] lg:max-w-[150px] w-[100px] lg:w-[150px] flex items-center justify-center dark:text-[#F5F5F5] text-center text-sm lg:text-lg font-light font-['Poppins'] leading-[13px] px-5 pt-2 pb-3 h-[58px]"
@@ -95,7 +95,7 @@ const filteredPhone = computed(() => {
                             " v-bind:class="{
     'text-neutral-800  dark:text-[#F5F5F5] dark:bg-[#09132C]  bg-white':
         openTab !== 1,
-    'text-white bg-blue-600': openTab === 1,
+    'text-white bg-[#0057FF]': openTab === 1,
 }">
                             Shared
                         </a>
@@ -110,7 +110,7 @@ const filteredPhone = computed(() => {
                             " v-bind:class="{
     'text-neutral-800   dark:text-[#F5F5F5] dark:bg-[#09132C] bg-white':
         openTab !== 2,
-    'text-white bg-blue-600': openTab === 2,
+    'text-white bg-[#0057FF]': openTab === 2,
 }">
                             Private
                         </a>
@@ -125,7 +125,7 @@ const filteredPhone = computed(() => {
                             " v-bind:class="{
     'text-neutral-800   dark:text-[#F5F5F5] dark:bg-[#09132C]  bg-white':
         openTab !== 3,
-    'text-white bg-blue-600': openTab === 3,
+    'text-white bg-[#0057FF]': openTab === 3,
 }">
                             Temporary
                         </a>
@@ -1017,7 +1017,7 @@ const filteredPhone = computed(() => {
                             <div class="px-[30px] py-[30px]">
                                 <div class=" justify-start items-start gap-5 inline-flex w-full">
                                     <div @click="handleModalOpen(false)" ref="cancelButtonRef"
-                                        class="cursor-pointer px-6 py-[9px] rounded-[10px] border border-zinc-600 justify-center items-center gap-2 flex text-zinc-600  dark:text-[#ACB5BD] hover:bg-[#0057FF] hover:text-[#fff] iconStock">
+                                        class="cursor-pointer px-6 py-[9px] rounded-[10px] border border-zinc-600 justify-center items-center gap-2 flex text-zinc-600  dark:text-[#ACB5BD] hover:bg-[#0057FF] hover:text-[#fff] iconStock dark:hover:text-white">
                                         <svg v-if="Theme === 'light'" width="14" height="11" viewBox="0 0 14 11" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M13 5.5H1M1 5.5L5.5 1M1 5.5L5.5 10" stroke="#495057"

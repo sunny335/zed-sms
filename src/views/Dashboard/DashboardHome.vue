@@ -58,7 +58,7 @@ import num7 from "../../assets/img/NumFlags/7.png"
                                             </div>
                                         </template>
                                         <span v-if="messageData.message.length > 100"
-                                            class="text-blue-600 text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                            class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
                                             @click="toggleMessageReadMore(messageData); toggleArrow(!toggleArrowIcon)">
                                             {{ messageData.showFullMessage ? 'Less' : 'More' }}
                                         </span>
@@ -98,18 +98,18 @@ import num7 from "../../assets/img/NumFlags/7.png"
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-['Poppins'] leading-[17px]">
                             All Number</h3>
                         <ul
-                            class="flex mb-0 list-none flex-row max-w-[168px] mx-auto rounded-xl border border-blue-600 overflow-hidden	 h-[37px]">
+                            class="flex mb-0 list-none flex-row max-w-[168px] mx-auto rounded-xl border border-[#0057FF] overflow-hidden	 h-[37px]">
                             <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                                 <a class="w-20 flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px] 
                                  h-[37px] dark:text-white" v-on:click="toggleTabs(1)"
-                                    v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 1, 'text-white bg-blue-600 dark:text-white': openTab === 1 }">
+                                    v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 1, 'text-white bg-[#0057FF] dark:text-white': openTab === 1 }">
                                     Active
                                 </a>
                             </li>
                             <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                                 <a class="w-20 flex items-center justify-center text-center text-sm font-light font-['Poppins'] leading-[13px]  
                                  h-[37px] dark:text-white" v-on:click="toggleTabs(2)"
-                                    v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 2, 'text-white bg-blue-600 dark:text-white': openTab === 2 }">
+                                    v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 2, 'text-white bg-[#0057FF] dark:text-white': openTab === 2 }">
                                     Deactive
                                 </a>
                             </li>

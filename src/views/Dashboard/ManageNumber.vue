@@ -21,18 +21,18 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             All
                             Number</h3>
                         <ul
-                            class="flex mb-0 list-none flex-row max-w-[168px]  rounded-xl border border-blue-600 overflow-hidden	 h-[37px]">
+                            class="flex mb-0 list-none flex-row max-w-[168px]  rounded-xl border border-[#0057FF] overflow-hidden	 h-[37px]">
                             <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                                 <a class="w-20 flex items-center justify-center  dark:text-[#F5F5F5]  text-center text-sm font-light font-['Poppins'] leading-[13px] 
                                  h-[37px] " v-on:click="toggleTabs(1)"
-                                    v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 1, 'text-white bg-blue-600': openTab === 1 }">
+                                    v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 1, 'text-white bg-[#0057FF]': openTab === 1 }">
                                     Active
                                 </a>
                             </li>
                             <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
                                 <a class="w-20 flex items-center justify-center dark:text-[#F5F5F5] text-center text-sm font-light font-['Poppins'] leading-[13px]  
                                  h-[37px] " v-on:click="toggleTabs(2)"
-                                    v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 2, 'text-white bg-blue-600': openTab === 2 }">
+                                    v-bind:class="{ 'text-neutral-800 bg-white dark:bg-transparent': openTab !== 2, 'text-white bg-[#0057FF]': openTab === 2 }">
                                     Deactive
                                 </a>
                             </li>

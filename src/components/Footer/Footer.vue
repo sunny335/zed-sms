@@ -120,7 +120,7 @@ import { RouterLink } from 'vue-router'
 
                 </div>
                 <div class="space-y-2 text-sm lg:w-full  sm:w-[48%] md:w-[30%]">
-                    <p class="text-blue-600 text-lg font-medium font-['Inter'] leading-7">Information</p>
+                    <p class="text-[#0057FF] text-lg font-medium font-['Inter'] leading-7">Information</p>
                     <div class="flex">
 
                         <RouterLink to="/blogs"
@@ -141,7 +141,7 @@ import { RouterLink } from 'vue-router'
                     </div>
                 </div>
                 <div class="space-y-2 text-sm lg:w-full sm:w-[48%] md:w-[30%]">
-                    <p class="text-blue-600 text-lg font-medium font-['Inter'] leading-7">Company</p>
+                    <p class="text-[#0057FF] text-lg font-medium font-['Inter'] leading-7">Company</p>
                     <div class="flex">
 
                         <RouterLink to="/about"
@@ -169,7 +169,7 @@ import { RouterLink } from 'vue-router'
             <div>
                 <div
                     class="space-y-2 text-sm w-full flex flex-col justify-center items-start lg:items-center gap-3 px-4">
-                    <p class="text-blue-600 text-lg font-medium font-['Inter'] leading-7">Download App</p>
+                    <p class="text-[#0057FF] text-lg font-medium font-['Inter'] leading-7">Download App</p>
                     <div class="flex  lg:flex-col items-center gap-3">
 
                         <a href="#" class="max-w-[46%] md:max-w-[100%]">

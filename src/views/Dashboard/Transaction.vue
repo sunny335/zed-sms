@@ -51,7 +51,7 @@
                                     class="px-4 py-6 text-neutral-800  dark:text-[#F5F5F5] text-xs font-light font-['Poppins'] leading-[17px] max-w-[253px]">
                                     {{ showFullMessage[data.id] || data.description.length < 100 ? data.description :
                                         data.description.substring(0, 100) }} <button v-if="data.description.length > 100"
-                                        class="text-blue-600 text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                        class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
                                         @click="toggleMessage(data.id)">
                                         {{ showFullMessage[data.id] ? 'Less' : 'More' }}
                                         </button>

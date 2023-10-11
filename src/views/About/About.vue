@@ -58,7 +58,7 @@ interdum ullamcorper sed pharetra sene." />
                     <div class="flex flex-col justify-center items-center">
                         <div
                             class="max-w-[201px] h-[63px] px-[50px] py-[18px] bg-sky-100 rounded-[39px] justify-center items-center gap-2.5 inline-flex mb-[28px]">
-                            <p class="text-blue-600 text-lg font-normal font-['Poppins']">Our values
+                            <p class="text-[#0057FF] text-lg font-normal font-['Poppins']">Our values
                             </p>
 
                         </div>

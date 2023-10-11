@@ -18,7 +18,7 @@
                     <p class="text-zinc-600   dark:text-[#ACB5BD] text-sm lg:text-base font-normal font-['Poppins'] leading-normal">Icons and Graphics
                         are manually designed by the
                         <a href=""
-                            class="text-blue-600 dark:text-blue-600 text-base font-semibold font-['Poppins'] leading-normal">VictorFlow</a>
+                            class="text-[#0057FF] dark:text-[#0057FF] text-base font-semibold font-['Poppins'] leading-normal">VictorFlow</a>
                         Templates team. You
                         may download these and edit them to fit your website without asking for permission or providing
                         credit.
@@ -33,15 +33,15 @@
                     <h3 class="text-neutral-800 dark:text-white text-xl lg:text-[32px] font-medium font-['Poppins'] leading-9 mb-[16px]">Photography
                     </h3>
                     <p class="text-zinc-600  dark:text-[#ACB5BD] text-sm lg:text-base font-normal font-['Poppins'] leading-normal">All images used in the
-                        <a href="" class="text-blue-600  dark:text-blue-600 text-sm lg:text-base font-semibold font-['Poppins'] leading-normal">
+                        <a href="" class="text-[#0057FF]  dark:text-[#0057FF] text-sm lg:text-base font-semibold font-['Poppins'] leading-normal">
                             Saasup
                         </a>
                         Webflow Template are licensed for free personal and commercial use. If you'd like to use any
                         specific image, you can check the licenses and download the images for free on <a href=""
-                            class="text-blue-600  dark:text-blue-600 text-sm lg:text-base font-semibold font-['Poppins'] leading-normal">Unsplash,
+                            class="text-[#0057FF]  dark:text-[#0057FF] text-sm lg:text-base font-semibold font-['Poppins'] leading-normal">Unsplash,
                             Pexels‍</a> and
                         icons from <a href=""
-                            class="text-blue-600  dark:text-blue-600 text-sm lg:text-base font-semibold font-['Poppins'] leading-normal">Fontawesome.</a>
+                            class="text-[#0057FF]  dark:text-[#0057FF] text-sm lg:text-base font-semibold font-['Poppins'] leading-normal">Fontawesome.</a>
                     </p>
 
                 </div>
@@ -52,7 +52,7 @@
                         <h3 class="text-neutral-800 dark:text-white text-xl lg:text-[32px] font-medium font-['Poppins'] leading-9">Pexels :</h3>
                         <p class="text-zinc-600 dark:text-gray-400 text-[22px] font-normal font-['Nunito'] leading-[34.63px]">Licenscs</p>
                     </div>
-                    <div class=" text-blue-600 text-sm lg:text-base font-semibold font-['Poppins'] leading-[25.18px]">Image 1, Image 2,
+                    <div class=" text-[#0057FF] text-sm lg:text-base font-semibold font-['Poppins'] leading-[25.18px]">Image 1, Image 2,
                         Image 3, Image 4, Image 5, Image 6, Image 7, Image 8, Image 9, Image 10, Image 11, Image 12, Image
                         13.</div>
 
@@ -65,7 +65,7 @@
                         <h3 class="text-neutral-800 dark:text-white text-xl lg:text-[32px] font-medium font-['Poppins'] leading-9">Unsplash :</h3>
                         <p class="text-zinc-600 dark:text-gray-400 text-[22px] font-normal font-['Nunito'] leading-[34.63px]">Licenscs</p>
                     </div>
-                    <div class=" text-blue-600 text-sm  lg:text-base font-semibold font-['Poppins'] leading-[25.18px]">Image 1.</div>
+                    <div class=" text-[#0057FF] text-sm  lg:text-base font-semibold font-['Poppins'] leading-[25.18px]">Image 1.</div>
 
 
                 </div>
@@ -75,9 +75,9 @@
 
                         <h3 class="text-neutral-800 dark:text-white text-xl lg:text-[32px] font-medium font-['Poppins'] leading-9">Font awesome :</h3>
                         <a href=""
-                            class="text-blue-600 dark:text-blue-600 text-base lg:text-[22px] font-normal font-['Poppins'] leading-[34.63px]">Licenscs</a>
+                            class="text-[#0057FF] dark:text-[#0057FF] text-base lg:text-[22px] font-normal font-['Poppins'] leading-[34.63px]">Licenscs</a>
                     </div>
-                    <div class=" text-blue-600 text-sm lg:text-base font-semibold font-['Poppins'] leading-[25.18px]">Image 1.</div>
+                    <div class=" text-[#0057FF] text-sm lg:text-base font-semibold font-['Poppins'] leading-[25.18px]">Image 1.</div>
 
 
                 </div>
@@ -87,11 +87,11 @@
                     <p class="text-zinc-600  dark:text-[#ACB5BD] text-sm lg:text-base font-normal font-['Poppins'] leading-normal">Saasup template uses free
                         licensed
                         <a href="https://fonts.google.com/"
-                            class="text-blue-600 dark:text-blue-600 text-sm lg:text-base font-semibold font-['Poppins'] leading-normal">
+                            class="text-[#0057FF] dark:text-[#0057FF] text-sm lg:text-base font-semibold font-['Poppins'] leading-normal">
                             Google Fonts.
                         </a>
                         Please check <a href="https://fonts.google.com/specimen/Nunito"
-                            class="text-blue-600 dark:text-blue-600 text-sm lg:text-base font-semibold font-['Poppins'] leading-normal"> Nunito.</a>
+                            class="text-[#0057FF] dark:text-[#0057FF] text-sm lg:text-base font-semibold font-['Poppins'] leading-normal"> Nunito.</a>
                     </p>
 
                 </div>

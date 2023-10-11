@@ -97,7 +97,7 @@ const Theme = localStorage.getItem("Theme");
                           notification.notificationMessage.substring(0, 100) }} </span>
 
                           <button v-if="notification.notificationMessage.length > 100"
-                            class="text-blue-600 text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                            class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
                             @click="toggleMessage(notification.id)">
                             {{ showFullMessage[notification.id] ? "Less" : "More" }}
                           </button>
@@ -189,7 +189,7 @@ const Theme = localStorage.getItem("Theme");
               <RouterLink v-if="!login" to="/logIn" @click="mobileHandleModalOpen(true)"
                 class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
                 <button
-                  class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-blue-600 justify-center items-center inline-flex">
+                  class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-[#0057FF] justify-center items-center inline-flex">
                   <span
                     class="text-center text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
                     Sign In
@@ -220,7 +220,7 @@ const Theme = localStorage.getItem("Theme");
             <ul class="flex items-center gap-11 text-sm">
               <li>
                 <RouterLink
-                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600"
+                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-[#0057FF]"
                   to="/service">
                   Our Service
                 </RouterLink>
@@ -228,7 +228,7 @@ const Theme = localStorage.getItem("Theme");
 
               <li>
                 <RouterLink
-                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600"
+                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-[#0057FF]"
                   to="/about">
                   About us
                 </RouterLink>
@@ -236,7 +236,7 @@ const Theme = localStorage.getItem("Theme");
 
               <li>
                 <RouterLink
-                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-blue-600"
+                  class="text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-['Poppins'] leading-normal transition hover:text-[#0057FF]"
                   v-bind:class="{ 'mr-8': login }" to="/contact-us">
                   Contact
                 </RouterLink>
@@ -248,7 +248,7 @@ const Theme = localStorage.getItem("Theme");
             <div class="sm:flex sm:gap-5">
               <div class="hidden sm:flex">
                 <RouterLink
-                  class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-blue-600 justify-center items-center inline-flex"
+                  class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-[#0057FF] justify-center items-center inline-flex"
                   to="/logIn">
                   <span
                     class="text-center text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-['Poppins'] leading-[17px]">
@@ -369,7 +369,7 @@ const Theme = localStorage.getItem("Theme");
                               notification.notificationMessage.substring(0, 100) }} </span>
 
                               <button v-if="notification.notificationMessage.length > 100"
-                                class="text-blue-600 text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
+                                class="text-[#0057FF] text-xs font-medium font-['Poppins'] leading-tight cursor-pointer pl-1"
                                 @click="toggleMessage(notification.id)">
                                 {{
                                   showFullMessage[notification.id] ? "Less" : "More"
