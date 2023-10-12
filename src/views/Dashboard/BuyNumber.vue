@@ -86,7 +86,7 @@ const filteredPhone = computed(() => {
                 <ul class="flex mb-0 list-none flex-row max-w-[300px] lg:max-w-[450px] w-full mx-auto rounded-2xl border border-[#0057FF] overflow-hidden h-[58px]"
                     :class="{ 'hidden lg:flex': selectedCountry || selectedService || selectedPhone }">
                     <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                        <a class="max-w-[100px] lg:max-w-[150px] w-[100px] lg:w-[150px] flex items-center justify-center dark:text-[#F5F5F5] text-center text-sm lg:text-lg font-light font-[Poppins] leading-[13px] px-5 pt-2 pb-3 h-[58px]"
+                        <a class="max-w-[100px] lg:max-w-[150px] w-full  flex items-center justify-center dark:text-[#F5F5F5] text-center text-sm lg:text-lg font-light font-[Poppins] leading-[13px] px-5 pt-2 pb-3 h-[58px]"
                             v-on:click="
                                 toggleTabs(1);
                             selectCountry(null);
@@ -101,7 +101,7 @@ const filteredPhone = computed(() => {
                         </a>
                     </li>
                     <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                        <a class="max-w-[100px] lg:max-w-[150px] w-[100px] lg:w-[150px] flex items-center justify-center text-center text-sm lg:text-lg font-light font-[Poppins] leading-[13px] px-5 pt-2 pb-3 h-[58px] dark:text-[#F5F5F5]"
+                        <a class="max-w-[100px] lg:max-w-[150px]  w-full flex items-center justify-center text-center text-sm lg:text-lg font-light font-[Poppins] leading-[13px] px-5 pt-2 pb-3 h-[58px] dark:text-[#F5F5F5]"
                             v-on:click="
                                 toggleTabs(2);
                             selectCountry(null);
@@ -116,7 +116,7 @@ const filteredPhone = computed(() => {
                         </a>
                     </li>
                     <li class="-mb-px last:mr-0 flex-auto text-center cursor-pointer">
-                        <a class="max-w-[100px] lg:max-w-[150px] w-[100px] lg:w-[150px] flex items-center justify-center text-center text-sm lg:text-lg font-light font-[Poppins] leading-[13px] px-5 pt-2 pb-3 h-[58px] dark:text-[#F5F5F5]"
+                        <a class="max-w-[100px] lg:max-w-[150px]  w-full flex items-center justify-center text-center text-sm lg:text-lg font-light font-[Poppins] leading-[13px] px-5 pt-2 pb-3 h-[58px] dark:text-[#F5F5F5]"
                             v-on:click="
                                 toggleTabs(3);
                             selectCountry(null);

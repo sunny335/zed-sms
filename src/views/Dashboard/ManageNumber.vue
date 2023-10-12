@@ -14,7 +14,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
         <div class="flex flex-col lg:flex-row gap-0 lg:gap-[82px]">
             <!-- All Number -->
             <div class="max-w-full lg:max-w-[450px] w-full mx-auto" v-bind:class="{ 'hidden lg:block': selectedNumber }">
-                <div class="max-w-full lg:max-w-[420px] h-[600px] mx-auto px-12 lg:px-0 xl:px-0">
+                <div class="max-w-full w-full lg:max-w-[420px] h-[600px] mx-auto px-12 lg:px-0 xl:px-0">
                     <div class="flex  justify-between items-center mb-[30px]">
                         <h3
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] pr-[16px]">
@@ -58,7 +58,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                                         <div class="flex justify-between items-center relative"
                                             v-for="numberData in numbersData" :key="numberData.id">
-                                            <div class="w-[374px] h-[58px] cursor-pointer px-2 text-neutral-800 flex items-center"
+                                            <div class="w-full max-w-[374px] h-[58px] cursor-pointer px-2 text-neutral-800 flex items-center"
                                                 :class="{ 'bg-[#0057FF] text-white': selectedNumber === numberData.id }"
                                                 @click="selectNumber(numberData.id)">
                                                 <div class="flex items-center">
@@ -104,7 +104,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                                         <div class="flex justify-between items-center relative"
                                             v-for="number2Data in numbers2Data" :key="number2Data.id">
-                                            <div class="w-[274px] h-[58px] cursor-pointer px-2 text-neutral-800 flex items-center"
+                                            <div class="w-full max-w-[374px] h-[58px] cursor-pointer px-2 text-neutral-800 flex items-center"
                                                 :class="{ 'bg-[#0057FF] text-white': selectedNumber === number2Data.id }"
                                                 @click="selectNumber(number2Data.id)">
                                                 <div class="flex items-center">
@@ -115,7 +115,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                                 </div>
 
                                             </div>
-
+                                            <!--  :class="{ 'whiteIconStock': selectedNumber === numberData.id }" -->
                                             <button @click="deleteModal(true)" class="absolute right-2"
                                                 :class="{ 'whiteIconStock': selectedNumber === number2Data.id }">
                                                 <svg class="darkIconStock" width="24" height="24" viewBox="0 0 24 24"
@@ -156,7 +156,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
             <!-- Number Details Desktop -->
             <div class="lg:max-w-[460px] w-full mx-auto hidden lg:block">
                 <div
-                    class="w-[450px] h-[589px] p-[30px] bg-white dark:bg-[#09132C] rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
+                    class=" w-full max-w-full lg:max-w-[450px] h-[589px] p-[30px] bg-white dark:bg-[#09132C] rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
                     <h3
                         class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] mb-[20px]">
                         Number
@@ -237,7 +237,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             Message Forward
                         </h3>
 
-                        <div class="mt-[16px] flex justify-between items-center">
+                        <div class="mt-[16px] flex justify-between items-center gap-2">
                             <input
                                 class="max-w-[260px] w-full outline-none h-[37px] px-2 py-2.5 rounded-lg border border-zinc-600 justify-center items-center gap-2.5 inline-flex dark:bg-transparent"
                                 type="email" placeholder="Email Here" />
@@ -274,7 +274,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             Message Forward
                         </h3>
 
-                        <button class="mt-[16px] flex  justify-between items-center w-full">
+                        <button class="mt-[16px] flex  justify-between items-center w-full gap-2">
 
                             <p class="text-sm inline">example@example.com</p>
                             <p class="max-w-[78px] h-[37px] w-full py-2.5 inline darkIconStock">
@@ -306,7 +306,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             Extent Number
                         </h3>
 
-                        <form v-on:submit="onSubmit" class="mt-[16px] flex justify-between items-center">
+                        <form v-on:submit="onSubmit" class="mt-[16px] flex justify-between items-center gap-2">
                             <div
                                 class="w-52 h-10 px-2 outline-none py-2.5 rounded-lg border border-zinc-600 justify-center items-center gap-1.5 inline-flex">
                                 <div class="relative inline-block text-left">
@@ -1145,7 +1145,13 @@ body.dark .darkIconStock path {
     display: none;
     /* Add your loader styles here */
 }
+@media (max-width: 1023px) {
+    .loader-mobile {
+        display: block;
+    }
 
+
+}
 /* Media query to show the loader on mobile screens */
 @media (max-width: 768px) {
     .loader-mobile {

@@ -13,8 +13,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 <template>
     <section class="ml-0 lg:ml-[25px] mb-[97px]">
         <div class="flex  flex-col-reverse lg:flex-row justify-center items-center gap-2 mt-0 lg:mt-20">
-            <img class="mx-[18px] lg:mx-0" :src="balanceTransfer" alt="">
-            <div class="max-w-[450px] w-full h-96 px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+            <img  class="mx-[18px] lg:mx-0 min-w-[300px]" :src="balanceTransfer" alt="">
+            <div class="max-w-[450px] min-w-[350px] w-full h-96 px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
 
 
                 <form v-on:submit="onSubmit">

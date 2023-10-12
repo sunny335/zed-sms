@@ -12,8 +12,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
         <div class="flex justify-center lg:justify-between  gap-[49px]">
             <!-- Choose Payment -->
-            <div class="max-w-full lg:max-w-[460px] w-full mx-auto flex justify-center items-center" :class="{ 'hidden lg:block': selectedPayment }">
-                <div class="max-w-full  lg:max-w-[450px] h-[635px] mx-auto">
+            <div class="max-w-full min-w-[350px] lg:max-w-[460px] w-full mx-auto flex justify-center items-center" :class="{ 'hidden lg:block': selectedPayment }">
+                <div class="max-w-full min-w-[340px]  lg:max-w-[450px] h-[635px] mx-auto">
                     <div class="flex items-center mb-[30px]">
                         <h3
                             class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] pr-[16px]">
@@ -108,7 +108,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
             </div>
             <!-- Balance TO-UP  for desktop-->
-            <div class="max-w-[460px] w-full mx-auto hidden lg:block">
+            <div class="max-w-[460px] min-w-[310px] w-full mx-auto hidden lg:block">
 
 
 
@@ -340,7 +340,13 @@ export default {
     display: none;
     /* Add your loader styles here */
 }
+@media (max-width: 1023px) {
+    .loader-mobile {
+        display: block;
+    }
 
+
+}
 /* Media query to show the loader on mobile screens */
 @media (max-width: 768px) {
     .loader-mobile {

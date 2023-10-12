@@ -20,11 +20,11 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
         :class="{ 'block': showMessageCompose === !true, 'hidden': showMessageCompose === true }">
         <div class="flex  gap-[25px] lg:flex-row flex-col">
             <!-- All Number -->
-            <div class="max-w-[100%] lg:max-w-[480px] w-full mx-auto"
+            <div class="max-w-[100%] lg:max-w-[400px]  min-w-[338px] w-full mx-auto"
             :class="{'hidden lg:block':selectedNumber}"
             >
-                <div class="max-w-[100%] lg:max-w-[480px] max-h-[711px]  ">
-                    <div class="max-w-full w-full lg:w-[470px] flex justify-around items-center px-4 lg:px-0">
+                <div class="max-w-[100%] lg:max-w-[400px] w-full max-h-[711px]  ">
+                    <div class="max-w-full w-full lg:max-w-[400px]  flex justify-around items-center px-4 lg:px-0">
                         <h3
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px]">
                             All Number</h3>
@@ -116,7 +116,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                     <div
                         class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                         <div class="scrollbar max-h-[620px] mt-[20px]">
-                            <div class="max-w-full lg:max-w-[470px] h-[93px] px-5 py-7 border-b cursor-pointer border-gray-400 flex  items-center gap-4 flex-wrap mx-auto"
+                            <div class="max-w-full lg:max-w-[390px] w-full h-[93px] px-5 py-7 border-b cursor-pointer border-gray-400 flex  items-center gap-4 flex-wrap mx-auto"
                                 v-for="numberData in filteredNumberData" :key="numberData.id"
                                 @click="selectNumber(numberData)"
                                 :class="{ 'bg-[#0057FF] text-white': selectedNumber === numberData.id }">
@@ -180,9 +180,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
             </div>
             <!-- All Message Desktop-->
 
-            <div  class="max-w-[460px] w-full hidden lg:block">
+            <div  class="max-w-[500px] min-w-[350px] w-full hidden lg:block">
                     <div
-                        class="max-w-[375px] lg:max-w-[460px] h-[716px] mt-0  p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+                        class="max-w-[100%] w-full lg:max-w-[500px] h-[716px] mt-0  p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
                         <div class="flex justify-between items-center px-4  lg:hidden">
     
                             <button @click="handleBack" class="">
@@ -242,7 +242,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             </ul>
                         </div>
                         <div
-                            class="max-w-[400px] w-full h-[50px] px-4  py-3 rounded-[100px] border border-zinc-600 dark:border-[#ACB5BD] justify-start items-center gap-[7px] inline-flex mb-[32px]">
+                            class="max-w-[100%] w-full h-[50px] px-4  py-3 rounded-[100px] border border-zinc-600 dark:border-[#ACB5BD] justify-start items-center gap-[7px] inline-flex mb-[32px]">
     
                             <svg v-if="Theme === 'light'" width="16" height="17" viewBox="0 0 16 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -546,7 +546,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                 <div v-else class="max-w-full lg:max-w-[460px] w-full mx-auto">
                     <div
-                        class=" max-w-full lg:max-w-[460px] h-[716px] mt-0 lg:mt-[58px] p-[22px] bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom mx-auto">
+                        class=" max-w-full lg:max-w-[460px] h-[716px] mt-0 lg:mt-[58px]  bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom mx-auto">
                         <div class="flex justify-between items-center px-4  lg:hidden">
     
                             <button @click="handleBack" class="">
@@ -606,7 +606,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             </ul>
                         </div>
                         <div
-                            class="max-w-[400px] w-full h-[50px] px-4  py-3 rounded-[100px] border border-zinc-600 dark:border-[#ACB5BD] justify-start items-center gap-[7px] inline-flex mb-[32px]">
+                            class="max-w-[100%] w-full h-[50px] px-4  py-3 rounded-[100px] border border-zinc-600 dark:border-[#ACB5BD] justify-start items-center gap-[7px] inline-flex mb-[32px]">
     
                             <svg v-if="Theme === 'light'" width="16" height="17" viewBox="0 0 16 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -945,26 +945,26 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
     <section class="ml-0 lg:ml-[25px] mb-[97px] mt-0 lg:mt-[70px] w-full"
         :class="{ 'block': showMessageCompose === true, 'hidden': showMessageCompose === !true }">
         <div
-            class="max-w-[808px] w-full h-[457px] px-[45px] lg:px-[100px] py-0 lg:py-[50px] bg-transparent lg:bg-white lg:dark:bg-[#09132C] rounded-[30px] shadow-none lg:shadow-custom">
+            class="max-w-[808px] w-full h-[457px] px-[5px] lg:px-[100px] py-0 lg:py-[50px] bg-transparent lg:bg-white lg:dark:bg-[#09132C] rounded-[30px] shadow-none lg:shadow-custom mx-auto">
             <h3 class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] ">Message
                 Compose</h3>
             <form v-on:submit="onSubmit" class="mt-[30px]">
 
 
-                <div class="flex flex-col lg:flex-row justify-between items-center">
+                <div class="flex flex-col lg:flex-row justify-between items-center gap-4">
 
-                    <div class="max-w-[284px] w-full ">
+                    <div class="max-w-full lg:max-w-[284px] w-full ">
                         <p
                             class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-[Poppins] leading-[17px] mb-[14px] ">
                             From Number
                         </p>
                         <input
-                            class="max-w-[284px] w-full h-10 bg-white rounded-lg border border-gray-400 outline-none px-4 dark:bg-transparent"
+                            class="max-w-full lg:max-w-[284px] w-full h-10 bg-white rounded-lg border border-gray-400 outline-none px-4 dark:bg-transparent"
                             v-model="inputPhoneValue" readonly type="text" placeholder="+85 654 646 655 874" />
                     </div>
 
 
-                    <div class="max-w-[284px] w-full ">
+                    <div class="max-w-full lg:max-w-[284px] w-full mt-4 lg:mt-0">
                         <p
                             class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-[Poppins] leading-[17px] mb-[14px] ">
                             To Number
@@ -972,7 +972,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
 
                         <vue-tel-input
-                            class="max-w-[284px] w-full h-10 bg-white rounded-lg border border-gray-400 outline-none dark:bg-transparent"
+                            class="max-w-full lg:max-w-[284px] w-full h-10 bg-white rounded-lg border border-gray-400 outline-none dark:bg-transparent"
                             :value="phone" @input="onInput" placeholder="+85 654 646 655 874"></vue-tel-input>
                     </div>
                 </div>
@@ -981,11 +981,11 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                     <p class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-normal font-[Poppins] leading-[17px]">
                         Message</p>
                     <textarea
-                        class="max-w-[337px] lg:max-w-[608px] w-full h-[111px] bg-white rounded-xl border border-zinc-600 mt-[14px] outline-none px-4 py-2 resize-none dark:bg-transparent"></textarea>
+                        class="max-w-full lg:max-w-[608px] w-full h-[111px] bg-white rounded-xl border border-zinc-600 mt-[14px] outline-none px-4 py-2 resize-none dark:bg-transparent"></textarea>
                 </div>
                 <div class="flex justify-end items-center mt-[24px]">
                     <button v-on:click="toggleShowMessageCompose(true)"
-                        class="max-w-[289px] w-full  h-[49px]  rounded-xl border border-[#0057FF] dark:bg-[#0057FF] justify-center items-center gap-2.5 inline-flex hover:text-[#F5F5F5] hover:bg-[#0057FF] text-[#0057FF] text-base  dark:text-[#F5F5F5] dark:hover:bg-[#F5F5F5] dark:hover:text-[#0057FF]">
+                        class="max-w-full lg:max-w-[289px] w-full  h-[49px]  rounded-xl border border-[#0057FF] dark:bg-[#0057FF] justify-center items-center gap-2.5 inline-flex hover:text-[#F5F5F5] hover:bg-[#0057FF] text-[#0057FF] text-base  dark:text-[#F5F5F5] dark:hover:bg-[#F5F5F5] dark:hover:text-[#0057FF]">
                         <div class="    font-normal font-[Poppins] leading-[17px]">
                             Send</div>
                     </button>
@@ -1565,14 +1565,18 @@ body.dark .vti__input {
 }
 
 /* Media query to show the loader on mobile screens */
+@media (max-width: 1023px) {
+    .loader-mobile {
+        display: block;
+    }
+
+
+}
 @media (max-width: 768px) {
     .loader-mobile {
         display: block;
     }
 
-    /* Hide other elements on mobile screens */
-    .max-w-[360px] {
-        display: none;
-    }
+
 }
 </style>

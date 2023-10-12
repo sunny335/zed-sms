@@ -21,10 +21,11 @@ import num7 from "../../assets/img/NumFlags/7.png"
 
 <template>
     <section class="max-w-[1080px] pl-0 lg:pl-[17px] ">
-        <div class="flex flex-wrap gap-[58px] md:gap-0 lg:gap-[58px]">
-            <!-- Recent Message --> 
-            <div class="max-w-full lg:max-w-[500px] w-full">
-                <div class="max-w-full lg:max-w-[446px] w-full pl-5 lg:pl-6 pr-[24px] lg:pr-[30px] pt-6 pb-5 bg-transparent lg:bg-white lg:dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom mx-auto">
+        <div class="flex flex-col lg:flex-row  items-center gap-[58px] md:gap-0 lg:gap-[58px]">
+            <!-- Recent Message -->
+            <div>
+                <div
+                    class="max-w-full lg:max-w-[446px] min-w-[290px] w-full pl-5 lg:pl-6 pr-[24px] lg:pr-[30px] pt-6 pb-5 bg-transparent lg:bg-white lg:dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom mx-auto">
                     <h4 class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px]">
                         Recent Message</h4>
 
@@ -91,11 +92,10 @@ import num7 from "../../assets/img/NumFlags/7.png"
                 </div>
             </div>
             <!-- All Number -->
-            <div class="max-w-full lg:max-w-[430px] w-full  mx-4 lg:mx-0">
-                <div class="max-w-full lg:max-w-[400px] w-full mx-auto h-[546px]">
+            <div class="max-w-full lg:max-w-[400px] w-full  mx-4 lg:mx-0 mt-10 lg:mt-0">
+                <div class="max-w-full lg:max-w-[400px] w-full mx-auto h-[546px] pl-5 lg:pl-6 pr-[24px] lg:pr-[30px] pt-6 pb-5">
                     <div class="flex justify-between items-center mb-[30px]">
-                        <h3
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px]">
+                        <h3 class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px]">
                             All Number</h3>
                         <ul
                             class="flex mb-0 list-none flex-row max-w-[168px]  rounded-xl border border-[#0057FF] overflow-hidden	 h-[37px]">
@@ -170,7 +170,7 @@ import num7 from "../../assets/img/NumFlags/7.png"
                                             <div class="mb-[30px] flex flex-wrap items-center">
                                                 <img class="max-w-[30px] max-h-[30px] mr-[16px]" :src="numbersData.img"
                                                     alt="">
-                                                <div class="max-w-[80%] w-full lg:w-[251px]">
+                                                <div class="max-w-[80%] w-full lg:w-[322px]">
                                                     <div class="flex justify-between">
                                                         <p
                                                             class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
@@ -182,13 +182,13 @@ import num7 from "../../assets/img/NumFlags/7.png"
                                                     <div class="flex justify-between mt-[6px]">
                                                         <p
                                                             class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-[Poppins] leading-[17px]">
-                                                            Type: {{ numbersData?.type }} •</p>
+                                                            Type: {{ numbersData?.type }}</p>
                                                         <p
                                                             class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-[Poppins] leading-[17px]">
-                                                            Service: {{ numbersData?.service }} •</p>
+                                                            • Service: {{ numbersData?.service }} </p>
                                                         <p
                                                             class="text-zinc-600 dark:text-[#ACB5BD] text-xs font-light font-[Poppins] leading-[17px]">
-                                                            Rent: {{ numbersData?.rent }}</p>
+                                                            • Rent: {{ numbersData?.rent }}</p>
                                                     </div>
 
                                                 </div>
@@ -207,67 +207,72 @@ import num7 from "../../assets/img/NumFlags/7.png"
 
                 </div>
             </div>
+
+        </div>
+        <div>
             <!-- Recent Transaction -->
             <div class="max-w-[1000px] mt-[48px] w-full">
                 <div class="max-w-[1000px]  w-full ">
-                    <div class="text-neutral-800 text-center lg:text-left dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] ">
+                    <div
+                        class="text-neutral-800 text-center lg:text-left dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] ">
                         Recent Transaction
                     </div>
 
-                   <div class="w-full  overflow-x-auto max-w-[100vw] lg:max-w-[full]">
-                    <table class="border-collapse w-full min-w-[825px] lg:min-w-full">
-                        <thead>
-                            <tr class="shadow-md dark:border-b-[1px]">
-                                <th
-                                    class="px-4 py-8 text-left text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-[17px]">
-                                    Date & Time</th>
-                                <th
-                                    class="px-4 py-8 text-left text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-[17px]">
-                                    Action</th>
-                                <th
-                                    class="px-4 py-8 text-left text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-[17px]">
-                                    Amount</th>
-                                <th
-                                    class="px-4 py-8 text-left text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-[17px]">
-                                    Description</th>
+                    <div class="w-full  overflow-x-auto max-w-[100vw] lg:max-w-[full]">
+                        <table class="border-collapse w-full min-w-[825px] lg:min-w-full">
+                            <thead>
+                                <tr class="shadow-md dark:border-b-[1px]">
+                                    <th
+                                        class="px-4 py-8 text-left text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-[17px]">
+                                        Date & Time</th>
+                                    <th
+                                        class="px-4 py-8 text-left text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-[17px]">
+                                        Action</th>
+                                    <th
+                                        class="px-4 py-8 text-left text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-[17px]">
+                                        Amount</th>
+                                    <th
+                                        class="px-4 py-8 text-left text-neutral-800 dark:text-[#F5F5F5] text-base font-normal font-[Poppins] leading-[17px]">
+                                        Description</th>
 
-                            </tr>
-                        </thead>
-                        <tbody v-for="data in visibleData" :key="data.id" class="">
+                                </tr>
+                            </thead>
+                            <tbody v-for="data in visibleData" :key="data.id" class="">
 
-                            <tr class=" border-b-[1px]">
-                                <td
-                                    class="px-4 py-6 text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-[Poppins] leading-[17px]">
-                                    {{
-                                        data.dateTime }}</td>
-                                <td
-                                    class="px-4 py-6 text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-[Poppins] leading-[17px]">
-                                    {{ data.action }}</td>
-                                <td
-                                    class="px-4 py-6 text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-[Poppins] leading-[17px]">
-                                    ${{ data.amount }}</td>
-                                <td
-                                    class="px-4 py-6 text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-[Poppins] leading-[17px] max-w-[253px]">
-                                    {{ data.description }} </td>
+                                <tr class=" border-b-[1px]">
+                                    <td
+                                        class="px-4 py-6 text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-[Poppins] leading-[17px]">
+                                        {{
+                                            data.dateTime }}</td>
+                                    <td
+                                        class="px-4 py-6 text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-[Poppins] leading-[17px]">
+                                        {{ data.action }}</td>
+                                    <td
+                                        class="px-4 py-6 text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-[Poppins] leading-[17px]">
+                                        ${{ data.amount }}</td>
+                                    <td
+                                        class="px-4 py-6 text-neutral-800 dark:text-[#F5F5F5] text-xs font-light font-[Poppins] leading-[17px] max-w-[253px]">
+                                        {{ data.description }} </td>
 
-                            </tr>
+                                </tr>
 
 
-                        </tbody>
-                    </table>
-                   </div>
-                
-                   <div class="flex justify-center items-center mt-10">
-                    <button @click="loadMore" v-if="tableData.length > 3"
-                        class="max-w-[125px] h-[37px] w-full py-2.5 rounded-[10px] border border-[#0057FF] dark:bg-[#0057FF] justify-center items-center gap-2.5 inline-flex mx-auto mb-[67px] text-[#0057FF] dark:text-[#F5F5F5] dark:hover:bg-white dark:hover:text-[#0057FF]">
-                        <p class=" text-sm font-normal font-[Poppins] leading-[17px]">
-                            {{ tableData.length == itemsToShow ? "See less" : "See More" }}</p>
-                    </button>
-                   </div>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="flex justify-center items-center mt-10">
+                        <button @click="loadMore" v-if="tableData.length > 3"
+                            class="max-w-[125px] h-[37px] w-full py-2.5 rounded-[10px] border border-[#0057FF] dark:bg-[#0057FF] justify-center items-center gap-2.5 inline-flex mx-auto mb-[67px] text-[#0057FF] dark:text-[#F5F5F5] dark:hover:bg-white dark:hover:text-[#0057FF]">
+                            <p class=" text-sm font-normal font-[Poppins] leading-[17px]">
+                                {{ tableData.length == itemsToShow ? "See less" : "See More" }}</p>
+                        </button>
+                    </div>
 
 
                 </div>
             </div>
+
         </div>
     </section>
 </template>

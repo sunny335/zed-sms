@@ -156,6 +156,20 @@ const Theme = localStorage.getItem("Theme");
           <div v-if="!currentPath.includes('dashboard')">
             <div v-if="MobileOpenModal"
               class="absolute z-10 right-0 top-[50px] shadow w-[175px]  bg-neutral-50 dark:bg-[#09132C] rounded-[14px] flex-col justify-start items-start inline-flex">
+              <RouterLink v-if="login" to="/dashboard" @click="mobileHandleModalOpen(true)"
+                class="self-stretch px-10 py-5 justify-start items-center gap-2.5 inline-flex text-neutral-800 dark:text-[#F5F5F5]  border-b border-gray-400">
+                <div
+                  class="flex gap-[9px] relative cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 downArrow darkCircle">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="9" r="3" stroke="#1E2329" />
+                    <circle cx="12" cy="12" r="10" stroke="#1E2329" />
+                    <path d="M17.9691 20C17.81 17.1085 16.9247 15 12 15C7.07521 15 6.18991 17.1085 6.03076 20"
+                      stroke="#1E2329" stroke-linecap="round" />
+                  </svg>
+
+                  <span> ahmad </span>
+                </div>
+              </RouterLink>
               <RouterLink to="/service" @click="mobileHandleModalOpen(true)"
                 class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
                 <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
@@ -169,25 +183,12 @@ const Theme = localStorage.getItem("Theme");
                 </div>
               </RouterLink>
               <RouterLink to="/contact-us" @click="mobileHandleModalOpen(true)"
-                class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
+                class="self-stretch px-10 py-5 justify-start items-center gap-2.5 inline-flex">
                 <div class="text-neutral-800 dark:text-[#F5F5F5] text-base font-light font-[Poppins]">
                   Contact Us
                 </div>
               </RouterLink>
-              <RouterLink v-if="login" to="/dashboard" @click="mobileHandleModalOpen(true)"
-                class="self-stretch px-10 py-5 justify-start items-center gap-2.5 inline-flex text-neutral-800 dark:text-[#F5F5F5]">
-                <div
-                  class="flex gap-[9px] relative cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 downArrow darkCircle">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="12" cy="9" r="3" stroke="#1E2329" />
-                    <circle cx="12" cy="12" r="10" stroke="#1E2329" />
-                    <path d="M17.9691 20C17.81 17.1085 16.9247 15 12 15C7.07521 15 6.18991 17.1085 6.03076 20"
-                      stroke="#1E2329" stroke-linecap="round" />
-                  </svg>
-
-                  <span> ahmad </span>
-                </div>
-              </RouterLink>
+             
 
               <RouterLink v-if="!login" to="/logIn" @click="mobileHandleModalOpen(true)"
                 class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
