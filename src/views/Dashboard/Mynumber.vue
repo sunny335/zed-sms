@@ -20,7 +20,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
         :class="{ 'block': showMessageCompose === !true, 'hidden': showMessageCompose === true }">
         <div class="flex  gap-[25px] lg:flex-row flex-col">
             <!-- All Number -->
-            <div class="max-w-[100%] lg:max-w-[400px]  min-w-[338px] w-full mx-auto"
+            <div class="max-w-[100%] lg:max-w-[400px]  min-w-[338px] w-full mx-auto mb-[100px] lg:mb-0"
             :class="{'hidden lg:block':selectedNumber}"
             >
                 <div class="max-w-[100%] lg:max-w-[400px] w-full max-h-[711px]  ">
@@ -544,7 +544,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                     <div class="loader-mobile loader"></div>
                 </div>
 
-                <div v-else class="max-w-full lg:max-w-[460px] w-full mx-auto">
+                <div v-else class="max-w-full lg:max-w-[460px] w-full mx-auto mb-[100px]">
                     <div
                         class=" max-w-full lg:max-w-[460px] h-[716px] mt-0 lg:mt-[58px]  bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom mx-auto">
                         <div class="flex justify-between items-center px-4  lg:hidden">

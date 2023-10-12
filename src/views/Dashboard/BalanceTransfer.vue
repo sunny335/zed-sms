@@ -14,7 +14,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
     <section class="ml-0 lg:ml-[25px] mb-[97px]">
         <div class="flex  flex-col-reverse lg:flex-row justify-center items-center gap-2 mt-0 lg:mt-20">
             <img  class="mx-[18px] lg:mx-0 min-w-[300px]" :src="balanceTransfer" alt="">
-            <div class="max-w-[450px] min-w-[350px] w-full h-96 px-3 lg:px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+            <div class="max-w-full lg:max-w-[450px] min-w-[350px] w-full h-96 px-3 lg:px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
 
 
                 <form v-on:submit="onSubmit">
@@ -34,7 +34,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                     <button
                     @click="submitModal(true)"
                     type="submit"
-                        class="max-w-[180px] h-12 w-full py-3 rounded-[10px] shadow border border-[#0057FF] dark:bg-[#0057FF] justify-center items-start gap-2.5 inline-flex text-[#0057FF]  dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:bg-[#0057FF] dark:hover:bg-white dark:hover:text-[#0057FF]">
+                        class="max-w-full lg:max-w-[180px] h-12 w-full py-3 rounded-[10px] shadow border border-[#0057FF] dark:bg-[#0057FF] justify-center items-start gap-2.5 inline-flex text-[#0057FF]  dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:bg-[#0057FF] dark:hover:bg-white dark:hover:text-[#0057FF]">
                         <p class="text-center  text-base font-normal font-[Poppins]">Transfer</p>
                     </button>
                 </div>
@@ -63,7 +63,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                         <p
                                             class="text-zinc-600 dark:text-[#F5F5F5] text-center text-base lg:text-xl font-normal font-[Poppins] mb-[30px]">
                                             Do you want to transfer money?</p>
-                                        <div class="flex justify-between items-center">
+                                        <div class="flex justify-between items-center gap-10">
 
                                             <button
                                                 class="max-w-[119px] w-full h-9  py-1.5 rounded-[10px] border border-zinc-600 justify-center items-center gap-1.5 inline-flex"
