@@ -12,9 +12,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
         <div class="flex justify-center lg:justify-between  gap-[49px]">
             <!-- Choose Payment -->
-            <div class="max-w-full min-w-[350px] lg:max-w-[460px] w-full mx-auto flex justify-center items-center" :class="{ 'hidden lg:block': selectedPayment }">
-                <div class="max-w-full min-w-[340px]  lg:max-w-[450px] h-[635px] mx-auto">
-                    <div class="flex items-center mb-[30px]">
+            <div class="max-w-full min-w-[350px] lg:max-w-[450px] w-full  flex justify-center items-center" :class="{ 'hidden lg:block': selectedPayment }">
+                <div class="max-w-full min-w-[340px] w-full  lg:max-w-[450px] h-[635px]">
+                    <div class=" mb-[30px]">
                         <h3
                             class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] pr-[16px]">
                             Choose
@@ -28,8 +28,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                     <div
                         class="relative after:content-[''] after:w-[2px] after:absolute after:top-0 after:bottom-0 after:right-[1px] after:bg-[#DDE2E5]">
                         <div
-                            class="w-full px-[2px] pt-[0px] pb-[30px] flex-col justify-start items-center gap-[30px] inline-flex overflow-y-auto scrollbar max-h-[570px]">
-                            <div class="max-w-full">
+                            class="w-full max-w-full px-[2px] pt-[0px] pb-[30px] flex-col justify-start items-center gap-[30px] inline-flex overflow-y-auto scrollbar max-h-[570px]">
+                            <div class="max-w-full w-full">
 
                                 <div class="flex items-center gap-[20px] py-4 pr-3 cursor-pointer max-w-full lg:max-w-[460px] w-full px-4"
                                     v-for="data in paymentsData" :key="data.id" @click="selectPayment(data.id)"
@@ -38,7 +38,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                     <div>
                                         <h6 class="text-neutral-800  dark:text-[#F5F5F5] text-base font-medium font-[Poppins] leading-[17px]"
                                             :class="{ ' text-white dark:text-white': selectedPayment === data.id }">
-                                            Cash</h6>
+                                            {{ data?.name }}</h6>
                                         <p class="  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-normal"
                                             :class="{ ' text-white dark:text-[#F5F5F5]': selectedPayment === data.id }">
                                             Accepting bitcoin payment to staic wallet. Fee 1.5%</p>
@@ -52,7 +52,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                 </div>
             </div>
             <!-- Balance TO-UP  for mobile-->
-            <div class="max-w-[360px] w-full mx-auto "
+            <div class="max-w-full lg:max-w-[360px] w-full mx-auto "
             :class="{ 'block lg:hidden': selectedPayment,'hidden': !selectedPayment }"
             >
                 <div v-if="isLoading" class="flex justify-center items-center my-40">
@@ -64,7 +64,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                 <div v-else
                 
                 >
-                    <div class="flex justify-between lg:justify-center lg:hidden px-2 lg:px-0 items-center">
+                    <div class="flex justify-between lg:justify-center lg:hidden px-0 items-center">
                         <button @click="handleBack"
                             class="">
 
@@ -79,14 +79,14 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             Balance TO-UP</h3>
                     </div>
                     <div
-                        class="max-w-[360px] w-full h-[281px] px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
+                        class="max-w-full lg:max-w-[360px] w-full h-[281px] px-0 lg:px-[30px] py-10 bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom">
                         <form v-on:submit="onSubmit">
 
                             <h6
                                 class="text-neutral-800  dark:text-[#F5F5F5] text-base font-normal font-[Poppins] mb-[14px]">
                                 Amount</h6>
                             <input
-                                class="max-w-[300px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 dark:bg-transparent"
+                                class="max-w-full lg:max-w-[300px] w-full h-[50px] px-4 outline-none pt-3.5 pb-[15px] rounded-[10px] border border-zinc-600 dark:bg-transparent"
                                 type="text" placeholder="$00.00" />
                             <p class="text-zinc-600  dark:text-[#ACB5BD] text-xs font-light font-[Poppins] mt-[10px]">
                                 Minimum

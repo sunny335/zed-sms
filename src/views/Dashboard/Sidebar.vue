@@ -2,7 +2,7 @@
 
 <template>
   <aside
-    class="w-full min-w-[265px] max-w-[350px] h-[auto] bg-white dark:bg-[#09132C] rounded-2xl shadow-none lg:shadow-custom mb-[40px] flex-col justify-start items-start inline-flex overflow-hidden  hidden lg:block"
+    class="min-w-[265px] w-[265px] md:w-[300px] lg:w-[265px] xl:w-[350px] h-[auto] bg-white dark:bg-[#09132C] rounded-2xl shadow-none lg:shadow-custom mb-[40px] flex-col justify-start items-start inline-flex overflow-hidden  hidden lg:block"
     v-bind:class="{ 'dark-aside': Theme == 'dark', }"
     >
     <ul class="w-full">

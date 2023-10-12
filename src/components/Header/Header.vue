@@ -9,9 +9,7 @@ const Theme = localStorage.getItem("Theme");
   <header class="bg-white dark:bg-[#070F24] sticky top-0 z-[999999]"
     v-bind:class="{ 'shadow-custom': currentPath.includes('dashboard'), 'shadow-custom shadow-transition': hasShadow }">
     <div class="mx-auto  px-4 sm:px-6 lg:px-8 w-full"
-    v-bind:class="{ 'max-w-[1440px]': currentPath.includes('dashboard'), 'max-w-[1192px]': !currentPath.includes('dashboard')}"
-    
-    >
+      v-bind:class="{ 'max-w-[1440px]': currentPath.includes('dashboard'), 'max-w-[1192px]': !currentPath.includes('dashboard') }">
       <div class="flex h-[70px] lg:h-[116px] items-center justify-between">
         <div class="flex-1 md:flex md:items-center md:gap-11">
           <RouterLink class="block text-teal-600 dark:text-[#F5F5F5] header-logo" to="/">
@@ -33,8 +31,8 @@ const Theme = localStorage.getItem("Theme");
               <button class="w-[40px] h-[40px]  rounded-full flex justify-center items-center relative "
                 v-bind:class="{ 'bg-[#0057FF] border-2 border-[#6B9EFF]': OpenNotificationModal, 'bg-neutral-100 dark:bg-slate-700  border-none ': !OpenNotificationModal }">
 
-                <svg class="darkIconStockBlack darkIconStock" v-if="!OpenNotificationModal" width="18" height="18" viewBox="0 0 22 22"
-                  fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="darkIconStockBlack darkIconStock" v-if="!OpenNotificationModal" width="18" height="18"
+                  viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M17.1867 8.90109V8.2552C17.1867 4.70886 14.4168 1.83398 11 1.83398C7.58318 1.83398 4.8133 4.70886 4.8133 8.2552V8.90109C4.8133 9.67621 4.59224 10.434 4.17798 11.0789L3.16283 12.6594C2.23559 14.103 2.94346 16.0652 4.55617 16.5217C8.77501 17.7159 13.225 17.7159 17.4438 16.5217C19.0565 16.0652 19.7644 14.103 18.8372 12.6594L17.822 11.0789C17.4078 10.434 17.1867 9.67621 17.1867 8.90109Z"
                     stroke="#1E2329" />
@@ -87,8 +85,7 @@ const Theme = localStorage.getItem("Theme");
                       <p class="dark:text-[#F5F5F5] text-neutral-900 text-sm font-normal font-[Poppins] leading-[17px]">
                         {{ notification?.title }}
                       </p>
-                      <p
-                        class="dark:text-[#F5F5F5] text-neutral-900 text-xs font-light font-[Poppins] leading-[18.89px]">
+                      <p class="dark:text-[#F5F5F5] text-neutral-900 text-xs font-light font-[Poppins] leading-[18.89px]">
                         {{ notification?.notificationTime }}
                       </p>
                     </div>
@@ -188,7 +185,7 @@ const Theme = localStorage.getItem("Theme");
                   Contact Us
                 </div>
               </RouterLink>
-             
+
 
               <RouterLink v-if="!login" to="/logIn" @click="mobileHandleModalOpen(true)"
                 class="self-stretch px-10 py-5 border-b border-gray-400 justify-start items-center gap-2.5 inline-flex">
@@ -254,8 +251,7 @@ const Theme = localStorage.getItem("Theme");
                 <RouterLink
                   class="w-[101px] h-[37px] px-4 py-2.5 rounded-[10px] border border-[#0057FF] justify-center items-center inline-flex hover:bg-[#0057FF] text-neutral-800 dark:text-[#F5F5F5] hover:text-[#F5F5F5]"
                   to="/logIn">
-                  <span
-                    class="text-center  text-sm font-normal font-[Poppins] leading-[17px]">
+                  <span class="text-center  text-sm font-normal font-[Poppins] leading-[17px]">
                     Sign In
                   </span>
                 </RouterLink>
@@ -365,8 +361,7 @@ const Theme = localStorage.getItem("Theme");
                           </p>
                         </div>
                         <div>
-                          <span
-                            class="dark:text-[#ACB5BD] text-zinc-600 text-xs font-light font-[Poppins] leading-tight">
+                          <span class="dark:text-[#ACB5BD] text-zinc-600 text-xs font-light font-[Poppins] leading-tight">
                             {{
                               showFullMessage[notification.id] ||
                               notification.notificationMessage.length < 100 ? notification.notificationMessage :

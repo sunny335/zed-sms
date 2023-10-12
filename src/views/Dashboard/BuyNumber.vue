@@ -69,7 +69,7 @@ const filteredPhone = computed(() => {
 </script>
 
 <template>
-    <div class="pl-[7px]">
+    <div class="pl-0 lg:pl-[24px] xl:pl-[54px]">
         <div class="flex justify-center lg:justify-start items-center lg:flex-row flex-col gap-[30px]">
             <div>
                 <h1
@@ -321,7 +321,7 @@ const filteredPhone = computed(() => {
                             <div class="w-full" v-bind:class="{ 'hidden': openTab !== 1, 'block': openTab === 1 }">
                                 <div class="mt-0 lg:mt-[30px]">
                                     <div class="flex gap-4">
-                                        <div class="max-w-[95%] lg:max-w-[306px] w-full"
+                                        <div class="max-w-[100%] lg:max-w-[306px] w-full"
                                             v-bind:class="{ 'hidden lg:block': selectedCountry }">
 
                                             <form>
@@ -376,7 +376,7 @@ const filteredPhone = computed(() => {
                                         </div>
 
                                         <!-- column2 -->
-                                        <div class="max-w-[95%] lg:max-w-[306px] w-full " v-bind:class="{
+                                        <div class="max-w-[100%] lg:max-w-[306px] w-full " v-bind:class="{
                                             block: selectedCountry,
                                             'hidden lg:block ': !selectedCountry || selectedService,
                                         }">
@@ -412,7 +412,7 @@ const filteredPhone = computed(() => {
                                                         :class="{ 'border': (service?.flag == selectedService?.flag) && (selectedService?.name == service?.name) }">
 
                                                         <div
-                                                            class="max-w-full lg:max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex">
+                                                            class="max-w-full min-w-[220px] lg:max-w-[290px] w-full h-[58px] pl-6 pr-[30px] py-3.5 justify-between items-center inline-flex gap-1">
                                                             <div
                                                                 class="grow shrink basis-0 h-[30px] justify-start items-center gap-2.5 flex">
                                                                 
@@ -433,7 +433,7 @@ const filteredPhone = computed(() => {
                                         </div>
                                         <!-- column2 end -->
 
-                                        <div class="max-w-[95%] lg:max-w-[423px] w-full" v-bind:class="{
+                                        <div class="max-w-[100%] lg:max-w-[423px] w-full" v-bind:class="{
                                             block: selectedService,
                                             'hidden lg:block': !selectedService,
                                         }">
@@ -586,7 +586,7 @@ const filteredPhone = computed(() => {
                             <div v-bind:class="{ 'hidden': openTab !== 2, 'block': openTab === 2 }">
                                 <div class="mt-[30px]">
                                     <div class="flex gap-4">
-                                        <div class="max-w-[95%] lg:max-w-3/6 w-full"
+                                        <div class="max-w-[100%] lg:max-w-3/6 w-full"
                                             v-bind:class="{ 'hidden lg:block': selectedCountry }">
 
                                             <form>
@@ -645,7 +645,7 @@ const filteredPhone = computed(() => {
 
                                         <!-- phone part -->
 
-                                        <div class="max-w-[95%] lg:max-w-3/6 w-full" v-bind:class="{
+                                        <div class="max-w-[100%] lg:max-w-3/6 w-full" v-bind:class="{
                                             block: selectedCountry,
                                             'hidden lg:block': !selectedCountry,
                                         }">
@@ -764,7 +764,7 @@ const filteredPhone = computed(() => {
                             <div v-bind:class="{ 'hidden': openTab !== 3, 'block': openTab === 3 }">
                                 <div class="mt-[30px]">
                                     <div class="flex gap-4">
-                                        <div class="max-w-[95%] lg:max-w-3/6 w-full"
+                                        <div class="max-w-[100%] lg:max-w-3/6 w-full"
                                             v-bind:class="{ 'hidden lg:block': selectedCountry }">
 
                                             <form>

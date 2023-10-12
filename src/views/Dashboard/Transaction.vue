@@ -7,11 +7,11 @@
 </script>
 
 <template>
-    <section class="max-w-[950px]   w-full ml-0 lg:ml-[41px] mx-auto px-2 lg:px-0">
+    <section class="max-w-[950px]   w-full pl-0 lg:pl-[24px] xl:pl-[54px] mx-auto px-0 lg:px-0">
         <!-- All Transaction -->
         <div class="">
             <div class="  w-full ">
-                <div class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] ">All
+                <div class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] pl-2 lg:pl-0">All
                     Transaction
                 </div>
 

@@ -4,7 +4,7 @@
 <template >
     <section class="flex justify-center items-center">
         <div
-            class="max-w-full lg:max-w-[700px] w-full h-[656px] px-[38px] lg:px-20 pt-0 lg:pt-10 pb-[50px] bg-white  dark:bg-[#09132C] rounded-3xl shadow-none mx-auto lg:shadow-custom ml-0 mr-0 lg:ml-[80px] mb-[112px]">
+            class="max-w-full lg:max-w-[700px] w-full h-[656px] px-0 lg:px-20 pt-0 lg:pt-10 pb-[50px] bg-white  dark:bg-[#09132C] rounded-3xl shadow-none mx-auto lg:shadow-custom ml-0 mr-0 lg:ml-[80px] mb-[112px]">
             <h3 class="text-zinc-600  dark:text-[#F5F5F5]  text-xl font-medium font-[Poppins]">Account</h3>
             <form v-on:submit="onSubmit" class="mt-[26px] w-full">
                 <div>
@@ -72,8 +72,8 @@
 
 
                 </div>
-                <div class="mt-[24px] flex gap-[24px] flex-col lg:flex-row w-full max-w-[540px]">
-                    <div class="max-w-full  lg:max-w-[250px]">
+                <div class="mt-[24px] flex gap-[24px] flex-col lg:flex-row justify-between w-full max-w-full  lg:max-w-[540px]">
+                    <div class="flex-1">
                         <div class="flex justify-between items-center">
                             <label
                                 class="text-zinc-600  dark:text-[#F5F5F5]  text-base font-normal font-[Poppins] block">New
@@ -110,12 +110,12 @@
                         </div>
 
                         <input
-                            class="max-w-full  lg:max-w-[270px] h-[50px] w-full px-4 outline-none pt-[15px] pb-[11px] rounded-[10px] border border-zinc-600 mt-[10px] dark:bg-transparent"
+                            class="max-w-full  lg:max-w-[250px] h-[50px] w-full px-4 outline-none pt-[15px] pb-[11px] rounded-[10px] border border-zinc-600 mt-[10px] dark:bg-transparent"
                             :type="passwordShow ? 'password' : 'text'" placeholder="***************" />
 
 
                     </div>
-                    <div  class="max-w-full  lg:max-w-[250px]">
+                    <div  class="flex-1">
                         <div class="flex justify-between items-center">
                             <label
                                 class="text-zinc-600  dark:text-[#F5F5F5]  text-base font-normal font-[Poppins] block">Confirm

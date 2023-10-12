@@ -10,11 +10,11 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 </script>
 
 <template>
-    <section class="pl-0 lg:pl-[54px] mb-[97px]">
-        <div class="flex flex-col lg:flex-row gap-0 lg:gap-[82px]">
+    <section class="pl-0 lg:pl-[24px] xl:pl-[54px] mb-[97px]">
+        <div class="flex flex-col lg:flex-row gap-0 lg:gap-5 xl:gap-[82px]">
             <!-- All Number -->
             <div class="max-w-full lg:max-w-[450px] w-full mx-auto" v-bind:class="{ 'hidden lg:block': selectedNumber }">
-                <div class="max-w-full w-full lg:max-w-[420px] h-[600px] mx-auto px-12 lg:px-0 xl:px-0">
+                <div class="max-w-full w-full lg:max-w-[420px] min-w-[305px] h-[600px] mx-auto px-0">
                     <div class="flex  justify-between items-center mb-[30px]">
                         <h3
                             class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] pr-[16px]">
@@ -154,7 +154,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
             </div>
 
             <!-- Number Details Desktop -->
-            <div class="lg:max-w-[460px] w-full mx-auto hidden lg:block">
+            <div class="max-w-full lg:max-w-[460px] w-full mx-auto hidden lg:block">
                 <div
                     class=" w-full max-w-full lg:max-w-[450px] h-[589px] p-[30px] bg-white dark:bg-[#09132C] rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
                     <h3
@@ -232,8 +232,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         </p>
                     </div>
                     <div class="mt-[24px] w-full">
-                        <h3
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
+                        <h3 class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
                             Message Forward
                         </h3>
 
@@ -269,8 +268,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         </div>
                     </div>
                     <div class="mt-[24px] w-full">
-                        <h3
-                            class="text-neutral-800  dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
+                        <h3 class="text-neutral-800  dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
                             Message Forward
                         </h3>
 
@@ -301,8 +299,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         </button>
                     </div>
                     <div class="mt-[24px] w-full">
-                        <h3
-                            class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
+                        <h3 class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[17px]">
                             Extent Number
                         </h3>
 
@@ -378,25 +375,35 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
 
                 <div v-else v-bind:class="{ 'hidden lg:block': !selectedNumber }">
-                    <div class="ml-4 mb-6">
-                        <button @click="handleBack" class=" flex justify-center items-center">
-
-                            <svg width="70" height="69" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M17.8337 13H9.16699M9.16699 13L12.417 9.75M9.16699 13L12.417 16.25"
-                                    stroke="#495057" stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
 
 
-                        </button>
-                    </div>
-
-                    <div class="max-w-[337px] w-full mx-auto">
+                    <div class="max-w-full lg:max-w-[337px] w-full mx-auto">
                         <div
-                            class="w-[337px] h-[589px] p-[30px] bg-white dark:bg-[#09132C] rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
-                            <h3
-                                class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] mb-[20px]">
-                                Number
-                                Details</h3>
+                            class="max-w-full w-full lg:max-w-[337px] h-[589px] p-[30px] bg-white dark:bg-[#09132C] rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
+
+
+                            <div class="flex justify-between items-center w-full max-w-full mb-10">
+
+                                <div class=" mt-[-16px]">
+                                    <button @click="handleBack" class=" flex justify-center items-center">
+
+                                        <svg width="70" height="69" viewBox="0 0 27 26" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M17.8337 13H9.16699M9.16699 13L12.417 9.75M9.16699 13L12.417 16.25"
+                                                stroke="#495057" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+
+
+                                    </button>
+                                </div>
+
+                                <h3
+                                    class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] mb-[20px]">
+                                    Number
+                                    Details</h3>
+
+                            </div>
+
                             <div class="flex  items-center w-full">
                                 <p
                                     class="text-neutral-800 dark:text-[#F5F5F5] text-sm font-normal font-[Poppins] leading-[30px]  w-2/4">
@@ -473,9 +480,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                     Message Forward
                                 </h3>
 
-                                <div class="mt-[16px] flex justify-between items-center">
+                                <div class="mt-[16px] flex justify-between items-center gap-4">
                                     <input
-                                        class="max-w-[180px] w-full outline-none h-[37px] px-2 py-2.5 rounded-lg border border-zinc-600 justify-center items-center gap-2.5 inline-flex dark:bg-transparent"
+                                        class="max-w-full lg:max-w-[180px] w-full outline-none h-[37px] px-2 py-2.5 rounded-lg border border-zinc-600 justify-center items-center gap-2.5 inline-flex dark:bg-transparent"
                                         type="email" placeholder="Email Here" />
 
                                     <button
@@ -544,9 +551,9 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                     Extent Number
                                 </h3>
 
-                                <form v-on:submit="onSubmit" class="mt-[16px] flex justify-between items-center">
+                                <form v-on:submit="onSubmit" class="mt-[16px] flex justify-between items-center gap-4">
                                     <div
-                                        class="w-32 h-10 px-2 outline-none py-2.5 rounded-lg border border-zinc-600 justify-center items-center gap-1.5 inline-flex">
+                                        class="w-32 h-10 px-2 outline-none py-2.5 rounded-lg border border-zinc-600 justify-center items-center gap-1.5 inline-flex flex-1">
                                         <div class="relative inline-block text-left">
                                             <!-- Dropdown Trigger -->
                                             <div @click="toggleDropdown" class="cursor-pointer flex items-center">
@@ -581,7 +588,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                     </div>
 
                                     <button @click="handleExtentNow"
-                                        class="max-w-[131px] h-[41px] w-full py-3 rounded-lg border border-zinc-600 justify-center items-center gap-1 inline-flex text-neutral-800 dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#0057FF] iconStock">
+                                        class="max-w-[131px] h-[41px] w-full py-3 rounded-lg border border-zinc-600 justify-center items-center gap-1 inline-flex text-neutral-800 dark:text-[#F5F5F5] hover:text-[#F5F5F5] hover:border-[#0057FF] hover:bg-[#0057FF] iconStock flex-1">
                                         <div class="text-xs font-light font-[Poppins] leading-[17px]">
                                             Extent Now
                                         </div>
@@ -1145,6 +1152,7 @@ body.dark .darkIconStock path {
     display: none;
     /* Add your loader styles here */
 }
+
 @media (max-width: 1023px) {
     .loader-mobile {
         display: block;
@@ -1152,6 +1160,7 @@ body.dark .darkIconStock path {
 
 
 }
+
 /* Media query to show the loader on mobile screens */
 @media (max-width: 768px) {
     .loader-mobile {
