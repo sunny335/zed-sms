@@ -533,7 +533,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                 <div v-else class="max-w-full lg:max-w-[460px] w-full mx-auto mb-[100px]">
                     <div
-                        class=" max-w-full lg:max-w-[460px] h-[716px] mt-0 lg:mt-[58px]  bg-white dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom mx-auto">
+                        class=" max-w-full lg:max-w-[460px] h-[716px] mt-0 lg:mt-[58px]  bg-white  dark:bg-transparent lg:dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom mx-auto">
                         <div class="mb-8">
 
                             <p class="">Selected Number : <span class="text-[#0057FF]">  {{ selectedNumberData?.number }}</span></p>
