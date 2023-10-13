@@ -60,7 +60,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         <div>
                             <button
                                 class="w-11 h-11 p-3.5 rounded-[10px] border  hover:bg-[#0057FF] hover:border-[#0057FF] dark:border-[#ACB5BD] justify-start items-start gap-2.5 inline-flex iconStock ml-[150px] lg:ml-0 relative"
-                                :class="{ 'bg-[#0057FF] border-[#0057FF] iconStockWhite z-[99999]': isOpen, 'z-[99999] border-zinc-600': !isOpen }"
+                                :class="{ 'bg-[#0057FF] border-[#0057FF] darkIconStock z-[99999]': isOpen, 'z-[99999] border-zinc-600': !isOpen }"
                                 @click="toggleActiveStatusDropdown">
                                 <div class="w-4 h-4 relative rounded-[5px] darkIconStock">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -542,7 +542,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                             <button @click="handleBack" class=" flex justify-center items-center">
 
-                                <svg class="w-[50px] h-[50px] ml-[-18px] iconStockWhite" viewBox="0 0 27 26" fill="none"
+                                <svg class="w-[50px] h-[50px] ml-[-18px] darkIconStock" viewBox="0 0 27 26" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.8337 13H9.16699M9.16699 13L12.417 9.75M9.16699 13L12.417 16.25"
                                         stroke="#495057" stroke-linecap="round" stroke-linejoin="round" />

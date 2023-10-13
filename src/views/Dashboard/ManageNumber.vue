@@ -387,7 +387,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                 <div class=" mt-[-16px]">
                                     <button @click="handleBack" class=" flex justify-center items-center">
 
-                                        <svg class="w-[50px] h-[50px] ml-[-18px] iconStockWhite" viewBox="0 0 27 26" fill="none"
+                                        <svg class="w-[50px] h-[50px] ml-[-18px] darkIconStock" viewBox="0 0 27 26" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M17.8337 13H9.16699M9.16699 13L12.417 9.75M9.16699 13L12.417 16.25"
                                                 stroke="#495057" stroke-linecap="round" stroke-linejoin="round" />
