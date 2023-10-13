@@ -201,38 +201,7 @@ const filteredPhone = computed(() => {
                             {{ selectedPhone }}
                         </div>
                     </div>
-                    <!-- <div
-              class="flex gap-[6px] items-center"
-              v-if="selectedPhone && selectedWeek"
-            >
-              <div
-                class="text-center text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-normal font-[Poppins]"
-              >
-                Rent:
-              </div>
-              <div
-                class="text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-light font-[Poppins]"
-              >
-                {{ selectedWeek }}
-              </div>
-            </div> -->
-                    <!-- <div
-              class="flex gap-[6px] items-center"
-              v-if="openTab === 2 ? selectedCountry?.price : selectedService"
-            >
-              <div
-                class="text-center text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-normal font-[Poppins]"
-              >
-                Cost:
-              </div>
-              <div
-                class="text-zinc-600 dark:text-[#F5F5F5] text-[11px] font-light font-[Poppins]"
-              >
-                {{
-                  openTab === 2 ? selectedCountry?.price : selectedService.price
-                }}
-              </div>
-            </div> -->
+                  
                 </div>
             </div>
         </div>
