@@ -16,7 +16,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                 <div class="max-w-full min-w-[340px] w-full  lg:max-w-[450px] h-[635px]">
                     <div class=" mb-[30px]">
                         <h3
-                            class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] pr-[16px]">
+                            class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] pr-[16px] pl-6 lg:pl-0">
                             Choose
                             Payment</h3>
 
@@ -174,7 +174,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                         class="max-w-[420px] w-full h-[196px] p-[50px] bg-neutral-50 dark:bg-[#09132C] rounded-3xl">
                                         <p
                                             class="text-zinc-600 dark:text-[#F5F5F5] text-center text-base lg:text-xl font-normal font-[Poppins] mb-[30px]">
-                                            Do you want to Payment?</p>
+                                            Do you want to TOP-UP?</p>
                                         <div class="flex justify-between items-center gap-10">
 
                                             <button
