@@ -67,7 +67,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                     <div class="flex justify-between lg:justify-center lg:hidden px-0 items-center">
                         <button @click="handleBack" class=" flex justify-center items-center">
 
-<svg class="w-[50px] h-[50px] ml-[-18px]" viewBox="0 0 27 26" fill="none"
+<svg class="w-[50px] h-[50px] ml-[-18px] iconStockWhite" viewBox="0 0 27 26" fill="none"
     xmlns="http://www.w3.org/2000/svg">
     <path d="M17.8337 13H9.16699M9.16699 13L12.417 9.75M9.16699 13L12.417 16.25"
         stroke="#495057" stroke-linecap="round" stroke-linejoin="round" />
@@ -117,14 +117,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
 
                 <div class="flex justify-between lg:justify-center lg:hidden px-2 lg:px-0 items-center">
-                    <button @click="handleBack" class="w-12 h-12 border-2 rounded-full flex justify-center items-center">
-
-                        <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512">
-                            <path
-                                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
-                        </svg>
-
-                    </button>
+          
                     <h3
                         class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-medium font-[Poppins] leading-[17px] mb-0 lg:mb-10 text-center lg:text-left">
                         Balance TO-UP</h3>
