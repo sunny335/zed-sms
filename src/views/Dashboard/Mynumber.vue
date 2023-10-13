@@ -59,8 +59,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                         </div>
                         <div>
                             <button
-                                class="w-11 h-11 p-3.5 rounded-[10px] border  hover:bg-[#0057FF] hover:border-[#0057FF] dark:border-[#ACB5BD] justify-start items-start gap-2.5 inline-flex iconStock ml-[150px] lg:ml-0"
-                                :class="{ 'bg-[#0057FF] border-[#0057FF] iconStockWhite z-[999999999]': isOpen, 'z-[99999] border-zinc-600': !isOpen }"
+                                class="w-11 h-11 p-3.5 rounded-[10px] border  hover:bg-[#0057FF] hover:border-[#0057FF] dark:border-[#ACB5BD] justify-start items-start gap-2.5 inline-flex iconStock ml-[150px] lg:ml-0 relative"
+                                :class="{ 'bg-[#0057FF] border-[#0057FF] iconStockWhite z-[99999999]': isOpen, 'z-[99999]' : !isOpen }"
                                 @click="toggleActiveStatusDropdown">
                                 <div class="w-4 h-4 relative rounded-[5px] darkIconStock">
                                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -88,7 +88,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                 <!-- Dropdown Menu -->
 
                                 <ul v-show="isOpen"
-                                    class="absolute right-0 top-5 mt-2  w-48 bg-white   dark:bg-slate-900 border border-[#0057FF] rounded-md shadow-lg z-[99999]"
+                                    class="absolute right-0 top-5 mt-2  w-48 bg-white   dark:bg-slate-900 border border-[#0057FF] rounded-md shadow-lg"
                                     :class="{ 'z-[99999999] block': isOpen, 'z-[99999] hidden': !isOpen }">
                                     <!-- Render your list of countries and languages here -->
                                     <li v-for="(item, index) in option" :key="index" @click="selectActiveStatus(item)"
@@ -103,8 +103,8 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             </div>
                         </div>
 
-                        <div class="fixed top-0 bottom-0 right-0 left-0 bg-black bg-opacity-20 z-[9999]"
-                            :class="{ 'z-[99999999] block': isOpen, 'z-[99999] hidden': !isOpen }">
+                        <div class="fixed top-0 bottom-0 right-0 left-0 bg-black bg-opacity-20"
+                            :class="{ 'z-[9999999] block': isOpen, 'z-[99999] hidden': !isOpen }">
 
                         </div>
 
