@@ -20,7 +20,9 @@ else  {
   
     <Header />
   
-  <RouterView />
+  <div class="overflow-hidden">
+    <RouterView />
+  </div>
   <div>
     <Footer />
   </div>

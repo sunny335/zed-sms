@@ -12,7 +12,7 @@ const Theme = localStorage.getItem("Theme");
       v-bind:class="{ 'max-w-[1440px]': currentPath.includes('dashboard'), 'max-w-[1192px]': !currentPath.includes('dashboard') }">
       <div class="flex h-[70px] lg:h-[116px] items-center justify-between">
         <div class="flex-1 md:flex md:items-center md:gap-11">
-          <RouterLink class="block text-teal-600 dark:text-[#F5F5F5] header-logo" to="/">
+          <RouterLink class="block text-teal-600 dark:text-[#F5F5F5] header-logo " to="/">
             <span class="sr-only">Home</span>
             <CommunityIcon iconName="siteLogo" />
           </RouterLink>
