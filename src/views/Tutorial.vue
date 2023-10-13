@@ -150,7 +150,7 @@ export default {
 
 
         handleModalOpen(open) {
-            console.log("modal", open);
+         
             this.OpenModal = open;
         },
 

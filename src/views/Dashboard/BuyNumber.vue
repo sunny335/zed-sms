@@ -1174,7 +1174,7 @@ export default {
         },
         handleModalOpen(open) {
             this.OpenModal = open;
-            console.log(this.selectedCountry,this.selectedService,this.selectedPhone);
+         
         },
         scrollLeft() {
             this.scrollPosition -= 100;
@@ -1183,7 +1183,7 @@ export default {
 
         scrollRight() {
             this.scrollPosition += 100;
-            console.log("scrollPosition", this.scrollPosition);
+           
 
             const element = this.$refs.scrollContainer;
             const elementContent = this.$refs.content;

@@ -1076,17 +1076,12 @@ export default {
             this.selectedPhone = phone;
         },
         updateSelectedWeek(week) {
-            this.selectedWeek = week; // Update the selected language when the event is emitted from HeaderDropdown
-            // You can perform any additional actions based on the selected language here
+            this.selectedWeek = week;  
         },
         handleModalOpen(open) {
             this.OpenModal = open;
         },
-        // getFlagImage(flagFileName) {
-        //     // Adjust the path to the directory where your flag images are stored
-        //     console.log(flagFileName)
-        //     return require(`../../assets/img/${flagFileName}`);
-        // },
+   
 
         scrollLeft() {
             this.scrollPosition -= 100;
@@ -1096,7 +1091,7 @@ export default {
 
         scrollRight() {
             this.scrollPosition += 100;
-            console.log("scrollPosition", this.scrollPosition);
+           
 
             const element = this.$refs.scrollContainer;
             const elementContent = this.$refs.content;

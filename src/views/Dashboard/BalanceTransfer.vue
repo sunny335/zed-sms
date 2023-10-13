@@ -109,7 +109,7 @@ export default {
     },
     methods: {
         submitModal(open) {
-            console.log("object", open);
+      
             this.isSubmitOpen = open;
         },
         onSubmit(e) {

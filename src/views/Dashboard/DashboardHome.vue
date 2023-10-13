@@ -25,7 +25,7 @@ import num7 from "../../assets/img/NumFlags/7.png"
             <!-- Recent Message -->
             <div>
                 <div
-                    class="max-w-full lg:max-w-[446px] min-w-[290px] w-full pl-5 lg:pl-6 pr-[24px] lg:pr-[30px] pt-6 pb-5 bg-transparent lg:bg-white lg:dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom mx-auto">
+                    class="max-w-full lg:max-w-[465px] min-w-[290px] w-full pl-5 lg:pl-6 pr-[24px] lg:pr-[30px] pt-6 pb-5 bg-transparent lg:bg-white lg:dark:bg-[#09132C] rounded-[20px] shadow-none lg:shadow-custom mx-auto">
                     <h4 class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px]">
                         Recent Message</h4>
 
@@ -92,8 +92,8 @@ import num7 from "../../assets/img/NumFlags/7.png"
                 </div>
             </div>
             <!-- All Number -->
-            <div class="max-w-full lg:max-w-[400px] w-full  mx-4 lg:mx-0 mt-10 lg:mt-0">
-                <div class="max-w-full lg:max-w-[400px] w-full mx-auto h-[546px] pl-5 lg:pl-6 pr-[24px] lg:pr-[30px] pt-6 pb-5">
+            <div class="max-w-full lg:max-w-[480px] w-full  mx-4 lg:mx-0 mt-10 lg:mt-0">
+                <div class="max-w-full lg:max-w-[480px] w-full mx-auto h-[546px] pl-5 lg:pl-6 pr-[24px] lg:pr-[0] pt-6 pb-5">
                     <div class="flex justify-between items-center mb-[30px]">
                         <h3 class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px]">
                             All Number</h3>
@@ -211,7 +211,7 @@ import num7 from "../../assets/img/NumFlags/7.png"
         </div>
         <div>
             <!-- Recent Transaction -->
-            <div class="max-w-[1000px] mt-[48px] w-full">
+            <div class="max-w-[1000px] mt-[120px] w-full">
                 <div class="max-w-[1000px]  w-full ">
                     <div
                         class="text-neutral-800 text-center lg:text-left dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] ">

@@ -11,7 +11,7 @@
         <!-- All Transaction -->
         <div class="">
             <div class="  w-full ">
-                <div class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] pl-2 lg:pl-0">All
+                <div class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] pl-4 lg:pl-0">All
                     Transaction
                 </div>
 

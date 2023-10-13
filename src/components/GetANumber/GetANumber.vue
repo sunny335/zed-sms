@@ -130,7 +130,7 @@ const filteredPhone = computed(() => {
       <!-- Mobile Show Selected data -->
 
       <div class="relative px-[22px] mt-[30px]  block lg:hidden">
-        <div class="absolute left-[-10px] top-[3px]">
+        <div class="absolute left-0 top-[3px]">
           <div @click="handleBackStateTab1_3(data)" v-if="openTab == 1 || openTab == 3"
             class="relative border border-gray-800 dark:border-white rounded-full cursor-pointer after:absolute after:left-0 after:right-0 after:top-0 after:bottom-0 after:content-[''] after:z-10 darkIconStock">
             <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -942,7 +942,7 @@ export default {
 
     scrollRight() {
       this.scrollPosition += 100;
-      console.log("scrollPosition", this.scrollPosition);
+     
 
       const element = this.$refs.scrollContainer;
       const elementContent = this.$refs.content;

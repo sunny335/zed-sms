@@ -1,7 +1,7 @@
 
 
 <template>
-  <section class="ml-0 px-6 lg:px-4 lg:ml-[24px] mb-[100px] mt-0 lg:mt-10 max-w-[940px] w-full">
+  <section class="ml-0 px-0 lg:px-4 lg:ml-[24px] mb-[100px] mt-0 lg:mt-10 max-w-[940px] w-full">
     <div class=" border-b border-gray-400 pb-[30px]">
       <h3 class="text-neutral-800  dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px]">Appearance</h3>
     </div>
@@ -245,7 +245,7 @@ export default {
       }
       else {
         document.body.classList.toggle('dark', false);
-        console.log(option)
+    
         localStorage.setItem("Theme", 'light');
       }
       this.themeIsOpen = false;

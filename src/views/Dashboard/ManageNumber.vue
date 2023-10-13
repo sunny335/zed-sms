@@ -60,7 +60,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                             v-for="numberData in numbersData" :key="numberData.id">
                                             <div class="w-full max-w-[374px] h-[58px] cursor-pointer px-2 text-neutral-800 flex items-center"
                                                 :class="{ 'bg-[#0057FF] text-white': selectedNumber === numberData.id }"
-                                                @click="selectNumber(numberData.id)">
+                                                @click="selectNumber(numberData)">
                                                 <div class="flex items-center">
                                                     <img class="pr-[10px]" :src="numberData.img" alt="" srcset="">
                                                     <p
@@ -106,7 +106,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                             v-for="number2Data in numbers2Data" :key="number2Data.id">
                                             <div class="w-full max-w-[374px] h-[58px] cursor-pointer px-2 text-neutral-800 flex items-center"
                                                 :class="{ 'bg-[#0057FF] text-white': selectedNumber === number2Data.id }"
-                                                @click="selectNumber(number2Data.id)">
+                                                @click="selectNumber(number2Data)">
                                                 <div class="flex items-center">
                                                     <img class="pr-[10px]" :src="number2Data.img" alt="" srcset="">
                                                     <p
@@ -156,7 +156,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
             <!-- Number Details Desktop -->
             <div class="max-w-full lg:max-w-[460px] w-full mx-auto hidden lg:block">
                 <div
-                    class=" w-full max-w-full lg:max-w-[450px] h-[589px] p-[30px] bg-white dark:bg-[#09132C] rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
+                    class=" w-full max-w-full lg:max-w-[450px] p-[30px] bg-white dark:bg-[#09132C] rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
                     <h3
                         class="text-neutral-800 dark:text-[#F5F5F5] text-xl font-normal font-[Poppins] leading-[17px] mb-[20px]">
                         Number
@@ -178,7 +178,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                         <p
                             class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
-                            :+87987787465
+                            :{{ selectedNumberData?.number }}
                         </p>
                     </div>
                     <div class="flex  items-center w-full">
@@ -379,15 +379,15 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                     <div class="max-w-full lg:max-w-[337px] w-full mx-auto">
                         <div
-                            class="max-w-full w-full lg:max-w-[337px] h-[589px] p-[30px] bg-white dark:bg-[#09132C] rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
+                            class="max-w-full w-full lg:max-w-[337px] p-[30px] bg-white dark:bg-[#09132C] rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
 
 
-                            <div class="flex justify-between items-center w-full max-w-full mb-10">
+                            <div class="flex  items-center w-full max-w-full mb-10">
 
                                 <div class=" mt-[-16px]">
                                     <button @click="handleBack" class=" flex justify-center items-center">
 
-                                        <svg width="70" height="69" viewBox="0 0 27 26" fill="none"
+                                        <svg class="w-[50px] h-[50px] ml-[-18px]" viewBox="0 0 27 26" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M17.8337 13H9.16699M9.16699 13L12.417 9.75M9.16699 13L12.417 16.25"
                                                 stroke="#495057" stroke-linecap="round" stroke-linejoin="round" />
@@ -421,7 +421,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
 
                                 <p
                                     class="text-zinc-600  dark:text-[#ACB5BD] text-sm font-light font-[Poppins] leading-[30px] w-2/4">
-                                    :+87987787465
+                                    :{{ selectedNumberData?.number }}
                                 </p>
                             </div>
                             <div class="flex  items-center w-full">
@@ -573,7 +573,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                                             </div>
                                             <!-- Dropdown Menu -->
                                             <ul v-show="isOpen"
-                                                class="absolute right-0 mt-2 py-2 w-48 bg-white z-[9999] dark:bg-[#09132C]  border border-gray-300 rounded-md shadow-lg">
+                                                class="absolute right-[-62px] mt-2 py-2 w-48 bg-white z-[9999] dark:bg-[#09132C]  border border-gray-300 rounded-md shadow-lg">
                                                 <!-- Render your list of countries and languages here -->
                                                 <li v-for="(item, index) in options" :key="index"
                                                     @click="selectOption(item)"
@@ -690,6 +690,7 @@ export default {
             messageSeenStatus: false,
             toggleArrowIcon: false,
             selectedNumber: null,
+            selectedNumberData: null,
             selectedDeActiveNumber: null,
             isLoading: false,
             numbersData: [
@@ -1032,10 +1033,13 @@ export default {
 
             if (this.selectedNumber === data) {
                 this.selectedNumber = null;
+                this.selectedNumberData = null;
 
             } else {
-                this.selectedNumber = data;
+                this.selectedNumber = data.id;
                 this.isLoading = true;
+                this.selectedNumberData = data;
+          
                 setTimeout(() => {
                     this.isLoading = false;
                 }, 1000);
@@ -1056,7 +1060,7 @@ export default {
 
         },
         deleteModal(open) {
-            console.log("object", open);
+   
             this.isDeleteOpen = open;
         },
         onSubmit(e) {

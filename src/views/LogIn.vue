@@ -214,7 +214,7 @@ export default {
         handlePasswordShow(v) {
 
             this.passwordShow = v
-            console.log("handlePasswordShow", this.passwordShow = v);
+           
 
         },
         onSubmit(e) {

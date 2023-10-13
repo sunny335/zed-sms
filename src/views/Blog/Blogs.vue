@@ -186,7 +186,7 @@ export default {
     methods: {
 
         selectedBlogPage(id) {
-            console.log(id);
+       
         },
 
 

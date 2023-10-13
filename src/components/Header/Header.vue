@@ -662,7 +662,7 @@ export default {
     mobileHandleModalOpen(open) {
       this.MobileOpenModal = !this.MobileOpenModal;
 
-      console.log("MobileOpenModal", this.MobileOpenModal);
+  
     },
     handleNotificationModalOpen(event) {
       if (!this.$el.contains(event.target)) {
