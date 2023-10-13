@@ -64,7 +64,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                 <div v-else
                 
                 >
-                    <div class="flex justify-between lg:justify-center lg:hidden px-0">
+                    <div class="flex items-center lg:hidden px-0">
                         <button @click="handleBack" class=" flex justify-center items-center">
 
 <svg class="w-[50px] h-[50px] ml-[-18px] darkIconStock" viewBox="0 0 27 26" fill="none"

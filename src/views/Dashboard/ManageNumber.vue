@@ -382,7 +382,7 @@ import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } fro
                             class="max-w-full w-full lg:max-w-[337px] p-[30px] bg-white dark:bg-[#09132C] rounded-3xl shadow-custom flex-col justify-start items-start inline-flex">
 
 
-                            <div class="flex  items-center w-full max-w-full mb-10">
+                            <div class="flex  w-full max-w-full mb-10">
 
                                 <div class=" mt-[-16px]">
                                     <button @click="handleBack" class=" flex justify-center items-center">
